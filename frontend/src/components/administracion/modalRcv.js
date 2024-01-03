@@ -1741,7 +1741,7 @@ export const ModalRcv = (props) => {
                       onBlur={validarInput}
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
-                      onChange={validaSoloLetras}
+                      //onChange={validaSoloLetras}
                     />
                   </div>
                   <div id="nomtac" class="form-text hidden">
@@ -1762,9 +1762,7 @@ export const ModalRcv = (props) => {
                       class="form-control"
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
-                      onChange={(e) => {
-                        validaSoloLetras(e);
-                      }}
+                      //onChange={(e) => {validaSoloLetras(e)}}
                       onBlur={validarInput}
                       name="apecon"
                     />
@@ -2223,7 +2221,7 @@ export const ModalRcv = (props) => {
                       aria-describedby="inputGroup-sizing-sm"
                       name="nomti"
                       onBlur={validarInput}
-                      onChange={validaSoloLetras}
+                      //onChange={validaSoloLetras}
                     />
                   </div>
                   <div id="nomti" class="form-text hidden">
@@ -2242,7 +2240,7 @@ export const ModalRcv = (props) => {
                       class="form-control"
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
-                      onChange={validaSoloLetras}
+                      //onChange={validaSoloLetras}
                       name="apeti"
                       onBlur={validarInput}
                     />

@@ -531,6 +531,17 @@ abstract class cls_poliza extends cls_db
 					"code" => 400
 				];
 			}
+
+			$result = $this->SearchByUsuario();
+			if (!$resul) {
+				$this->db->rollback();
+				return [
+					"data" => [
+						"res" => "Ocurrio un error en la transacción"
+					],
+					"code" => 400
+				];
+			}
 			$result = $this->editarDebito($this->debitoCredito);
 			if (!$result) {
 				$this->db->rollback();
@@ -561,7 +572,17 @@ abstract class cls_poliza extends cls_db
 					'code' => 400
 				];
 			}
-
+			$result = $this->SearchBySucursal();
+			$result = $this->db->prepare("UPDATE poliza SET 
+			usuario_id = ?,
+			sucursal_id = ?
+			WHERE poliza_id = ?
+			");
+			$result->execute([
+				$this->usuario,
+				$this->sucursal,
+				$this->id
+			]);
 			if ($result) {
 				$this->db->commit();
 				return [
