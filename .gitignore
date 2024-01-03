@@ -1,3 +1,6 @@
 /backend/vendor
 /backend/.env
 /backend/ImgQr
+/backend/fotosCliente
+/backend/fotosHotel
+/backend/ImgPanel
