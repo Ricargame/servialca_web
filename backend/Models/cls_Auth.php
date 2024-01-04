@@ -208,17 +208,17 @@ class cls_Auth extends cls_db
         $this->telefono,
         $this->direccion,
         $this->correo,
-        $this->clave,
+        $clave,
         $this->rol,
         $this->sucursal,
         $this->permiso
       ]);
       $this->id = $this->db->lastInsertId();
       if ($sql->rowCount() > 0) {
-        $this->reg_bitacora([
-          'table_name' => "usuario",
-          'des' => "Registro de datos de usuario ($this->usuario, $this->nombre, $this->apellido, $this->telefono)"
-        ]);
+        // $this->reg_bitacora([
+        //   'table_name' => "usuario",
+        //   'des' => "Registro de datos de usuario ($this->usuario, $this->nombre, $this->apellido, $this->telefono)"
+        // ]);
         return [
           'data' => [
             'res' => "Registro exitoso"

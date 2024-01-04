@@ -626,7 +626,7 @@ export const ModalUsuarios = (props) => {
               Debe ingresar login de usuario
             </div>
           </div>
-          <div class=" mb-1 col-md-4">
+          {/* <div class=" mb-1 col-md-4">
             <div class="input-group input-group-sm">
               <span class="input-group-text" id="inputGroup-sizing-sm">
                 Contraseña:
@@ -648,7 +648,7 @@ export const ModalUsuarios = (props) => {
             <div id="passs" class="form-text hidden">
               Debe ingresar contraseña de usuario
             </div>
-          </div>
+          </div> */}
           <div class=" mb-1 col-md-6">
             <div class="input-group input-group-sm">
               <span class="input-group-text" id="inputGroup-sizing-sm">
@@ -665,7 +665,7 @@ export const ModalUsuarios = (props) => {
                 onBlur={validarInput}
                 onChange={(e) => {
                   e.target.value = e.target.value.toUpperCase();
-                  validaSoloLetras();
+                  //validaSoloLetras();
                 }}
               />
             </div>
