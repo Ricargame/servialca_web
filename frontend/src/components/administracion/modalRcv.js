@@ -1661,7 +1661,7 @@ export const ModalRcv = (props) => {
                     Cedula:
                   </span>
                   <select
-                    disabled={operacion === 3}
+                     disabled={operacion === 3 || idUser !== 57 && operacion === 2}
                     class="form-select col-md-3"
                     ref={cmbNacionalidad}
                     aria-label="Default select example"
@@ -1674,7 +1674,7 @@ export const ModalRcv = (props) => {
                   <input
                     type="text"
                     class="form-control"
-                    disabled={operacion === 3}
+                    disabled={operacion === 3 || idUser !== 57 && operacion === 2}
                     ref={txtCedula}
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
@@ -2167,6 +2167,7 @@ export const ModalRcv = (props) => {
                       class="form-select col-md-3"
                       ref={cmbNacionalidadTitular}
                       aria-label="Default select example"
+                      
                     >
                       <option value="V-">V-</option>
                       <option value="E-">E-</option>
@@ -2186,6 +2187,7 @@ export const ModalRcv = (props) => {
                         validaSoloNumero(e);
                         igualA(2);
                       }}
+                     
                     />
 
                     <button
@@ -2265,7 +2267,9 @@ export const ModalRcv = (props) => {
                     Placa
                   </span>
                   <input
-                    disabled={operacion === 3}
+                    disabled={
+                      operacion === 3 || (idUser !== 57 && operacion === 2)
+                    }
                     type="text"
                     ref={txtPlaca}
                     maxLength={10}
@@ -2602,7 +2606,9 @@ export const ModalRcv = (props) => {
                     Ser. Carroceria
                   </span>
                   <input
-                    disabled={operacion === 3}
+                    disabled={
+                      operacion === 3 || (idUser !== 57 && operacion === 2)
+                    }
                     type="text"
                     class="form-control"
                     maxLength={20}
