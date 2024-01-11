@@ -1661,7 +1661,7 @@ export const ModalRcv = (props) => {
                     Cedula:
                   </span>
                   <select
-                     disabled={operacion === 3 || idUser !== 57 && operacion === 2}
+                     disabled={operacion === 3 || idUser != 57 && operacion === 2}
                     class="form-select col-md-3"
                     ref={cmbNacionalidad}
                     aria-label="Default select example"
@@ -2268,7 +2268,7 @@ export const ModalRcv = (props) => {
                   </span>
                   <input
                     disabled={
-                      operacion === 3 || (idUser !== 57 && operacion === 2)
+                      operacion === 3 || (idUser != 57 && operacion === 2)
                     }
                     type="text"
                     ref={txtPlaca}
@@ -2607,7 +2607,7 @@ export const ModalRcv = (props) => {
                   </span>
                   <input
                     disabled={
-                      operacion === 3 || (idUser !== 57 && operacion === 2)
+                      operacion === 3 || (idUser != 57 && operacion === 2)
                     }
                     type="text"
                     class="form-control"

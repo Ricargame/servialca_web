@@ -23,7 +23,7 @@ $generado = 0;
 $gastado = 0;
 $total = 0;
 foreach ($datos as $fila) {
-  if ($fila["nota_IngresoEgreso"] === 1) {
+  if ($fila["nota_IngresoEgreso"] == 1) {
     $generado += $fila["nota_monto"];
   } else {
     $gastado += $fila["nota_monto"];
@@ -84,7 +84,7 @@ $pdf->SetX($tableX - 7.4);
 
 // Establecer el color de fondo de las celdas de encabezado
 $pdf->SetFillColor(229, 57, 53); // Rojo más intenso
-$pdf->Cell($cellWidth, 10, utf8_decode('N° de movimiento'), 1, 0, 'C', true);
+$pdf->Cell($cellWidth, 10, utf8_decode('N° de contrato'), 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, 'Fecha', 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, utf8_decode('Hora'), 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, utf8_decode('Usuario'), 1, 0, 'C', true);
@@ -105,7 +105,7 @@ foreach ($datos as $fila) {
     $pdf->SetFillColor(255, 255, 255); // Restaurar el color de fondo a blanco
   }
 
-  $pdf->Cell($cellWidth, 10, utf8_decode($fila["poliza_id"]), 1, 0, "C", true);
+  $pdf->Cell($cellWidth, 10, $fila["poliza_id"], 1, 0, "C", true);
   $pdf->Cell($cellWidth, 10, date("d-m-Y", strtotime($fila["nota_fecha"])), 1, 0, "C", true);
   $pdf->Cell($cellWidth, 10, $fila["nota_hora"], 1, 0, "C", true);
   $pdf->Cell($cellWidth, 10, utf8_decode($fila["usuario_usuario"]), 1, 0, "C", true);

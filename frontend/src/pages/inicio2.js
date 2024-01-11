@@ -70,6 +70,7 @@ function Inicio2() {
       backgroundColor: "#e70101bf",
       color: "white",
     },
+
     {
       label: "Telefono",
       textAlign: "center",
@@ -281,6 +282,11 @@ function Inicio2() {
                 : 0) ||
               (x.cliente_nombre !== null
                 ? x.cliente_nombre
+                    .toLowerCase()
+                    .includes(target.value.toLowerCase())
+                : "") ||
+              (x.cliente_apellido !== null
+                ? x.cliente_apellido
                     .toLowerCase()
                     .includes(target.value.toLowerCase())
                 : "") ||
@@ -591,7 +597,7 @@ function Inicio2() {
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.cliente_nombre}
+                    {item.cliente_nombre + " " + item.cliente_apellido}
                   </TableCell>
                   <TableCell
                     className="align-baseline"

@@ -542,6 +542,16 @@ abstract class cls_poliza extends cls_db
 					"code" => 400
 				];
 			}
+			$result = $this->SearchBySucursal();
+			if (!$resul) {
+				$this->db->rollback();
+				return [
+					"data" => [
+						"res" => "Ocurrio un error en la transacción"
+					],
+					"code" => 400
+				];
+			}
 			$result = $this->editarDebito($this->debitoCredito);
 			if (!$result) {
 				$this->db->rollback();
@@ -572,7 +582,6 @@ abstract class cls_poliza extends cls_db
 					'code' => 400
 				];
 			}
-			$result = $this->SearchBySucursal();
 			$result = $this->db->prepare("UPDATE poliza SET 
 			usuario_id = ?,
 			sucursal_id = ?
@@ -1211,12 +1220,16 @@ abstract class cls_poliza extends cls_db
 		$sql = $this->db->prepare("UPDATE debitocredito SET
 		nota_referencia = ?,
 		nota_tipoPago = ?,
-		nota_monto =? 
+		nota_monto =?,
+		usuario_id = ?,
+		sucursal_id = ? 
 		WHERE nota_id = ?");
 		$sql->execute([
 			$this->referencia,
 			$this->metodoPago,
 			$this->cantidadDolar,
+			$this->usuario,
+			$this->sucursal,
 			$id
 		]);
 		return true;
@@ -1812,10 +1825,12 @@ abstract class cls_poliza extends cls_db
 		$params[] = date('Y-m-d', strtotime($desde));
 		$params[] = date('Y-m-d', strtotime($hasta));
 
-		$sql = $this->db->prepare("SELECT *, usuario.*, sucursal.* 
-        FROM debitocredito 
+		$sql = $this->db->prepare("SELECT *, usuario.*, sucursal.*, debitocredito.* 
+        FROM poliza 
+		INNER JOIN debitocredito ON debitocredito.nota_id = poliza.debitoCredito
         INNER JOIN usuario ON usuario.usuario_id = debitocredito.usuario_id
         INNER JOIN sucursal ON sucursal.sucursal_id = debitocredito.sucursal_id
+		
         WHERE $where");
 		$a = $sql->execute($params);
 
