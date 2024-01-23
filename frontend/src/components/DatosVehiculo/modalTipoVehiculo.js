@@ -101,7 +101,7 @@ export const ModalTipoVehiculo = (props) => {
   const txtFechaNaci = useRef();
   const txtDescripcion = useRef();
   const [records, setRecords] = useState([]);
-  const [idTipo,setIdTipo] = useState()
+  const [idTipo, setIdTipo] = useState();
   const [filterFn, setFilterFn] = useState({
     fn: (items) => {
       return items;
@@ -190,7 +190,6 @@ export const ModalTipoVehiculo = (props) => {
     let bodyF = new FormData();
     setActivate(true);
     for (let i = 0; i < records.length; i++) {
-          
       bodyF.append("ID", id);
       bodyF.append("precio", txtDolar.current.value);
       bodyF.append("idContrato", records[i].contrato_id);
@@ -222,7 +221,6 @@ export const ModalTipoVehiculo = (props) => {
       icono: "exito",
     });
   };
-  
 
   const actualizarCertificado = async () => {
     let endpoint;
@@ -234,7 +232,7 @@ export const ModalTipoVehiculo = (props) => {
       endpoint = op.conexion + "/tipo_vehiculo/registrar";
     }
 
-    if(operacion === 2){
+    if (operacion === 2) {
       endpoint = op.conexion + "/tipo_vehiculo/actualizar";
       bodyF.append("ID", values.tipoVehiculo_id);
     }
@@ -242,7 +240,7 @@ export const ModalTipoVehiculo = (props) => {
     bodyF.append("tipoVehiculo_nombre", txtDescripcion.current.value);
     bodyF.append("precio", txtDolar.current.value);
     bodyF.append("Sucursal", idsucursal);
-        
+
     bodyF.append("token", token);
     await fetch(endpoint, {
       method: "POST",
@@ -252,12 +250,11 @@ export const ModalTipoVehiculo = (props) => {
       .then((response) => {
         setActivate(false);
         console.log(response);
-        console.log("aqui")
-        if(operacion === 1){
-          if(records.length > 0){
+        console.log("aqui");
+        if (operacion === 1) {
+          if (records.length > 0) {
             actualizarTiposContratos(response.id);
-
-          } else{
+          } else {
             setMensaje({
               mostrar: true,
               titulo: "Exito.",
@@ -265,7 +262,6 @@ export const ModalTipoVehiculo = (props) => {
               icono: "exito",
             });
           }
-
         } else {
           setMensaje({
             mostrar: true,
@@ -308,7 +304,7 @@ export const ModalTipoVehiculo = (props) => {
   };
 
   const blanquear = () => {
-    setRecords([])
+    setRecords([]);
     setValues({
       ced: "",
       nombre: "",
@@ -359,7 +355,7 @@ export const ModalTipoVehiculo = (props) => {
     )
       event.returnValue = false;
   }
- 
+
   const handleInputMontoChange = (event) => {
     validaMonto(event);
     if (event.which === 13 || typeof event.which === "undefined") {
@@ -400,10 +396,15 @@ export const ModalTipoVehiculo = (props) => {
   };
 
   const idsucursal = JSON.parse(localStorage.getItem("idsucursal"));
-  
+
   const selecionarRegistros = async (id) => {
-    let endpoint = op.conexion + "/tipo_vehiculo/ConsultarTipoVehiculo?ID=" + id + "&sucursal=" + idsucursal;
-    setMostrar(false)
+    let endpoint =
+      op.conexion +
+      "/tipo_vehiculo/ConsultarTipoVehiculo?ID=" +
+      id +
+      "&sucursal=" +
+      idsucursal;
+    setMostrar(false);
     console.log(endpoint);
     setActivate(true);
 
@@ -428,10 +429,7 @@ export const ModalTipoVehiculo = (props) => {
       );
   };
 
-  useEffect(() => {
-   
-  }, []);
-    
+  useEffect(() => {}, []);
 
   const selecionarTipo = async (id) => {
     let endpoint = op.conexion + "/tipo_vehiculo/ConsultarUno?ID=" + id;
@@ -458,7 +456,7 @@ export const ModalTipoVehiculo = (props) => {
           : 0;
         let bs = parseFloat(dolarbcv);
         let totalbs = $ * bs;
-        setIdTipo(response)
+        setIdTipo(response);
         txtDescripcion.current.value = response.tipoVehiculo_nombre;
         txtDolar.current.value = response.tipoVehiculo_precio
           ? formatMoneda(
@@ -479,7 +477,6 @@ export const ModalTipoVehiculo = (props) => {
         );
         setValues(response);
         selecionarRegistros(response.tipoVehiculo_id);
-
       })
       .catch((error) =>
         setMensaje({
@@ -519,7 +516,7 @@ export const ModalTipoVehiculo = (props) => {
   };
   const elimminarrTipo = (id) => async (e) => {
     e.preventDefault();
-    
+
     let endpoint = op.conexion + "/tipo_vehiculo/EliminarPrecio";
     setActivate(true);
     let bodyF = new FormData();
@@ -540,8 +537,8 @@ export const ModalTipoVehiculo = (props) => {
           icono: "exito",
         });
         console.log(response);
-        let id = idTipo.tipoVehiculo_id
-        selecionarRegistros(id)
+        let id = idTipo.tipoVehiculo_id;
+        selecionarRegistros(id);
       })
       .catch((error) =>
         setMensaje({
@@ -551,24 +548,27 @@ export const ModalTipoVehiculo = (props) => {
           icono: "informacion",
         })
       );
-   
+
     // setRecords(array);
   };
 
   const validarInput = (e) => {
-    console.log(e.target.name)
-   let item = document.getElementById(e.target.name);
-    if(!e.target.value || e.target.name === 'ced' && e.target.value.length < 8){
-      console.log('1')
-      item.className -= ' form-text fw-bold hidden ';
-      item.className += ' form-text fw-bold visible ';
+    console.log(e.target.name);
+    let item = document.getElementById(e.target.name);
+    if (
+      !e.target.value ||
+      (e.target.name === "ced" && e.target.value.length < 8)
+    ) {
+      console.log("1");
+      item.className -= " form-text fw-bold hidden ";
+      item.className += " form-text fw-bold visible ";
     } else {
-      console.log('2')
+      console.log("2");
 
-      item.className -= ' form-text fw-bold visible ';
-      item.className += ' form-text fw-bold hidden ';
+      item.className -= " form-text fw-bold visible ";
+      item.className += " form-text fw-bold hidden ";
     }
-  }
+  };
 
   return (
     <Modal
@@ -585,7 +585,6 @@ export const ModalTipoVehiculo = (props) => {
         if (props.operacion !== 1) {
           selecionarTipo(props.idTipoVehiculo);
         }
-       
       }}
     >
       <Modal.Header className="bg-danger">
@@ -635,28 +634,31 @@ export const ModalTipoVehiculo = (props) => {
         />
 
         <div className="col-md-12 row mx-auto">
-        <div class=" mb-1 col-md-12">
-          <div class="input-group input-group-sm">
-            <span class="input-group-text" id="inputGroup-sizing-sm">
-              Nombre:
-            </span>
-            <input
-             maxLength={50}
-              type="text"
-              disabled={
-                operacion === 1 ? false : operacion === 2 ? false : true
-              }
-              class="form-control"
-              ref={txtDescripcion}
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm"
-              name="nom"
-              onBlur={validarInput}
-              onChange={(e) => e.target.value = e.target.value.toUpperCase()}
-            />
-             </div>
-          <div id="nom" class="form-text hidden">Debe ingresar nombre del tipo del vehiculo</div>
-
+          <div class=" mb-1 col-md-12">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text" id="inputGroup-sizing-sm">
+                Nombre:
+              </span>
+              <input
+                maxLength={50}
+                type="text"
+                disabled={
+                  operacion === 1 ? false : operacion === 2 ? false : true
+                }
+                class="form-control"
+                ref={txtDescripcion}
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                name="nom"
+                onBlur={validarInput}
+                onChange={(e) =>
+                  (e.target.value = e.target.value.toUpperCase())
+                }
+              />
+            </div>
+            <div id="nom" class="form-text hidden">
+              Debe ingresar nombre del tipo del vehiculo
+            </div>
           </div>
 
           <div class="input-group input-group-sm mb-1 col-md-6">
@@ -741,7 +743,7 @@ export const ModalTipoVehiculo = (props) => {
                         }}
                       >
                         {item.sucursal_nombre}
-                      </TableCell>                      
+                      </TableCell>
 
                       <TableCell
                         className="align-baseline"

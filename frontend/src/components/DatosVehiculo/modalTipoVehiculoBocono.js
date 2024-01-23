@@ -229,9 +229,14 @@ export const ModalTipoVehiculoBocono = (props) => {
     if (operacion === 1) {
       endpoint = op.conexion + "/tipo_vehiculo/registrar";
     }
-
+    if (operacion === 2) {
+      endpoint = op.conexion + "/tipo_vehiculo/actualizar";
+      bodyF.append("ID", values.tipoVehiculo_id);
+    }
     bodyF.append("tipoVehiculo_nombre", txtDescripcion.current.value);
-
+    bodyF.append("precio", txtDolar.current.value);
+    bodyF.append("Sucursal", 27);
+    bodyF.append("token", token);
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,

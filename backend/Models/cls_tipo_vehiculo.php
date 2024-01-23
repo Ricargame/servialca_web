@@ -38,9 +38,7 @@ abstract class cls_tipo_vehiculo extends cls_db
           $this->$key = str_replace(',', '.', $value);
         }
       }
-
       $sql = $this->db->prepare("INSERT INTO tipovehiculo(tipoVehiculo_nombre,tipoVehiculo_precio,sucursal_id,tipoVehiculo_estatus)  VALUES(?,?,?,1)");
-
       $sql->execute([$this->nombre, $this->precio, $this->sucursal]);
 
       if ($sql->rowCount() > 0) {
@@ -88,6 +86,18 @@ abstract class cls_tipo_vehiculo extends cls_db
           "code" => 400
         ];
       }
+      foreach ($this as $key => $value) {
+        if (is_string($value)) {
+          $this->$key = str_replace(',', '.', $value);
+        }
+      }
+      $sql = $this->db->prepare("UPDATE precio SET 
+        precio_monto = ?
+        WHERE tipoVehiculo_id = ?");
+      if ($sql->execute([
+        $this->precio,
+        $this->id
+      ]));
       $sql = $this->db->prepare("UPDATE tipovehiculo SET
           tipoVehiculo_nombre = ?
         WHERE tipoVehiculo_id = ?");
@@ -98,11 +108,10 @@ abstract class cls_tipo_vehiculo extends cls_db
         ])
       ) {
 
-        $this->reg_bitacora([
-          'table_name' => "tipovehiculo",
-          'des' => "Actualización en tipo vehiculo (id: $this->id, nombre: $this->nombre)"
-        ]);
-
+        // $this->reg_bitacora([
+        //   'table_name' => "tipovehiculo",
+        //   'des' => "Actualización en tipo vehiculo (id: $this->id, nombre: $this->nombre)"
+        // ]);
 
         return [
           "data" => [
