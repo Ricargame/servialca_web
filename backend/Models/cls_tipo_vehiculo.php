@@ -115,7 +115,8 @@ abstract class cls_tipo_vehiculo extends cls_db
 
         return [
           "data" => [
-            "res" => "Actualización de datos exitosa"
+            "res" => "Actualización de datos exitosa",
+            "id" => $this->id
           ],
           "code" => 300
         ];

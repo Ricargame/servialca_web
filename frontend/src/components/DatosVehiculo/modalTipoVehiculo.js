@@ -220,6 +220,7 @@ export const ModalTipoVehiculo = (props) => {
       texto: "Operacion Exitosa",
       icono: "exito",
     });
+    
   };
 
   const actualizarCertificado = async () => {
@@ -345,6 +346,7 @@ export const ModalTipoVehiculo = (props) => {
   const cerrarModal = () => {
     setMensaje({ mostrar: false, titulo: "", texto: "", icono: "" });
     props.render();
+    props.onHideCancela();
   };
 
   function soloLetras(event) {

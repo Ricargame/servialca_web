@@ -1404,11 +1404,11 @@ export const ModalRcv = (props) => {
       <Modal.Header className="bg-danger">
         <Modal.Title style={{ color: "#fff" }}>
           <Modal.Title style={{ color: "#fff" }}>
-            {operacion === 1
+            {operacion == 1
               ? "Registro de RCV"
-              : operacion === 2
+              : operacion == 2
               ? "Editar de RCV"
-              : operacion === 3
+              : operacion == 3
               ? "Renovar de RCV"
               : "Registro de RCV"}
           </Modal.Title>{" "}
@@ -1661,7 +1661,10 @@ export const ModalRcv = (props) => {
                     Cedula:
                   </span>
                   <select
-                     disabled={operacion === 3 || idUser != 57 && operacion === 2}
+                    disabled={
+                      (operacion == 3 && idUser != 57) ||
+                      (idUser != 57 && operacion === 2)
+                    }
                     class="form-select col-md-3"
                     ref={cmbNacionalidad}
                     aria-label="Default select example"
@@ -1674,7 +1677,10 @@ export const ModalRcv = (props) => {
                   <input
                     type="text"
                     class="form-control"
-                    disabled={operacion === 3 || idUser !== 57 && operacion === 2}
+                    disabled={
+                      (operacion == 3 && idUser != 57) ||
+                      (idUser != 57 && operacion == 2)
+                    }
                     ref={txtCedula}
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
@@ -1711,7 +1717,7 @@ export const ModalRcv = (props) => {
                       Fecha Nacimiento
                     </span>
                     <input
-                      disabled={operacion === 3}
+                      disabled={operacion == 3 && idUser != 57}
                       type="date"
                       ref={txtFechaNaci}
                       class="form-control"
@@ -1733,7 +1739,7 @@ export const ModalRcv = (props) => {
                     </span>
                     <input
                       type="text"
-                      disabled={operacion === 3}
+                      disabled={operacion == 3 && idUser != 57}
                       maxLength={25}
                       ref={txtNombre}
                       class="form-control "
@@ -1755,7 +1761,7 @@ export const ModalRcv = (props) => {
                       Apellido
                     </span>
                     <input
-                      disabled={operacion === 3}
+                      disabled={operacion == 3 && idUser != 57}
                       type="text"
                       ref={txtApellido}
                       maxLength={25}
@@ -2167,7 +2173,6 @@ export const ModalRcv = (props) => {
                       class="form-select col-md-3"
                       ref={cmbNacionalidadTitular}
                       aria-label="Default select example"
-                      
                     >
                       <option value="V-">V-</option>
                       <option value="E-">E-</option>
@@ -2187,7 +2192,6 @@ export const ModalRcv = (props) => {
                         validaSoloNumero(e);
                         igualA(2);
                       }}
-                     
                     />
 
                     <button
@@ -2268,7 +2272,8 @@ export const ModalRcv = (props) => {
                   </span>
                   <input
                     disabled={
-                      operacion === 3 || (idUser != 57 && operacion === 2)
+                      (operacion == 3 && idUser != 57) ||
+                      (idUser != 57 && operacion == 2)
                     }
                     type="text"
                     ref={txtPlaca}
@@ -2300,7 +2305,7 @@ export const ModalRcv = (props) => {
                     Puesto
                   </span>
                   <input
-                    disabled={operacion === 3}
+                    disabled={operacion == 3 && idUser != 57}
                     type="text"
                     maxLength={2}
                     ref={txtPuesto}
@@ -2420,7 +2425,7 @@ export const ModalRcv = (props) => {
                     Año
                   </span>
                   <input
-                    disabled={operacion === 3}
+                    disabled={operacion == 3 && idUser != 57}
                     type="text"
                     class="form-control text-right"
                     maxLength={4}
@@ -2607,7 +2612,9 @@ export const ModalRcv = (props) => {
                   </span>
                   <input
                     disabled={
-                      operacion === 3 || (idUser != 57 && operacion === 2)
+                      operacion == 3 ||
+                      idUser != 57 ||
+                      (idUser != 57 && operacion == 2)
                     }
                     type="text"
                     class="form-control"
@@ -2736,7 +2743,7 @@ export const ModalRcv = (props) => {
                     Modelo
                   </span>
                   <input
-                    disabled={operacion === 3}
+                    disabled={operacion == 3 && idUser != 57}
                     maxLength={50}
                     type="text"
                     class="form-control"
@@ -2762,7 +2769,7 @@ export const ModalRcv = (props) => {
                     Marca
                   </span>
                   <input
-                    disabled={operacion === 3}
+                    disabled={operacion == 3 && idUser != 57}
                     maxLength={50}
                     type="text"
                     class="form-control"
@@ -2788,7 +2795,7 @@ export const ModalRcv = (props) => {
                     Peso
                   </span>
                   <input
-                    disabled={operacion === 3}
+                   disabled={operacion == 3 && idUser != 57}
                     maxLength={10}
                     type="text"
                     class="form-control"
@@ -2811,7 +2818,7 @@ export const ModalRcv = (props) => {
                     Cap. Ton.
                   </span>
                   <input
-                    disabled={operacion === 3}
+                    disabled={operacion == 3 && idUser != 57}
                     maxLength={10}
                     type="text"
                     class="form-control"
@@ -2912,7 +2919,7 @@ export const ModalRcv = (props) => {
         <Modal.Footer>
           <button
             className="btn btn-sm btn-success rounded-pill col-md-2"
-            disabled={props.operacion === 4 ? true : false}
+            disabled={props.operacion == 4 ? true : false}
             onClick={onChangeValidar}
           >
             <i className="fas fa-check-circle"> Aceptar</i>

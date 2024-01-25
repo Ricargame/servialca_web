@@ -24,7 +24,7 @@ abstract class cls_usoVehiculo extends cls_db
 				];
 			}
 			$result = $this->SearchByNombre($this->nombre);
-			if (isset($result)) {
+			if ($result) {
 				return [
 					"data" => [
 						"res" => "Este nombre de uso vehiculo ($this->nombre) ya existe",
@@ -116,7 +116,8 @@ abstract class cls_usoVehiculo extends cls_db
 	{
 		$sql = $this->db->prepare("SELECT * FROM usovehiculo WHERE usoVehiculo_nombre =? AND usoVehiculo_id != ?");
 		$sql->execute([$this->nombre, $this->id]);
-		if ($sql->rowCount() > 0) return true; else return false;
+		if ($sql->rowCount() > 0) return true;
+		else return false;
 	}
 
 	protected function Delete()
@@ -152,20 +153,23 @@ abstract class cls_usoVehiculo extends cls_db
 	{
 		$sql = $this->db->prepare("SELECT * FROM usovehiculo WHERE usoVehiculo_id = ?");
 		$sql->execute([$id]);
-		if ($sql->rowCount() > 0) return $sql->fetch(PDO::FETCH_ASSOC); else return [];
+		if ($sql->rowCount() > 0) return $sql->fetch(PDO::FETCH_ASSOC);
+		else return [];
 	}
 
 	protected function SearchByNombre($nombre)
 	{
 		$sql = $this->db->prepare("SELECT * FROM usovehiculo WHERE usoVehiculo_nombre = ?");
 		$sql->execute([$nombre]);
-		if ($sql->rowCount() > 0) return $sql->fetch(PDO::FETCH_ASSOC); else return [];
+		if ($sql->rowCount() > 0) return $sql->fetch(PDO::FETCH_ASSOC);
+		else return [];
 	}
 
 	protected function GetAll()
 	{
 		$sql = $this->db->prepare("SELECT * FROM usovehiculo ORDER BY usoVehiculo_id DESC");
 		$sql->execute();
-		if ($sql->rowCount() > 0) return $sql->fetchAll(PDO::FETCH_ASSOC); else return [];
+		if ($sql->rowCount() > 0) return $sql->fetchAll(PDO::FETCH_ASSOC);
+		else return [];
 	}
 }
