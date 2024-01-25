@@ -2612,7 +2612,7 @@ export const ModalRcv = (props) => {
                   </span>
                   <input
                     disabled={
-                      operacion == 3 ||
+                      operacion == 3 &&
                       idUser != 57 ||
                       (idUser != 57 && operacion == 2)
                     }
