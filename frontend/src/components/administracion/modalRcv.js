@@ -2611,11 +2611,7 @@ export const ModalRcv = (props) => {
                     Ser. Carroceria
                   </span>
                   <input
-                    disabled={
-                      operacion == 3 &&
-                      idUser != 57 ||
-                      (idUser != 57 && operacion == 2)
-                    }
+                    disabled={operacion == 3 ||operacion == 2}
                     type="text"
                     class="form-control"
                     maxLength={20}
