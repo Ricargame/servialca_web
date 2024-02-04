@@ -175,3 +175,34 @@ Stack trace:
 #4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
 #5 {main}
   thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_tipo_vehiculo.php on line 270
+[30-Jan-2024 10:22:26 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1481
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1481): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteVendedores.php(9): cls_poliza->Reporte()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1481
+[01-Feb-2024 10:35:04 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/007507-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(9): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[01-Feb-2024 10:35:07 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/007507-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(9): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267

@@ -58,7 +58,7 @@ $Pdf->Cell(10, -5, "TITULAR: ");
 $Pdf->Ln(1);
 $Pdf->SetFont('Arial', '', 9); // Aumentar el tamaño de fuente a 9
 $Pdf->Cell(17, 20, "");
-$Pdf->Cell(8, -2, "" . utf8_decode($datos[0]["titular_nombre"] . " " . $datos[0]["titular_apellido"]));
+$Pdf->Cell(8, -2, "" . strtoupper(utf8_decode($datos[0]["titular_nombre"] . " " . $datos[0]["titular_apellido"])));
 $Pdf->SetFont('Arial', '', 9); // Aumentar el tamaño de fuente a 9
 $Pdf->Cell(2, 10, "");
 $Pdf->Cell(12, 4, "" . $datos[0]["titular_cedula"]);
@@ -69,7 +69,7 @@ $Pdf->Cell(10, -3, "CONTRATANTE: ");
 $Pdf->Ln(1);
 $Pdf->SetFont('Arial', '', 9); // Aumentar el tamaño de fuente a 9
 $Pdf->Cell(17, 20, "");
-$Pdf->Cell(10, 1, "" . utf8_decode($datos[0]["cliente_nombre"]) . " " . utf8_decode($datos[0]["cliente_apellido"]));
+$Pdf->Cell(10, 1, "" . strtoupper(utf8_decode($datos[0]["cliente_nombre"]) . " " . utf8_decode($datos[0]["cliente_apellido"])));
 $Pdf->SetFont('Arial', '', 9); // Aumentar el tamaño de fuente a 9
 $Pdf->Cell(2, 2, "");
 $Pdf->Cell(10, 8, "" . $datos[0]["cliente_cedula"]);
@@ -108,7 +108,7 @@ $Pdf->Cell(34, 31, "" . $datos[0]["vehiculo_serialCarroceria"]);
 $Pdf->SetFont('Arial', 'B', 9); // Aumentar el tamaño de fuente a 9
 $Pdf->Cell(12, 31, "PLACA: "); //SER.MOTOR.:
 $Pdf->SetFont('Arial', '', 9); // Aumentar el tamaño de fuente a 9
-$Pdf->Cell(28, 31, "" . $datos[0]["vehiculo_placa"]);
+$Pdf->Cell(28, 31, "" . strtoupper($datos[0]["vehiculo_placa"]));
 $Pdf->Ln(4);
 $Pdf->SetFont('Arial', 'B', 9); // Aumentar el tamaño de fuente a 9
 $Pdf->Cell(17, 22, "");

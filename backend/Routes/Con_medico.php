@@ -19,6 +19,8 @@ class Con_medico extends cls_medico
         $this->lente = isset($_POST["Lente"]) ? $_POST["Lente"] : null;
         $this->metodo = isset($_POST["metodoPago"]) ? $_POST["metodoPago"] : null;
         $this->refrencia = isset($_POST["Referencia"]) ? $_POST["Referencia"] : null;
+        $this->desde = isset($_POST["fechaInicio"]) ? $_POST["fechaInicio"] : null;
+        $this->hasta = isset($_POST["fechaVencimiento"]) ? $_POST["fechaVencimiento"] : null;
     }
 
     public function Editar()

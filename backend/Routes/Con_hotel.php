@@ -17,6 +17,7 @@ class Con_hotel extends cls_hotel
         $this->habitacion = isset($_POST["Habitacion"]) ? $_POST["Habitacion"] : null;
         $this->horaSalida = isset($_POST["horaSalida"]) ? $_POST["horaSalida"] : null;
         $this->observacion = isset($_POST["Observacion"]) ? $_POST["Observacion"] : null;
+    
     }
 
 
@@ -34,7 +35,7 @@ class Con_hotel extends cls_hotel
 
     public function ConsultarTodos()
     {
-        $resultado = $this->GetAll();
+        $resultado = $this->GetAll($_POST["Desde"], $_POST["Hasta"]);
         Response($resultado, 200);
     }
 

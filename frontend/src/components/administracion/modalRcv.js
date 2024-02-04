@@ -1747,7 +1747,9 @@ export const ModalRcv = (props) => {
                       onBlur={validarInput}
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
-                      //onChange={validaSoloLetras}
+                      onChange={(e) =>
+                        (e.target.value = e.target.value.toUpperCase())
+                      }
                     />
                   </div>
                   <div id="nomtac" class="form-text hidden">
@@ -1768,7 +1770,9 @@ export const ModalRcv = (props) => {
                       class="form-control"
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
-                      //onChange={(e) => {validaSoloLetras(e)}}
+                      onChange={(e) =>
+                        (e.target.value = e.target.value.toUpperCase())
+                      }
                       onBlur={validarInput}
                       name="apecon"
                     />
@@ -2227,7 +2231,9 @@ export const ModalRcv = (props) => {
                       aria-describedby="inputGroup-sizing-sm"
                       name="nomti"
                       onBlur={validarInput}
-                      //onChange={validaSoloLetras}
+                      onChange={(e) =>
+                        (e.target.value = e.target.value.toUpperCase())
+                      }
                     />
                   </div>
                   <div id="nomti" class="form-text hidden">
@@ -2246,7 +2252,9 @@ export const ModalRcv = (props) => {
                       class="form-control"
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
-                      //onChange={validaSoloLetras}
+                      onChange={(e) =>
+                        (e.target.value = e.target.value.toUpperCase())
+                      }
                       name="apeti"
                       onBlur={validarInput}
                     />
@@ -2283,7 +2291,10 @@ export const ModalRcv = (props) => {
                     aria-describedby="inputGroup-sizing-sm"
                     name="placa"
                     onBlur={validarInput}
-                    onChange={tuFuncionEspecifica}
+                    onChange={(e) => {
+                      e.target.value = e.target.value.toUpperCase();
+                      tuFuncionEspecifica(e);
+                    }}
                   />
                   <button
                     type="button"
@@ -2611,7 +2622,10 @@ export const ModalRcv = (props) => {
                     Ser. Carroceria
                   </span>
                   <input
-                    disabled={operacion == 3 ||operacion == 2}
+                    disabled={
+                      (operacion == 3 && idUser != 57) ||
+                      (operacion == 2 && idUser != 57)
+                    }
                     type="text"
                     class="form-control"
                     maxLength={20}
@@ -2791,7 +2805,7 @@ export const ModalRcv = (props) => {
                     Peso
                   </span>
                   <input
-                   disabled={operacion == 3 && idUser != 57}
+                    disabled={operacion == 3 && idUser != 57}
                     maxLength={10}
                     type="text"
                     class="form-control"

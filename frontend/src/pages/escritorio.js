@@ -40,6 +40,7 @@ import ReportesAsesor from "../components/reportesPorqueria/reportesAsesor";
 import TablaHotel from "../components/hotel/tablaHotel";
 import TablaHotelGeneral from "../components/hotel/tablaHotelGeneral";
 import Reporte from "../components/reportesPorqueria/resportes";
+import ReporteHotel from "../components/hotel/reporteHote";
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
   //let op = require("../modulos/datos");
@@ -243,6 +244,15 @@ function MenuImpuestoPP(props) {
                             >
                               <i className="fas fa-bed fa-fw me-1"></i>
                               <span>Lista de ocupantes</span>
+                            </a>
+                          </div>
+                          <div className="accordion-body py-0 list-group px-0">
+                            <a
+                              href="/hotelReporte"
+                              className="list-group-item list-group-item-action py-2 ripple"
+                            >
+                              <i className="fas fa-bed fa-fw me-1"></i>
+                              <span>Reporte</span>
                             </a>
                           </div>
                         </div>
@@ -646,7 +656,9 @@ function MenuImpuestoPP(props) {
               <section>
                 <Header onCambiar={cambiar} />
               </section>
-              <AuthRoute exact path="/reporte" component={Reporte}/>
+
+              <AuthRoute exact path="/hotelReporte" component={ReporteHotel} />
+              <AuthRoute exact path="/reporte" component={Reporte} />
               <AuthRoute exact path="/hotel" component={TablaHotel} />
               <AuthRoute
                 exact

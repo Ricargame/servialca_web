@@ -15,6 +15,8 @@ import { ModalConsultaHotel } from "./modalConsultaHotel";
 function TablaHotelGeneral(props) {
   var op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
+  const Desde = useRef();
+  const Hasta = useRef();
   const user_id = JSON.parse(localStorage.getItem("user_id"));
   const [idLicencia, setIdLicencia] = useState();
   const [activate, setActivate] = useState(false);
@@ -224,9 +226,12 @@ function TablaHotelGeneral(props) {
     setActivate(true);
 
     //setLoading(false);
-
+    let bodyF = new FormData();
+    bodyF.append("Desde", Desde.current.value);
+    bodyF.append("Hasta", Hasta.current.value);
     await fetch(endpoint, {
       method: "POST",
+      body: bodyF,
     })
       .then((res) => res.json())
       .then((response) => {
@@ -247,6 +252,17 @@ function TablaHotelGeneral(props) {
   console.log("estas en menu");
 
   useEffect(() => {
+    // Obtener la fecha actual
+    const fechaActual = new Date();
+    // Obtener la fecha actual + 30 días
+    const fechaDesde = new Date(fechaActual);
+    fechaDesde.setDate(fechaDesde.getDate() + 30);
+    // Formatear las fechas en formato "YYYY-MM-DD"
+    const fechaActualFormateada = fechaActual.toISOString().split("T")[0];
+    const fechaDesdeFormateada = fechaDesde.toISOString().split("T")[0];
+    // Asignar las fechas a los campos de entrada
+    Desde.current.value = fechaActualFormateada;
+    Hasta.current.value = fechaDesdeFormateada;
     selecionarRegistros();
   }, []);
 
@@ -344,18 +360,27 @@ function TablaHotelGeneral(props) {
             <input
               type="text"
               className=" col-3 form-control form-control-sm rounded-pill"
-              // onChange={handleSearch}
+              //onChange={handleSearch}
               placeholder="Buscar"
             />
-          </div>
-          {/* <div className="col-md-3 d-flex justify-content-end">
+            <input
+              type="date"
+              ref={Desde}
+              className="col-md-2 mb-2 form-control"
+            />
+            <input
+              type="date"
+              ref={Hasta}
+              className="col-md-2 mb-2 form-control"
+            />
             <button
-              onClick={gestionarBanco(1, "")}
-              className="btn btn-sm btn-primary rounded-circle"
+              className="col-md-2 mb-2 form-control"
+              onClick={selecionarRegistros}
             >
-              <i className="fas fa-plus"></i>{" "}
+              Buscar
             </button>
-          </div> */}
+            <div className="col-md-6 offset-md-3 d-flex justify-content-center"></div>
+          </div>
         </div>
         <TblContainer>
           <TblHead />
@@ -403,7 +428,7 @@ function TablaHotelGeneral(props) {
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.fecha_llegada_hospedaje}
+                    {formatDate(item.fecha_llegada_hospedaje)}
                   </TableCell>
                   <TableCell
                     className="align-baseline"
@@ -469,3 +494,7 @@ function TablaHotelGeneral(props) {
 }
 
 export default TablaHotelGeneral;
+const formatDate = (dateString) => {
+  // Usa moment.js para formatear la fecha
+  return moment(dateString).format("DD-MM-YYYY"); // Formato "día-mes-año"
+};

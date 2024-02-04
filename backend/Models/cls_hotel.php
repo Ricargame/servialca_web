@@ -231,14 +231,14 @@ abstract class cls_hotel extends cls_db
         return $resultado;
     }
 
-    protected function GetAll()
+    protected function GetAll($desde, $hasta)
     {
         $sql = $this->db->prepare("SELECT *, cliente.*, vehiculo.* FROM hospedaje_clientes 
         INNER JOIN cliente on cliente.cliente_id = hospedaje_clientes.cliente_id_hospedaje
         INNER JOIN vehiculo on vehiculo.vehiculo_id = hospedaje_clientes.vehiculo_id_hospedaje
-        WHERE estatus_hospedaje = 0
+        WHERE estatus_hospedaje = 0 AND fecha_llegada_hospedaje BETWEEN ? AND ?
         ORDER BY id_hospedaje DESC");
-        if ($sql->execute()) {
+        if ($sql->execute([$desde,$hasta])) {
             $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $resultado = [];
@@ -293,5 +293,18 @@ abstract class cls_hotel extends cls_db
             $resultado = [];
         }
         return $resultado;
+    }
+
+    public function GetReporte($desde, $hasta)
+    {
+        $sql = $this->db->prepare("SELECT *,cliente.*, vehiculo.*, marca.*, modelo.* FROM hospedaje_clientes 
+        INNER JOIN cliente ON cliente.cliente_id = hospedaje_clientes.cliente_id_hospedaje
+        INNER JOIN vehiculo ON vehiculo.vehiculo_id = hospedaje_clientes.vehiculo_id_hospedaje
+        INNER JOIN marca ON marca.marca_id = vehiculo.marca_id
+        INNER JOIN modelo ON modelo.modelo_id = vehiculo.modelo_id
+        WHERE fecha_llegada_hospedaje BETWEEN ? AND ?");
+        $sql->execute([$desde, $hasta]);
+        $datos = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $datos;
     }
 }

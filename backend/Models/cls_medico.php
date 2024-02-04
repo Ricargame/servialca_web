@@ -5,7 +5,7 @@ abstract class cls_medico extends cls_db
 {
 	protected $cliente, $medico, $cedula, $nombre, $apellido,
 		$fechaNacimiento, $telefono, $correo, $edad, $sangre, $lente,
-		$cobertura, $refrencia, $metodo;
+		$cobertura, $refrencia, $metodo, $desde, $hasta;
 	public function __construct()
 	{
 		parent::__construct();
@@ -84,10 +84,10 @@ abstract class cls_medico extends cls_db
 				$id
 			])
 		) {
-			$this->reg_bitacora([
-				'table_name' => "debitocredito",
-				'des' => "Actualización de datos de debido credito (id: $id, metodo pago: $this->metodo, referencia: $this->refrencia)"
-			]);
+			// $this->reg_bitacora([
+			// 	'table_name' => "debitocredito",
+			// 	'des' => "Actualización de datos de debido credito (id: $id, metodo pago: $this->metodo, referencia: $this->refrencia)"
+			// ]);
 			return true;
 		} else
 			return false;
@@ -110,10 +110,10 @@ abstract class cls_medico extends cls_db
 				$id
 			])
 		) {
-			$this->reg_bitacora([
-				'table_name' => "cliente",
-				'des' => "Actualización de datos del cliente (id del cliente: $id, cedula: $this->cedula, nombre: $this->nombre, apellido: $this->apellido, fecha nacimiento: $this->fechaNacimiento)"
-			]);
+			// $this->reg_bitacora([
+			// 	'table_name' => "cliente",
+			// 	'des' => "Actualización de datos del cliente (id del cliente: $id, cedula: $this->cedula, nombre: $this->nombre, apellido: $this->apellido, fecha nacimiento: $this->fechaNacimiento)"
+			// ]);
 			return true;
 		} else
 			return false;
@@ -122,19 +122,23 @@ abstract class cls_medico extends cls_db
 	{
 		$sql = $this->db->prepare("UPDATE medico SET
             medico_edad = ?,
+			medico_fechaInicio = ?,
+			medico_fechaVencimiento = ?,
             medico_tipoSangre = ?,
             medico_lente = ?
             WHERE medico_id = ?");
 		if ($sql->execute([
 			$this->edad,
+			$this->desde,
+			$this->hasta,
 			$this->sangre,
 			$this->lente,
 			$id
 		])) {
-			$this->reg_bitacora([
-				'table_name' => "medico",
-				'des' => "Actualización de medico (edad: $this->edad, sangre: $this->sangre, lente: $this->lente, id del medico: $id"
-			]);
+			// $this->reg_bitacora([
+			// 	'table_name' => "medico",
+			// 	'des' => "Actualización de medico (edad: $this->edad, sangre: $this->sangre, lente: $this->lente, id del medico: $id"
+			// ]);
 			return true;
 		} else {
 			return false;

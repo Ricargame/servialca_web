@@ -1342,8 +1342,8 @@ abstract class cls_poliza extends cls_db
 			$sql->execute([
 				$this->cliente,
 				$this->edad,
-				$fechaInicio,
-				$fechaFinal,
+				$this->fechaInicio,
+				$this->fechaVencimiento,
 				$this->sangre,
 				$this->lente,
 				$this->debitoCredito

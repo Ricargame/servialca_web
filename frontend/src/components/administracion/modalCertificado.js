@@ -39,7 +39,8 @@ export const ModalCertificadoMedico = (props) => {
   const txtReferencia = useRef();
   const txtBs = useRef();
   const txtDolar = useRef();
-
+  const txtDesde = useRef();
+  const txtHasta = useRef();
   const txtFechaNaci = useRef();
   const txtApellido = useRef();
   const [edad, setEdad] = useState("");
@@ -146,6 +147,8 @@ export const ModalCertificadoMedico = (props) => {
         cmbLentes.current.value = response[0].medico_lente;
         cmbPago.current.value = response[0].nota_tipoPago;
         txtReferencia.current.value = response[0].nota_referencia;
+        txtDesde.current.value = response[0].medico_fechaInicio;
+        txtHasta.current.value = response[0].medico_fechaVencimiento;
       })
       .catch((error) =>
         setMensaje({
@@ -222,6 +225,8 @@ export const ModalCertificadoMedico = (props) => {
     bodyF.append("precioDolar", dolarbcv.toFixed(2));
     bodyF.append("Usuario", user);
     bodyF.append("Sucursal", sucursal);
+    bodyF.append("fechaInicio", txtDesde.current.value);
+    bodyF.append("fechaVencimiento", txtHasta.current.value);
     bodyF.append("token", token);
     await fetch(endpoint, {
       method: "POST",
@@ -396,22 +401,25 @@ export const ModalCertificadoMedico = (props) => {
     } else return false;
   };
 
-
   const validarInput = (e) => {
-    console.log(e.target.name)
+    console.log(e.target.name);
     let item = document.getElementById(e.target.name);
-    if (!e.target.value || e.target.name === 'ced' && e.target.value.length < 8) {
-      console.log('1')
-      item.className -= ' form-text fw-bold hidden ';
-      item.className += ' form-text fw-bold visible ';
+    if (
+      !e.target.value ||
+      (e.target.name === "ced" && e.target.value.length < 8)
+    ) {
+      console.log("1");
+      item.className -= " form-text fw-bold hidden ";
+      item.className += " form-text fw-bold visible ";
     } else {
-      console.log('2')
+      console.log("2");
 
-      item.className -= ' form-text fw-bold visible ';
-      item.className += ' form-text fw-bold hidden ';
+      item.className -= " form-text fw-bold visible ";
+      item.className += " form-text fw-bold hidden ";
     }
-  }
-
+  };
+  let fechaSistema = moment();
+  let fechaHasta = fechaSistema.clone().add(5, "year");
   return (
     <Modal
       {...props}
@@ -459,11 +467,11 @@ export const ModalCertificadoMedico = (props) => {
             mensaje.titulo === "Exito."
               ? cerrarModal()
               : setMensaje({
-                mostrar: false,
-                titulo: "",
-                texto: "",
-                icono: "",
-              });
+                  mostrar: false,
+                  titulo: "",
+                  texto: "",
+                  icono: "",
+                });
           }}
         />
 
@@ -509,8 +517,40 @@ export const ModalCertificadoMedico = (props) => {
                 <i class="fa fa-search"></i>
               </button>
             </div>
-            <div id="ced3" class="form-text hidden pr-0"> Debe ingresar un cedula valida longitud(8-9).</div>
-
+            <div id="ced3" class="form-text hidden pr-0">
+              {" "}
+              Debe ingresar un cedula valida longitud(8-9).
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="input-group input-group-sm mb-2">
+              <span class="input-group-text" id="inputGroup-sizing-sm">
+                Desde
+              </span>
+              <input
+                type="date"
+                className="form-control"
+                ref={txtDesde}
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                defaultValue={fechaSistema.format("YYYY-MM-DD")}
+              />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="input-group input-group-sm mb-2">
+              <span class="input-group-text" id="inputGroup-sizing-sm">
+                Hasta
+              </span>
+              <input
+                type="date"
+                className="form-control"
+                ref={txtHasta}
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                defaultValue={fechaHasta.format("YYYY-MM-DD")}
+              />
+            </div>
           </div>
           <div class=" col-md-7"></div>
           <div class=" col-md-6">
@@ -533,8 +573,9 @@ export const ModalCertificadoMedico = (props) => {
                 onBlur={validarInput}
               />
             </div>
-            <div id="nom3" class="form-text hidden">Debe ingresar nombre </div>
-
+            <div id="nom3" class="form-text hidden">
+              Debe ingresar nombre{" "}
+            </div>
           </div>
           <div class=" col-md-6">
             <div class="input-group input-group-sm">
@@ -548,7 +589,6 @@ export const ModalCertificadoMedico = (props) => {
                 ref={txtApellido}
                 onChange={(e) => {
                   e.target.value = e.target.value.toUpperCase();
-
                 }}
                 onKeyDown={validaSoloLetras}
                 aria-label="Sizing example input"
@@ -557,8 +597,9 @@ export const ModalCertificadoMedico = (props) => {
                 onBlur={validarInput}
               />
             </div>
-            <div id="ape3" class="form-text hidden">Debe ingresar apellido</div>
-
+            <div id="ape3" class="form-text hidden">
+              Debe ingresar apellido
+            </div>
           </div>
           <div class="col-md-4">
             <div class="input-group input-group-sm">
@@ -576,8 +617,9 @@ export const ModalCertificadoMedico = (props) => {
                 onBlur={validarInput}
               />
             </div>
-            <div id="fechaNaci" class="form-text hidden">Debe ingresar fecha de nacimiento</div>
-
+            <div id="fechaNaci" class="form-text hidden">
+              Debe ingresar fecha de nacimiento
+            </div>
           </div>
           <div class="col-md-2">
             <div class="input-group input-group-sm ">
@@ -597,10 +639,11 @@ export const ModalCertificadoMedico = (props) => {
                 onBlur={validarInput}
               />
             </div>
-            <div id="edadC" class="form-text hidden">Debe ingresar edad</div>
-
+            <div id="edadC" class="form-text hidden">
+              Debe ingresar edad
+            </div>
           </div>
-          
+
           <div class="input-group input-group-sm mb-3 col-md-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">
               Tipo de Sangre:
