@@ -2246,7 +2246,7 @@ export const ModalRcv = (props) => {
                       Apellido
                     </span>
                     <input
-                      maxLength={25}
+                      maxLength={50}
                       type="text"
                       ref={txtApellidoTitular}
                       class="form-control"

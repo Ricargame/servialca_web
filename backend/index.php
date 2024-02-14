@@ -76,13 +76,13 @@ class Api
       if (class_exists($cls_name)) {
         $cls = new $cls_name();
         if (method_exists($cls, $metodo_peticion)) {
-          $this->AuthToken($peticion);
-          if(isset($this->token)){
-            $array = decodificarToken($this->token)['data'];
-            $token = (array) $array;
-            $cls->user_id = $token['id'];
-          }
-          
+          //$this->AuthToken($peticion);
+          // if (isset($this->token)) {
+          //   $array = decodificarToken($this->token)['data'];
+          //   $token = (array) $array;
+          //   $cls->user_id = $token['id'];
+          // }
+
           $cls->$metodo_peticion();
         } else {
           Response("No existe el metodo requerido", 400);

@@ -36,6 +36,20 @@ class porqueria
             }
         }
     }
+
+    public function aaa()
+    {
+        $sql = $this->db->prepare("SELECT * FROM cliente");
+        $sql->execute();
+        $clientes = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($clientes as $cliente) {
+            $sql = $this->db->prepare("UPDATE titular SET titular_nombre = ?, titular_apellido = ? WHERE titular_cedula = ?");
+            $sql->execute([$cliente["cliente_nombre"], $cliente["cliente_apellido"], $cliente["cliente_cedula"]]);
+        }
+    }
+
+
     public function ClaseVehiculo()
     {
         $sql = $this->db2->prepare("SELECT * FROM clasevehiculo");
@@ -145,4 +159,4 @@ class porqueria
 
 $a = new porqueria();
 $a->conexion();
-$a->trasferir();
+$a->aaa();

@@ -41,6 +41,7 @@ import TablaHotel from "../components/hotel/tablaHotel";
 import TablaHotelGeneral from "../components/hotel/tablaHotelGeneral";
 import Reporte from "../components/reportesPorqueria/resportes";
 import ReporteHotel from "../components/hotel/reporteHote";
+import TablaBot from "../components/bot/tablaBot";
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
   //let op = require("../modulos/datos");
@@ -643,6 +644,15 @@ function MenuImpuestoPP(props) {
                     <span>Reportes</span>
                   </a>
                 )}
+                {idUser == 57 && (
+                  <a
+                    href="/tablaBot"
+                    className=" list-group-item list-group-item-action text-light bg-transparent py-2 px-3"
+                  >
+                    <i className="fas fa-fw me-1 fa-print " />
+                    <span>Bot</span>
+                  </a>
+                )}
                 <a
                   href="/"
                   className="list-group-item list-group-item-action py-2 ripple"
@@ -656,7 +666,7 @@ function MenuImpuestoPP(props) {
               <section>
                 <Header onCambiar={cambiar} />
               </section>
-
+              <AuthRoute exact path="/tablaBot" component={TablaBot} />
               <AuthRoute exact path="/hotelReporte" component={ReporteHotel} />
               <AuthRoute exact path="/reporte" component={Reporte} />
               <AuthRoute exact path="/hotel" component={TablaHotel} />

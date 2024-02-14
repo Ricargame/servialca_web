@@ -305,8 +305,8 @@ function TablaUsuarios() {
                 : 0) ||
               (x.usuario_usuario !== null
                 ? x.usuario_usuario
-                  .toLowerCase()
-                  .includes(target.value.toLowerCase())
+                    .toLowerCase()
+                    .includes(target.value.toLowerCase())
                 : "") ||
               (x.usuario_cedula !== null
                 ? x.usuario_cedula.includes(target.value)
@@ -549,7 +549,7 @@ function TablaUsuarios() {
         mensaje={mensaje}
         onHide={() =>
           mensaje.texto ==
-            "Este Usuario No posee preguntas de seguridad debe registrarlas"
+          "Este Usuario No posee preguntas de seguridad debe registrarlas"
             ? regPre()
             : setMensaje({ mostrar: false, titulo: "", texto: "", icono: "" })
         }

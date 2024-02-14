@@ -31,6 +31,196 @@ abstract class cls_poliza extends cls_db
 		//Licencia
 		$correoLicencia, $licencia, $licenciaRestante, $montoTotal, $abonado, $restante;
 
+	protected function saveBot($dolar, $tipoIngreso, $motivo)
+	{
+		try {
+
+			$this->db->beginTransaction();
+			$result = $this->SearchByUsuario();
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción usuario"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchBySucursal();
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción cliente"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchByCliente();
+			// SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción cliente"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchByTitular();
+			// // SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción titular"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchByColor();
+			// SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción color"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchByModelo();
+			// SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción modelo"
+					],
+					'code' => 400
+				];
+			}
+
+			$result = $this->SearchByMarca();
+			// SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción marca"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchByUso();
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción uso"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchByClase();
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción clase"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchByTipo();
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción tipo"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->SearchByVehiculo();
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción vehiculo"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->precioDolar($dolar);
+			// SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->debitoCredito($tipoIngreso, $motivo);
+			// SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción"
+					],
+					'code' => 400
+				];
+			}
+			$result = $this->RegistraCobertura();
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción"
+					],
+					'code' => 400
+				];
+			}
+			$this->db->prepare("UPDATE cliente SET cliente_telefono = ? WHERE cliente_id = ?")->execute([$this->telefono, $this->cliente]);
+			$this->db->prepare("INSERT INTO poliza_bot 
+			(bot_cliente_id, 
+			bot_titular_id, 
+			bot_vehiculo_id,
+			bot_debito_id,
+			bot_cobertura_id
+			) 
+			VALUES (?,?,?,?,?)")->execute([
+				$this->cliente,
+				$this->idTitular,
+				$this->vehiculo,
+				$this->debitoCredito,
+				$this->cobertura
+			]);
+
+			// SI ESTA ULTIMA OPERACIÓN SALIÓ BIEN, SE HACE COMMIT PARA APLICAR LOS CAMBIOS
+			if ($result) {
+				$this->db->commit();
+				return [
+					'data' => [
+						'res' => "Registro exitoso",
+						"code" => "200",
+						'id' => $this->id // Agregar el ID en la respuesta
+					],
+					'code' => 200
+				];
+			}
+		} catch (PDOException $e) {
+			return [
+				"data" => [
+					'res' => "Error de consulta: " . $e->getMessage()
+				],
+				"code" => 400
+			];
+		}
+	}
 
 	protected function findContrato()
 	{
