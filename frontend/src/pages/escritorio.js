@@ -42,6 +42,7 @@ import TablaHotelGeneral from "../components/hotel/tablaHotelGeneral";
 import Reporte from "../components/reportesPorqueria/resportes";
 import ReporteHotel from "../components/hotel/reporteHote";
 import TablaBot from "../components/bot/tablaBot";
+import ImagenBot from "../components/bot/imagenBot";
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
   //let op = require("../modulos/datos");
@@ -254,6 +255,50 @@ function MenuImpuestoPP(props) {
                             >
                               <i className="fas fa-bed fa-fw me-1"></i>
                               <span>Reporte</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                  {idUser == 57 && (
+                    <>
+                      <div className="accordion-item px-0">
+                        <h2 className="accordion-header" id="heading3">
+                          <button
+                            className="accordion-button text-light"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse10"
+                            aria-expanded="false"
+                            aria-controls="collapse10"
+                          >
+                            <i className="fas fa-hotel fa-fw me-1"></i>
+                            <span>Bot</span>
+                          </button>
+                        </h2>
+                        <div
+                          id="collapse10"
+                          className="accordion-collapse collapse list-group-item-action"
+                          aria-labelledby="heading9"
+                          data-bs-parent="#accordionExample"
+                        >
+                          <div className="accordion-body py-0 list-group px-0">
+                            <a
+                              href="/tablaBot"
+                              className="list-group-item list-group-item-action py-2 ripple"
+                            >
+                              <i className="fas fa-bed fa-fw me-1"></i>
+                              <span>Contratos por realizar</span>
+                            </a>
+                          </div>
+                          <div className="accordion-body py-0 list-group px-0">
+                            <a
+                              href="/ImagenBot"
+                              className="list-group-item list-group-item-action py-2 ripple"
+                            >
+                              <i className="fas fa-bed fa-fw me-1"></i>
+                              <span>Imagen</span>
                             </a>
                           </div>
                         </div>
@@ -644,15 +689,6 @@ function MenuImpuestoPP(props) {
                     <span>Reportes</span>
                   </a>
                 )}
-                {idUser == 57 && (
-                  <a
-                    href="/tablaBot"
-                    className=" list-group-item list-group-item-action text-light bg-transparent py-2 px-3"
-                  >
-                    <i className="fas fa-fw me-1 fa-print " />
-                    <span>Bot</span>
-                  </a>
-                )}
                 <a
                   href="/"
                   className="list-group-item list-group-item-action py-2 ripple"
@@ -666,6 +702,7 @@ function MenuImpuestoPP(props) {
               <section>
                 <Header onCambiar={cambiar} />
               </section>
+              <AuthRoute exact path="/ImagenBot" component={ImagenBot} />
               <AuthRoute exact path="/tablaBot" component={TablaBot} />
               <AuthRoute exact path="/hotelReporte" component={ReporteHotel} />
               <AuthRoute exact path="/reporte" component={Reporte} />

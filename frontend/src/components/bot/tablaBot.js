@@ -249,11 +249,26 @@ function TablaBot() {
         else
           return items.filter((x) => {
             if (
-              (x.usoVehiculo_id !== null
-                ? String(x.usoVehiculo_id).includes(target.value)
+              (x.cliente_cedula !== null
+                ? String(x.cliente_cedula).includes(target.value)
                 : 0) ||
-              (x.usoVehiculo_nombre !== null
-                ? x.usoVehiculo_nombre
+              (x.cliente_nombre !== null
+                ? x.cliente_nombre
+                    .toLowerCase()
+                    .includes(target.value.toLowerCase())
+                : "") ||
+              (x.cliente_apellido !== null
+                ? x.cliente_apellido
+                    .toLowerCase()
+                    .includes(target.value.toLowerCase())
+                : "") ||
+              (x.cliente_apellido !== null
+                ? x.cliente_apellido
+                    .toLowerCase()
+                    .includes(target.value.toLowerCase())
+                : "") ||
+              (x.nota_referencia !== null
+                ? x.nota_referencia
                     .toLowerCase()
                     .includes(target.value.toLowerCase())
                 : "")
@@ -382,14 +397,14 @@ function TablaBot() {
             placeholder="Buscar"
           />
 
-          <div className="col-3 d-flex justify-content-end">
+          {/* <div className="col-3 d-flex justify-content-end">
             <button
               onClick={gestionarBanco(1, "", "")}
               className="btn btn-sm btn-primary rounded-circle"
             >
               <i className="fas fa-plus"></i>{" "}
             </button>
-          </div>
+          </div> */}
         </div>
         <TblContainer>
           <TblHead />
@@ -420,7 +435,7 @@ function TablaBot() {
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.cliente_apellido}
+                    {item.vehiculo_placa}
                   </TableCell>
                   <TableCell
                     className="align-baseline"
