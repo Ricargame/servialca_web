@@ -42,7 +42,7 @@ import TablaHotelGeneral from "../components/hotel/tablaHotelGeneral";
 import Reporte from "../components/reportesPorqueria/resportes";
 import ReporteHotel from "../components/hotel/reporteHote";
 import TablaBot from "../components/bot/tablaBot";
-import ImagenBot from "../components/bot/imagenBot";
+
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
   //let op = require("../modulos/datos");
@@ -273,7 +273,7 @@ function MenuImpuestoPP(props) {
                             aria-expanded="false"
                             aria-controls="collapse10"
                           >
-                            <i className="fas fa-hotel fa-fw me-1"></i>
+                            <i className="fas fa-robot  fa-fw me-1"></i>
                             <span>Bot</span>
                           </button>
                         </h2>
@@ -288,11 +288,11 @@ function MenuImpuestoPP(props) {
                               href="/tablaBot"
                               className="list-group-item list-group-item-action py-2 ripple"
                             >
-                              <i className="fas fa-bed fa-fw me-1"></i>
+                              <i className="fas "></i>
                               <span>Contratos por realizar</span>
                             </a>
                           </div>
-                          <div className="accordion-body py-0 list-group px-0">
+                          {/* <div className="accordion-body py-0 list-group px-0">
                             <a
                               href="/ImagenBot"
                               className="list-group-item list-group-item-action py-2 ripple"
@@ -300,7 +300,7 @@ function MenuImpuestoPP(props) {
                               <i className="fas fa-bed fa-fw me-1"></i>
                               <span>Imagen</span>
                             </a>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </>
@@ -702,7 +702,7 @@ function MenuImpuestoPP(props) {
               <section>
                 <Header onCambiar={cambiar} />
               </section>
-              <AuthRoute exact path="/ImagenBot" component={ImagenBot} />
+
               <AuthRoute exact path="/tablaBot" component={TablaBot} />
               <AuthRoute exact path="/hotelReporte" component={ReporteHotel} />
               <AuthRoute exact path="/reporte" component={Reporte} />

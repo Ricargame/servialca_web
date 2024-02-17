@@ -78,7 +78,7 @@ export const ModalHotel = (props) => {
   const [operacion, setOperacion] = useState(0);
 
   /*********************************************** FUNCINES DE VALIDACION***********************************************************/
- 
+
   const salir = () => {
     props.onHideCancela();
     setValues({
@@ -331,7 +331,7 @@ export const ModalHotel = (props) => {
     <Modal
       {...props}
       style={{ background: "rgb(28, 27, 23)" }}
-      size="lg"
+      size="xl"
       aria-labelledby="contained-modal-title-vcenter"
       centered
       backdrop="static"
@@ -379,7 +379,7 @@ export const ModalHotel = (props) => {
           }}
         />
         <fieldset class="border rounded-3 p-3 row mx-auto">
-          <div class="col-md-12 row mx-auto">
+          <div class="col-md-14 row mx-auto">
             <fieldset class="border rounded-3 p-3 row mx-auto">
               <legend
                 class="float-none w-auto px-3 fw-bold"
@@ -387,21 +387,21 @@ export const ModalHotel = (props) => {
               >
                 Datos del Cliente
               </legend>
-              <div class="col-md-4 my-auto">
+              <div class="col-md-5 my-auto">
                 <div class="input-group input-group-sm mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
                     Cédula
                   </span>
                   <select
                     disabled={operacion === 3}
-                    class="form-select col-md-4"
+                    class="form-select form-select-sm col-md-3"
                     ref={cmbNacionalidad}
                     aria-label="Default select example"
                   >
-                    <option value="V-">V-</option>
-                    <option value="E-">E-</option>
-                    <option value="J-">J-</option>
-                    <option value="G-">G-</option>
+                    <option value="V-">V</option>
+                    <option value="E-">E</option>
+                    <option value="J-">J</option>
+                    <option value="G-">G</option>
                   </select>
                   <input
                     onChange={consultarHabitacio}
@@ -425,13 +425,13 @@ export const ModalHotel = (props) => {
                   </button>
                 </div>
               </div>
+
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
                     Nombre
                   </span>
                   <input
-                    
                     type="text"
                     ref={txtNombre}
                     maxLength={25}

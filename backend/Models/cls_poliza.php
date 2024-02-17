@@ -626,6 +626,8 @@ abstract class cls_poliza extends cls_db
 				return $result;
 			}
 			$this->db->beginTransaction();
+			$this->SearchbyContrato();
+
 			$resul = $this->SearchByEstado();
 			if (!$resul) {
 				$this->db->rollback();
@@ -773,11 +775,13 @@ abstract class cls_poliza extends cls_db
 				];
 			}
 			$result = $this->db->prepare("UPDATE poliza SET 
+			tipoContrato_id = ?,
 			usuario_id = ?,
 			sucursal_id = ?
 			WHERE poliza_id = ?
 			");
 			$result->execute([
+				$this->tipoContrato,
 				$this->usuario,
 				$this->sucursal,
 				$this->id

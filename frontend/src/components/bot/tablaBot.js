@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, useState, useRef } from "react";
 import { formatMoneda, validaMonto, formatoMonto } from "../../util/varios";
-
 import { Mensaje } from "../mensajes";
 import { MensajeSiNo } from "../mensajes";
 import { Loader, Dimmer } from "semantic-ui-react";
@@ -10,6 +9,11 @@ import axios from "axios";
 import useTable from "../useTable";
 import { TableBody, TableRow, TableCell } from "@material-ui/core";
 import { ModalConsultarBot } from "./ModalConstularBot";
+import { ModalImagenBot } from "./modalImagenBot";
+
+
+// Ahora puedes llamar a la función iniciarBot() en este archivo
+
 function TablaBot() {
   var op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
@@ -307,6 +311,9 @@ function TablaBot() {
 
   const gestionarBanco = (op, id, estatus) => (e) => {
     e.preventDefault();
+    if (op == 1) {
+      setMostrar(true);
+    }
     if (op == 2) {
       setVariable(id);
       setEstatus(estatus);
@@ -334,6 +341,12 @@ function TablaBot() {
   };
   return (
     <div className="col-md-12 mx-auto p-2">
+      <ModalImagenBot
+        show={mostrar}
+        onHideCancela={() => {
+          setMostrar(false);
+        }}
+      />
       <ModalConsultarBot
         show={mostrar3}
         onHideCancela={() => {
@@ -397,14 +410,16 @@ function TablaBot() {
             placeholder="Buscar"
           />
 
-          {/* <div className="col-3 d-flex justify-content-end">
-            <button
-              onClick={gestionarBanco(1, "", "")}
-              className="btn btn-sm btn-primary rounded-circle"
-            >
-              <i className="fas fa-plus"></i>{" "}
-            </button>
-          </div> */}
+          {
+            <div className="col-3 d-flex justify-content-end">
+              <button
+                onClick={gestionarBanco(1, "", "")}
+                className="btn btn-sm btn-primary rounded-circle"
+              >
+                <i className="fas fa-plus"></i>{" "}
+              </button>
+            </div>
+          }
         </div>
         <TblContainer>
           <TblHead />
