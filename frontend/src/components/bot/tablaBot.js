@@ -10,10 +10,6 @@ import useTable from "../useTable";
 import { TableBody, TableRow, TableCell } from "@material-ui/core";
 import { ModalConsultarBot } from "./ModalConstularBot";
 import { ModalImagenBot } from "./modalImagenBot";
-const { ejecutarOtroArchivo } = require("./eje.js");
-
-// Llamada a la función para ejecutar el otro archivo
-ejecutarOtroArchivo();
 
 // Ahora puedes llamar a la función iniciarBot() en este archivo
 
