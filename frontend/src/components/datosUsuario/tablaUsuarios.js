@@ -292,6 +292,37 @@ function TablaUsuarios() {
       );
   };
 
+  const resetPassword = async (id) => {
+    let endpoint = op.conexion + "/Auth/reset";
+    setActivate(true);
+    let bodyF = new FormData();
+    bodyF.append("ID", id);
+
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        console.log(response);
+        setMensaje({
+          mostrar: true,
+          titulo: "Exito.",
+          texto: "Contraseña modificada",
+          icono: "exito",
+        });
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
+
   const handleSearch = (e) => {
     let target = e.target;
     setFilterFn({
@@ -374,6 +405,8 @@ function TablaUsuarios() {
       quitarLuz();
     } else if (op == 8) {
       cambiarEstatus(id, estatus);
+    } else if (op == 6) {
+      resetPassword(id);
     } else {
       setOperacion(op);
       setMostrar(true);
@@ -506,35 +539,61 @@ function TablaUsuarios() {
                       width: 130,
                     }}
                   >
-                    <button
-                      onClick={gestionarBanco(2, item.usuario_id, "")}
-                      className="btn btn-sm mx-1 btn-warning rounded-circle"
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
                     >
-                      <i className="fa fa-edit"></i>{" "}
-                    </button>
-                    <button
-                      onClick={gestionarBanco(
-                        8,
-                        item.usuario_id,
-                        item.usuario_estatus
-                      )}
-                      className="btn btn-sm mx-1 btn-danger rounded-circle"
-                    >
-                      {item.usuario_estatus == 1 ? (
-                        <i className="fa fa-times"></i>
-                      ) : (
-                        <i
-                          className="fa fa-check"
-                          style={{ background: "none" }}
-                        ></i>
-                      )}
-                    </button>
-                    <button
-                      onClick={gestionarBanco(5, item.usuario_id)}
-                      className="btn btn-sm mx-1 btn-secondary rounded-circle"
-                    >
-                      <i className="fa fa-trash"></i>{" "}
-                    </button>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          marginBottom: "10px",
+                        }}
+                      >
+                        <button
+                          onClick={gestionarBanco(2, item.usuario_id, "")}
+                          className="btn btn-sm mx-1 btn-warning rounded-circle"
+                        >
+                          <i className="fa fa-edit"></i>{" "}
+                        </button>
+                        <button
+                          onClick={gestionarBanco(
+                            8,
+                            item.usuario_id,
+                            item.usuario_estatus
+                          )}
+                          className="btn btn-sm mx-1 btn-danger rounded-circle"
+                        >
+                          {item.usuario_estatus == 1 ? (
+                            <i className="fa fa-times"></i>
+                          ) : (
+                            <i
+                              className="fa fa-check"
+                              style={{ background: "none" }}
+                            ></i>
+                          )}
+                        </button>
+                      </div>
+                      <div
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <button
+                          onClick={gestionarBanco(5, item.usuario_id)}
+                          className="btn btn-sm mx-1 btn-secondary rounded-circle"
+                        >
+                          <i className="fa fa-trash"></i>{" "}
+                        </button>
+                        <button
+                          onClick={gestionarBanco(6, item.usuario_id, "")}
+                          className="btn btn-sm mx-1 btn-warning rounded-circle"
+                        >
+                          <i className="fa fa-sync"></i>{" "}
+                        </button>
+                      </div>
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

@@ -138,18 +138,23 @@ class Con_Auth extends cls_Auth
     Response($resultado["data"], $resultado["code"]);
   }
 
-  public function recuperar_email(){
+  public function recuperar_email()
+  {
     $user_data = $this->SearchByUsername($_POST['Usuario']);
 
-    if(isset($user_data['usuario_correo'])){
+    if (isset($user_data['usuario_correo'])) {
       $code = $this->generateRandomString();
-      $this->clave = password_hash($code, PASSWORD_BCRYPT, ['cost' => 12]);;
+      $this->clave = password_hash($code, PASSWORD_BCRYPT, ['cost' => 12]);
+      ;
       $this->id = $user_data['usuario_id'];
       $this->ChangePassword();
       $res = $this->SendEmail($code, $user_data['usuario_correo']);
-      if($res) Response(['data' => "Su nueva clave ha sido enviada a su correo con exito"], 200);
-      else Response(['data' => "Ah ocurrido un problema al enviar los datos"], 400);
-    }else Response(['data' => "Su usuario es incorrecto o no es valido"], 400);
+      if ($res)
+        Response(['data' => "Su nueva clave ha sido enviada a su correo con exito"], 200);
+      else
+        Response(['data' => "Ah ocurrido un problema al enviar los datos"], 400);
+    } else
+      Response(['data' => "Su usuario es incorrecto o no es valido"], 400);
   }
 
   public function actualizar_password()
@@ -180,6 +185,12 @@ class Con_Auth extends cls_Auth
   public function get_preguntas_from_user()
   {
     $resultado = $this->getPreguntasFromUser();
+    Response($resultado, 200);
+  }
+
+  public function reset()
+  {
+    $resultado = $this->ResetPassword();
     Response($resultado, 200);
   }
 }

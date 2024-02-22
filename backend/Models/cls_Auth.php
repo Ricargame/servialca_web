@@ -4,8 +4,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-if (is_file("vendor/autoload.php")) require "vendor/autoload.php";
-if (!class_exists("cls_db")) require("cls_db.php");
+if (is_file("vendor/autoload.php"))
+  require "vendor/autoload.php";
+if (!class_exists("cls_db"))
+  require("cls_db.php");
 
 class cls_Auth extends cls_db
 {
@@ -411,8 +413,10 @@ class cls_Auth extends cls_db
       INNER JOIN sucursal ON sucursal.sucursal_id = usuario.sucursal_id WHERE usuario_id = ?");
     $sql->execute([$id]);
 
-    if ($sql->rowCount() > 0) $resultado = $sql->fetch(PDO::FETCH_ASSOC);
-    else $resultado = [];
+    if ($sql->rowCount() > 0)
+      $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+    else
+      $resultado = [];
     return $resultado;
   }
 
@@ -423,8 +427,10 @@ class cls_Auth extends cls_db
       INNER JOIN sucursal ON sucursal.sucursal_id = usuario.sucursal_id WHERE usuario_usuario = ?");
     $sql->execute([$user]);
 
-    if ($sql->rowCount() > 0) $resultado = $sql->fetch(PDO::FETCH_ASSOC);
-    else $resultado = [];
+    if ($sql->rowCount() > 0)
+      $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+    else
+      $resultado = [];
     return $resultado;
   }
 
@@ -435,8 +441,10 @@ class cls_Auth extends cls_db
       usuario_id != ?");
     $sql->execute([$this->usuario, $this->id]);
 
-    if ($sql->rowCount() > 0) $resultado = $sql->fetch(PDO::FETCH_ASSOC);
-    else $resultado = [];
+    if ($sql->rowCount() > 0)
+      $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+    else
+      $resultado = [];
     return $resultado;
   }
 
@@ -445,8 +453,10 @@ class cls_Auth extends cls_db
     $sql = $this->db->prepare("SELECT * FROM usuario WHERE usuario_usuario = ?");
     $sql->execute([$username]);
 
-    if ($sql->rowCount() > 0) $resultado = $sql->fetch(PDO::FETCH_ASSOC);
-    else $resultado = [];
+    if ($sql->rowCount() > 0)
+      $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+    else
+      $resultado = [];
     return $resultado;
   }
 
@@ -455,8 +465,10 @@ class cls_Auth extends cls_db
     $sql = $this->db->prepare("SELECT * FROM usuario WHERE usuario_cedula = ?");
     $sql->execute([$cedula]);
 
-    if ($sql->rowCount() > 0) $resultado = $sql->fetch(PDO::FETCH_ASSOC);
-    else $resultado = [];
+    if ($sql->rowCount() > 0)
+      $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+    else
+      $resultado = [];
     return $resultado;
   }
 
@@ -496,13 +508,15 @@ class cls_Auth extends cls_db
         } else {
           $sql = $this->db->prepare("INSERT INTO respuestas_user(user_id_respuesta, des_pregunta, des_respuesta, des_pregunta2, des_respuesta2) 
           VALUES(?,?,?,?,?)");
-          if ($sql->execute([
-            $this->id,
-            $this->des_pregunta,
-            $this->des_respuesta,
-            $this->des_pregunta2,
-            $this->des_respuesta2
-          ])) {
+          if (
+            $sql->execute([
+              $this->id,
+              $this->des_pregunta,
+              $this->des_respuesta,
+              $this->des_pregunta2,
+              $this->des_respuesta2
+            ])
+          ) {
             return [
               "data" => [
                 "res" => "Preguntas de seguridad registras",
@@ -665,7 +679,8 @@ class cls_Auth extends cls_db
 
   public function SendEmail($code, $email)
   {
-    if ($_ENV['MAILTO_EMAIL']  == '') die("Debes de tener configurada una cuenta de Correo electronico");
+    if ($_ENV['MAILTO_EMAIL'] == '')
+      die("Debes de tener configurada una cuenta de Correo electronico");
 
     $mail = new PHPMailer(true);
     $email_user = strtolower($email);
@@ -676,12 +691,12 @@ class cls_Auth extends cls_db
 
       $mail->SMTPDebug = 0;                              //Enable verbose debug output
       $mail->isSMTP();                                   //Send using SMTP
-      $mail->Host       = 'smtp.gmail.com';              //Set the SMTP server to send through
-      $mail->SMTPAuth   = true;                          //Enable SMTP authentication
-      $mail->Username   = $_ENV['MAILTO_EMAIL'];    //SMTP username
-      $mail->Password   = $_ENV['MAILTO_TOKEN'];    //SMTP password
+      $mail->Host = 'smtp.gmail.com';              //Set the SMTP server to send through
+      $mail->SMTPAuth = true;                          //Enable SMTP authentication
+      $mail->Username = $_ENV['MAILTO_EMAIL'];    //SMTP username
+      $mail->Password = $_ENV['MAILTO_TOKEN'];    //SMTP password
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   //Enable implicit TLS encryption
-      $mail->Port       = $_ENV['MAILTO_PORT'];
+      $mail->Port = $_ENV['MAILTO_PORT'];
 
       //Recipients
       $mail->setFrom($_ENV['MAILTO_EMAIL'], 'Mailer');
@@ -690,10 +705,12 @@ class cls_Auth extends cls_db
       //Content
       $mail->isHTML(true);                                  //Set email format to HTML
       $mail->Subject = 'Codigo de recuperacion';
-      $mail->Body    = "Esta es su nueva clave de acceso: <b>$code</b>";
+      $mail->Body = "Esta es su nueva clave de acceso: <b>$code</b>";
 
-      if (!$mail->send()) return false;
-      else return true;
+      if (!$mail->send())
+        return false;
+      else
+        return true;
     } catch (Exception $e) {
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
@@ -733,4 +750,38 @@ class cls_Auth extends cls_db
       ]
     ];
   }
+
+  public function ResetPassword()
+  {
+    // Preparar y ejecutar la consulta para obtener los detalles del usuario
+    $sql = $this->db->prepare("SELECT * FROM usuario WHERE usuario_id = ?");
+    if ($sql->execute([$this->id])) {
+      $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+
+      // Verificar si se encontró el usuario
+      if ($resultado) {
+        // Extraer la parte numérica de la cédula
+        $cedulaNumerica = substr($resultado["usuario_cedula"], 2); // Suponiendo que "v-" siempre es un prefijo constante
+        $hashedPassword = password_hash($cedulaNumerica, PASSWORD_BCRYPT, ['cost' => 12]);
+
+        // Actualizar la contraseña en la base de datos
+        $sql = $this->db->prepare("UPDATE usuario SET usuario_clave = ? WHERE usuario_id = ?");
+        if ($sql->execute([$hashedPassword, $resultado["usuario_id"]])) {
+          // Devolver true si la actualización se realizó correctamente
+          return true;
+        } else {
+          // Devolver false si ocurrió algún error en la actualización
+          return false;
+        }
+      } else {
+        // Devolver false si no se encontró el usuario
+        return false;
+      }
+    } else {
+      // Devolver false si no se pudo ejecutar la consulta SQL
+      return false;
+    }
+  }
+
+
 }
