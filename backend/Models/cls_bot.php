@@ -91,20 +91,22 @@ abstract class cls_bot extends cls_db
                     cobertura_id,
                     poliza_renovacion,
                     debitoCredito) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
-                if ($sql->execute([
-                    $poliza["bot_cliente_id"],
-                    $poliza["bot_titular_id"],
-                    $poliza["bot_vehiculo_id"],
-                    $fechaActual->format('Y-m-d'),
-                    $fechaConUnAnioMas,
-                    1,
-                    18,
-                    57,
-                    1,
-                    $poliza["bot_cobertura_id"],
-                    0,
-                    $poliza["bot_debito_id"]
-                ])) {
+                if (
+                    $sql->execute([
+                        $poliza["bot_cliente_id"],
+                        $poliza["bot_titular_id"],
+                        $poliza["bot_vehiculo_id"],
+                        $fechaActual->format('Y-m-d'),
+                        $fechaConUnAnioMas,
+                        1,
+                        18,
+                        57,
+                        1,
+                        $poliza["bot_cobertura_id"],
+                        0,
+                        $poliza["bot_debito_id"]
+                    ])
+                ) {
                     $ultimoID = $this->db->lastInsertId();
 
                     // Aquí puedes usar $ultimoID para lo que necesites, como generar un QR
@@ -180,4 +182,9 @@ abstract class cls_bot extends cls_db
 
         return false;
     }
+    protected function activate()
+    {
+        $url = "../../../botServialca/index.js";
+    }
+
 }

@@ -8,28 +8,28 @@ require_once("cls_db.php");
 abstract class cls_poliza extends cls_db
 {
 	protected $id, $sucursal, $usuario,
-		// Contratante 
-		$nombre, $apellido, $cedula, $fechaNacimiento, $telefono, $correo, $direccion,
-		// Titular 
-		$nombreTitular, $apellidoTitular, $cedulaTitular,
-		// Vehiculo
-		$placa, $puesto, $ano, $serialMotor, $serialCarroceria, $peso, $capacidad,
-		// Vehiculo extra
-		$color, $modelo, $marca, $uso, $clase, $tipo,
-		// Contrato
-		$fechaInicio, $fechaVencimiento, $tipoContrato,
-		$tipoTransporte, $estado,
-		$danoCosas, $danoPersonas, $fianza, $asistencia, $apov,
-		$muerte, $invalidez, $medico, $grua,
-		// Pago
-		$metodoPago, $referencia, $cantidadDolar, $monto,
-		// ID
-		$vehiculo, $cliente, $precioDolar, $debitoCredito, $cobertura, $idTitular,
-		$idColor, $idModelo, $idMarca,
-		// Medico
-		$edad, $fechaInicioMedico, $fechaVencimientoMedico, $sangre, $lente,
-		//Licencia
-		$correoLicencia, $licencia, $licenciaRestante, $montoTotal, $abonado, $restante;
+	// Contratante 
+	$nombre, $apellido, $cedula, $fechaNacimiento, $telefono, $correo, $direccion,
+	// Titular 
+	$nombreTitular, $apellidoTitular, $cedulaTitular,
+	// Vehiculo
+	$placa, $puesto, $ano, $serialMotor, $serialCarroceria, $peso, $capacidad,
+	// Vehiculo extra
+	$color, $modelo, $marca, $uso, $clase, $tipo,
+	// Contrato
+	$fechaInicio, $fechaVencimiento, $tipoContrato,
+	$tipoTransporte, $estado,
+	$danoCosas, $danoPersonas, $fianza, $asistencia, $apov,
+	$muerte, $invalidez, $medico, $grua,
+	// Pago
+	$metodoPago, $referencia, $cantidadDolar, $monto,
+	// ID
+	$vehiculo, $cliente, $precioDolar, $debitoCredito, $cobertura, $idTitular,
+	$idColor, $idModelo, $idMarca,
+	// Medico
+	$edad, $fechaInicioMedico, $fechaVencimientoMedico, $sangre, $lente,
+	//Licencia
+	$correoLicencia, $licencia, $licenciaRestante, $montoTotal, $abonado, $restante;
 
 	protected function saveBot($dolar, $tipoIngreso, $motivo)
 	{
@@ -193,12 +193,12 @@ abstract class cls_poliza extends cls_db
 			bot_cobertura_id
 			) 
 			VALUES (?,?,?,?,?)")->execute([
-				$this->cliente,
-				$this->idTitular,
-				$this->vehiculo,
-				$this->debitoCredito,
-				$this->cobertura
-			]);
+						$this->cliente,
+						$this->idTitular,
+						$this->vehiculo,
+						$this->debitoCredito,
+						$this->cobertura
+					]);
 
 			// SI ESTA ULTIMA OPERACIÓN SALIÓ BIEN, SE HACE COMMIT PARA APLICAR LOS CAMBIOS
 			if ($result) {
@@ -242,9 +242,34 @@ abstract class cls_poliza extends cls_db
 		// 	];
 		// }
 
-		$sql = $this->db->prepare("SELECT * FROM poliza 
+		$sql = $this->db->prepare(" SELECT poliza.*, 
+        titular.*, 
+        cliente.*, 
+        vehiculo.*, 
+        marca.*, 
+        clasevehiculo.*, 
+        color.*, 
+        modelo.*, 
+        usovehiculo.*, 
+        tipovehiculo.*, 
+        debitocredito.*,
+        usuario.*,
+        tipocontrato.*,
+        coberturas.*
+        FROM poliza
         INNER JOIN cliente ON cliente.cliente_id = poliza.cliente_id
         INNER JOIN vehiculo ON vehiculo.vehiculo_id = poliza.vehiculo_id
+        INNER JOIN titular ON titular.titular_id = poliza.titular_id
+        INNER JOIN marca ON marca.marca_id = vehiculo.marca_id
+        INNER JOIN clasevehiculo ON clasevehiculo.claseVehiculo_id  = vehiculo.clase_id
+        INNER JOIN color ON color.color_id = vehiculo.color_id
+        INNER JOIN modelo ON modelo.modelo_id = vehiculo.modelo_id 
+        INNER JOIN usovehiculo ON usovehiculo.usoVehiculo_id = vehiculo.uso_id
+        INNER JOIN tipovehiculo ON tipovehiculo.tipovehiculo_id = vehiculo.tipo_id
+        INNER JOIN debitocredito ON debitocredito.nota_id = poliza.debitoCredito
+        INNER JOIN usuario ON usuario.usuario_id = poliza.usuario_id
+        INNER JOIN tipocontrato ON tipocontrato.contrato_id = poliza.tipoContrato_id
+        INNER JOIN coberturas ON coberturas.cobertura_id = poliza.cobertura_id
         WHERE cliente.cliente_cedula = ? AND vehiculo.vehiculo_placa = ?");
 		$sql->execute([$this->cedula, $this->placa]);
 		if ($sql->rowCount() > 0) {
@@ -343,13 +368,15 @@ abstract class cls_poliza extends cls_db
     poliza_renovacion = poliza_renovacion+1,
     debitoCredito =?
     WHERE poliza_id = ?");
-		if ($sql->execute([
-			$this->fechaInicio,
-			$this->fechaVencimiento,
-			$this->cobertura,
-			$this->debitoCredito,
-			$this->id
-		])) {
+		if (
+			$sql->execute([
+				$this->fechaInicio,
+				$this->fechaVencimiento,
+				$this->cobertura,
+				$this->debitoCredito,
+				$this->id
+			])
+		) {
 			$this->generarQr($this->id);
 			// Si la actualización fue exitosa, simplemente retorna el ID
 			return [
@@ -424,7 +451,8 @@ abstract class cls_poliza extends cls_db
 					],
 					"code" => 400
 				];
-			};
+			}
+			;
 			$this->db->beginTransaction();
 			$this->SearchByUsuario();
 			$this->SearchBySucursal();
@@ -637,7 +665,8 @@ abstract class cls_poliza extends cls_db
 					],
 					"code" => 400
 				];
-			};
+			}
+			;
 			$result = $this->editarCliente($this->cliente);
 			if (!$result) {
 				$this->db->rollback();

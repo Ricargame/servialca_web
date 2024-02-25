@@ -28,4 +28,10 @@ class Con_bot extends cls_bot
         $resultado = $this->GetAll();
         Response($resultado, 200);
     }
+
+    public function botActivar()
+    {
+        $resultado = $this->activate();
+        Response($resultado, 200);
+    }
 }

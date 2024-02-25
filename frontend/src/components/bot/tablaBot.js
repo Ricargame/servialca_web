@@ -308,10 +308,32 @@ function TablaBot() {
     setMensaje({ mostrar: false, titulo: "", texto: "", icono: "" });
   };
 
+  const activar = async () => {
+    let endpoint = op.conexion + "/bot/botActivar";
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "POST",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        console.log(response);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
+
   const gestionarBanco = (op, id, estatus) => (e) => {
     e.preventDefault();
     if (op == 1) {
-      setMostrar(true);
+      //setMostrar(true);
+      activar();
     }
     if (op == 2) {
       setVariable(id);

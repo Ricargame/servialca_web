@@ -54,7 +54,7 @@ $pdf->SetFont("Arial", "B", 16);
 $pdf->SetY(40);
 $pdf->SetX(190);
 $pdf->SetFont("Arial", "B", 12);
-$pdf->Cell(0, 10, "Reporte de: " . $motivo, 0, 1, "R");
+$pdf->Cell(0, 10, "Reporte de: " . $datos[0]["sucursal_nombre"], 0, 1, "R");
 $pdf->Cell(0, 10, "Desde: " . date("d-m-Y", strtotime($_GET["Desde"])), 0, 1, "R");
 $pdf->Cell(0, 10, "Hasta: " . date("d-m-Y", strtotime($_GET["Hasta"])), 0, 1, "R");
 $pdf->SetX(15);
@@ -64,7 +64,7 @@ $pdf->Cell(0, 10, "Total Gastado: " . $gastado . " $", 0, 1, "L");
 $pdf->Cell(0, 10, "Total: " . $total . " $", 0, 1, "L");
 $pdf->Ln(10);
 $pdf->SetFont('Arial', '', 10);
-$pdf->SetY(90);
+$pdf->SetY(70);
 $pageWidth = $pdf->GetPageWidth();
 
 // Número de columnas de la tabla
@@ -112,7 +112,7 @@ foreach ($datos as $fila) {
   $pdf->Cell($cellWidth, 10, utf8_decode($fila["sucursal_nombre"]), 1, 0, "C", true);
   $pdf->Cell($cellWidth + 15, 10, utf8_decode($fila["nota_motivo"]), 1, 0, "C", true);
   $pdf->Cell($cellWidth, 10, $fila["nota_monto"] . " $", 1, 0, "C", true);
-
+  
   // Restaurar el color de fondo a blanco para la siguiente fila
   $pdf->SetFillColor(255, 255, 255);
 
