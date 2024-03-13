@@ -177,7 +177,7 @@ export const ModalUsuarios = (props) => {
 
     console.log(endpoint);
     setActivate(true);
-
+    
     let chk = check.current.checked ? "1" : "0";
     let chk1 = check1.current.checked ? "1" : "0";
     let chk2 = check2.current.checked ? "1" : "0";
@@ -333,7 +333,7 @@ export const ModalUsuarios = (props) => {
         console.log(response);
 
         txtUsuario.current.value = response.usuario_usuario;
-        txtPass.current.value = response.usuario_clave;
+        
 
         txtNombre.current.value = response.usuario_nombre;
         txtApellido.current.value = response.usuario_apellido;
