@@ -332,7 +332,7 @@ function TablaBot() {
   const gestionarBanco = (op, id, estatus) => (e) => {
     e.preventDefault();
     if (op == 1) {
-      //setMostrar(true);
+      setMostrar(true);
       activar();
     }
     if (op == 2) {

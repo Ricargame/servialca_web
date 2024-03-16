@@ -985,7 +985,7 @@ export const ModalUsuarios = (props) => {
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
-                ref={check13}
+                ref={check16}
                 type="checkbox"
                 value="Roles"
                 id="flexCheckDefault"
@@ -995,7 +995,7 @@ export const ModalUsuarios = (props) => {
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
-                ref={check14}
+                ref={check13}
                 type="checkbox"
                 value="Roles"
                 id="flexCheckDefault"
@@ -1017,7 +1017,7 @@ export const ModalUsuarios = (props) => {
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
-                ref={check16}
+                ref={check14}
                 type="checkbox"
                 value="Roles"
                 id="flexCheckDefault"

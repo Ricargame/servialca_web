@@ -61,7 +61,7 @@ export const ModalImagenBot = (props) => {
       >
         <div>
           <img
-            src="https://servialcarcv.com/botServialc/qr.png"
+            src="http://62.72.7.45:3001/"
             alt="QR Code"
             style={{ maxWidth: "100%", maxHeight: "100%" }}
           />
