@@ -1382,14 +1382,18 @@ abstract class cls_poliza extends cls_db
 		return $this->sucursal;
 	}
 
-	protected function GetAll($id)
+	protected function GetAll($id, $desde, $hasta)
 	{
+		$diaActual = $desde; // Obtener el día actual
+		$diaCinco = $hasta; // Obtener el quinto día 
 		if ($id == 57) {
 			$sql = $this->db->prepare("SELECT poliza.*, cliente.*, sucursal.*, usuario.*, vehiculo.* FROM poliza 
 				INNER JOIN cliente ON cliente.cliente_id = poliza.cliente_id
 				INNER JOIN sucursal ON sucursal.sucursal_id = poliza.sucursal_id
 				INNER JOIN usuario ON usuario.usuario_id = poliza.usuario_id
 				INNER JOIN vehiculo ON vehiculo.vehiculo_id = poliza.vehiculo_id
+				WHERE poliza.poliza_fechaVencimiento >= :diaActual AND 
+            	poliza.poliza_fechaVencimiento <= :diaCinco
 				ORDER BY poliza_id DESC");
 		} else {
 			$sql = $this->db->prepare("SELECT poliza.*, cliente.*, sucursal.*, usuario.*, vehiculo.* FROM poliza 
@@ -1397,10 +1401,13 @@ abstract class cls_poliza extends cls_db
 				INNER JOIN sucursal ON sucursal.sucursal_id = poliza.sucursal_id
 				INNER JOIN usuario ON usuario.usuario_id = poliza.usuario_id
 				INNER JOIN vehiculo ON vehiculo.vehiculo_id = poliza.vehiculo_id
-				WHERE usuario.usuario_id = $id
+				WHERE usuario.usuario_id = $id AND 
+            	poliza.poliza_fechaVencimiento > :diaActual AND 
+            	poliza.poliza_fechaVencimiento <= :diaCinco
 				ORDER BY poliza_id DESC");
 		}
-
+		$sql->bindParam(':diaActual', $diaActual, PDO::PARAM_STR);
+		$sql->bindParam(':diaCinco', $diaCinco, PDO::PARAM_STR);
 		if ($sql->execute())
 			$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 		else

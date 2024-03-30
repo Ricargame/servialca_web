@@ -17,7 +17,8 @@ function TablaContratosRealizados() {
   var op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
   const user_id = JSON.parse(localStorage.getItem("user_id"));
-  console.log(user_id);
+  const Desde = useRef();
+  const Hasta = useRef();
   const [activate, setActivate] = useState(false);
   const [mensaje, setMensaje] = useState({
     mostrar: false,
@@ -222,7 +223,8 @@ function TablaContratosRealizados() {
     let bodyF = new FormData();
 
     bodyF.append("ID", user_id);
-
+    bodyF.append("Desde", Desde.current.value);
+    bodyF.append("Hasta", Hasta.current.value);
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -285,7 +287,18 @@ function TablaContratosRealizados() {
   console.log("estas en menu");
 
   useEffect(() => {
-    selecionarRegistros();
+     // Obtener la fecha actual
+     const fechaActual = new Date();
+     // Obtener la fecha actual + 30 días
+     const fechaDesde = new Date(fechaActual);
+     fechaDesde.setDate(fechaDesde.getDate() + 30);
+     // Formatear las fechas en formato "YYYY-MM-DD"
+     const fechaActualFormateada = fechaActual.toISOString().split("T")[0];
+     const fechaDesdeFormateada = fechaDesde.toISOString().split("T")[0];
+     // Asignar las fechas a los campos de entrada
+     Desde.current.value = fechaActualFormateada;
+     Hasta.current.value = fechaDesdeFormateada;
+     selecionarRegistros();
   }, []);
 
   const regPre = () => {
@@ -403,17 +416,30 @@ function TablaContratosRealizados() {
         className="col-md-12 bg-light py-2 rounded"
         style={{ margin: "auto" }}
       >
-        <div className="row col-12 d-flex justify-content-between mb-2">
+       <div className="row col-12 d-flex justify-content-between mb-2">
           <input
             type="text"
-            className=" col-3 form-control form-control-sm rounded-pill"
+            className=" col-md-3 mb-2 form-control form-control-sm rounded-pill"
             onChange={handleSearch}
             placeholder="Buscar"
           />
 
-          {/*<div className='col-3 d-flex justify-content-end'>
-            <button onClick={gestionarBanco(1, '')} className="btn btn-sm btn-primary rounded-circle"><i className="fas fa-plus"></i> </button>
-  </div>*/}
+          <input
+            type="date"
+            ref={Desde}
+            className="col-md-2 mb-2 form-control"
+          />
+          <input
+            type="date"
+            ref={Hasta}
+            className="col-md-2 mb-2 form-control"
+          />
+          <button
+            className="col-md-2 mb-2 form-control"
+            onClick={selecionarRegistros}
+          >
+            Buscar
+          </button>
         </div>
         <TblContainer>
           <TblHead />
