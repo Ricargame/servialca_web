@@ -207,7 +207,7 @@ abstract class cls_tipo_vehiculo extends cls_db
     else
       return [];
   }
-  protected function GetAll($sucursal, $contrato)
+  protected function GetAll($sucursal)
   {
     // Verificar si la sucursal es 21
     $whereClause = ($sucursal == 21) ? 'WHERE tipovehiculo.tipoVehiculo_estatus = 1 AND tipovehiculo.sucursal_id = 21 AND precio.tipoContrato_id = ?' : 'WHERE tipovehiculo.tipoVehiculo_estatus = 1 AND tipovehiculo.sucursal_id != 21';
@@ -217,7 +217,7 @@ abstract class cls_tipo_vehiculo extends cls_db
           INNER JOIN tipocontrato ON tipocontrato.contrato_id = precio.tipoContrato_id 
           $whereClause ORDER BY precio_id ASC");
 
-    $sql->execute([$contrato]);
+    $sql->execute();
 
     if ($sql->rowCount() > 0) {
       return $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -225,7 +225,6 @@ abstract class cls_tipo_vehiculo extends cls_db
       return [];
     }
   }
-
 
 
   protected function savePrecio()
