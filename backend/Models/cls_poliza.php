@@ -2087,4 +2087,23 @@ abstract class cls_poliza extends cls_db
 		$dato = $sql->fetchAll(PDO::FETCH_ASSOC);
 		return $dato;
 	}
+	public function GetAllSelet($ids){
+		// Preparar la consulta con los marcadores de posición
+		$sql = $this->db->prepare("SELECT *, vehiculo.*, cliente.*, modelo.*, marca.*, color.* FROM poliza
+		INNER JOIN vehiculo ON vehiculo.vehiculo_id = poliza.vehiculo_id
+		INNER JOIN cliente ON cliente.cliente_id = poliza.cliente_id
+		INNER JOIN modelo ON modelo.modelo_id = vehiculo.modelo_id
+		INNER JOIN marca ON marca.marca_id = vehiculo.marca_id
+		INNER JOIN color ON color.color_id = vehiculo.color_id
+		WHERE poliza.poliza_id IN ($ids)");
+	
+		// Ejecutar la consulta con los valores de los IDs como un array
+		$sql->execute();
+	
+		// Recuperar los datos
+		$datos = $sql->fetchAll(PDO::FETCH_ASSOC);
+	
+		return $datos;
+	}
+	
 }

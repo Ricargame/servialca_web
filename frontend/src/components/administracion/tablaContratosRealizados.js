@@ -6,7 +6,7 @@ import moment from "moment";
 
 import axios from "axios";
 import useTable from "../useTable";
-import { TableBody, TableRow, TableCell } from "@material-ui/core";
+import { TableBody, TableRow, TableCell, Checkbox } from "@material-ui/core";
 import { ModalImprimir } from "./modalImprimir";
 import { ModalConsultarPoliza } from "./modalConsultarPoliza";
 import { ModalRenovarPoliza } from "./modalRenovar";
@@ -20,6 +20,7 @@ function TablaContratosRealizados() {
   const Desde = useRef();
   const Hasta = useRef();
   const [activate, setActivate] = useState(false);
+  const [checkedItems, setCheckedItems] = useState([]);
   const [mensaje, setMensaje] = useState({
     mostrar: false,
     titulo: "",
@@ -29,6 +30,9 @@ function TablaContratosRealizados() {
 
   console.log(user_id);
   const headCells = [
+    {
+      backgroundColor: "#e70101bf",
+    },
     {
       label: "N° Contrato",
       textAlign: "center",
@@ -284,7 +288,29 @@ function TablaContratosRealizados() {
     });
   };
 
-  console.log("estas en menu");
+  const checkContra = (id) => {
+    const currentIndex = checkedItems.indexOf(id);
+    const newCheckedItems = [...checkedItems];
+  
+    if (currentIndex === -1) {
+      // Si el elemento no está en el array, lo agregamos
+      newCheckedItems.push(id);
+    } else {
+      // Si el elemento ya está en el array, lo quitamos
+      newCheckedItems.splice(currentIndex, 1);
+    }
+  
+    // Actualizamos el estado con el nuevo array de elementos marcados
+    setCheckedItems(newCheckedItems);
+  
+    // Imprimimos el contenido del array en la consola
+    console.log(newCheckedItems);
+  };
+
+  const imprimirSelect = async (e) => {
+    e.preventDefault();
+    window.open(`${op.conexion}/reporte/reporteSelect?id=` + checkedItems)
+  }
 
   useEffect(() => {
      // Obtener la fecha actual
@@ -441,12 +467,27 @@ function TablaContratosRealizados() {
             Buscar
           </button>
         </div>
+        <div className="row-col-12 d-flex justify-content-center mb-2">
+          <button
+            className="col-md-2 mb-2 form-control"
+            onClick={imprimirSelect}
+          >
+            Imprimir  
+          </button>
+        </div>
         <TblContainer>
           <TblHead />
           <TableBody>
             {records &&
               recordsAfterPagingAndSorting().map((item, index) => (
                 <TableRow key={index} style={{ padding: "0" }}>
+                  <TableCell>
+                  <Checkbox
+                    checked={checkedItems.includes(item.poliza_id)}
+                    onChange={() => checkContra(item.poliza_id)}
+                    inputProps={{ 'aria-label': 'Checkbox' }}
+                  />
+                  </TableCell>
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
