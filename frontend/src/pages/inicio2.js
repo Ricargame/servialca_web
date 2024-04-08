@@ -19,7 +19,7 @@ import moment from "moment";
 import { Bar } from "react-chartjs-2";
 import axios from "axios";
 import useTable from "../components/useTable";
-import { TableBody, TableRow, TableCell } from "@material-ui/core";
+import { TableBody, TableRow, TableCell, Checkbox } from "@material-ui/core";
 
 import { ModalCertificadoMedico } from "../components/administracion/modalCertificado";
 import { ModalRcv } from "../components/administracion/modalRcv";
@@ -409,7 +409,7 @@ function Inicio2() {
         })
       );
   };
-
+  
   return (
     <div className="col-md-12 mx-auto p-2">
       <GestionarPreguntas
@@ -512,6 +512,7 @@ function Inicio2() {
         style={{ margin: "auto" }}
       >
         <div className="row col-12 d-flex justify-content-between mb-2">
+        
           <input
             type="text"
             className=" col-md-3 mb-2 form-control form-control-sm rounded-pill"

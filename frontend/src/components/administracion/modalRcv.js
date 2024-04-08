@@ -884,7 +884,7 @@ export const ModalRcv = (props) => {
 
   const selecionarTipo = async () => {
     let endpoint =
-      op.conexion + "/tipo_vehiculo/ConsultarTodos?Sucursal=" + idsucursal;
+      op.conexion + "/tipo_vehiculo/ConsultarTodos?Sucursal=" + idsucursal + '&Contrato=1';
     setActivate(true);
 
     //setLoading(false);
