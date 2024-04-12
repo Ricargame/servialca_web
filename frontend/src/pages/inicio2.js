@@ -367,7 +367,31 @@ function Inicio2() {
     setMostrar(true);
     setMensaje({ mostrar: false, titulo: "", texto: "", icono: "" });
   };
+  const changeVip = async (id) => {
+    let endpoint = op.conexion + "/ladilla/update";
+    setActivate(true);
 
+    let bodyF = new FormData();
+    bodyF.append("id", id); // Cambiado a minúsculas
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setRecords(response);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.message, // Cambiado a error.message
+          icono: "informacion",
+        })
+      );    
+      selecionarRegistros(); // Cambiado a selectRecords
+  }
   const gestionarBanco = (op, id) => (e) => {
     e.preventDefault();
     setIdCliente(id);
@@ -384,6 +408,8 @@ function Inicio2() {
       setMostrar2(true);
       setIdCliente(id);
       setPoliza(id);
+    } else if (op === 6){
+      changeVip(id)
     }
   };
   const gestionarRcv = (opcion) => (e) => {
@@ -685,9 +711,9 @@ function Inicio2() {
                       <i className="fa fa-sync"></i>{" "}
                     </button>
                     <button
+                      onClick={gestionarBanco(6,item.poliza_id)}
                       className={`btn btn-sm mx-1 ${item.vip == 0 ? 'btn-danger' : 'btn-success' } rounded-circle`}
                     >
-                      {/* Contenido del botón */}
                     </button>
                   </TableCell>
                 </TableRow>
