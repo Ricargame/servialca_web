@@ -269,6 +269,39 @@ function Inicio2() {
       );
   };
 
+  const clientVip = async (id) => {
+    let endpoint = op.conexion + "/poliza/ConsultarVencer";
+    console.log(endpoint);
+    setActivate(true);
+
+    //setLoading(false);
+
+    let bodyF = new FormData();
+
+    bodyF.append("ID", user_id);
+    bodyF.append("Desde", Desde.current.value);
+    bodyF.append("Hasta", Hasta.current.value);
+
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        console.log(response);
+        setRecords(response);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
+
   const handleSearch = (e) => {
     let target = e.target;
     setFilterFn({
@@ -650,6 +683,11 @@ function Inicio2() {
                     >
                       {" "}
                       <i className="fa fa-sync"></i>{" "}
+                    </button>
+                    <button
+                      className={`btn btn-sm mx-1 ${item.vip == 0 ? 'btn-danger' : 'btn-success' } rounded-circle`}
+                    >
+                      {/* Contenido del botón */}
                     </button>
                   </TableCell>
                 </TableRow>

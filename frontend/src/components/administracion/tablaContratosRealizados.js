@@ -312,18 +312,34 @@ function TablaContratosRealizados() {
     window.open(`${op.conexion}/reporte/reporteSelect?id=` + checkedItems)
   }
 
+  const changeVip = async (id) => {
+    let endpoint = op.conexion + "/ladilla/update";
+    setActivate(true);
+
+    let bodyF = new FormData();
+    bodyF.append("id", id); // Cambiado a minúsculas
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setRecords(response);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.message, // Cambiado a error.message
+          icono: "informacion",
+        })
+      );    
+      selecionarRegistros(); // Cambiado a selectRecords
+  }
+
+
   useEffect(() => {
-     // Obtener la fecha actual
-     const fechaActual = new Date();
-     // Obtener la fecha actual + 30 días
-     const fechaDesde = new Date(fechaActual);
-     fechaDesde.setDate(fechaDesde.getDate() + 30);
-     // Formatear las fechas en formato "YYYY-MM-DD"
-     const fechaActualFormateada = fechaActual.toISOString().split("T")[0];
-     const fechaDesdeFormateada = fechaDesde.toISOString().split("T")[0];
-     // Asignar las fechas a los campos de entrada
-     Desde.current.value = fechaActualFormateada;
-     Hasta.current.value = fechaDesdeFormateada;
      selecionarRegistros();
   }, []);
 
@@ -354,6 +370,8 @@ function TablaContratosRealizados() {
       setMostrar2(true);
     } else if (op === 5) {
       setMostrar3(true);
+    } else if (op === 6){
+      changeVip(id)
     }
   };
 
@@ -570,6 +588,11 @@ function TablaContratosRealizados() {
                       className="btn btn-sm mx-1 btn-primary rounded-circle"
                     >
                       <i className="fa fa-eye"></i>{" "}
+                    </button>
+                    <button
+                      onClick={gestionarBanco(6,item.poliza_id)}
+                      className={`btn btn-sm mx-1 ${item.vip == 0 ? 'btn-danger' : 'btn-success' } rounded-circle`}
+                    >
                     </button>
                   </TableCell>
                 </TableRow>
