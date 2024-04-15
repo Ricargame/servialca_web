@@ -377,20 +377,7 @@ function Inicio2() {
       method: "POST",
       body: bodyF,
     })
-      .then((res) => res.json())
-      .then((response) => {
-        setActivate(false);
-        setRecords(response);
-      })
-      .catch((error) =>
-        setMensaje({
-          mostrar: true,
-          titulo: "Notificación",
-          texto: error.message, // Cambiado a error.message
-          icono: "informacion",
-        })
-      );    
-      selecionarRegistros(); // Cambiado a selectRecords
+    selecionarRegistros(); // Cambiado a selectRecords
   }
   const gestionarBanco = (op, id) => (e) => {
     e.preventDefault();
