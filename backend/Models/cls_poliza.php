@@ -1399,7 +1399,7 @@ abstract class cls_poliza extends cls_db
 				INNER JOIN sucursal ON sucursal.sucursal_id = poliza.sucursal_id
 				INNER JOIN usuario ON usuario.usuario_id = poliza.usuario_id
 				INNER JOIN vehiculo ON vehiculo.vehiculo_id = poliza.vehiculo_id
-				WHERE usuario.usuario_id = $id
+				WHERE usuario.usuario_id = $id 
 				ORDER BY poliza_id DESC");
 		}
 		if ($sql->execute())
@@ -2049,11 +2049,12 @@ abstract class cls_poliza extends cls_db
 		$params[] = date('Y-m-d', strtotime($desde));
 		$params[] = date('Y-m-d', strtotime($hasta));
 
-		$sql = $this->db->prepare("SELECT *, usuario.*, sucursal.*, debitocredito.* 
+		$sql = $this->db->prepare("SELECT *, usuario.*, sucursal.*, debitocredito.*, coberturas.* 
         FROM poliza 
 		INNER JOIN debitocredito ON debitocredito.nota_id = poliza.debitoCredito
         INNER JOIN usuario ON usuario.usuario_id = debitocredito.usuario_id
         INNER JOIN sucursal ON sucursal.sucursal_id = debitocredito.sucursal_id
+        INNER JOIN coberturas ON coberturas.cobertura_id  = poliza.cobertura_id 
 		
         WHERE $where");
 		$a = $sql->execute($params);

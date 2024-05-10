@@ -20,16 +20,15 @@ if (isset($_GET["Sucursal"]) && $_GET["Sucursal"] != null || $_GET["Sucursal"] !
   $motivo = $_GET["Motivo"];
 }
 $generado = 0;
-$gastado = 0;
+$generdoBs = 0;
 $total = 0;
+$totalBs = 0;
 foreach ($datos as $fila) {
-  if ($fila["nota_IngresoEgreso"] == 1) {
     $generado += $fila["nota_monto"];
-  } else {
-    $gastado += $fila["nota_monto"];
-  }
-  $total = $generado - $gastado;
-}
+    $generadoBs += $fila["totalPagar"];
+};
+$total = $generado / 2;
+$totalBs = $generadoBs / 2;
 class PDF extends FPDF
 {
   public function __construct()
@@ -60,11 +59,12 @@ $pdf->Cell(0, 10, "Hasta: " . date("d-m-Y", strtotime($_GET["Hasta"])), 0, 1, "R
 $pdf->SetX(15);
 $pdf->SetY(40);
 $pdf->Cell(0, 10, "Total Generado: " . $generado . " $", 0, 1, "L");
-$pdf->Cell(0, 10, "Total Gastado: " . $gastado . " $", 0, 1, "L");
+$pdf->Cell(0, 10, "Total Generado: " . $generadoBs . " Bs", 0, 1, "L");
 $pdf->Cell(0, 10, "Total: " . $total . " $", 0, 1, "L");
+$pdf->Cell(0, 10, "Total: " . $totalBs . " Bs", 0, 1, "L");
 $pdf->Ln(10);
 $pdf->SetFont('Arial', '', 10);
-$pdf->SetY(70);
+$pdf->SetY(80);
 $pageWidth = $pdf->GetPageWidth();
 
 // Número de columnas de la tabla

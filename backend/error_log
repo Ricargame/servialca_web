@@ -206,3 +206,668 @@ Stack trace:
 #6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
 #7 {main}
   thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[08-Apr-2024 07:56:57 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2101
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2101): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(33): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2101
+[09-Apr-2024 09:09:22 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[09-Apr-2024 09:09:29 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[09-Apr-2024 09:09:32 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[09-Apr-2024 09:10:05 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[10-Apr-2024 15:52:17 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1435
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1435): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(9): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(9): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1435
+[11-Apr-2024 22:39:59 America/Caracas] PHP Fatal error:  Uncaught Error: Class "cls_hotel" not found in /home/servialc/public_html/servialca_web/backend/Routes/Con_ladilla.php:4
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#3 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_ladilla.php on line 4
+[11-Apr-2024 22:41:18 America/Caracas] PHP Fatal error:  Uncaught Error: Class "cls_hotel" not found in /home/servialc/public_html/servialca_web/backend/Routes/Con_ladilla.php:4
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#3 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_ladilla.php on line 4
+[11-Apr-2024 22:41:53 America/Caracas] PHP Fatal error:  Uncaught Error: Class "cls_hotel" not found in /home/servialc/public_html/servialca_web/backend/Routes/Con_ladilla.php:4
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#3 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_ladilla.php on line 4
+[11-Apr-2024 22:42:32 America/Caracas] PHP Fatal error:  Uncaught Error: Class "cls_hotel" not found in /home/servialc/public_html/servialca_web/backend/Routes/Con_ladilla.php:4
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#3 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_ladilla.php on line 4
+[12-Apr-2024 09:17:32 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2095
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2095): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(33): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2095
+[12-Apr-2024 09:17:34 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2095
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2095): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(33): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2095
+[12-Apr-2024 09:35:34 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2095
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2095): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(33): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2095
+[17-Apr-2024 11:36:09 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY poliza_id DESC' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1405
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1405): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(133): cls_poliza->GetAll()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarTodos()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1405
+[18-Apr-2024 04:51:46 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 04:51:48 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 06:45:59 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 06:45:59 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 06:45:59 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 07:40:04 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:47:39 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:47:39 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:47:39 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:47:46 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:47:51 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:47:55 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:47:59 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:12 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:23 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:23 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:40 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:52 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:52 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:52 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:54 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:49:54 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:15 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:39 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:39 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:53 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:53 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:50:53 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:51:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:51:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:51:20 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:51:49 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:51:49 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:51:49 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:51:57 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:51:57 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:52:09 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:52:38 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:52:38 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:52:38 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:52:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:52:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:02 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:02 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:14 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:14 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:14 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:34 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:34 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:53:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:56:13 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 08:56:13 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:06:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:06:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:06:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:08:00 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:08:00 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:08:00 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:08:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:08:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:08:16 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:08:19 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:14:01 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:14:01 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:14:01 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:16:15 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:16:58 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:17:38 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:26:16 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:26:16 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:32:13 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:32:13 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:33:12 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:34:18 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:34:21 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:34:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:44:47 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:44:47 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:44:47 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:44:51 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:44:51 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:45:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:45:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:45:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:46:04 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:46:04 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:46:18 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:46:24 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:46:24 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:46:24 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:52:26 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:52:26 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:52:26 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:54:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:54:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:54:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:54:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:54:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:54:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:54:57 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 09:54:57 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:02:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:02:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:02:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:14:37 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:14:37 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:14:37 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:14:40 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:14:40 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:14:53 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:16:08 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:16:16 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:16:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:16:46 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:16:46 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:20:19 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:20:48 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:20:58 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:20:58 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:20:59 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:21:57 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:23:48 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:24:53 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:24:53 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:24:53 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:02 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:02 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:21 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:21 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:21 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:22 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 10:25:22 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:04 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:07 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:20 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:27 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:32 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:32 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:33 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:03:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:04:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:04:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:04:13 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:04:21 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:04:26 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:04:26 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:08 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:09 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:24 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:27 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:27 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:27 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:38 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:40 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:05:42 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:07:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:07:58 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:07:58 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:07:58 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:08:01 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:08:01 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:08:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:08:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:08:19 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:08:19 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:08:21 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:00 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:03 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:04 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:04 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:06 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:07 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:07 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:08 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:08 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:28 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:09:34 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:10:37 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:10:37 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:10:40 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:10:42 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:11:20 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:11:20 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:11:20 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:11:27 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:11:27 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:11:38 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:11:42 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:22:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:22:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:22:05 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:27:36 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:27:36 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:33:29 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:33:29 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:33:29 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:33:35 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:45:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:45:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:45:29 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:47:29 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:47:29 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 12:47:29 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:00:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.4.33. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:00:27 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.4.33. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:00:32 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.4.33. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:42 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:42 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:04:50 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:05:46 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:05:46 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:05:46 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:05:56 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:06:43 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:06:43 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:06:43 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:07:45 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:07:45 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:07:45 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:07:54 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:07:58 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:09:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:13:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:13:25 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:20:31 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:22:55 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:22:55 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:22:55 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:23:01 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:23:04 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:23:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:23:13 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:24:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:24:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:24:11 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:24:13 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:24:13 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:24:26 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:24:26 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:26:19 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:26:19 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:26:19 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.30. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:26:46 America/Caracas] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.4.33. in /home/servialc/public_html/servialca_web/backend/vendor/composer/platform_check.php on line 24
+[18-Apr-2024 13:38:24 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1705
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1705): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteVendedores.php(9): cls_poliza->Reporte()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1705
+[18-Apr-2024 16:11:16 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:11:31 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:13:48 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:13:50 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:13:52 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:13:53 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:13:55 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:13:56 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:13:58 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:13:59 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[18-Apr-2024 16:14:02 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[19-Apr-2024 09:54:54 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[21-Apr-2024 10:38:00 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[21-Apr-2024 10:38:02 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[30-Apr-2024 11:03:41 America/Caracas] PHP Fatal error:  Uncaught Exception: Unknown or bad format (PTH) in /home/servialc/public_html/servialca_web/backend/Models/cls_hotel.php:106
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_hotel.php(106): DateInterval->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_hotel.php(65): cls_hotel->SaveHotel()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_hotel.php(26): cls_hotel->save()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_hotel->registrar()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_hotel.php on line 106
+[30-Apr-2024 11:06:56 America/Caracas] PHP Fatal error:  Uncaught Exception: Unknown or bad format (PTH) in /home/servialc/public_html/servialca_web/backend/Models/cls_hotel.php:106
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_hotel.php(106): DateInterval->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_hotel.php(65): cls_hotel->SaveHotel()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_hotel.php(26): cls_hotel->save()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_hotel->registrar()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_hotel.php on line 106
+[06-May-2024 09:29:28 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Image file has no extension and no type was specified: ./ImgQr/ in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(881): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(9): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[06-May-2024 09:33:46 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1435
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1435): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(306): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(116): cls_poliza->renovar_poliza()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->renovar()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1435
+[06-May-2024 11:55:41 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 10
+[06-May-2024 11:55:41 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 11
+[06-May-2024 11:55:41 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 12
+[07-May-2024 16:41:20 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[07-May-2024 16:41:36 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[07-May-2024 16:41:43 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[07-May-2024 16:42:04 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172

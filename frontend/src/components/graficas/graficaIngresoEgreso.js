@@ -455,7 +455,12 @@ function GraficosIngresos() {
                     </TableCell>
                     <TableCell
                       className="align-baseline"
-                      style={{ textAlign: "center", alignItems: "center" }}
+                      style={{ 
+                        textAlign: "center", 
+                        alignItems: "center",
+                        color: item.usuario_nombre == "MIGUEL" ? "red" : "inherit"
+                    }}
+                      
                     >
                       {item.sucursal_nombre}
                     </TableCell>

@@ -94,7 +94,7 @@ $Pdf->SetFont('Arial', 'B', 8); // Aumentar el tamaño de fuente a 8
 $Pdf->Cell(17, 28, "");
 $Pdf->Cell(13, 34, "COLOR : ");
 $Pdf->SetFont('Arial', '', 9); // Aumentar el tamaño de fuente a 9
-$Pdf->Cell(39, 34, "" . $datos[0]["color_nombre"]);
+$Pdf->Cell(39, 34, "" . utf8_decode($datos[0]["color_nombre"]));
 $Pdf->SetFont('Arial', 'B', 8); // Aumentar el tamaño de fuente a 8
 $Pdf->Cell(8, 34, "TIPO: ");
 $Pdf->SetFont('Arial', '', 9); // Aumentar el tamaño de fuente a 9
