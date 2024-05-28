@@ -76,7 +76,7 @@ $Pdf->SetFont('Arial', '', 10);
 $Pdf->Cell(8, 80, "" . $datos[0]["cliente_telefono"]);
 $Pdf->Cell(91, 80, "-");
 $Pdf->SetFont('Arial', 'B', 10);
-$Pdf->Cell(27, 80, "Tel. Habitacion: ");
+$Pdf->Cell(27, 80, "Tel. del usuario: ");
 $Pdf->SetFont('Arial', '', 10);
 $Pdf->Cell(8, 80, "" . $datos[0]["usuario_telefono"]);
 $Pdf->Cell(8, 80, "");

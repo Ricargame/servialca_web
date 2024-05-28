@@ -93,32 +93,68 @@ abstract class cls_hotel extends cls_db
         }
     }
 
+    // protected function SaveHotel()
+    // {
+    //     // Obtener la hora actual en formato HH:mm:ss
+    //     $this->horaLlegada = date("H:i:s");
+
+    //     // Supongamos que $this->horaSalida es un valor numérico que representa las horas
+    //     $horasSalida = $this->horaSalida;
+
+    //     // Sumar las horas de $horasSalida a la hora actual
+    //     $horaActual = new DateTime($this->horaLlegada);
+    //     $horaActual->add(new DateInterval("PT{$horasSalida}H"));
+
+    //     // Obtener la hora resultante en formato HH:mm:ss
+    //     $desde = $horaActual->format("H:i:s");
+    //     $fecha_actual = date('Y-m-d');
+    //     $sql = $this->db->prepare("INSERT INTO hospedaje_clientes(cliente_id_hospedaje, vehiculo_id_hospedaje, num_habicacion_hospedaje,fecha_llegada_hospedaje, hora_llegada_hospedaje, hora_salida_hospedaje) VALUES(?,?,?,?,?,?)");
+
+
+    //     if ($sql->execute([$this->id_cliente, $this->id_vehiculo, $this->habitacion, $fecha_actual, $this->horaLlegada, $desde])) {
+    //         $resultado = true;
+    //     } else {
+    //         $resultado = false;
+    //     }
+
+    //     return $resultado;
+    // }
     protected function SaveHotel()
-    {
-        // Obtener la hora actual en formato HH:mm:ss
-        $this->horaLlegada = date("H:i:s");
+{
+    // Obtener la fecha y hora actual
+    $fechaHoraLlegada = new DateTime();
+    
+    // Obtener la hora actual en formato HH:mm:ss
+    $this->horaLlegada = $fechaHoraLlegada->format("H:i:s");
 
-        // Supongamos que $this->horaSalida es un valor numérico que representa las horas
-        $horasSalida = $this->horaSalida;
+    // Supongamos que $this->horaSalida es un valor numérico que representa las horas
+    $horasSalida = $this->horaSalida;
 
-        // Sumar las horas de $horasSalida a la hora actual
-        $horaActual = new DateTime($this->horaLlegada);
-        $horaActual->add(new DateInterval("PT{$horasSalida}H"));
+    // Clonar el objeto DateTime para calcular la hora de salida sin modificar el original
+    $fechaHoraSalida = clone $fechaHoraLlegada;
 
-        // Obtener la hora resultante en formato HH:mm:ss
-        $desde = $horaActual->format("H:i:s");
-        $fecha_actual = date('Y-m-d');
-        $sql = $this->db->prepare("INSERT INTO hospedaje_clientes(cliente_id_hospedaje, vehiculo_id_hospedaje, num_habicacion_hospedaje,fecha_llegada_hospedaje, hora_llegada_hospedaje, hora_salida_hospedaje) VALUES(?,?,?,?,?,?)");
+    // Sumar las horas de $horasSalida a la fecha y hora de llegada
+    $fechaHoraSalida->add(new DateInterval("PT{$horasSalida}H"));
 
+    // Obtener la hora resultante en formato HH:mm:ss
+    $horaSalida = $fechaHoraSalida->format("H:i:s");
+    
+    // Obtener la fecha de llegada en formato Y-m-d
+    $fechaLlegada = $fechaHoraLlegada->format('Y-m-d');
 
-        if ($sql->execute([$this->id_cliente, $this->id_vehiculo, $this->habitacion, $fecha_actual, $this->horaLlegada, $desde])) {
-            $resultado = true;
-        } else {
-            $resultado = false;
-        }
+    // Preparar la consulta SQL para insertar los datos
+    $sql = $this->db->prepare("INSERT INTO hospedaje_clientes(cliente_id_hospedaje, vehiculo_id_hospedaje, num_habicacion_hospedaje, fecha_llegada_hospedaje, hora_llegada_hospedaje, hora_salida_hospedaje) VALUES(?,?,?,?,?,?)");
 
-        return $resultado;
+    // Ejecutar la consulta con los valores correspondientes
+    if ($sql->execute([$this->id_cliente, $this->id_vehiculo, $this->habitacion, $fechaLlegada, $this->horaLlegada, $horaSalida])) {
+        $resultado = true;
+    } else {
+        $resultado = false;
     }
+
+    return $resultado;
+}
+
 
 
     protected function SaveObs()

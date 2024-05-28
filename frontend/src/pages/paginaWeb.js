@@ -196,7 +196,7 @@ function PaginaWeb(props) {
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="#home">
-                  <i class="fas fa-home"></i> Home
+                  <i class="fas fa-home"></i> Casa
                 </a>
               </li>
               <li class="nav-item">
@@ -216,7 +216,7 @@ function PaginaWeb(props) {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/login">
-                  <i class="fas fa-sign-in-alt"></i> Login
+                  <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
                 </a>
               </li>
             </ul>
@@ -253,7 +253,7 @@ function PaginaWeb(props) {
             <div class="col-md-12 mx-auto row py-5" id="homediv">
               <div class="col-md-12 mx-auto text-center mt-5 py-4">
                 <h1 class="fw-bold text-center text-servial">
-                  - <i class="fas fa-home"></i> Home -
+                  - <i class="fas fa-home"></i> Casa -
                 </h1>
               </div>
 

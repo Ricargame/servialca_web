@@ -871,3 +871,183 @@ Stack trace:
 #5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
 #6 {main}
   thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[11-May-2024 12:47:17 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:47:19 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:47:20 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:47:25 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:47:28 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:47:35 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:47:37 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:47:38 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:47:42 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:48:06 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:48:48 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 12:48:50 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: heic in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(889): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteMedico.php(144): FPDF->Image()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteMedico()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[11-May-2024 14:10:49 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2096
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2096): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(33): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2096
+[12-May-2024 12:29:47 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2096
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2096): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(33): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2096
+[14-May-2024 10:07:02 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[14-May-2024 10:07:08 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[14-May-2024 10:07:47 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[14-May-2024 10:07:47 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
