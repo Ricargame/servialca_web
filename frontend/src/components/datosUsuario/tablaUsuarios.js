@@ -486,7 +486,7 @@ function TablaUsuarios() {
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.sucursal_nombre + " " + item.usuario_apellido}
+                    {item.usuario_nombre + " " + item.usuario_apellido}
                   </TableCell>
                   <TableCell
                     className="align-baseline"
