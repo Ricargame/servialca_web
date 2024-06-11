@@ -469,7 +469,14 @@ function TablaUsuarios() {
           <TableBody>
             {records &&
               recordsAfterPagingAndSorting().map((item, index) => (
-                <TableRow key={index} style={{ padding: "0" }}>
+                <TableRow
+                  key={index}
+                  style={{
+                    padding: "0",
+                    backgroundColor:
+                      item.usuario_estatus == 0 ? "red" : "inherit",
+                  }}
+                >
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
@@ -530,7 +537,6 @@ function TablaUsuarios() {
                   >
                     {item.usuario_estatus == 1 ? "ACTIVO" : "INACTIVO"}
                   </TableCell>
-
                   <TableCell
                     className="align-baseline"
                     style={{
@@ -599,6 +605,7 @@ function TablaUsuarios() {
               ))}
           </TableBody>
         </TblContainer>
+
         <TblPagination />
       </div>
       <Dimmer active={activate} inverted>
