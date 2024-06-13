@@ -1,6 +1,9 @@
 <?php
 class Con_reporte 
 {
+    public function reporteGrua(){
+        include("Con_reporteGrua.php");
+    }
     public function reporteMedico(){
         include("Con_reporteMedico.php");
     }

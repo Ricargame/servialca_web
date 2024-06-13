@@ -325,20 +325,6 @@ export const ModalConsultarPoliza = (props) => {
       );
   };
 
-  const imprimir = (tipo) => (e) => {
-    e.preventDefault();
-
-    if (tipo === 1) {
-      window.open(`${op.conexion}/reporte/reporteRCV?ID=${props.idCliente}`);
-    }
-    if (tipo === 2) {
-      window.open(`${op.conexion}/reporte/reporteWeb?ID=${props.idCliente}`);
-    }
-    if (tipo === 3) {
-      window.open(`${op.conexion}/reporte/reporteCarnet?ID=${props.idCliente}`);
-    }
-  };
-
   return (
     <Modal
       {...props}

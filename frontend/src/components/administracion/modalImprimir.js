@@ -295,6 +295,9 @@ export const ModalImprimir = (props) => {
     if (tipo === 3) {
       window.open(`${op.conexion}/reporte/reporteCarnet?ID=${props.idCliente}`);
     }
+    if (tipo === 4) {
+      window.open(`${op.conexion}/reporte/reporteGrua?ID=${props.idCliente}`);
+    }
   };
 
   return (
@@ -354,7 +357,7 @@ export const ModalImprimir = (props) => {
         />
 
         <div className="col-md-12 row mx-auto">
-          <div class="input-group input-group-sm mb-3 col-md-4">
+          <div class="input-group input-group-sm mb-3 col-md-3">
             <button
               type="button"
               onClick={imprimir(1)}
@@ -363,7 +366,7 @@ export const ModalImprimir = (props) => {
               RCV
             </button>
           </div>
-          <div class="input-group input-group-sm mb-3 col-md-4">
+          <div class="input-group input-group-sm mb-3 col-md-3">
             <button
               type="button"
               onClick={imprimir(2)}
@@ -372,13 +375,22 @@ export const ModalImprimir = (props) => {
               RCV WEB
             </button>
           </div>
-          <div class="input-group input-group-sm mb-3 col-md-4">
+          <div class="input-group input-group-sm mb-3 col-md-3">
             <button
               type="button"
               onClick={imprimir(3)}
               class="btn col btn-primary"
             >
               Carnet R.C.V
+            </button>
+          </div>
+          <div class="input-group input-group-sm mb-3 col-md-3">
+            <button
+              type="button"
+              onClick={imprimir(4)}
+              class="btn col btn-primary"
+            >
+              Contrato de Grua
             </button>
           </div>
         </div>
