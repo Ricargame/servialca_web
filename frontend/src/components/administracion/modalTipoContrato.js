@@ -284,34 +284,34 @@ export const ModalTipoContrato = (props) => {
       event.returnValue = false;
   }
 
-  const handleInputMontoChange = (event) => {
-    validaMonto(event);
-    if (event.which === 13 || typeof event.which === "undefined") {
-      if (
-        event.target.value === "" ||
-        parseFloat(
-          event.target.value.trim().replace(".", "").replace(",", ".")
-        ) === 0.0
-      ) {
-        event.target.value = "0,00";
-      }
-      event.target.value = formatoMonto(event.target.value);
-      let char1 = event.target.value.substring(0, 1);
-      let char2 = event.target.value.substring(1, 2);
-      if (char1 === "0" && char2 !== ",") {
-        event.target.value = event.target.value.substring(
-          1,
-          event.target.value.legth
-        );
-      }
-    } else if (event.which === 46) {
-      return false;
-    } else if (event.which >= 48 && event.which <= 57) {
-      return true;
-    } else if (event.which === 8 || event.which === 0 || event.which === 44) {
-      return true;
-    } else return false;
-  };
+  // const handleInputMontoChange = (event) => {
+  //   validaMonto(event);
+  //   if (event.which === 13 || typeof event.which === "undefined") {
+  //     if (
+  //       event.target.value === "" ||
+  //       parseFloat(
+  //         event.target.value.trim().replace(".", "").replace(",", ".")
+  //       ) === 0.0
+  //     ) {
+  //       event.target.value = "0,00";
+  //     }
+  //     event.target.value = formatoMonto(event.target.value);
+  //     let char1 = event.target.value.substring(0, 1);
+  //     let char2 = event.target.value.substring(1, 2);
+  //     if (char1 === "0" && char2 !== ",") {
+  //       event.target.value = event.target.value.substring(
+  //         1,
+  //         event.target.value.legth
+  //       );
+  //     }
+  //   } else if (event.which === 46) {
+  //     return false;
+  //   } else if (event.which >= 48 && event.which <= 57) {
+  //     return true;
+  //   } else if (event.which === 8 || event.which === 0 || event.which === 44) {
+  //     return true;
+  //   } else return false;
+  // };
 
   
   const selecionarTipoContrato = async (id) => {
@@ -493,7 +493,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtDanoaCosa}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -509,7 +508,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtDanoPer}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -525,7 +523,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtFinanzaCuan}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -541,7 +538,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtAsistenciaLegal}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -557,7 +553,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtApov}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -573,7 +568,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtMuerte}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -589,7 +583,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtInvalidez}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -605,7 +598,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtGastosMed}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -621,7 +613,6 @@ export const ModalTipoContrato = (props) => {
               }
               type="text"
               class="form-control text-right"
-              onChange={handleInputMontoChange}
               ref={txtGrua}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
