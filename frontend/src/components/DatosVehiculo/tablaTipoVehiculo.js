@@ -271,7 +271,13 @@ function TablaTipoVehiculo() {
                 ? x.tipoVehiculo_nombre
                     .toLowerCase()
                     .includes(target.value.toLowerCase())
-                : "")
+                : "") || (
+                x.contrato_nombre !== null
+                  ? x.contrato_nombre
+                      .toLowerCase()
+                      .includes(target.value.toLowerCase())
+                  : ""
+              )
             ) {
               return x;
             }
