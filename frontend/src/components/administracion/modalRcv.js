@@ -164,7 +164,6 @@ export const ModalRcv = (props) => {
 
   const [idContrato, setIdContrato] = useState();
   const [operacion, setOperacion] = useState(0);
-
   const [valorSeleccionado, setValorSeleccionado] = useState({
     contrato_nombre: "",
     estado_nombre: "Portuguesa",
@@ -280,7 +279,6 @@ export const ModalRcv = (props) => {
 
         let data = await response.json();
         setActivate(false);
-        console.log(data);
       } catch (error) {
         console.error(error);
         setMensaje({
@@ -522,7 +520,6 @@ export const ModalRcv = (props) => {
     //Contrato
     bodyF.append("fechaInicio", txtDesde.current.value);
     bodyF.append("fechaVencimiento", txtHasta.current.value);
-
     bodyF.append("tipoContrato", valorSeleccionado.contrato_nombre);
     bodyF.append("Estado", valorSeleccionado.estado_nombre);
     bodyF.append("Usuario", valorSeleccionado.usuario_usuario);
@@ -658,7 +655,6 @@ export const ModalRcv = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log(response[0]);
 
         if (response[0]) {
           txtDolar.current.value = response[0]["precio_monto"];
@@ -883,8 +879,13 @@ export const ModalRcv = (props) => {
   };
 
   const selecionarTipo = async () => {
-    let endpoint =
-      op.conexion + "/tipo_vehiculo/ConsultarTodos?Sucursal=" + idsucursal + '&Contrato' + tipoContrato;
+    let endpoint = ''
+    if (typeof tipoContrato === "object") {
+      endpoint = `${op.conexion}/tipo_vehiculo/ConsultarTodos?Sucursal=${idsucursal}&Contrato=${1}`;
+    } else {
+      endpoint = `${op.conexion}/tipo_vehiculo/ConsultarTodos?Sucursal=${idsucursal}&Contrato=${tipoContrato}`;
+    }
+      
     setActivate(true);
 
     //setLoading(false);
@@ -965,7 +966,6 @@ export const ModalRcv = (props) => {
     telefono,
     dir
   ) => {
-    console.log(nombre, apellido, cedula);
     cmbNacionalidad.current.value = nacionalidad + "-";
     txtCedula.current.value = cedula;
     txtApellido.current.value = apellido;
@@ -1187,9 +1187,6 @@ export const ModalRcv = (props) => {
   const [contrato, setContrato] = useState([]);
 
   const selecionarRegistros = async (id) => {
-    console.group("valor seleccionado 1");
-    console.log(valorSeleccionado);
-    console.groupEnd();
     let endpoint = op.conexion + "/poliza/ConsultarUno?ID=" + id;
     setActivate(true);
     // let bodyF = new FormData();
@@ -1216,10 +1213,6 @@ export const ModalRcv = (props) => {
           clase_nombre: response[0].clase_nombre,
           tipoVehiculo_nombre: response[0].tipoVehiculo_nombre,
         });
-
-        console.group("valor seleccionado 2");
-        console.log(valorSeleccionado);
-        console.groupEnd();
         // setValorSeleccionado({
         //   contrato_nombre:"BASICO",
         //   estado_nombre:'1',
@@ -1284,7 +1277,6 @@ export const ModalRcv = (props) => {
         txtCapTon.current.value = response[0].vehiculo_capTon;
       })
       .catch((error) => {
-        console.log(error);
         setMensaje({
           mostrar: true,
           titulo: "Notificación",
@@ -1294,9 +1286,6 @@ export const ModalRcv = (props) => {
       });
   };
 
-  console.group("ssssssssssss");
-  console.log(valorSeleccionado);
-  console.groupEnd();
 
   function validarIguales(e) {
     if (e == 1) {
@@ -1351,7 +1340,6 @@ export const ModalRcv = (props) => {
 
   const handleChange = (event, newValue) => {
     setSelectedContrato(newValue); // newValue contiene el objeto seleccionado
-    console.log(newValue.contrato_nombre);
     setValorSeleccionado({
       ...valorSeleccionado,
       contrato_nombre: newValue.contrato_nombre,
@@ -1359,17 +1347,14 @@ export const ModalRcv = (props) => {
   };
 
   const validarInput = (e) => {
-    console.log(e.target.name);
     let item = document.getElementById(e.target.name);
     if (
       !e.target.value ||
       (e.target.name === "ced" && e.target.value.length < 8)
     ) {
-      console.log("1");
       item.className -= " form-text fw-bold hidden ";
       item.className += " form-text fw-bold visible ";
     } else {
-      console.log("2");
 
       item.className -= " form-text fw-bold visible ";
       item.className += " form-text fw-bold hidden ";
@@ -1594,7 +1579,6 @@ export const ModalRcv = (props) => {
                         value={valorSeleccionado}
                         onChange={(event, newValue) => {
                           if (newValue) {
-                            console.log(newValue.contrato_nombre);
                             setValorSeleccionado({
                               ...valorSeleccionado,
                               contrato_nombre: newValue.contrato_nombre,
@@ -1912,7 +1896,6 @@ export const ModalRcv = (props) => {
                       value={valorSeleccionado}
                       onChange={(event, newValue) => {
                         if (newValue) {
-                          console.log(newValue.estado_nombre);
                           setValorSeleccionado({
                             ...valorSeleccionado,
                             estado_nombre: newValue.estado_nombre,
@@ -1939,7 +1922,6 @@ export const ModalRcv = (props) => {
                       value={valorSeleccionado}
                       onChange={(event, newValue) => {
                         if (newValue) {
-                          console.log(newValue.usuario_usuario);
                           setValorSeleccionado({
                             ...valorSeleccionado,
                             usuario_usuario: newValue.usuario_usuario,
@@ -2037,7 +2019,6 @@ export const ModalRcv = (props) => {
                         value={valorSeleccionado}
                         onChange={(event, newValue) => {
                           if (newValue) {
-                            console.log(newValue.sucursal_nombre);
                             setValorSeleccionado({
                               ...valorSeleccionado,
                               sucursal_nombre: newValue.sucursal_nombre,
