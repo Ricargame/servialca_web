@@ -30,7 +30,7 @@ if ($datos && count($datos) > 0) {
 $Pdf = new FPDF("L", "mm", "legal");
 $Pdf->AddPage("P");
 $Pdf->Image("./Img/rubro2.jpg", 49, 224, 36, 32);
-$Pdf->Image("./ImgQr/" . $datos[0]["poliza_qr"], 120, 240, 36, 32);
+// $Pdf->Image("./ImgQr/" . $datos[0]["poliza_qr"], 120, 240, 36, 32);
 $Pdf->SetFont("Arial", "", 12);
 $Pdf->SetTextColor(000);
 $Pdf->SetFillColor(255, 255, 255);
@@ -217,8 +217,13 @@ $Pdf->Cell(60, 70, "" . $datos[0]["cobertura_muerte"] + $datos[0]["cobertura_inv
 $Pdf->Ln(6);
 $Pdf->SetFont('Arial', '', 10);
 $Pdf->Cell(90, 70, "GRUA Y ESTACIONAMIENTO:");
-$Pdf->Cell(60, 70, "" . $datos[0]["grua"]);
-$Pdf->Cell(60, 70, "" . $datos[0]["cobertura_grua"]);
+$Pdf->Cell(60, 70, "" . $datos[0]["grua"] * 0.5 . ".00");
+$Pdf->Cell(60, 70, "" . $datos[0]["cobertura_grua"] * 0.5);
+$Pdf->Ln(6);
+$Pdf->SetFont('Arial', '', 10);
+$Pdf->Cell(90, 70, "SERVICIO LOCAL:");
+$Pdf->Cell(60, 70, "" . $datos[0]["grua"] * 0.5 . ".00");
+$Pdf->Cell(60, 70, "" . $datos[0]["cobertura_grua"] * 0.5);
 $Pdf->Ln(6);
 $Pdf->SetFont('Arial', 'B', 10);
 $Pdf->Cell(90, 70, "TOTAL GASTOS EXTRAS:");

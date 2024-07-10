@@ -376,9 +376,9 @@ function Inicio2() {
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
-    })
+    });
     selecionarRegistros(); // Cambiado a selectRecords
-  }
+  };
   const gestionarBanco = (op, id) => (e) => {
     e.preventDefault();
     setIdCliente(id);
@@ -395,8 +395,8 @@ function Inicio2() {
       setMostrar2(true);
       setIdCliente(id);
       setPoliza(id);
-    } else if (op === 6){
-      changeVip(id)
+    } else if (op === 6) {
+      changeVip(id);
     }
   };
   const gestionarRcv = (opcion) => (e) => {
@@ -455,7 +455,7 @@ function Inicio2() {
         })
       );
   };
-  
+
   return (
     <div className="col-md-12 mx-auto p-2">
       <GestionarPreguntas
@@ -558,7 +558,6 @@ function Inicio2() {
         style={{ margin: "auto" }}
       >
         <div className="row col-12 d-flex justify-content-between mb-2">
-        
           <input
             type="text"
             className=" col-md-3 mb-2 form-control form-control-sm rounded-pill"
@@ -621,7 +620,14 @@ function Inicio2() {
           <TableBody>
             {records &&
               recordsAfterPagingAndSorting().map((item, index) => (
-                <TableRow key={index} style={{ padding: "0" }}>
+                <TableRow
+                  key={index}
+                  style={{
+                    padding: "0",
+                    backgroundColor:
+                      item.vip == 0 ? "red" : "inherit",
+                  }}
+                >
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
@@ -698,10 +704,11 @@ function Inicio2() {
                       <i className="fa fa-sync"></i>{" "}
                     </button>
                     <button
-                      onClick={gestionarBanco(6,item.poliza_id)}
-                      className={`btn btn-sm mx-1 ${item.vip == 0 ? 'btn-danger' : 'btn-success' } rounded-circle`}
-                    >
-                    </button>
+                      onClick={gestionarBanco(6, item.poliza_id)}
+                      className={`btn btn-sm mx-1 ${
+                        item.vip == 0 ? "btn-danger" : "btn-success"
+                      } rounded-circle`}
+                    ></button>
                   </TableCell>
                 </TableRow>
               ))}

@@ -1051,3 +1051,1534 @@ Stack trace:
 #5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
 #6 {main}
   thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[15-Jun-2024 09:20:44 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:54 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:55 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:57 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:58 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:58 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:58 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:58 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:59 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:59 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:20:59 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:00 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:00 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:00 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:42 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:46 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:46 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:56 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:57 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:21:58 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:08 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:09 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:09 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:10 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:10 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:11 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:15 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:28 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:31 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:31 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:32 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:32 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:32 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:33 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:34 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:34 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:35 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:35 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:45 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:45 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:47 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:47 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:48 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009615-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(28): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(20): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:52 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:52 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:22:57 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:23:03 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:23:03 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:23:22 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 09:23:24 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/004143-02.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(12): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[15-Jun-2024 14:48:59 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:430
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(430): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(139): cls_poliza->Vencer()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarVencer()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 430
+[15-Jun-2024 15:03:18 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:430
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(430): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(139): cls_poliza->Vencer()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarVencer()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 430
+[15-Jun-2024 15:03:24 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:430
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(430): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(139): cls_poliza->Vencer()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarVencer()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 430
+[15-Jun-2024 15:04:50 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:430
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(430): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(139): cls_poliza->Vencer()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarVencer()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 430
+[15-Jun-2024 15:04:52 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:430
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(430): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(139): cls_poliza->Vencer()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarVencer()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 430
+[15-Jun-2024 15:05:36 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:430
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(430): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(139): cls_poliza->Vencer()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarVencer()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 430
+[15-Jun-2024 15:06:18 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:430
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(430): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(139): cls_poliza->Vencer()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarVencer()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 430
+[15-Jun-2024 15:06:22 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1525 Incorrect DATE value: '' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:430
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(430): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(139): cls_poliza->Vencer()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_poliza->ConsultarVencer()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 430
+[15-Jun-2024 21:38:58 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '? ORDER BY precio_id ASC' at line 4 in /home/servialc/public_html/servialca_web/backend/Models/cls_tipo_vehiculo.php:220
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_tipo_vehiculo.php(220): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_tipo_vehiculo.php(49): cls_tipo_vehiculo->GetAll()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_tipo_vehiculo->ConsultarTodos()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#5 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_tipo_vehiculo.php on line 220
+[16-Jun-2024 14:06:18 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 10
+[16-Jun-2024 14:06:18 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 11
+[16-Jun-2024 14:06:18 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 12
+[16-Jun-2024 16:34:42 America/Caracas] PHP Warning:  require(fpdf.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:34:42 America/Caracas] PHP Warning:  require(fpdf.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:34:42 America/Caracas] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php:2
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:36:07 America/Caracas] PHP Warning:  require(fpdf.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:36:07 America/Caracas] PHP Warning:  require(fpdf.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:36:07 America/Caracas] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php:2
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:41:11 America/Caracas] PHP Warning:  require(fpdf.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:41:11 America/Caracas] PHP Warning:  require(fpdf.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:41:11 America/Caracas] PHP Fatal error:  Uncaught Error: Failed opening required 'fpdf.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php:2
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 2
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 32
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 32
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 34
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 34
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 38
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 38
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 42
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 42
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 44
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 44
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 46
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 46
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 50
+[16-Jun-2024 16:42:07 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 50
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 32
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 32
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 34
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 34
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 38
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 38
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 42
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 42
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 44
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 44
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 46
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 46
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 50
+[16-Jun-2024 16:43:06 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 50
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 32
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 32
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 34
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 34
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 38
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 38
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 42
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 42
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 44
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 44
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 46
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 46
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Undefined variable $data in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 50
+[16-Jun-2024 16:43:20 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 50
+[16-Jun-2024 17:10:55 America/Caracas] PHP Warning:  require(RoundedRect.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 17:10:55 America/Caracas] PHP Warning:  require(RoundedRect.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 17:10:55 America/Caracas] PHP Fatal error:  Uncaught Error: Failed opening required 'RoundedRect.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php:3
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 17:10:56 America/Caracas] PHP Warning:  require(RoundedRect.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 17:10:56 America/Caracas] PHP Warning:  require(RoundedRect.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 17:10:56 America/Caracas] PHP Fatal error:  Uncaught Error: Failed opening required 'RoundedRect.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php:3
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 17:11:37 America/Caracas] PHP Warning:  require(RoundedRect.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 17:11:37 America/Caracas] PHP Warning:  require(RoundedRect.php): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 17:11:37 America/Caracas] PHP Fatal error:  Uncaught Error: Failed opening required 'RoundedRect.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php:3
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php on line 3
+[16-Jun-2024 21:52:20 America/Caracas] PHP Warning:  fopen(path/to/icon.png): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 1274
+[16-Jun-2024 21:52:20 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: path/to/icon.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(73): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(93): PDF->CrearEstructura()
+#4 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#5 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#7 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#8 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[16-Jun-2024 22:08:13 America/Caracas] PHP Warning:  fopen(path/to/icon.png): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 1274
+[16-Jun-2024 22:08:13 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: path/to/icon.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(73): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(114): PDF->CrearEstructura()
+#4 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#5 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#7 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#8 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[16-Jun-2024 22:08:16 America/Caracas] PHP Warning:  fopen(path/to/icon.png): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 1274
+[16-Jun-2024 22:08:16 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: path/to/icon.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(73): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(114): PDF->CrearEstructura()
+#4 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#5 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#7 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#8 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[16-Jun-2024 22:21:29 America/Caracas] PHP Warning:  fopen(path/to/icon.png): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 1274
+[16-Jun-2024 22:21:29 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: path/to/icon.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(73): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(114): PDF->CrearEstructura()
+#4 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#5 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#7 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#8 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[16-Jun-2024 22:43:40 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009642-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(8): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteGrua()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[16-Jun-2024 22:43:42 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: ./ImgQr/009642-00.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php(33): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(8): include('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteGrua()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[16-Jun-2024 22:43:51 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1435
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1435): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php(9): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(8): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteGrua()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1435
+[16-Jun-2024 22:44:06 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1435
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1435): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php(9): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(8): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteGrua()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1435
+[16-Jun-2024 22:44:08 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1435
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1435): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php(9): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(8): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteGrua()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1435
+[16-Jun-2024 22:55:30 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function Cell() on null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php:222
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(8): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteGrua()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php on line 222
+[16-Jun-2024 22:55:32 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function Cell() on null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php:222
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(8): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteGrua()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php on line 222
+[16-Jun-2024 22:55:54 America/Caracas] PHP Fatal error:  Uncaught Error: Call to a member function Cell() on null in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php:222
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(8): include()
+#1 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteGrua()
+#2 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#4 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGrua.php on line 222
+[17-Jun-2024 11:34:29 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:34:47 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:35:51 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:36:28 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:36:51 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:36:55 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:37:17 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:37:25 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:37:48 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[17-Jun-2024 11:39:00 America/Caracas] PHP Parse error:  syntax error, unexpected token "/" in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 305
+[18-Jun-2024 00:28:29 America/Caracas] PHP Warning:  fopen(path/to/icon.png): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 1274
+[18-Jun-2024 00:28:29 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: path/to/icon.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(51): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(86): PDF->CrearEstructura()
+#4 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#5 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#7 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#8 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[18-Jun-2024 00:28:30 America/Caracas] PHP Warning:  fopen(path/to/icon.png): Failed to open stream: No such file or directory in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 1274
+[18-Jun-2024 00:28:30 America/Caracas] PHP Fatal error:  Uncaught Exception: FPDF error: Can't open image file: path/to/icon.png in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:267
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(1276): FPDF->Error()
+#1 /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php(890): FPDF->_parsepng()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(51): FPDF->Image()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteBauche.php(86): PDF->CrearEstructura()
+#4 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(5): include('/home/servialc/...')
+#5 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteBauche()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#7 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#8 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php on line 267
+[20-Jun-2024 07:09:52 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2072
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2072): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(39): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2072
+[20-Jun-2024 07:09:54 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2072
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2072): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(39): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2072
+[20-Jun-2024 07:09:56 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2072
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2072): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(39): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2072
+[20-Jun-2024 09:29:32 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_grafica.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): cls_grafica->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:29:32 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_grafica.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): cls_grafica->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:33:58 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGeneral.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:35:03 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGeneral.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:35:07 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGeneral.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:35:08 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGeneral.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:36:06 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGeneral.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:36:11 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGeneral.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:36:15 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGeneral.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:44:43 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteGeneral.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(74): require_once('/home/servialc/...')
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:51:32 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_panel.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_panel.php(8): cls_panel->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_panel->__construct()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[20-Jun-2024 09:53:35 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[25-Jun-2024 08:28:34 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 08:29:23 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 08:29:39 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 08:38:59 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 08:39:14 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 08:39:16 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 08:39:22 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 11:25:15 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 11:25:25 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 11:26:14 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 11:26:17 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[25-Jun-2024 14:00:52 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2085
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2085): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(39): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2085
+[25-Jun-2024 14:02:04 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 7 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:2085
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(2085): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteSelect.php(26): cls_poliza->GetAllSelet()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(39): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteSelect()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 2085
+[26-Jun-2024 09:10:40 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[26-Jun-2024 09:11:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_claseVehiculo.php(10): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_claseVehiculo.php(8): cls_claseVehiculo->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_claseVehiculo->__construct()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[26-Jun-2024 09:11:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_tipo_contrato.php(12): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_tipo_contrato.php(8): cls_tipo_contrato->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_tipo_contrato->__construct()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[26-Jun-2024 09:11:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_estado.php(8): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): cls_estado->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[26-Jun-2024 09:11:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_Auth.php(20): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_Auth.php(8): cls_Auth->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_Auth->__construct()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[26-Jun-2024 09:11:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_sucursal.php(10): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_sucursal.php(8): cls_sucursal->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_sucursal->__construct()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[26-Jun-2024 09:11:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_transporte.php(11): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_transporte.php(8): cls_transporte->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_transporte->__construct()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[26-Jun-2024 09:11:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_usoVehiculo.php(10): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_usoVehiculo.php(8): cls_usoVehiculo->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_usoVehiculo->__construct()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[26-Jun-2024 09:11:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[08004] [1040] Too many connections in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php:34
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(34): PDO->__construct()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(29): cls_db->conexion()
+#2 /home/servialc/public_html/servialca_web/backend/Models/cls_tipo_vehiculo.php(12): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/Routes/Con_tipo_vehiculo.php(8): cls_tipo_vehiculo->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_tipo_vehiculo->__construct()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#6 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#7 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_db.php on line 34
+[27-Jun-2024 09:13:56 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[27-Jun-2024 09:15:01 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[27-Jun-2024 10:24:01 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[27-Jun-2024 19:07:25 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[28-Jun-2024 14:09:20 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[28-Jun-2024 14:10:24 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[28-Jun-2024 14:13:37 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[28-Jun-2024 14:15:07 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[30-Jun-2024 08:48:53 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteWeb.php(8): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(19): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteWeb()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[30-Jun-2024 08:48:59 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteWeb.php(8): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(19): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteWeb()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[30-Jun-2024 08:49:05 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteWeb.php(8): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(19): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteWeb()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[30-Jun-2024 08:49:12 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteWeb.php(8): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(19): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteWeb()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[30-Jun-2024 08:49:16 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteWeb.php(8): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(19): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteWeb()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[30-Jun-2024 08:49:21 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(9): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(15): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[30-Jun-2024 08:49:23 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'where clause' in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(8): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(23): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[30-Jun-2024 17:34:48 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(8): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(23): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[30-Jun-2024 17:34:48 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(9): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(15): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[05-Jul-2024 15:20:40 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 10
+[05-Jul-2024 15:20:40 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 11
+[05-Jul-2024 15:20:40 America/Caracas] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/servialc/public_html/servialca_web/backend/FPDF/fpdf.php:1013) in /home/servialc/public_html/servialca_web/backend/index.php on line 12
+[05-Jul-2024 16:40:25 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteRCV.php(9): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(15): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteRCV()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[05-Jul-2024 16:40:31 America/Caracas] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 19 in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php:1424
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php(1424): PDOStatement->execute()
+#1 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporteCarnet.php(8): cls_poliza->GetOne()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_reporte.php(23): include('/home/servialc/...')
+#3 /home/servialc/public_html/servialca_web/backend/index.php(86): Con_reporte->reporteCarnet()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/Models/cls_poliza.php on line 1424
+[09-Jul-2024 10:26:18 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[09-Jul-2024 14:47:52 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[09-Jul-2024 17:39:22 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[09-Jul-2024 17:39:26 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[09-Jul-2024 17:39:29 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172
+[09-Jul-2024 17:39:32 America/Caracas] PHP Fatal error:  Uncaught Firebase\JWT\ExpiredException: Expired token in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php:172
+Stack trace:
+#0 /home/servialc/public_html/servialca_web/backend/libs/jwt.php(40): Firebase\JWT\JWT::decode()
+#1 /home/servialc/public_html/servialca_web/backend/Models/cls_db.php(16): decodificarToken()
+#2 /home/servialc/public_html/servialca_web/backend/Routes/Con_poliza.php(9): cls_db->__construct()
+#3 /home/servialc/public_html/servialca_web/backend/index.php(77): Con_poliza->__construct()
+#4 /home/servialc/public_html/servialca_web/backend/index.php(39): Api->GetController()
+#5 /home/servialc/public_html/servialca_web/backend/index.php(122): Api->__construct()
+#6 {main}
+  thrown in /home/servialc/public_html/servialca_web/backend/vendor/firebase/php-jwt/src/JWT.php on line 172

@@ -302,30 +302,6 @@ abstract class cls_poliza extends cls_db
 		if (empty($this->fechaInicio)) {
 			$this->fechaInicio = date("Y-m-d");
 		}
-		if (isset($this->fechaInicio) && isset($this->fechaVencimiento)) {
-			$result = $this->GetOne($this->id);
-			$fechaActual = date("Y-m-d H:i:s");
-
-			if (isset($result[0]["poliza_fechaVencimiento"])) {
-				$fechaVencimiento = $result[0]["poliza_fechaVencimiento"];
-
-				// Extraer el año de la fecha actual y la fecha de vencimiento
-				$anioActual = date("Y");
-				$anioVencimiento = date("Y", strtotime($fechaVencimiento));
-
-				// Comparar los años
-				if ($anioVencimiento > $anioActual) {
-					return [
-						"data" => [
-							"res" => "Este contrato aun no esta vencido",
-							"code" => 400
-						],
-						"code" => 400
-					];
-				}
-			}
-		}
-
 
 		$this->Security();
 		$this->SearchByUsuario();
@@ -803,16 +779,29 @@ abstract class cls_poliza extends cls_db
 					'code' => 400
 				];
 			}
+			$result = $this->RegistraCobertura();
+			// SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
+			if (!$result) {
+				$this->db->rollback();
+				return [
+					'data' => [
+						'res' => "Ocurrión un error en la transacción"
+					],
+					'code' => 400
+				];
+			}
 			$result = $this->db->prepare("UPDATE poliza SET 
 			tipoContrato_id = ?,
 			usuario_id = ?,
-			sucursal_id = ?
+			sucursal_id = ?,
+			cobertura_id = ?
 			WHERE poliza_id = ?
 			");
 			$result->execute([
 				$this->tipoContrato,
 				$this->usuario,
 				$this->sucursal,
+				$this->cobertura,
 				$this->id
 			]);
 			if ($result) {
