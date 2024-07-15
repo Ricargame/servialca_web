@@ -1,25 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  TableBody,
-  TableRow,
-  TableCell,
-  InputAdornment,
-} from "@material-ui/core";
 import { Loader, Dimmer } from "semantic-ui-react";
-import { Search } from "@material-ui/icons";
-import axios from "axios";
-/* import { Dona, Torta } from '../graficos/graficos'; */
-/* import CartasAgentes from './cartasAgentes'; */
-import { Mensaje, MensajeSiNo } from "../mensajes";
-/* import { GestionarExpendedor } from './modalExpendedor'; */
-import useTable from "../useTable";
-import { formatMoneda } from "../../util/varios";
-import moment from "moment";
+
 
 function Reporte() {
   var op = require("../../modulos/datos");
-  let token = localStorage.getItem("jwtToken");
-  const user_id = JSON.parse(localStorage.getItem("user_id"));
   const username = JSON.parse(localStorage.getItem("username"));
 
   const txtDesde = useRef();
@@ -27,11 +11,19 @@ function Reporte() {
 
   const generarReporte = async () => {
     window.open(
-      `${op.conexion}/reporteVendedores?Nombre=${username}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
+      `${op.conexion}/reporteVendedores?Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
     );
   };
+  const [desde, setDesde] = useState(new Date().toISOString().split('T')[0]);
 
-  useEffect(() => {});
+  const [hasta, setHasta] = useState(new Date().toISOString().split('T')[0]);
+  useEffect(() => {
+
+    txtDesde.current.value = desde;
+
+    txtHasta.current.value = hasta;
+
+  }, [desde, hasta]);
 
   return (
     <div style={{ height: "100%", width: "100%" }}>

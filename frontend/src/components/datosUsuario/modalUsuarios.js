@@ -1001,7 +1001,7 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">
-                Lista de vendedores semanal
+                Reporte de usuarios
               </label>
             </div>
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
