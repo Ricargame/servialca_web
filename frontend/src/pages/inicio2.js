@@ -177,7 +177,7 @@ function Inicio2() {
   const [mostrar6, setMostrar6] = useState(false);
   const [mostrar7, setMostrar7] = useState(false);
   const [opPreguntas, setOpPreguntas] = useState(0);
-
+  const [cantidad, setCantidad] = useState(0);
   const [idCliente, setIdCliente] = useState();
 
   const [filterFn, setFilterFn] = useState({
@@ -361,6 +361,7 @@ function Inicio2() {
     Desde.current.value = fechaActualFormateada;
     Hasta.current.value = fechaDesdeFormateada;
     selecionarRegistros();
+    cantidadContrato();
   }, []);
 
   const regPre = () => {
@@ -372,12 +373,12 @@ function Inicio2() {
     setActivate(true);
 
     let bodyF = new FormData();
-    bodyF.append("id", id); // Cambiado a minúsculas
+    bodyF.append("id", id);
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
     });
-    selecionarRegistros(); // Cambiado a selectRecords
+    selecionarRegistros();
   };
   const gestionarBanco = (op, id) => (e) => {
     e.preventDefault();
@@ -456,6 +457,27 @@ function Inicio2() {
       );
   };
 
+  const cantidadContrato = async () => {
+    let endpoint = op.conexion + "/ladilla/cantidad";
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setCantidad(response.max_poliza_id);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
+
   return (
     <div className="col-md-12 mx-auto p-2">
       <GestionarPreguntas
@@ -518,7 +540,11 @@ function Inicio2() {
 
       <div className="col-12 py-2">
         <div className="col-12 row d-flex justify-content-between py-2 mt-5 mb-3">
-          <h2 className=" col-5 text-light">RCV QUE ESTAN POR VENCER</h2>
+          <h2 className=" col-3 text-light">RCV QUE ESTAN POR VENCER</h2>
+          <h2 className="col-3 text-light">
+            Cantidad de contratos:{" "}
+            <span style={{ color: "red" }}>{cantidad}</span>
+          </h2>{" "}
           <div class="input-group input-group-sm col-md-4 my-auto">
             <span
               class="input-group-text bg-transparent border-0 fw-bold text-light"
@@ -625,7 +651,11 @@ function Inicio2() {
                   style={{
                     padding: "0",
                     backgroundColor:
-                      item.vip == 0 ? "red" : "inherit",
+                      item.vip == 1
+                        ? "red"
+                        : item.vip == 2
+                        ? "green"
+                        : "inherit",
                   }}
                 >
                   <TableCell
@@ -706,7 +736,11 @@ function Inicio2() {
                     <button
                       onClick={gestionarBanco(6, item.poliza_id)}
                       className={`btn btn-sm mx-1 ${
-                        item.vip == 0 ? "btn-danger" : "btn-success"
+                        item.vip == 1
+                          ? "btn-danger"
+                          : item.vip == 2
+                          ? "btn-success"
+                          : "btn-warning"
                       } rounded-circle`}
                     ></button>
                   </TableCell>
