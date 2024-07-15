@@ -601,7 +601,7 @@ function MenuImpuestoPP(props) {
                       className=" list-group-item list-group-item-action text-light bg-transparent py-2 px-3"
                     >
                       <i className="fas fa-fw me-1 fa-print " />
-                      <span>Lista de vendedores semanal</span>
+                      <span>Reporte de Usuarios</span>
                     </a>
                   )}
                 {permisos &&
