@@ -1,0 +1,8 @@
+div#slider figure img {
+    overflow: hidden;
+    margin-top: 88px;
+    height: calc(100vh - 200px) !important;
+}
+.hold-transition {
+    overflow: hidden;
+}

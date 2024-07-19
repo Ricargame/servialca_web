@@ -9,7 +9,7 @@ import { Mensaje } from "../components/mensajes";
 import logo from "../imagenes/logo1.png";
 import banner1 from "../imagenes/banner1.jpeg";
 import Fade from "react-reveal/Fade";
-
+import "./style.css";
 function PaginaWeb(props) {
   const [loading, setLoading] = useState(false);
 
@@ -194,7 +194,7 @@ function PaginaWeb(props) {
             id="navbarSupportedContent"
           >
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
+              {/* <li class="nav-item">
                 <a class="nav-link" href="#home">
                   <i class="fas fa-home"></i> Casa
                 </a>
@@ -213,7 +213,7 @@ function PaginaWeb(props) {
                 <a class="nav-link" href="/galeria">
                   <i class="fas fa-camera"></i> Galeria
                 </a>
-              </li>
+              </li> */}
               <li class="nav-item">
                 <a class="nav-link" href="/login">
                   <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
@@ -237,203 +237,9 @@ function PaginaWeb(props) {
 
       <div id="slider">
         <figure>
-          <img src={op.conexion + "/ImgPanel/" + records.carrusel_1} alt="" />
-        </figure>
-        <figure>
-          <img src={op.conexion + "/ImgPanel/" + records.carrusel_2} alt="" />
-        </figure>
-        <figure>
-          <img src={op.conexion + "/ImgPanel/" + records.carrusel_3} alt="" />
+          <img src="../"/>
         </figure>
       </div>
-
-      <div class="col-md-12 mx-auto" id="home">
-        <Fade left>
-          <div class="col-md-12 mx-auto" id="home">
-            <div class="col-md-12 mx-auto row py-5" id="homediv">
-              <div class="col-md-12 mx-auto text-center mt-5 py-4">
-                <h1 class="fw-bold text-center text-servial">
-                  - <i class="fas fa-home"></i> Casa -
-                </h1>
-              </div>
-
-              <div class="col-md-5 mx-auto">
-                <img
-                  className="img-fluid"
-                  src={op.conexion + "/ImgPanel/" + records.img_home}
-                  alt=""
-                />
-              </div>
-              <div class="col-md-7 mx-auto text-center">{values.text_home}</div>
-            </div>
-          </div>
-        </Fade>
-        <Fade right>
-          <div class="col-md-12 mx-auto px-0">
-            <img
-              className="img-fluid"
-              src={op.conexion + "/ImgPanel/" + records.img_banner}
-              style={{ width: "100%" }}
-              alt=""
-            />
-          </div>
-        </Fade>
-        <Fade left>
-          <div class="col-md-12 mx-auto py-5" id="quienes">
-            <div class="row col-md-12 mx-auto" id="quienesdiv">
-              <div class="col-md-12 mx-auto row py-5">
-                <div class="col-md-12 mx-auto text-center">
-                  <h1 class="fw-bold text-center text-servial">
-                    - <i class="fas fa-id-card-alt"></i> Quienes Somos -
-                  </h1>
-                </div>
-              </div>
-              <div class="col-md-12 mx-auto row py-5">
-                <div class="col-md-6 mx-auto text-center">
-                  {values.text_about}
-                </div>
-
-                <div class="col-md-6 mx-auto py-4">
-                  <img
-                    className="img-fluid"
-                    src={op.conexion + "/ImgPanel/" + records.img_about}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Fade>
-        <Fade right>
-          <div class="col-md-12 py-5" id="contact">
-            <div class="row  col-md-12 mt-5 mb-5 " id="contactanos">
-              <div class="col-md-12 mx-auto row py-5">
-                <div class="col-md-12 mx-auto text-center">
-                  <h1 class="fw-bold text-center text-servial">
-                    - <i class="fas fa-address-book"></i> Contactanos -
-                  </h1>
-                </div>
-              </div>
-              <div class="col-md-12 mx-auto row py-5">
-                <div class="col-md-4 mx-auto py-4">
-                  <form class="card shadow p-4 rounded border">
-                    <div class="mb-2">
-                      <label for="exampleInputEmail1" class="form-label">
-                        Tu Correo:
-                      </label>
-                      <input
-                        type="email"
-                        class="form-control form-control-sm bg-transparent rounded-pill"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                      />
-                      <div id="emailHelp" class="form-text">
-                        Ingresa tu correo para poder comunicarnos contigo,
-                      </div>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">
-                        Mensaje
-                      </label>
-                      <textarea
-                        type="textarea"
-                        class="form-control"
-                        id="exampleInputPassword1"
-                      ></textarea>
-                    </div>
-
-                    <button
-                      type="submit"
-                      class="btn btn-primary btn-sm rounded-pill"
-                    >
-                      Enviar Mensaje
-                    </button>
-                  </form>
-                </div>
-                <div class="col-md-5 mx-auto py-4">
-                  <ul class="fa-ul">
-                    <li class="mb-3">
-                      <h5 class="fa-li">
-                        <i class="fas fa-home"></i>
-                      </h5>
-                      <h5 class="ms-2"> {values.text_ubicacion}</h5>
-                    </li>
-                    <li class="mb-3">
-                      <h5 class="fa-li">
-                        <i class="fas fa-envelope"></i>
-                      </h5>
-                      <h5 class="ms-2"> {values.text_correo}</h5>
-                    </li>
-                    <li class="mb-3">
-                      <h5 class="fa-li">
-                        <i class="fas fa-phone"></i>
-                      </h5>
-                      <h5 class="ms-2"> {values.text_telefono}</h5>
-                    </li>
-                    <li class="mb-3">
-                      <h5 class="fa-li">
-                        <i class="fas fa-print"></i>
-                      </h5>
-                      <h5 class="ms-2"> {values.text_fax}</h5>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Fade>
-        <Fade left>
-          <div class="row  col-md-12 mt-5 mb-5" id="misionvision">
-            <div class="col-md-12 mx-auto row py-5">
-              <div class="col-md-6 mx-auto py-4">
-                <div class="col-md-12 mx-auto text-center row py-5">
-                  <div class="col-md-12 mx-auto text-center">
-                    <h1 class="fw-bold text-center text-servial">- Vision -</h1>
-                  </div>
-
-                  <h5 class="ms-2 mt-3"> {values.text_vision}</h5>
-                </div>
-              </div>
-              <div class="col-md-6 mx-auto py-4">
-                <div class="col-md-12 mx-auto text-center row py-5">
-                  <div class="col-md-12 mx-auto text-center">
-                    <h1 class="fw-bold text-center text-servial">- Mision -</h1>
-                  </div>
-
-                  <h5 class="ms-2 mt-3"> {values.text_mision}</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Fade>
-        <div class="col-md-12 mx-auto px-0 fixed-bottom">
-          {/* <div class="slider2">
-            <div class="slide-track d-flex justify-content-end">
-              <div class="slide text-left">
-                <span>La pagina Servialca rcv se enceuntra en desarrollo</span>
-              </div>
-            </div>
-          </div> */}
-        </div>
-      </div>
-      <div class="col-md-12 mx-auto px-0 fixed-bottom">
-        <div class="slider2">
-          <div class="slide-track d-flex justify-content-end">
-            <div class="slide text-left">
-              <span>{values.text_fax}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a
-        href="https://api.whatsapp.com/send/?phone=4126544855&text=Hola!+Estoy+interesado+en+tu+servicio&type=phone_number&app_absent=0"
-        class="btn-wsp"
-        target="_blank"
-        title="Contactar por WhatsApp"
-      >
-        <i class="fab fa-whatsapp"></i>
-      </a>
-
       <footer class="text-center text-white bg-servial mb-3">
         <div class="container p-4 pb-0">
           <section class="mb-4">
@@ -485,24 +291,19 @@ function PaginaWeb(props) {
               <i class="fab fa-github"></i>
             </a>
           </section>
-        </div>
-
-        <div
-          class="text-center py-5"
-          style={{ backgroundColor: " rgba(0, 0, 0, 0.2)" }}
-        >
-          © 2020 Copyright:
-          <a
-            class="text-white"
-            href="https://servialcarcv.com/"
-            target="_blank"
-          >
-            Servialcarcv.com
-          </a>
+          <div>
+            © 2020 Copyright:
+            <a
+              class="text-white"
+              href="https://servialcarcv.com/"
+              target="_blank"
+            >
+              Servialcarcv.com
+            </a>
+          </div>
         </div>
       </footer>
     </div>
   );
 }
-
 export default PaginaWeb;
