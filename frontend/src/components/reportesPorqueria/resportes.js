@@ -5,11 +5,16 @@ import { Loader, Dimmer } from "semantic-ui-react";
 function Reporte() {
   var op = require("../../modulos/datos");
   const username = JSON.parse(localStorage.getItem("username"));
-
+  const idUser = JSON.parse(localStorage.getItem("user_id"));
   const txtDesde = useRef();
   const txtHasta = useRef();
 
   const generarReporte = async () => {
+    if (idUser !== 57) {
+      window.open(
+        `${op.conexion}/reporteVendedoresUno?Nombre=${username}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
+      );
+    }
     window.open(
       `${op.conexion}/reporteVendedores?Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
     );

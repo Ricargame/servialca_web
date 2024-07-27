@@ -109,14 +109,14 @@ function App(props) {
       {pathname === "/" || pathname === "/galeria" ? (
         <Router>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={PaginaWeb} />
           <Route exact path="/galeria" component={Login} />
         </Router>
       ) : (
         <AuthProvider>
           <Router>
             <Route exact path="/login" component={Login} />
-            <Route exact path="/" component={Login} />
+            <Route exact path="/" component={PaginaWeb} />
             <Route exact path="/galeria" component={Login} />
 
             {pathname !== "/" && pathname !== "/login" && (

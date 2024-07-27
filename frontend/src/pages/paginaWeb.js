@@ -59,11 +59,11 @@ export default function PaginaWeb() {
           </div>
         </div>
       </nav>
-      <div className="container-fluid mt-5 pt-5">
+      <div id="slider" className="container-fluid mt-5 pt-5">
         <figure className="w-100">
           <img
             src={banner2}
-            style={{ width: "100%", height: "80vh", marginLeft: "-40px" }}
+            style={{ width: "100%", height: "calc(100vh - 207px)"}}
             className="img-fluid"
           />
         </figure>
