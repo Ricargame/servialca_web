@@ -9,16 +9,17 @@ function Reporte() {
   const txtDesde = useRef();
   const txtHasta = useRef();
 
-  const generarReporte = async () => {
+  function generarReporte (){
     if (idUser == 57) {
       window.open(
         `${op.conexion}/reporteVendedores?Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
       );
+    } else {
+      window.open(
+        `${op.conexion}/reporteVendedoresUno?Nombre=${username}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
+      )
     }
-    window.open(
-      `${op.conexion}/reporteVendedoresUno?Nombre=${username}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
-    );
-  };
+  }
   const [desde, setDesde] = useState(new Date().toISOString().split('T')[0]);
 
   const [hasta, setHasta] = useState(new Date().toISOString().split('T')[0]);
