@@ -8,7 +8,7 @@ import md5 from "md5";
 import { Mensaje } from "../components/mensajes";
 import { GestionarPreguntas } from "../components/seguridad/preguntasSeguridad";
 import { GestionarClave } from "../components/seguridad/cambiarClavePersonal";
-
+import bg2 from "../imagenes/bg2.jpg";
 function Login(props) {
   const [loading, setLoading] = useState(false);
   const img_login = useRef();
@@ -337,17 +337,10 @@ function Login(props) {
               style={{
                 height: "100vh",
                 width: "100%",
-                backgroundImage:
-                  "url('" +
-                  op.conexion +
-                  "/ImgPanel/" +
-                  records.img_login +
-                  "')",
+                backgroundImage: `url(${bg2})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
               }}
-              ref={img_login}
-              name="img_login"
             />
           </div>
           <div class="col-md-8 col-lg-6">
@@ -388,7 +381,7 @@ function Login(props) {
                           value={values.password}
                           onChange={onChange}
                           maxLength={20}
-                          style={{ padingRight: "2.5rem" }} 
+                          style={{ padingRight: "2.5rem" }}
                         />
                         <span
                           onClick={changeIcon}
@@ -442,11 +435,11 @@ function Login(props) {
                             <h6>Recuperar Contraseña</h6>
                           </a>
                         </div>
-                        <div class="text-center">
+                        {/* <div class="text-center">
                           <a class="small" type="button" href="/">
                             <h6>Salir al Inicio</h6>
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                     </form>
                   </div>
