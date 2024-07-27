@@ -10,13 +10,13 @@ function Reporte() {
   const txtHasta = useRef();
 
   const generarReporte = async () => {
-    if (idUser != 57) {
+    if (idUser == 57) {
       window.open(
-        `${op.conexion}/reporteVendedoresUno?Nombre=${username}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
+        `${op.conexion}/reporteVendedores?Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
       );
     }
     window.open(
-      `${op.conexion}/reporteVendedores?Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
+      `${op.conexion}/reporteVendedoresUno?Nombre=${username}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
     );
   };
   const [desde, setDesde] = useState(new Date().toISOString().split('T')[0]);
