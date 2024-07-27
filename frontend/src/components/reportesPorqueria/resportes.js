@@ -10,7 +10,7 @@ function Reporte() {
   const txtHasta = useRef();
 
   const generarReporte = async () => {
-    if (idUser !== 57) {
+    if (idUser != 57) {
       window.open(
         `${op.conexion}/reporteVendedoresUno?Nombre=${username}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
       );
