@@ -337,7 +337,12 @@ function Login(props) {
               style={{
                 height: "100vh",
                 width: "100%",
-                backgroundImage: `url(${bg2})`,
+                backgroundImage:
+                  "url('" +
+                  op.conexion +
+                  "/ImgPanel/" +
+                  records.img_login +
+                  "')",
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
               }}
