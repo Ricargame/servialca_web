@@ -1798,24 +1798,6 @@ export const ModalRcv = (props) => {
                     Debe ingresar caracteres númericos con una longitud(8-9).
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="input-group input-group-sm mb-2">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">
-                      Correo
-                    </span>
-                    <input
-                      type="text"
-                      class="form-control"
-                      maxLength={30}
-                      ref={txtCorreo}
-                      aria-label="Sizing example input"
-                      aria-describedby="inputGroup-sizing-sm"
-                      onChange={(e) =>
-                        (e.target.value = e.target.value.toUpperCase())
-                      }
-                    />
-                  </div>
-                </div>
                 <div class="col-md-12">
                   <div class="input-group input-group-sm mb-2">
                     <span class="input-group-text" id="inputGroup-sizing-sm">

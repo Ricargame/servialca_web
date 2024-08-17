@@ -12,12 +12,6 @@ import axios from "axios";
 /* import CartasAgentes from './cartasAgentes'; */
 import { Mensaje, MensajeSiNo } from "../mensajes";
 /* import { GestionarExpendedor } from './modalExpendedor'; */
-import useTable from "../useTable";
-
-import { formatMoneda } from "../../util/varios";
-
-import moment from "moment";
-
 function TablaReportes() {
   var op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
@@ -127,6 +121,11 @@ function TablaReportes() {
 
   const generarReporte = async (e) => {
     e.preventDefault();
+    if (cmbTipo.current.value = 3) {
+      window.open(
+        `${op.conexion}/reporteNuevo`
+      );
+    }
     if (cmbDato.current.value != "" && cmbDato.current.value != null) {
       window.open(
         `${op.conexion}/reporteGeneral?Sucursal=${cmbDato.current.value}Motivo=${cmbTipo.current.value}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
@@ -355,6 +354,7 @@ function TablaReportes() {
                     <option value="1">Ingresos</option>
                     <option value="0">Egresos</option>
                     <option value="2">Ingreso y Egreso</option>
+                    <option value="3">Nuevo Formato</option>
                   </select>
                   {
                     <select

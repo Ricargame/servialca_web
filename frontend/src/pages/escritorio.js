@@ -264,7 +264,7 @@ function MenuImpuestoPP(props) {
                   {idUser == 57 && (
                     <>
                       <div className="accordion-item px-0">
-                        <h2 className="accordion-header" id="heading3">
+                        {/* <h2 className="accordion-header" id="heading3">
                           <button
                             className="accordion-button text-light"
                             type="button"
@@ -274,9 +274,9 @@ function MenuImpuestoPP(props) {
                             aria-controls="collapse10"
                           >
                             <i className="fas fa-robot  fa-fw me-1"></i>
-                            <span>Bot</span>
+                            <span>Nuevo Reporte</span>
                           </button>
-                        </h2>
+                        </h2> */}
                         <div
                           id="collapse10"
                           className="accordion-collapse collapse list-group-item-action"
@@ -369,7 +369,7 @@ function MenuImpuestoPP(props) {
                             <span>Listado de Morosos</span>
                           </a>
                         )} */}
-                        {permisos &&
+                        {/* {permisos &&
                           permisos.length >= 3 &&
                           permisos.substring(3, 4) === "1" && (
                             <a
@@ -379,7 +379,7 @@ function MenuImpuestoPP(props) {
                               <i class="fas fas-fw me-1 fa-file-signature"></i>
                               <span>Documentos</span>
                             </a>
-                          )}
+                          )} */}
 
                         {/* <a
                           href="/licencias"
@@ -388,7 +388,7 @@ function MenuImpuestoPP(props) {
                           <i class="fas fas-fw me-1 fa-clipboard-list"></i>
                           <span>Licencias</span>
                         </a> */}
-                        {permisos &&
+                        {/* {permisos &&
                           permisos.length >= 3 &&
                           permisos.substring(4, 5) === "1" && (
                             <a
@@ -398,7 +398,7 @@ function MenuImpuestoPP(props) {
                               <i class="fab fa-rocketchat fas-fw me-1"></i>
                               <span>Chats</span>
                             </a>
-                          )}
+                          )} */}
                       </div>
                     </div>
                   </div>
