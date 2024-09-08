@@ -30,6 +30,7 @@ import TablaTipoVehiculoBocono from "../components/DatosVehiculo/tablaTipoVehicu
 import TablaLicencia from "../components/licencia/tablaLicencia";
 import TablaDocumento from "../components/administracion/tablaDocumento";
 import TablaGastos from "../components/gastosPersonales/tablaGastos";
+import TablaInventario from "../components/inventario/tablaInventario";
 import Panel from "./panel";
 import TablaPrecio from "../components/listaPrecios/tablaPrecios";
 import TablaLicencias from "../components/administracion/tablaLicencia";
@@ -689,6 +690,15 @@ function MenuImpuestoPP(props) {
                     <span>Reportes</span>
                   </a>
                 )}
+                {idUser == 57 && (
+                  <a
+                    href="/inventario"
+                    className=" list-group-item list-group-item-action text-light bg-transparent py-2 px-3"
+                  >
+                    <i className="fas fa-fw me-1 fa-box" />
+                    <span>Inventario</span>
+                  </a>
+                )}
                 <a
                   href="/"
                   className="list-group-item list-group-item-action py-2 ripple"
@@ -790,6 +800,11 @@ function MenuImpuestoPP(props) {
                 exact
                 path="/gastosPersonales"
                 component={TablaGastos}
+              />
+              <AuthRoute
+                exact
+                path="/inventario"
+                component={TablaInventario}
               />
             </div>
           </div>

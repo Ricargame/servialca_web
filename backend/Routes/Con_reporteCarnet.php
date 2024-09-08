@@ -19,14 +19,20 @@ if ($datos && count($datos) > 0) {
         $capTotal = $datos[0]["vehiculo_capTon"];
     }
 }
+$nombre2 = strtoupper(utf8_decode($datos[0]["titular_nombre"]));
+$apellido2 = strtoupper(utf8_decode($datos[0]["titular_apellido"]));
+$nombre_corto2 = substr($nombre2, 0, strpos($nombre2, ' ')) . ' ' . substr($nombre2, strpos($nombre2, ' ') + 1, 1) . '. ';
+$apellido_corto2 = substr($apellido2, 0, strpos($apellido2, ' ')) . ' ' . substr($apellido2, strpos($apellido2, ' ') + 1, 1) . '.';
+// $Pdf->Cell(10, -5, "TITULAR:  " . strtoupper(utf8_decode($nombre_corto. " " . $apellido_corto)) . " " .  $datos[0]["titular_cedula"]);
 $Pdf = new FPDF("P", "mm", array(210, 297));
 $Pdf->AddPage('P');
 $Pdf->SetFont("arial", "", 13); // Aumentar el tamaño de fuente a 13
 $Pdf->Image("./Img/FONDO_CERTIFI.gif", 115, 28, 90, 60, "gif", "");
 $Pdf->Image("./Img/FONDO_CERTIFI_1.gif", 25, 28, 90, 60, "gif", "");
 $Pdf->Image("./Img/FONDO_CERTIFI_2.gif", 30, 32, 25, 8, "gif", "");
-//$Pdf->Image("./ImgQr/" . $datos[0]["poliza_qr"], 125, 64, 15, 12);
-$Pdf->SetTextColor(183, 28, 28); //color rojo en las letras
+if (file_exists("./ImgQr/" . $datos[0]["poliza_qr"])) {
+    $Pdf->Image("./ImgQr/" . $datos[0]["poliza_qr"], 120, 240, 36, 32);
+}$Pdf->SetTextColor(183, 28, 28); //color rojo en las letras
 $Pdf->SetFillColor(300, 300, 255);
 $Pdf->Ln(1);
 $Pdf->SetFont('Arial', 'B', 8); // Aumentar el tamaño de fuente a 8
