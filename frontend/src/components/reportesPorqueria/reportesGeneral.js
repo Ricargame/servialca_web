@@ -121,11 +121,11 @@ function TablaReportes() {
 
   const generarReporte = async (e) => {
     e.preventDefault();
-    if (cmbTipo.current.value = 3) {
-      window.open(
-        `${op.conexion}/reporteNuevo`
-      );
-    }
+    // if (cmbTipo.current.value = 3) {
+    //   window.open(
+    //     `${op.conexion}/reporteNuevo`
+    //   );
+    // }
     if (cmbDato.current.value != "" && cmbDato.current.value != null) {
       window.open(
         `${op.conexion}/reporteGeneral?Sucursal=${cmbDato.current.value}Motivo=${cmbTipo.current.value}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`

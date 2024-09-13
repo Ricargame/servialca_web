@@ -257,6 +257,7 @@ class cls_Auth extends cls_db
         ];
       }
       if ($this->clave != null && $this->clave != "") {
+        $hashedPassword = password_hash($this->clave, PASSWORD_BCRYPT, ['cost' => 12]);
         $sql = $this->db->prepare("UPDATE usuario SET 
         usuario_usuario = ?,
         usuario_nombre = ?,
@@ -278,7 +279,7 @@ class cls_Auth extends cls_db
           $this->telefono,
           $this->direccion,
           $this->correo,
-          $this->clave,
+          $hashedPassword,
           $this->rol,
           $this->sucursal,
           $this->permiso,
