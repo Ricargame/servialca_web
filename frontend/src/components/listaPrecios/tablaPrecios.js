@@ -8,13 +8,27 @@ import axios from "axios";
 import useTable from "../useTable";
 import { TableBody, TableRow, TableCell } from "@material-ui/core";
 import { formatMoneda, validaMonto, formatoMonto } from "../../util/varios";
-
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 function TablaPrecio() {
   var op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
   const user_id = JSON.parse(localStorage.getItem("user_id"));
   const idsucursal = JSON.parse(localStorage.getItem("idsucursal"));
+  const suc = JSON.parse(localStorage.getItem("sucursal"));
+  const user = JSON.parse(localStorage.getItem("username"));
   const [activate, setActivate] = useState(false);
+  const [valorSeleccionado, setValorSeleccionado] = useState({
+    contrato_nombre: "",
+    estado_nombre: "Portuguesa",
+    usuario_usuario: user.toString(),
+    sucursal_nombre: suc.toString(),
+    transporte_nombre: "",
+    usoVehiculo_nombre: "",
+    clase_nombre: "",
+    tipoVehiculo_nombre: "",
+  });
+
   const [mensaje, setMensaje] = useState({
     mostrar: false,
     titulo: "",
@@ -22,7 +36,6 @@ function TablaPrecio() {
     icono: "",
   });
 
-  console.log(user_id);
   const headCells = [
     {
       label: "Codigo",
@@ -56,6 +69,7 @@ function TablaPrecio() {
   const [idSucursal, setIdSucursal] = useState(0.0);
   const [operacion, setOperacion] = useState(0.0);
   const [mostrar, setMostrar] = useState(false);
+  const [tipoContrato, setTipoContrato] = useState([]);
 
   const [filterFn, setFilterFn] = useState({
     fn: (items) => {
@@ -176,13 +190,16 @@ function TablaPrecio() {
     );
   };
 
-  const selecionarRegistros = async () => {
-    let endpoint = op.conexion + "/tipo_vehiculo/ConsultarTodos?Sucursal=" + idsucursal;
-    console.log(endpoint);
+  const selecionarRegistros = async (contrato) => {
+    let a = 1
+    if (contrato) {
+     a = contrato.contrato_id
+    }
+    let endpoint =
+      op.conexion + "/tipo_vehiculo/ConsultarTodos?Sucursal=" + idsucursal;
     setActivate(true);
     let bodyF = new FormData();
-    
-
+    bodyF.append('idContrato', a)
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -190,7 +207,6 @@ function TablaPrecio() {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log(response);
         setRecords(response);
       })
       .catch((error) =>
@@ -219,10 +235,10 @@ function TablaPrecio() {
                     .toLowerCase()
                     .includes(target.value.toLowerCase())
                 : "") ||
-                (x.precio_monto != null
-                  ? x.precio_monto
-                  .toLowerCase()
-                  .includes(target.value.toLowerCase())
+              (x.precio_monto != null
+                ? x.precio_monto
+                    .toLowerCase()
+                    .includes(target.value.toLowerCase())
                 : "")
             ) {
               return x;
@@ -232,12 +248,33 @@ function TablaPrecio() {
     });
   };
 
-  console.log("estas en menu");
+  const selecionarTipoContrato = async () => {
+    let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
+    setActivate(true);
+    let bodyF = new FormData();
+    // bodyF.append("Contrato", valorSeleccionado.id)
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setTipoContrato(response);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
 
- 
   useEffect(() => {
+    selecionarTipoContrato();
     selecionarRegistros();
-    
   }, []);
 
   const regPre = () => {
@@ -301,6 +338,34 @@ function TablaPrecio() {
             onChange={handleSearch}
             placeholder="Buscar"
           />
+          {tipoContrato && 
+            Array.isArray(tipoContrato) &&
+            tipoContrato.length > 0 && (
+              <Autocomplete
+                className="col-3"
+                value={valorSeleccionado}
+                onChange={(event, newValue) => {
+                  if (newValue) {
+                    setValorSeleccionado({
+                      ...valorSeleccionado,
+                      contrato_nombre: newValue.contrato_nombre,
+                    });
+                  };
+                  selecionarRegistros(newValue)
+                }}
+                options={tipoContrato}
+                sx={{ width: "100%" }}
+                size="small"
+                getOptionLabel={(option) => option.contrato_nombre}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="Tipo de Contrato"
+                    variant="outlined"
+                  />
+                )}
+              />
+            )}
         </div>
         <TblContainer>
           <TblHead />
@@ -330,7 +395,7 @@ function TablaPrecio() {
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                   {(item.tipoVehiculo_precio * BCV).toFixed(2)}
+                    {(item.tipoVehiculo_precio * BCV).toFixed(2)}
                   </TableCell>
                 </TableRow>
               ))}

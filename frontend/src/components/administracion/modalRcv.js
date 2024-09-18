@@ -2113,7 +2113,7 @@ export const ModalRcv = (props) => {
                     />
                   </div>*/}
 
-                  {transporte &&
+                  {/* {transporte &&
                     Array.isArray(transporte) &&
                     transporte.length > 0 && (
                       <Autocomplete
@@ -2139,7 +2139,7 @@ export const ModalRcv = (props) => {
                           />
                         )}
                       />
-                    )}
+                    )} */}
                 </div>
               </fieldset>
               <fieldset class="border rounded-3 p-3 row mx-auto">

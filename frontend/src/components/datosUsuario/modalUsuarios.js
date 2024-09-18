@@ -66,6 +66,7 @@ export const ModalUsuarios = (props) => {
   const check17 = useRef();
   const check18 = useRef();
   const check19 = useRef();
+  const check20 = useRef();
 
   const [sucursales, setSucursales] = useState();
   const [roles, setRoles] = useState();
@@ -198,6 +199,7 @@ export const ModalUsuarios = (props) => {
     let chk17 = check17.current.checked ? "1" : "0";
     let chk18 = check18.current.checked ? "1" : "0";
     let chk19 = check19.current.checked ? "1" : "0";
+    let chk20 = check20.current.checked ? "1" : "0";
     let permiso =
       chk +
       chk1 +
@@ -218,7 +220,8 @@ export const ModalUsuarios = (props) => {
       chk16 +
       chk17 +
       chk18 +
-      chk19;
+      chk19 + 
+      chk20;
 
     //setLoading(false);
 
@@ -872,7 +875,7 @@ export const ModalUsuarios = (props) => {
               />
               <label class="form-check-label">Tipos de Contratos</label>
             </div>
-            <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check2}
@@ -881,8 +884,8 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Documentos</label>
-            </div>
-            <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            </div> */}
+            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check3}
@@ -891,7 +894,7 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Chats</label>
-            </div>
+            </div> */}
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
@@ -922,7 +925,7 @@ export const ModalUsuarios = (props) => {
               />
               <label class="form-check-label">Tipo De Vehiculo</label>
             </div>
-            <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check7}
@@ -931,8 +934,8 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Tipos de Vehiculos Bocono</label>
-            </div>
-            <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            </div> */}
+            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check8}
@@ -941,7 +944,7 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Lineas de Transporte</label>
-            </div>
+            </div> */}
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
@@ -1024,7 +1027,7 @@ export const ModalUsuarios = (props) => {
               />
               <label class="form-check-label">Licencias</label>
             </div>
-            <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check17}
@@ -1033,8 +1036,8 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Imagen</label>
-            </div>
-            <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            </div> */}
+            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check18}
@@ -1043,7 +1046,7 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Bitacora</label>
-            </div>
+            </div> */}
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
@@ -1053,6 +1056,16 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Asesor</label>
+            </div>
+            <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+              <input
+                class="form-check-input"
+                ref={check20}
+                type="checkbox"
+                value="Asesor"
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label">Lista de Precio Bocono</label>
             </div>
           </div>
         </div>
