@@ -40,7 +40,7 @@ export const ModalTipoContrato = (props) => {
   const txtInvalidez = useRef();
   const txtGastosMed = useRef();
   const txtGrua = useRef();
-
+  const bool = useRef();
   const txtDatosPastor = useRef();
   const txtReferencia = useRef();
   const txtBs = useRef();
@@ -182,7 +182,7 @@ export const ModalTipoContrato = (props) => {
       "grua",
       txtGrua.current.value.replace(/\./g, "").replace(",", ".")
     );
-
+    bodyF.append('bool', bool.current.value)
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -617,6 +617,19 @@ export const ModalTipoContrato = (props) => {
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
             />
+          </div>
+          <div class="input-group input-group-sm mb-3 col-md-4">
+            <span class="input-group-text" id="inputGroup-sizing-sm">
+              Es de Boconoa:
+            </span>
+            <select
+              class="form-select col-md-6"
+              ref={bool}
+              aria-label="Default select example"
+            >
+              <option value="0">No</option>
+              <option value="1">Si</option>
+            </select>
           </div>
         </div>
       </Modal.Body>

@@ -98,7 +98,12 @@ function TablaTipoContratos() {
       backgroundColor: "#e70101bf",
       color: "white",
     },
-
+    {
+      label: "Boconoa",
+      textAlign: "center",
+      backgroundColor: "#e70101bf",
+      color: "white",
+    },
     {
       label: "Opciones",
       textAlign: "center",
@@ -551,7 +556,14 @@ function TablaTipoContratos() {
                       ? "ACTIVO"
                       : "INACTIVO"}
                   </TableCell>
-
+                  <TableCell
+                    className="align-baseline"
+                    style={{ textAlign: "center", alignItems: "center" }}
+                  >
+                    {parseInt(item.contrato_validacion) === 1
+                      ? "Si"
+                      : "No"}
+                  </TableCell>
                   <TableCell
                     className="align-baseline"
                     style={{

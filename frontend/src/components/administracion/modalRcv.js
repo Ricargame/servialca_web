@@ -42,6 +42,7 @@ export const ModalRcv = (props) => {
   const idsucursal = JSON.parse(localStorage.getItem("idsucursal"));
   const [value, setValue] = useState("");
   const [variable, setVariable] = useState(false);
+  let permisos = JSON.parse(localStorage.getItem("permisos"));
   //ID
   const idPoliza = useRef();
   const idCliente = useRef();
@@ -682,6 +683,7 @@ export const ModalRcv = (props) => {
   const selecionarTipoContrato = async () => {
     let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
     setActivate(true);
+    const permiso = permisos[permisos.length - 1]
     let bodyF = new FormData();
     // bodyF.append("ID", user_id)
     await fetch(endpoint, {
@@ -690,8 +692,15 @@ export const ModalRcv = (props) => {
     })
       .then((res) => res.json())
       .then((response) => {
+        if (permiso.length > 19) {
+          if (permiso[20] == 1 ) {
+            const validatedContract = response.filter((contract) => contract.contrato_validacion == "1");
+            setTipoContrato(validatedContract);
+          }
+        }
+        const validatedContract = response.filter((contract) => contract.contrato_validacion == "0");
+        setTipoContrato(validatedContract);
         setActivate(false);
-        setTipoContrato(response);
       })
       .catch((error) =>
         setMensaje({
@@ -1035,7 +1044,6 @@ export const ModalRcv = (props) => {
       txtApellidoTitular.current.value = "";
     }
   };
-
   const buscarSucursal = async ($a) => {
     let endpoint = op.conexion + "/sucursal/buscarSucursal";
     setActivate(true);

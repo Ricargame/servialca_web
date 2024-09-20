@@ -10,6 +10,8 @@ import { TableBody, TableRow, TableCell } from "@material-ui/core";
 import { formatMoneda, validaMonto, formatoMonto } from "../../util/varios";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import { ModalTipoVehiculo } from "../DatosVehiculo/modalTipoVehiculo";
+
 function TablaPrecio() {
   var op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
@@ -18,6 +20,7 @@ function TablaPrecio() {
   const suc = JSON.parse(localStorage.getItem("sucursal"));
   const user = JSON.parse(localStorage.getItem("username"));
   const [activate, setActivate] = useState(false);
+  const [idTipoVehiculo, setIdTipoVehiculo] = useState(0.0);
   const [valorSeleccionado, setValorSeleccionado] = useState({
     contrato_nombre: "",
     estado_nombre: "Portuguesa",
@@ -50,14 +53,25 @@ function TablaPrecio() {
       color: "white",
     },
     {
+      label: "Contrato",
+      textAlign: "center",
+      backgroundColor: "#e70101bf",
+      color: "white",
+    },
+    {
       label: "Precio $",
       textAlign: "center",
       backgroundColor: "#e70101bf",
       color: "white",
     },
-
     {
       label: "Precio Bs",
+      textAlign: "center",
+      backgroundColor: "#e70101bf",
+      color: "white",
+    },
+    {
+      label: "Opciones",
       textAlign: "center",
       backgroundColor: "#e70101bf",
       color: "white",
@@ -286,10 +300,19 @@ function TablaPrecio() {
     e.preventDefault();
     setMostrar(true);
     setOperacion(op);
-    setIdSucursal(id);
+    setIdTipoVehiculo(id);
   };
   return (
     <div className="col-md-12 mx-auto p-2">
+      <ModalTipoVehiculo
+        operacion={operacion}
+        show={mostrar}
+        onHideCancela={() => {
+          setMostrar(false);
+        }}
+        idTipoVehiculo={idTipoVehiculo}
+        render={selecionarRegistros}
+      />
       <div className="col-12 py-2">
         <div className="col-12 row d-flex justify-content-between py-2 mt-5 mb-3">
           <h2 className=" col-5 text-light">Lista De Precios</h2>
@@ -389,6 +412,12 @@ function TablaPrecio() {
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
+                    {item.contrato_nombre}
+                  </TableCell>
+                  <TableCell
+                    className="align-baseline"
+                    style={{ textAlign: "center", alignItems: "center" }}
+                  >
                     {item.tipoVehiculo_precio + " $"}
                   </TableCell>
                   <TableCell
@@ -396,6 +425,21 @@ function TablaPrecio() {
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
                     {(item.tipoVehiculo_precio * BCV).toFixed(2)}
+                  </TableCell>
+                  <TableCell
+                    className="align-baseline"
+                    style={{
+                      textAlign: "center",
+                      alignItems: "center",
+                      width: 130,
+                    }}
+                  >
+                    <button
+                      onClick={gestionarBanco(2, item.tipoVehiculo_id, "")}
+                      className="btn btn-sm mx-1 btn-warning rounded-circle"
+                    >
+                      <i className="fa fa-edit"></i>{" "}
+                    </button>
                   </TableCell>
                 </TableRow>
               ))}
