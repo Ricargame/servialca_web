@@ -875,7 +875,7 @@ export const ModalUsuarios = (props) => {
               />
               <label class="form-check-label">Tipos de Contratos</label>
             </div>
-            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            {<div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check2}
@@ -884,8 +884,8 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Documentos</label>
-            </div> */}
-            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            </div>}
+            {<div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check3}
@@ -894,7 +894,7 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Chats</label>
-            </div> */}
+            </div>}
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
@@ -925,7 +925,7 @@ export const ModalUsuarios = (props) => {
               />
               <label class="form-check-label">Tipo De Vehiculo</label>
             </div>
-            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            {<div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check7}
@@ -933,9 +933,9 @@ export const ModalUsuarios = (props) => {
                 value="Linea de transporte"
                 id="flexCheckDefault"
               />
-              <label class="form-check-label">Tipos de Vehiculos Bocono</label>
-            </div> */}
-            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+              <label class="form-check-label"></label>
+            </div>}
+            {<div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check8}
@@ -944,7 +944,7 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Lineas de Transporte</label>
-            </div> */}
+            </div>}
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
@@ -1027,7 +1027,7 @@ export const ModalUsuarios = (props) => {
               />
               <label class="form-check-label">Licencias</label>
             </div>
-            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            {<div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check17}
@@ -1036,8 +1036,8 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Imagen</label>
-            </div> */}
-            {/* <div class="form-check col-md-4 mx-auto pl-5 mb-1">
+            </div>}
+            {<div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"
                 ref={check18}
@@ -1046,7 +1046,7 @@ export const ModalUsuarios = (props) => {
                 id="flexCheckDefault"
               />
               <label class="form-check-label">Bitacora</label>
-            </div> */}
+            </div>}
             <div class="form-check col-md-4 mx-auto pl-5 mb-1">
               <input
                 class="form-check-input"

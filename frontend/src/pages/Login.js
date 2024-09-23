@@ -341,14 +341,15 @@ function Login(props) {
                   "url('" +
                   op.conexion +
                   "/ImgPanel/" +
-                  records.img_login +
+                  "photo.jpg" +
                   "')",
-                backgroundSize: "cover",
+                backgroundSize: "100% 104vh",
                 backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat", // Agregar esta línea
               }}
             />
           </div>
-          <div class="col-md-8 col-lg-6">
+          <div class="col-md-8 col-lg-5">
             <div class="login d-flex align-items-center ">
               <div class="container">
                 <div class="row">

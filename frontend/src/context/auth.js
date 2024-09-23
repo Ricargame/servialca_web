@@ -9,9 +9,6 @@ const initialState = {
 };
 
 if (jwtToken) {
-  console.group("Token");
-  console.log("Token encontrado en localStorage");
-  console.log(jwtToken);
   console.groupEnd();
 
   try {

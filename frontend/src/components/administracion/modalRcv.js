@@ -2397,7 +2397,6 @@ export const ModalRcv = (props) => {
                     value={valorSeleccionado}
                     onChange={(event, newValue) => {
                       if (newValue) {
-                        console.log(newValue.usoVehiculo_nombre);
                         setValorSeleccionado({
                           ...valorSeleccionado,
                           usoVehiculo_nombre: newValue.usoVehiculo_nombre,
@@ -2712,9 +2711,32 @@ export const ModalRcv = (props) => {
                 {tipo && Array.isArray(tipo) && tipo.length > 0 && (
                   <Autocomplete
                     value={valorSeleccionado}
+                    // onChange={(event, newValue) => {
+                    //   if (newValue) {
+                    //     setValorSeleccionado({
+                    //       ...valorSeleccionado,
+                    //       tipoVehiculo_nombre: newValue.tipoVehiculo_nombre,
+                    //     });
+                    //   }
+                    // }}
+                    options={tipo}
+                    sx={{ width: "100%" }}
+                    size="small"
+                    getOptionLabel={(option) => option.tipoVehiculo_nombre}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Tipo Vehiculo"
+                        variant="outlined"
+                      />
+                    )}
+                  />
+                )}
+                {/* {tipo && Array.isArray(tipo) && tipo.length > 0 && (
+                  <Autocomplete
+                    value={valorSeleccionado}
                     onChange={(event, newValue) => {
                       if (newValue) {
-                        console.log(newValue.tipoVehiculo_nombre);
                         setValorSeleccionado({
                           ...valorSeleccionado,
                           tipoVehiculo_nombre: newValue.tipoVehiculo_nombre,
@@ -2733,7 +2755,7 @@ export const ModalRcv = (props) => {
                       />
                     )}
                   />
-                )}
+                )} */}
               </div>
 
               <div class="col-md-4">
