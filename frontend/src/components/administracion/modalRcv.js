@@ -2711,14 +2711,14 @@ export const ModalRcv = (props) => {
                 {tipo && Array.isArray(tipo) && tipo.length > 0 && (
                   <Autocomplete
                     value={valorSeleccionado}
-                    // onChange={(event, newValue) => {
-                    //   if (newValue) {
-                    //     setValorSeleccionado({
-                    //       ...valorSeleccionado,
-                    //       tipoVehiculo_nombre: newValue.tipoVehiculo_nombre,
-                    //     });
-                    //   }
-                    // }}
+                    onChange={(event, newValue) => {
+                      if (newValue) {
+                        setValorSeleccionado({
+                          ...valorSeleccionado,
+                          tipoVehiculo_nombre: newValue.tipoVehiculo_nombre,
+                        });
+                      }
+                    }}
                     options={tipo}
                     sx={{ width: "100%" }}
                     size="small"
