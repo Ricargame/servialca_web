@@ -456,6 +456,14 @@ function TablaUsuarios() {
             </div>
             <div className="col d-flex justify-content-end">
               <button
+                onClick={gestionarBanco(9, "", "")}
+                className="btn btn-sm btn-primary"
+              >
+                <i>Activar usuarios</i>{" "}
+              </button>
+            </div>
+            <div className="col d-flex justify-content-end">
+              <button
                 onClick={gestionarBanco(1, "", "")}
                 className="btn btn-sm btn-primary rounded-circle my-auto"
               >
