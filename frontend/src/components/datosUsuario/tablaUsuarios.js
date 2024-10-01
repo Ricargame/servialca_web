@@ -196,6 +196,34 @@ function TablaUsuarios() {
     selecionarRegistros();
   };
 
+  const ponerLuz = async () => {
+    let endpoint = op.conexion + "/Auth/ponerLuz";
+    setActivate(true);
+    let bodyF = new FormData();
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setMensaje({
+          mostrar: true,
+          titulo: "Exito.",
+          texto: "Usuarios desactivados",
+          icono: "exito",
+        });
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+    selecionarRegistros();
+  };
   const deleteUser = async () => {
     let endpoint = op.conexion + "/Auth/EliminarUsuario";
     setActivate(true);
@@ -401,6 +429,8 @@ function TablaUsuarios() {
         texto: "Una vez eliminado el usuario desaparecera del sistema",
         icono: "informacion",
       });
+    } else if (op === 10) {
+      ponerLuz()
     } else if (op == 9) {
       quitarLuz();
     } else if (op == 8) {
