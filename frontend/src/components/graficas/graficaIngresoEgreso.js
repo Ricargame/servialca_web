@@ -347,13 +347,34 @@ function GraficosIngresos() {
       },
     });
   };
+  const [cantidad, setCantidad] = useState(0);
 
   console.log("estas en menu");
-
+  const cantidadContrato = async () => {
+    let endpoint = op.conexion + "/ladilla/cantidad";
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setCantidad(response.max_poliza_id);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
   useEffect(() => {
     obtenerFechaHoy();
     selecionarRegistros();
     selecionarRegistrosAnual();
+    cantidadContrato();
   }, []);
 
   const regPre = () => {
@@ -366,6 +387,10 @@ function GraficosIngresos() {
       <div className="col-12 py-2">
         <div className="col-12 row d-flex justify-content-between py-2 mt-5 mb-3">
           <h2 className=" col-5 text-light">Grafica de Ingreso Y Egreso</h2>
+          <h2 className="col-3 text-light">
+            Cantidad de contratos:{" "}
+            <span style={{ color: "red" }}>{cantidad}</span>
+          </h2>{" "}
         </div>
       </div>
       <div className="col-md-12 bg-light py-2 rounded row py-5">

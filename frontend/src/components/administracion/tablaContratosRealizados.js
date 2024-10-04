@@ -311,7 +311,7 @@ function TablaContratosRealizados() {
     e.preventDefault();
     window.open(`${op.conexion}/reporte/reporteSelect?id=` + checkedItems)
   }
-
+  
   const changeVip = async (id) => {
     let endpoint = op.conexion + "/ladilla/update";
     setActivate(true);
@@ -341,6 +341,7 @@ function TablaContratosRealizados() {
 
   useEffect(() => {
      selecionarRegistros();
+    
   }, []);
 
   const regPre = () => {

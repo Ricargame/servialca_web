@@ -541,10 +541,6 @@ function Inicio2() {
       <div className="col-12 py-2">
         <div className="col-12 row d-flex justify-content-between py-2 mt-5 mb-3">
           <h2 className=" col-3 text-light">RCV QUE ESTAN POR VENCER</h2>
-          <h2 className="col-3 text-light">
-            Cantidad de contratos:{" "}
-            <span style={{ color: "red" }}>{cantidad}</span>
-          </h2>{" "}
           <div class="input-group input-group-sm col-md-4 my-auto">
             <span
               class="input-group-text bg-transparent border-0 fw-bold text-light"
