@@ -33,7 +33,6 @@ function GraficosIngresos() {
     icono: "",
   });
 
-  console.log(user_id);
   const headCells = [
     {
       label: "N° de contrato",
@@ -219,7 +218,6 @@ function GraficosIngresos() {
 
   const selecionarRegistros = async (e) => {
     let endpoint = op.conexion + "/grafica/Diario";
-    console.log(endpoint);
     setActivate(true);
     let bodyF = new FormData();
     bodyF.append("Desde", txtDate1.current.value);
@@ -266,9 +264,6 @@ function GraficosIngresos() {
         setEgreso(sumaEgreso);
         setOtroIngreso(otroIngreso);
         setLicencia(sumaLicencia);
-        console.log("Suma de RCV: " + sumaRcv);
-        console.log("Suma de renovacion: " + sumaRenovacion);
-        console.log("Suma de seguro: " + sumaSeguro);
       })
       .catch((error) =>
         setMensaje({
@@ -282,7 +277,6 @@ function GraficosIngresos() {
 
   const selecionarRegistrosAnual = async (e) => {
     let endpoint = op.conexion + "/grafica/Anual";
-    console.log(endpoint);
     setActivate(true);
     let bodyF = new FormData();
     await fetch(endpoint, {
@@ -348,18 +342,21 @@ function GraficosIngresos() {
     });
   };
   const [cantidad, setCantidad] = useState(0);
-
-  console.log("estas en menu");
+  const [cantidad2, setCantidad2] = useState(0);
   const cantidadContrato = async () => {
-    let endpoint = op.conexion + "/ladilla/cantidad";
+    const desde = new Date(new Date().getFullYear(), new Date().getMonth(), 1); // first day of the month
+    const hasta = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0); // last day of the month
+  
+    let endpoint = op.conexion + "/ladilla/totalReport";
     setActivate(true);
-    await fetch(endpoint, {
+    await fetch(`${endpoint}?desde=${desde.getFullYear()}-${padZero(desde.getMonth() + 1)}-${padZero(desde.getDate())}&hasta=${hasta.getFullYear()}-${padZero(hasta.getMonth() + 1)}-${padZero(hasta.getDate())}`, {
       method: "GET",
     })
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        setCantidad(response.max_poliza_id);
+        setCantidad(response.totales_usuario_57.total_nota_monto / 2);
+        setCantidad2(response.totales_usuario_57.total_totalPagar	 / 2);
       })
       .catch((error) =>
         setMensaje({
@@ -370,6 +367,11 @@ function GraficosIngresos() {
         })
       );
   };
+  
+  // helper function to pad single-digit numbers with a zero
+  function padZero(num) {
+    return (num < 10 ? "0" : "") + num;
+  }
   useEffect(() => {
     obtenerFechaHoy();
     selecionarRegistros();
@@ -385,12 +387,16 @@ function GraficosIngresos() {
   return (
     <div className="col-md-12 mx-auto p-2">
       <div className="col-12 py-2">
-        <div className="col-12 row d-flex justify-content-between py-2 mt-5 mb-3">
+        <div className="col-18 row d-flex justify-content-between py-2 mt-5 mb-3">
           <h2 className=" col-5 text-light">Grafica de Ingreso Y Egreso</h2>
           <h2 className="col-3 text-light">
-            Cantidad de contratos:{" "}
-            <span style={{ color: "red" }}>{cantidad}</span>
-          </h2>{" "}
+            Total Obtenido este Mes $:{" "}
+            <span style={{ color: "red" }}>{cantidad}$</span>
+          </h2>
+          <h2 className="col-3 text-light">
+            Total Obtenido este Mes bs:{" "}
+            <span style={{ color: "red" }}>{cantidad2}bs</span>
+          </h2>
         </div>
       </div>
       <div className="col-md-12 bg-light py-2 rounded row py-5">
