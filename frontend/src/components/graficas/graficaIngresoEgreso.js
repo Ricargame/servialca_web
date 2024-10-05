@@ -355,8 +355,10 @@ function GraficosIngresos() {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        setCantidad(response.totales_usuario_57.total_nota_monto / 2);
-        setCantidad2(response.totales_usuario_57.total_totalPagar	 / 2);
+        let total = response.results.reduce((acc, current) => acc + parseFloat(current.total_nota_monto), 0);
+        let total2 = response.results.reduce((acc, current) => acc + parseFloat(current.total_totalPagar), 0).toFixed(2)
+        setCantidad(total / 2);
+        setCantidad2(total2	 / 2);
       })
       .catch((error) =>
         setMensaje({
