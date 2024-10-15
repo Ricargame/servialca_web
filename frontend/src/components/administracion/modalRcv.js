@@ -1709,7 +1709,7 @@ export const ModalRcv = (props) => {
                       Fecha Nacimiento
                     </span>
                     <input
-                      disabled={operacion == 3 && idUser != 57}
+                      disabled={operacion == 3}
                       type="date"
                       ref={txtFechaNaci}
                       class="form-control"
@@ -1731,7 +1731,7 @@ export const ModalRcv = (props) => {
                     </span>
                     <input
                       type="text"
-                      disabled={operacion == 3 && idUser != 57}
+                      disabled={operacion == 3}
                       maxLength={25}
                       ref={txtNombre}
                       class="form-control "
@@ -1755,7 +1755,7 @@ export const ModalRcv = (props) => {
                       Apellido
                     </span>
                     <input
-                      disabled={operacion == 3 && idUser != 57}
+                      disabled={operacion == 3}
                       type="text"
                       ref={txtApellido}
                       maxLength={25}
@@ -2305,7 +2305,7 @@ export const ModalRcv = (props) => {
                     Puesto
                   </span>
                   <input
-                    disabled={operacion == 3 && idUser != 57}
+                    disabled={operacion == 3}
                     type="text"
                     maxLength={2}
                     ref={txtPuesto}
@@ -2424,7 +2424,7 @@ export const ModalRcv = (props) => {
                     Año
                   </span>
                   <input
-                    disabled={operacion == 3 && idUser != 57}
+                    disabled={operacion == 3}
                     type="text"
                     class="form-control text-right"
                     maxLength={4}
@@ -2611,8 +2611,8 @@ export const ModalRcv = (props) => {
                   </span>
                   <input
                     disabled={
-                      (operacion == 3 && idUser != 57) ||
-                      (operacion == 2 && idUser != 57)
+                      (operacion == 3) ||
+                      (operacion == 2)
                     }
                     type="text"
                     class="form-control"
@@ -2764,7 +2764,7 @@ export const ModalRcv = (props) => {
                     Modelo
                   </span>
                   <input
-                    disabled={operacion == 3 && idUser != 57}
+                    disabled={operacion == 3}
                     maxLength={50}
                     type="text"
                     class="form-control"
@@ -2790,7 +2790,7 @@ export const ModalRcv = (props) => {
                     Marca
                   </span>
                   <input
-                    disabled={operacion == 3 && idUser != 57}
+                    disabled={operacion == 3}
                     maxLength={50}
                     type="text"
                     class="form-control"
@@ -2816,7 +2816,7 @@ export const ModalRcv = (props) => {
                     Peso
                   </span>
                   <input
-                    disabled={operacion == 3 && idUser != 57}
+                    disabled
                     maxLength={10}
                     type="text"
                     class="form-control"
@@ -2839,7 +2839,7 @@ export const ModalRcv = (props) => {
                     Cap. Ton.
                   </span>
                   <input
-                    disabled={operacion == 3 && idUser != 57}
+                    disabled
                     maxLength={10}
                     type="text"
                     class="form-control"
