@@ -23,7 +23,6 @@ function TablaDocumento() {
     icono: "",
   });
 
-  console.log(user_id);
   const headCells = [
     {
       label: "N° de documento",
@@ -33,6 +32,12 @@ function TablaDocumento() {
     },
     {
       label: "Nombre",
+      textAlign: "center",
+      backgroundColor: "#e70101bf",
+      color: "white",
+    },
+    {
+      label: "Contenido",
       textAlign: "center",
       backgroundColor: "#e70101bf",
       color: "white",
@@ -235,7 +240,9 @@ function TablaDocumento() {
   };
   const imprimir = (id) => (e) => {
     e.preventDefault();
-    window.open(`${op.conexion}/${id}`);
+    window.open(
+      `${op.conexion}/reporteDocumento?ID=${id}`
+    );
   };
   const gestionarBanco = (op, id) => (e) => {
     e.preventDefault();
@@ -322,13 +329,19 @@ function TablaDocumento() {
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.documento_id}
+                    {item.documentos_id}
                   </TableCell>
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.documento_nombre}
+                    {item.documentos_nombre	}
+                  </TableCell>
+                  <TableCell
+                    className="align-baseline"
+                    style={{ textAlign: "center", alignItems: "center" }}
+                  >
+                    {item.documento_content		}
                   </TableCell>
                   <TableCell
                     className="align-baseline"
@@ -340,7 +353,7 @@ function TablaDocumento() {
                     }}
                   >
                     <button
-                      onClick={imprimir(item.documento_ruta)}
+                      onClick={imprimir(item.documentos_id)}
                       className="btn btn-sm mx-3 btn-info rounded-circle"
                     >
                       <i className="fas fa-print"></i>{" "}

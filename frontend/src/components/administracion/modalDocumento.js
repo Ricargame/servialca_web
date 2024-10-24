@@ -118,9 +118,9 @@ export const ModalDocumento = (props) => {
   };
 
   const actualizarCertificado = async (id) => {
-    let endpoint = op.conexion + "/documento/SetImg";
+    let endpoint = op.conexion + "/documento/saveDocument";
     let bodyF = new FormData();
-    bodyF.append("Imagen", txtImg.current.files[0]); // Utiliza .files[0] para obtener el archivo seleccionado
+    bodyF.append("Contenido", txtImg.current.value); // Utiliza .files[0] para obtener el archivo seleccionado
     bodyF.append("Nombre", txtNombre.current.value);
     bodyF.append("token", token);
     console.log(txtImg.current.value);
@@ -196,7 +196,37 @@ export const ModalDocumento = (props) => {
       console.log("Modal" + props.idLicencia);
     }
   };
-
+  const consultarCliente = async ($cedula) => {
+    let endpoint = op.conexion + "/documento/saveDocument";
+    let bodyF = new FormData();
+    bodyF.append("Nombre", $cedula);
+    bodyF.append("Contenido", $cedula);
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        if (response.code == 400) {
+          setMensaje({
+            mostrar: true,
+            titulo: "Error.",
+            texto: response.res,
+            icono: "error",
+          });
+        }
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
   const blanquear = () => {
     setValues({
       ced: "",
@@ -340,7 +370,6 @@ export const ModalDocumento = (props) => {
             </span>
             <input
               type="text"
-              name="Imagen" // Asegúrate de que el atributo name sea "Imagen"
               className="form-control"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -351,11 +380,10 @@ export const ModalDocumento = (props) => {
         <div className="col-md-12 row mx-auto">
           <div class="input-group input-group-sm mb-3 col-md-12">
             <span class="input-group-text" id="inputGroup-sizing-sm">
-              Seleccione un documento:{" "}
+              Contenido:{" "}
             </span>
             <input
-              type="file"
-              name="Imagen" // Asegúrate de que el atributo name sea "Imagen"
+              type="textarea"
               className="form-control"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"

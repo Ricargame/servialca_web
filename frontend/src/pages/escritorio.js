@@ -699,6 +699,15 @@ function MenuImpuestoPP(props) {
                     <span>Inventario</span>
                   </a>
                 )}
+                {idUser == 57 && (
+                  <a
+                    href="/documento"
+                    className=" list-group-item list-group-item-action text-light bg-transparent py-2 px-3"
+                  >
+                    <i class="fas fas-fw me-1 fa-file-signature"></i>
+                    <span>Documento</span>
+                  </a>
+                )}
                 <a
                   href="/"
                   className="list-group-item list-group-item-action py-2 ripple"
