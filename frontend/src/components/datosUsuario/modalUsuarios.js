@@ -37,7 +37,6 @@ export const ModalUsuarios = (props) => {
   const txtReferencia = useRef();
   const txtBs = useRef();
   const txtDolar = useRef();
-
   const txtFechaNaci = useRef();
   const txtDireccion = useRef();
   const cmbTelefono = useRef();

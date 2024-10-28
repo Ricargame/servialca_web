@@ -30,7 +30,7 @@ export const ModalSucursal = (props) => {
   const cmbLentes = useRef();
   const cmbPago = useRef();
   const cmbNacionalidad = useRef();
-
+  const txtReport = useRef();
   const txtDatosPastor = useRef();
   const txtReferencia = useRef();
   const txtBs = useRef();
@@ -131,6 +131,7 @@ export const ModalSucursal = (props) => {
     }
     bodyF.append("Nombre", txtDescripcion.current.value);
     bodyF.append("Direccion", txtDireccion.current.value);
+    bodyF.append("Reporte", txtReport.current.value);
     bodyF.append("token", token);
     console.log(endpoint);
     setActivate(true);
@@ -194,6 +195,7 @@ export const ModalSucursal = (props) => {
         console.log(response);
         txtDescripcion.current.value = response.sucursal_nombre;
         txtDireccion.current.value = response.sucursal_direccion;
+        txtReport.current.value = response.reporte;
         setValues(response);
       })
       .catch((error) =>
@@ -403,6 +405,24 @@ export const ModalSucursal = (props) => {
               aria-describedby="inputGroup-sizing-sm"
               
             />
+          </div>
+          <div class="input-group input-group-sm mb-3 col-md-12">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text" id="inputGroup-sizing-sm">
+                Pedir Reporte:
+              </span>
+
+              <select
+                class="form-select"
+                ref={txtReport}
+                aria-label="Default select example"
+              >
+                <option value="0">Semanal</option>
+                <option value="1">Quincenal</option>
+                <option value="2">Mensual</option>
+                <option value="3">Trimestre</option>
+              </select>
+            </div>
           </div>
         </div>
       </Modal.Body>

@@ -73,7 +73,7 @@ function TablaReportes() {
   const cmbDato = useRef();
 
   const txtDesde = useRef();
-
+  const reporte = useRef();
   const txtHasta = useRef();
 
   const [mensaje, setMensaje] = useState({
@@ -226,6 +226,7 @@ function TablaReportes() {
           array.push({
             id: response[i].sucursal_id,
             nombre: response[i].sucursal_nombre,
+            reporte: response[i].reporte,
           });
         }
 
@@ -253,13 +254,61 @@ function TablaReportes() {
       setDesabilitar(true);
     }
   };
+
+  const changeData = (value) => {
+    const fechaActual = new Date();
+
+    // Calculamos la nueva fecha "Desde" según el valor del reporte
+
+    switch (value) {
+      case "0":
+        fechaActual.setDate(fechaActual.getDate() + 7); // 7 días
+
+        break;
+
+      case "1":
+        fechaActual.setDate(fechaActual.getDate() + 15); // 15 días
+
+        break;
+
+      case "2":
+        fechaActual.setMonth(fechaActual.getMonth() + 1); // 1 mes
+
+        break;
+
+      case "3":
+        fechaActual.setMonth(fechaActual.getMonth() + 3); // 3 meses
+
+        break;
+
+      default:
+        break;
+    }
+
+    const fechaDesdeFormateada = fechaActual.toISOString().split("T")[0];
+    const fechaActual2 = new Date().toISOString().split("T")[0];
+    // Establecemos la fecha "Desde"
+
+    txtDesde.current.value = fechaActual2;
+
+    // También puedes establecer "Hasta" si lo deseas
+
+    txtHasta.current.value = fechaDesdeFormateada; // Cambia esto si quieres otra lógica para "Hasta"
+  };
+
+  const handleSelectChange = () => {
+    const selectedId = cmbDato.current.value;
+
+    // Busca el item correspondiente en records
+
+    const selectedItem = records.find((item) => item.id === selectedId);
+
+    if (selectedItem) {
+      changeData(selectedItem.reporte.toString()); // Llama a changeData con el reporte del item seleccionado
+    }
+  };
   useEffect(() => {
     // Obtener la fecha actual en el formato "YYYY-MM-DD"
-    const fechaActual = new Date().toISOString().split("T")[0];
-
-    // Establecer la fecha actual en los campos "Desde" y "Hasta"
-    txtDesde.current.value = fechaActual;
-    txtHasta.current.value = fechaActual;
   }, []);
   // const generar = () => {
   //   let sigue = true;
@@ -362,6 +411,7 @@ function TablaReportes() {
                       disabled={desabilitar}
                       aria-label="Default select example"
                       ref={cmbDato}
+                      onChange={handleSelectChange}
                     >
                       <option value="">Seleccionar</option>
                       {records &&

@@ -23,7 +23,6 @@ function TablaSursales() {
     icono: "",
   });
 
-  console.log(user_id);
   const headCells = [
     {
       label: "Codigo",
