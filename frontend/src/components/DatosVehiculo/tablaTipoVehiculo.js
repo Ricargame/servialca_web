@@ -9,12 +9,17 @@ import axios from "axios";
 import useTable from "../useTable";
 import { TableBody, TableRow, TableCell } from "@material-ui/core";
 import { ModalTipoVehiculo } from "./modalTipoVehiculo";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 
 function TablaTipoVehiculo() {
   var op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
   const user_id = JSON.parse(localStorage.getItem("user_id"));
   const idsucursal = JSON.parse(localStorage.getItem("idsucursal"));
+  const suc = JSON.parse(localStorage.getItem("sucursal"));
+  const user = JSON.parse(localStorage.getItem("username"));
+  const [nivelSeleccionado, setNivelSeleccionado] = useState("1");
   const [activate, setActivate] = useState(false);
   const [mensaje, setMensaje] = useState({
     mostrar: false,
@@ -22,8 +27,16 @@ function TablaTipoVehiculo() {
     texto: "",
     icono: "",
   });
-
-  console.log(user_id);
+  const [valorSeleccionado, setValorSeleccionado] = useState({
+    contrato_nombre: "",
+    estado_nombre: "Portuguesa",
+    usuario_usuario: user.toString(),
+    sucursal_nombre: suc.toString(),
+    transporte_nombre: "",
+    usoVehiculo_nombre: "",
+    clase_nombre: "",
+    tipoVehiculo_nombre: "",
+  });
   const headCells = [
     {
       label: "Codigo",
@@ -39,6 +52,12 @@ function TablaTipoVehiculo() {
     },
     {
       label: "Tipo de contrato",
+      textAlign: "center",
+      backgroundColor: "#e70101bf",
+      color: "white",
+    },
+    {
+      label: "Nivel",
       textAlign: "center",
       backgroundColor: "#e70101bf",
       color: "white",
@@ -79,6 +98,8 @@ function TablaTipoVehiculo() {
   const [totalact, setTotalact] = useState(0.0);
   const [idTipoVehiculo, setIdTipoVehiculo] = useState(0.0);
   const [mostrar, setMostrar] = useState(false);
+  const [tipoContrato, setTipoContrato] = useState([]);
+
   const [filterFn, setFilterFn] = useState({
     fn: (items) => {
       return items;
@@ -232,7 +253,6 @@ function TablaTipoVehiculo() {
     setMostrar(false);
     let endpoint =
       op.conexion + "/tipo_vehiculo/ConsultarTodos?Sucursal=" + idsucursal;
-    console.log(endpoint);
     setActivate(true);
 
     //setLoading(false);
@@ -243,7 +263,6 @@ function TablaTipoVehiculo() {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log(response);
         setRecords(response);
       })
       .catch((error) =>
@@ -271,13 +290,12 @@ function TablaTipoVehiculo() {
                 ? x.tipoVehiculo_nombre
                     .toLowerCase()
                     .includes(target.value.toLowerCase())
-                : "") || (
-                x.contrato_nombre !== null
-                  ? x.contrato_nombre
-                      .toLowerCase()
-                      .includes(target.value.toLowerCase())
-                  : ""
-              )
+                : "") ||
+              (x.contrato_nombre !== null
+                ? x.contrato_nombre
+                    .toLowerCase()
+                    .includes(target.value.toLowerCase())
+                : "")
             ) {
               return x;
             }
@@ -286,9 +304,31 @@ function TablaTipoVehiculo() {
     });
   };
 
-  console.log("estas en menu");
-
+  const selecionarTipoContrato = async () => {
+    let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
+    setActivate(true);
+    let bodyF = new FormData();
+    // bodyF.append("Contrato", valorSeleccionado.id)
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setTipoContrato(response);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
   useEffect(() => {
+    selecionarTipoContrato();
     selecionarRegistros();
   }, []);
 
@@ -356,17 +396,17 @@ function TablaTipoVehiculo() {
           </div>
         </div>
       </div>
-      <div
-        className="col-md-12 bg-light py-2 rounded"
-        style={{ margin: "auto" }}
-      >
-        <div className="row col-12 d-flex justify-content-between mb-2">
-          <input
-            type="text"
-            className=" col-3 form-control form-control-sm rounded-pill"
-            onChange={handleSearch}
-            placeholder="Buscar"
-          />
+        <div
+          className="col-md-12 bg-light py-2 rounded"
+          style={{ margin: "auto" }}
+        >
+          <div className="row col-12 d-flex justify-content-between mb-2">
+            <input
+              type="text"
+              className="col-3 form-control form-control-sm rounded-pill"
+              onChange={handleSearch}
+              placeholder="Buscar"
+            />
 
           <div className="col-3 d-flex justify-content-end">
             <button
@@ -374,7 +414,7 @@ function TablaTipoVehiculo() {
               className="btn btn-sm btn-primary rounded-circle"
             >
               <i className="fas fa-plus"></i>{" "}
-            </button>
+              </button>
           </div>
         </div>
         <TblContainer>
@@ -395,11 +435,18 @@ function TablaTipoVehiculo() {
                   >
                     {item.tipoVehiculo_nombre}
                   </TableCell>
+
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
                     {item.contrato_nombre}
+                  </TableCell>
+                  <TableCell
+                    className="align-baseline"
+                    style={{ textAlign: "center", alignItems: "center" }}
+                  >
+                    {item.nivel}
                   </TableCell>
                   {
                     <TableCell
@@ -426,12 +473,12 @@ function TablaTipoVehiculo() {
                       width: 130,
                     }}
                   >
-                    <button
+                    {<button
                       onClick={gestionarBanco(2, item.tipoVehiculo_id, "")}
                       className="btn btn-sm mx-1 btn-warning rounded-circle"
                     >
                       <i className="fa fa-edit"></i>{" "}
-                    </button>
+                    </button>}
                     <button
                       onClick={gestionarBanco(
                         8,

@@ -92,7 +92,7 @@ export const ModalTipoVehiculo = (props) => {
   const cmbLentes = useRef();
   const cmbPago = useRef();
   const cmbNacionalidad = useRef();
-
+  const nivel = useRef();
   const txtDatosPastor = useRef();
   const txtReferencia = useRef();
   const txtBs = useRef();
@@ -228,7 +228,6 @@ export const ModalTipoVehiculo = (props) => {
     let bodyF = new FormData();
 
     setActivate(true);
-
     if (operacion === 1) {
       endpoint = op.conexion + "/tipo_vehiculo/registrar";
     }
@@ -239,6 +238,7 @@ export const ModalTipoVehiculo = (props) => {
     }
 
     bodyF.append("tipoVehiculo_nombre", txtDescripcion.current.value);
+    bodyF.append('Nivel', nivel.current.value)
     bodyF.append("precio", txtDolar.current.value);
     bodyF.append("Sucursal", idsucursal);
 
@@ -407,7 +407,6 @@ export const ModalTipoVehiculo = (props) => {
       "&sucursal=" +
       idsucursal;
     setMostrar(false);
-    console.log(endpoint);
     setActivate(true);
 
     //setLoading(false);
@@ -418,7 +417,6 @@ export const ModalTipoVehiculo = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log(response);
         setRecords(response);
       })
       .catch((error) =>
@@ -451,7 +449,6 @@ export const ModalTipoVehiculo = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log(response);
 
         let $ = response.tipoVehiculo_precio
           ? parseFloat(response.tipoVehiculo_precio)
@@ -460,6 +457,7 @@ export const ModalTipoVehiculo = (props) => {
         let totalbs = $ * bs;
         setIdTipo(response);
         txtDescripcion.current.value = response.tipoVehiculo_nombre;
+        nivel.current.value = response.nivel
         txtDolar.current.value = response.tipoVehiculo_precio
           ? formatMoneda(
               response.tipoVehiculo_precio
@@ -491,7 +489,6 @@ export const ModalTipoVehiculo = (props) => {
   };
 
   const agregarTipoContrato = (values) => {
-    console.log(values);
 
     let sigue = true;
 
@@ -662,7 +659,27 @@ export const ModalTipoVehiculo = (props) => {
               Debe ingresar nombre del tipo del vehiculo
             </div>
           </div>
-
+          <div class=" mb-1 col-md-12">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text" id="inputGroup-sizing-sm">
+                Nivel:
+              </span>
+              <input
+                maxLength={50}
+                type="text"
+                disabled={
+                  operacion === 1 ? false : operacion === 2 ? false : true
+                }
+                class="form-control"
+                ref={nivel}
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <div id="nom" class="form-text hidden">
+              Debe ingresar nombre del tipo del vehiculo
+            </div>
+          </div>
           <div class="input-group input-group-sm mb-1 col-md-6">
             <span class="input-group-text" id="inputGroup-sizing-sm">
               Monto en $:
@@ -695,7 +712,7 @@ export const ModalTipoVehiculo = (props) => {
               onKeyUp={handleInputMontoChange}
             />
           </div>
-          <div className="row col-12 d-flex justify-content-between mb-2 mt-4">
+          {/* <div className="row col-12 d-flex justify-content-between mb-2 mt-4">
             <input
               type="text"
               className=" col-3 form-control form-control-sm rounded-pill"
@@ -711,8 +728,8 @@ export const ModalTipoVehiculo = (props) => {
                 <i className="fas fa-plus"></i>{" "}
               </button>
             </div>
-          </div>
-          <div className="col-md-12" style={{ margin: "auto" }}>
+          </div> */}
+          {/* <div className="col-md-12" style={{ margin: "auto" }}>
             <TblContainer>
               <TblHead />
               <TableBody>
@@ -766,7 +783,7 @@ export const ModalTipoVehiculo = (props) => {
               </TableBody>
             </TblContainer>
             <TblPagination />
-          </div>
+          </div> */}
         </div>
       </Modal.Body>
       <Modal.Footer>

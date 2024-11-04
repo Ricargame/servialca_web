@@ -70,12 +70,12 @@ function TablaPrecio() {
       backgroundColor: "#e70101bf",
       color: "white",
     },
-    {
-      label: "Opciones",
-      textAlign: "center",
-      backgroundColor: "#e70101bf",
-      color: "white",
-    },
+    // {
+    //   label: "Opciones",
+    //   textAlign: "center",
+    //   backgroundColor: "#e70101bf",
+    //   color: "white",
+    // },
   ];
 
   const codigo = JSON.parse(localStorage.getItem("codigo"));
@@ -84,12 +84,13 @@ function TablaPrecio() {
   const [operacion, setOperacion] = useState(0.0);
   const [mostrar, setMostrar] = useState(false);
   const [tipoContrato, setTipoContrato] = useState([]);
-
+  const price = useRef();
   const [filterFn, setFilterFn] = useState({
     fn: (items) => {
       return items;
     },
   });
+  const [nivelSeleccionado, setNivelSeleccionado] = useState("1");
 
   const [records, setRecords] = useState([
     {
@@ -203,7 +204,30 @@ function TablaPrecio() {
       `${op.conexion}/reporte/reporteIngresoEgreso?Nombre=${id}&Desde=${desde}&Hasta=${hasta}`
     );
   };
-
+  const guarcarPercio = async () => {
+    let endpoint = op.conexion + "/tipo_vehiculo/saveNewPrecio";
+    let bodyF = new FormData();
+    bodyF.append("idContrato", valorSeleccionado ? valorSeleccionado.contrato_id : null)
+    bodyF.append("Nivel", nivelSeleccionado);
+    bodyF.append("precio", price.current.value);
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        selecionarRegistros()
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
   const selecionarRegistros = async (contrato) => {
     let a = 1
     if (contrato) {
@@ -354,42 +378,60 @@ function TablaPrecio() {
         className="col-md-12 bg-light py-2 rounded"
         style={{ margin: "auto" }}
       >
-        <div className="row col-12 d-flex justify-content-between mb-2">
-          <input
-            type="text"
-            className=" col-3 form-control form-control-sm rounded-pill"
-            onChange={handleSearch}
-            placeholder="Buscar"
-          />
-          {tipoContrato && 
-            Array.isArray(tipoContrato) &&
-            tipoContrato.length > 0 && (
-              <Autocomplete
-                className="col-3"
-                value={valorSeleccionado}
-                onChange={(event, newValue) => {
-                  if (newValue) {
-                    setValorSeleccionado({
-                      ...valorSeleccionado,
-                      contrato_nombre: newValue.contrato_nombre,
-                    });
-                  };
-                  selecionarRegistros(newValue)
-                }}
-                options={tipoContrato}
-                sx={{ width: "100%" }}
-                size="small"
-                getOptionLabel={(option) => option.contrato_nombre}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label="Tipo de Contrato"
-                    variant="outlined"
-                  />
-                )}
-              />
-            )}
-        </div>
+         <div className="row col-12 d-flex justify-content-between mb-2">
+            <input
+              type="text"
+              className="col-3 form-control form-control-sm rounded-pill"
+              onChange={handleSearch}
+              placeholder="Buscar"
+            />
+            <select
+              onChange={(e) => {
+                setNivelSeleccionado(e.target.value);
+                selecionarRegistros(valorSeleccionado, e.target.value); // Llama a la función con el nivel actualizado
+              }}
+              className="col-1 form-control form-control-sm"
+            >
+              <option value="1">Nivel 1</option>
+              <option value="2">Nivel 2</option>
+              <option value="3">Nivel 3</option>
+            </select>
+            {tipoContrato &&
+              Array.isArray(tipoContrato) &&
+              tipoContrato.length > 0 && (
+                <Autocomplete
+                  className="col-2"
+                  value={valorSeleccionado}
+                  onChange={(event, newValue) => {
+                    setValorSeleccionado(newValue);
+                    selecionarRegistros(newValue, nivelSeleccionado);
+                  }}
+                  options={tipoContrato}
+                  sx={{ width: "100%" }}
+                  size="small"
+                  getOptionLabel={(option) => option.contrato_nombre}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Tipo de Contrato"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              )}
+            <input
+              type="number"
+              className="col-1 form-control form-control-sm"
+              ref={price}
+              placeholder="Precio"
+            />
+            <button
+              onClick={guarcarPercio}
+              className="col-1 form-control form-control-sm"
+            >
+              Guardar
+            </button>
+          </div>
         <TblContainer>
           <TblHead />
           <TableBody>
@@ -426,7 +468,7 @@ function TablaPrecio() {
                   >
                     {(item.tipoVehiculo_precio * BCV).toFixed(2)}
                   </TableCell>
-                  <TableCell
+                  {/* <TableCell
                     className="align-baseline"
                     style={{
                       textAlign: "center",
@@ -440,7 +482,7 @@ function TablaPrecio() {
                     >
                       <i className="fa fa-edit"></i>{" "}
                     </button>
-                  </TableCell>
+                  </TableCell> */}
                 </TableRow>
               ))}
           </TableBody>
