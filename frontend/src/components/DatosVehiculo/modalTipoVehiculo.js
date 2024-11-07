@@ -25,6 +25,8 @@ import { Mensaje } from "../mensajes";
 import CatalogoClientes from "../../catalogos/catalogoClientes";
 import useTable from "../useTable";
 import CatalogoTiposContratos from "../../catalogos/catalogoTiposContratos";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 
 export const ModalTipoVehiculo = (props) => {
   const headCells = [
@@ -53,6 +55,17 @@ export const ModalTipoVehiculo = (props) => {
       textAlign: "center",
     },
   ];
+  const [valorSeleccionado, setValorSeleccionado] = useState({
+    contrato_nombre: "",
+    estado_nombre: "Portuguesa",
+    usuario_usuario: '',
+    sucursal_nombre: '',
+    transporte_nombre: "",
+    usoVehiculo_nombre: "",
+    clase_nombre: "",
+    tipoVehiculo_nombre: "",
+    contrato_id: 1
+  });
 
   const handleSearch = (e) => {
     let target = e.target;
@@ -84,6 +97,9 @@ export const ModalTipoVehiculo = (props) => {
   let op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
   const dolarbcv = JSON.parse(localStorage.getItem("dolarbcv"));
+  let permisos = JSON.parse(localStorage.getItem("permisos"));
+  const user = JSON.parse(localStorage.getItem("username"));
+  const suc = JSON.parse(localStorage.getItem("sucursal"));
 
   const txtEdad = useRef();
   const txtNombre = useRef();
@@ -102,6 +118,8 @@ export const ModalTipoVehiculo = (props) => {
   const txtDescripcion = useRef();
   const [records, setRecords] = useState([]);
   const [idTipo, setIdTipo] = useState();
+  const [tipoContrato, setTipoContrato] = useState([]);
+
   const [filterFn, setFilterFn] = useState({
     fn: (items) => {
       return items;
@@ -159,7 +177,41 @@ export const ModalTipoVehiculo = (props) => {
 
   const { TblContainer, TblHead, recordsAfterPagingAndSorting, TblPagination } =
     useTable(records, headCells, filterFn);
-
+  const selecionarTipoContrato = async () => {
+    let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
+    setActivate(true);
+    const permiso = permisos[permisos.length - 1];
+    let bodyF = new FormData();
+    // bodyF.append("ID", user_id)
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        if (permiso.length > 19) {
+          if (permiso[20] == 1) {
+            const validatedContract = response.filter(
+              (contract) => contract.contrato_validacion == "1"
+            );
+            setTipoContrato(validatedContract);
+          }
+        }
+        const validatedContract = response.filter(
+          (contract) => contract.contrato_validacion == "0"
+        );
+        setTipoContrato(validatedContract);
+        setActivate(false);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
   const salir = () => {
     setRecords([]);
     props.onHideCancela();
@@ -220,26 +272,25 @@ export const ModalTipoVehiculo = (props) => {
       texto: "Operacion Exitosa",
       icono: "exito",
     });
-    
   };
 
   const actualizarCertificado = async () => {
     let endpoint;
     let bodyF = new FormData();
-
+    console.log(tipoContrato)
     setActivate(true);
     if (operacion === 1) {
-      endpoint = op.conexion + "/tipo_vehiculo/registrar";
+      endpoint = op.conexion + "/tipo_vehiculo/newTipeVehiculo";
     }
 
-    if (operacion === 2) {
-      endpoint = op.conexion + "/tipo_vehiculo/actualizar";
-      bodyF.append("ID", values.tipoVehiculo_id);
-    }
+    // if (operacion === 2) {
+    //   endpoint = op.conexion + "/tipo_vehiculo/actualizar";
+    //   bodyF.append("ID", values.tipoVehiculo_id);
+    // }
 
     bodyF.append("tipoVehiculo_nombre", txtDescripcion.current.value);
-    bodyF.append('Nivel', nivel.current.value)
-    bodyF.append("precio", txtDolar.current.value);
+    bodyF.append("idContrato", valorSeleccionado.contrato_id);
+    bodyF.append("Nivel", nivel.current.value);
     bodyF.append("Sucursal", idsucursal);
 
     bodyF.append("token", token);
@@ -457,7 +508,7 @@ export const ModalTipoVehiculo = (props) => {
         let totalbs = $ * bs;
         setIdTipo(response);
         txtDescripcion.current.value = response.tipoVehiculo_nombre;
-        nivel.current.value = response.nivel
+        nivel.current.value = response.nivel;
         txtDolar.current.value = response.tipoVehiculo_precio
           ? formatMoneda(
               response.tipoVehiculo_precio
@@ -489,7 +540,6 @@ export const ModalTipoVehiculo = (props) => {
   };
 
   const agregarTipoContrato = (values) => {
-
     let sigue = true;
 
     for (let i = 0; i < records.length; i++) {
@@ -580,7 +630,7 @@ export const ModalTipoVehiculo = (props) => {
       keyboard={false}
       onShow={() => {
         setOperacion(props.operacion);
-
+        selecionarTipoContrato();
         if (props.operacion !== 1) {
           selecionarTipo(props.idTipoVehiculo);
         }
@@ -680,7 +730,35 @@ export const ModalTipoVehiculo = (props) => {
               Debe ingresar nombre del tipo del vehiculo
             </div>
           </div>
-          <div class="input-group input-group-sm mb-1 col-md-6">
+          <div class=" mb-1 col-md-12">
+            {tipoContrato &&
+              Array.isArray(tipoContrato) &&
+              tipoContrato.length > 0 && (
+                <Autocomplete
+                  value={valorSeleccionado}
+                  onChange={(event, newValue) => {
+                    if (newValue) {
+                      setValorSeleccionado({
+                        ...valorSeleccionado,
+                        contrato_nombre: newValue.contrato_nombre,
+                      });
+                    }
+                  }}
+                  options={tipoContrato}
+                  sx={{ width: "100%" }}
+                  size="small"
+                  getOptionLabel={(option) => option.contrato_nombre}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Tipo de Contrato"
+                      variant="outlined"
+                    />
+                  )}
+                />
+              )}
+          </div>
+          {/* <div class="input-group input-group-sm mb-1 col-md-6">
             <span class="input-group-text" id="inputGroup-sizing-sm">
               Monto en $:
             </span>
@@ -711,7 +789,7 @@ export const ModalTipoVehiculo = (props) => {
               aria-describedby="inputGroup-sizing-sm"
               onKeyUp={handleInputMontoChange}
             />
-          </div>
+          </div> */}
           {/* <div className="row col-12 d-flex justify-content-between mb-2 mt-4">
             <input
               type="text"

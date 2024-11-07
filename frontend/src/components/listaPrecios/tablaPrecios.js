@@ -385,7 +385,7 @@ function TablaPrecio() {
               onChange={handleSearch}
               placeholder="Buscar"
             />
-            <select
+            {/* <select
               onChange={(e) => {
                 setNivelSeleccionado(e.target.value);
                 selecionarRegistros(valorSeleccionado, e.target.value); // Llama a la función con el nivel actualizado
@@ -430,7 +430,7 @@ function TablaPrecio() {
               className="col-1 form-control form-control-sm"
             >
               Guardar
-            </button>
+            </button> */}
           </div>
         <TblContainer>
           <TblHead />

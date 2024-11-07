@@ -2163,6 +2163,10 @@ export const ModalRcv = (props) => {
                       Cedula:
                     </span>
                     <select
+                      disabled={
+                        (operacion == 3 && idUser != 57) ||
+                        (idUser != 57 && operacion === 2)
+                      }
                       class="form-select col-md-3"
                       ref={cmbNacionalidadTitular}
                       aria-label="Default select example"
@@ -2173,6 +2177,10 @@ export const ModalRcv = (props) => {
                       <option value="G-">G-</option>
                     </select>
                     <input
+                      disabled={
+                        (operacion == 3 && idUser != 57) ||
+                        (idUser != 57 && operacion == 2)
+                      }
                       type="text"
                       className="form-control"
                       ref={txtCedulatTitular}
@@ -2610,10 +2618,7 @@ export const ModalRcv = (props) => {
                     Ser. Carroceria
                   </span>
                   <input
-                    disabled={
-                      (operacion == 3) ||
-                      (operacion == 2)
-                    }
+                    disabled={operacion == 3}
                     type="text"
                     class="form-control"
                     maxLength={20}
@@ -2719,6 +2724,10 @@ export const ModalRcv = (props) => {
                         });
                       }
                     }}
+                    disabled={
+                      (operacion == 3 && idUser != 57) ||
+                      (idUser != 57 && operacion === 2)
+                    }
                     options={tipo}
                     sx={{ width: "100%" }}
                     size="small"

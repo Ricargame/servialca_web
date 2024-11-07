@@ -44,7 +44,6 @@ function Inicio2() {
     icono: "",
   });
 
-  console.log(user_id);
   const headCells = [
     {
       label: "N° Contrato",
@@ -107,10 +106,10 @@ function Inicio2() {
   const BCV = JSON.parse(localStorage.getItem("dolarbcv"));
   const txtDolar = useRef();
   const txtBs = useRef();
-
+  const dolar = useRef();
   const calcular = () => {
     const cantidadDolares = parseFloat(txtDolar.current.value);
-    const precio = parseFloat(BCV);
+    const precio = parseFloat(dolar.current.value);
 
     if (!isNaN(cantidadDolares) && !isNaN(precio)) {
       const total = cantidadDolares * precio;
@@ -122,7 +121,7 @@ function Inicio2() {
   const calcular2 = () => {
     const cantidadBsStr = txtBs.current.value.replace(",", "."); // Reemplaza la coma por punto
     const cantidadBs = parseFloat(cantidadBsStr);
-    const precioDolar = parseFloat(BCV);
+    const precioDolar = parseFloat(dolar.current.value);
 
     if (!isNaN(cantidadBs) && !isNaN(precioDolar) && precioDolar !== 0) {
       const totalDolares = cantidadBs / precioDolar;
@@ -235,7 +234,55 @@ function Inicio2() {
   };
   const { TblContainer, TblHead, recordsAfterPagingAndSorting, TblPagination } =
     useTable(records, headCells, filterFn);
-
+  const guardaPrecioDolar = async () => {
+    let endpoint = op.conexion + "/moneda/guardar";
+    setActivate(true);
+    let bodyF = new FormData();
+    bodyF.append("Precio", dolar.current.value);
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: "Precio del Dolar Actualizado",
+          icono: "Success",
+        })
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+      buscarPrecio()
+  }
+  const buscarPrecio = async () => {
+    let endpoint = op.conexion + "/moneda/ConsultarTodos";
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        dolar.current.value = response[0].dolar_monto
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  }
   const selecionarRegistros = async () => {
     let endpoint = op.conexion + "/poliza/ConsultarVencer";
     console.log(endpoint);
@@ -256,7 +303,6 @@ function Inicio2() {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log(response);
         setRecords(response);
       })
       .catch((error) =>
@@ -362,6 +408,7 @@ function Inicio2() {
     Hasta.current.value = fechaDesdeFormateada;
     selecionarRegistros();
     cantidadContrato();
+    buscarPrecio();
   }, []);
 
   const regPre = () => {
@@ -428,7 +475,6 @@ function Inicio2() {
 
     //setLoading(false);
     let username = JSON.parse(localStorage.getItem("username"));
-    console.log(username);
 
     let bodyF = new FormData();
 
@@ -537,8 +583,34 @@ function Inicio2() {
         }}
         idCliente={idCliente}
       />
+      <div className="col-12">
+        {user_id == 57 && (
+          <div className="col-12 row d-flex justify-content-end py-2 mt-5 mb-3">
+            <div className="input-group input-group-sm col-md-2 my-auto">
+              <span
+                className="input-group-text bg-transparent border-0 fw-bold text-light"
+                id="inputGroup-sizing-sm"
+              >
+                Precio del $:
+              </span>
 
-      <div className="col-12 py-2">
+              <input
+                type="text"
+                className="form-control bg-transparent text-light text-right"
+                ref={dolar}
+                aria-label="Sizing example input"
+                placeholder="BS"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+
+              <button onClick={guardaPrecioDolar}>
+                Guardar
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+      <div className="col-12">
         <div className="col-12 row d-flex justify-content-between py-2 mt-5 mb-3">
           <h2 className=" col-3 text-light">RCV QUE ESTAN POR VENCER</h2>
           <h2 className="col-3 text-light">

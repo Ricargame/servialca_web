@@ -264,6 +264,7 @@ function GraficosIngresos() {
         setEgreso(sumaEgreso);
         setOtroIngreso(otroIngreso);
         setLicencia(sumaLicencia);
+        cantidadContrato()
       })
       .catch((error) =>
         setMensaje({
@@ -349,7 +350,7 @@ function GraficosIngresos() {
   
     let endpoint = op.conexion + "/ladilla/totalReport";
     setActivate(true);
-    await fetch(`${endpoint}?desde=${desde.getFullYear()}-${padZero(desde.getMonth() + 1)}-${padZero(desde.getDate())}&hasta=${hasta.getFullYear()}-${padZero(hasta.getMonth() + 1)}-${padZero(hasta.getDate())}`, {
+    await fetch(`${endpoint}?desde=${txtDate1.current.value}&hasta=${txtDate2.current.value}`, {
       method: "GET",
     })
       .then((res) => res.json())

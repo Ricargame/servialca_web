@@ -407,7 +407,7 @@ function TablaTipoVehiculo() {
               onChange={handleSearch}
               placeholder="Buscar"
             />
-
+          
           <div className="col-3 d-flex justify-content-end">
             <button
               onClick={gestionarBanco(1, "", "")}
