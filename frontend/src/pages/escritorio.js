@@ -43,6 +43,7 @@ import TablaHotelGeneral from "../components/hotel/tablaHotelGeneral";
 import Reporte from "../components/reportesPorqueria/resportes";
 import ReporteHotel from "../components/hotel/reporteHote";
 import TablaBot from "../components/bot/tablaBot";
+import TablaNivel from "../components/administracion/tablaNivel";
 
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
@@ -150,8 +151,8 @@ function MenuImpuestoPP(props) {
   };
 
   const selecionarDolar = async (id) => {
-    // let endpoint = "https://api.exchangedyn.com/markets/quotes/usdves/bcv";
-    let endpoint = op.conexion + "/moneda/ConsultarTodos";
+    let endpoint = "https://api.exchangedyn.com/markets/quotes/usdves/bcv";
+    // let endpoint = op.conexion + "/moneda/ConsultarTodos";
     console.log(endpoint);
     setActivate(true);
 
@@ -162,14 +163,14 @@ function MenuImpuestoPP(props) {
       .then((response) => {
         setActivate(false);
 
-        // localStorage.setItem(
-        //   "dolarbcv",
-        //   JSON.stringify(parseFloat(response.sources.BCV.quote))
-        // );
         localStorage.setItem(
           "dolarbcv",
-          JSON.stringify(parseFloat(response[0].dolar_monto))
+          JSON.stringify(parseFloat(response.sources.BCV.quote))
         );
+        // localStorage.setItem(
+        //   "dolarbcv",
+        //   JSON.stringify(parseFloat(response[0].dolar_monto))
+        // );
         // txtDescripcion.current.value = response.clase_nombre;
         //  setValues(response);
       })
@@ -464,6 +465,15 @@ function MenuImpuestoPP(props) {
                               <span>Tipos de Vehiculos</span>
                             </a>
                           )}
+                          {/* {permisos.substring(7, 8) === "1" && (
+                            <a
+                              href="/nivel"
+                              className="list-group-item list-group-item-action py-2 ripple"
+                            >
+                              <i class="fas fas-fw me-1 fa-caravan"></i>
+                              <span>Asignar Precio a Tipo</span>
+                            </a>
+                          )} */}
 
                           {permisos.substring(8, 9) === "1" && (
                             <a
@@ -779,6 +789,11 @@ function MenuImpuestoPP(props) {
                 exact
                 path="/tipovehiculo"
                 component={TablaTipoVehiculo}
+              />
+              <AuthRoute
+                exact
+                path="/nivel"
+                component={TablaNivel}
               />
               <AuthRoute
                 exact

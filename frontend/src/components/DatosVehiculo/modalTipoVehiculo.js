@@ -25,8 +25,6 @@ import { Mensaje } from "../mensajes";
 import CatalogoClientes from "../../catalogos/catalogoClientes";
 import useTable from "../useTable";
 import CatalogoTiposContratos from "../../catalogos/catalogoTiposContratos";
-import Autocomplete from "@mui/material/Autocomplete";
-import TextField from "@mui/material/TextField";
 
 export const ModalTipoVehiculo = (props) => {
   const headCells = [
@@ -55,17 +53,7 @@ export const ModalTipoVehiculo = (props) => {
       textAlign: "center",
     },
   ];
-  const [valorSeleccionado, setValorSeleccionado] = useState({
-    contrato_nombre: "",
-    estado_nombre: "Portuguesa",
-    usuario_usuario: '',
-    sucursal_nombre: '',
-    transporte_nombre: "",
-    usoVehiculo_nombre: "",
-    clase_nombre: "",
-    tipoVehiculo_nombre: "",
-    contrato_id: 1
-  });
+  
 
   const handleSearch = (e) => {
     let target = e.target;
@@ -108,7 +96,6 @@ export const ModalTipoVehiculo = (props) => {
   const cmbLentes = useRef();
   const cmbPago = useRef();
   const cmbNacionalidad = useRef();
-  const nivel = useRef();
   const txtDatosPastor = useRef();
   const txtReferencia = useRef();
   const txtBs = useRef();
@@ -119,6 +106,7 @@ export const ModalTipoVehiculo = (props) => {
   const [records, setRecords] = useState([]);
   const [idTipo, setIdTipo] = useState();
   const [tipoContrato, setTipoContrato] = useState([]);
+  const [nivel, setNivel] = useState([]);
 
   const [filterFn, setFilterFn] = useState({
     fn: (items) => {
@@ -177,6 +165,26 @@ export const ModalTipoVehiculo = (props) => {
 
   const { TblContainer, TblHead, recordsAfterPagingAndSorting, TblPagination } =
     useTable(records, headCells, filterFn);
+  const buscarNivel = async () => {
+    let endpoint = op.conexion + "/nivel/ConsultarTodos";
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setNivel(response);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
   const selecionarTipoContrato = async () => {
     let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
     setActivate(true);
@@ -277,7 +285,6 @@ export const ModalTipoVehiculo = (props) => {
   const actualizarCertificado = async () => {
     let endpoint;
     let bodyF = new FormData();
-    console.log(tipoContrato)
     setActivate(true);
     if (operacion === 1) {
       endpoint = op.conexion + "/tipo_vehiculo/newTipeVehiculo";
@@ -289,8 +296,6 @@ export const ModalTipoVehiculo = (props) => {
     // }
 
     bodyF.append("tipoVehiculo_nombre", txtDescripcion.current.value);
-    bodyF.append("idContrato", valorSeleccionado.contrato_id);
-    bodyF.append("Nivel", nivel.current.value);
     bodyF.append("Sucursal", idsucursal);
 
     bodyF.append("token", token);
@@ -508,24 +513,6 @@ export const ModalTipoVehiculo = (props) => {
         let totalbs = $ * bs;
         setIdTipo(response);
         txtDescripcion.current.value = response.tipoVehiculo_nombre;
-        nivel.current.value = response.nivel;
-        txtDolar.current.value = response.tipoVehiculo_precio
-          ? formatMoneda(
-              response.tipoVehiculo_precio
-                .toString()
-                .replace(",", "")
-                .replace(".", ","),
-              ",",
-              ".",
-              2
-            )
-          : "0,00";
-        txtBs.current.value = formatMoneda(
-          totalbs.toString().replace(",", "").replace(".", ","),
-          ",",
-          ".",
-          2
-        );
         setValues(response);
         selecionarRegistros(response.tipoVehiculo_id);
       })
@@ -629,6 +616,7 @@ export const ModalTipoVehiculo = (props) => {
       backdrop="static"
       keyboard={false}
       onShow={() => {
+        buscarNivel();
         setOperacion(props.operacion);
         selecionarTipoContrato();
         if (props.operacion !== 1) {
@@ -683,7 +671,7 @@ export const ModalTipoVehiculo = (props) => {
         />
 
         <div className="col-md-12 row mx-auto">
-          <div class=" mb-1 col-md-12">
+          <div class="mb-1 col-md-12">
             <div class="input-group input-group-sm">
               <span class="input-group-text" id="inputGroup-sizing-sm">
                 Nombre:
@@ -705,30 +693,35 @@ export const ModalTipoVehiculo = (props) => {
                 }
               />
             </div>
-            <div id="nom" class="form-text hidden">
-              Debe ingresar nombre del tipo del vehiculo
-            </div>
           </div>
-          <div class=" mb-1 col-md-12">
-            <div class="input-group input-group-sm">
-              <span class="input-group-text" id="inputGroup-sizing-sm">
-                Nivel:
-              </span>
-              <input
-                maxLength={50}
-                type="text"
-                disabled={
-                  operacion === 1 ? false : operacion === 2 ? false : true
-                }
-                class="form-control"
-                ref={nivel}
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
+          {/* <div className="mb-1 col-md-12">
+            {nivel && Array.isArray(nivel) && nivel.length > 0 && (
+              <Autocomplete
+                value={
+                  nivel.find(
+                    (n) => n.nivel_id === valorSeleccionado.nivel_id
+                  ) || null
+                } // Para que el Autocomplete muestre el valor correcto
+                onChange={(event, newValue) => {
+                  if (newValue) {
+                    setValorSeleccionado({
+                      ...valorSeleccionado,
+
+                      nivel_id: newValue.nivel_id,
+
+                      monto: newValue.nivel_monto, // Actualiza el monto directamente aquí
+                    });
+                  }
+                }}
+                options={nivel}
+                sx={{ width: "100%" }}
+                size="small"
+                getOptionLabel={(option) => option.nivel_id}
+                renderInput={(params) => (
+                  <TextField {...params} label="Nivel" variant="outlined" />
+                )}
               />
-            </div>
-            <div id="nom" class="form-text hidden">
-              Debe ingresar nombre del tipo del vehiculo
-            </div>
+            )}
           </div>
           <div class=" mb-1 col-md-12">
             {tipoContrato &&
@@ -758,109 +751,23 @@ export const ModalTipoVehiculo = (props) => {
                 />
               )}
           </div>
-          {/* <div class="input-group input-group-sm mb-1 col-md-6">
-            <span class="input-group-text" id="inputGroup-sizing-sm">
-              Monto en $:
-            </span>
-            <input
-              type="text"
-              disabled={
-                operacion === 1 ? false : operacion === 2 ? false : true
-              }
-              maxLength={5}
-              class="form-control text-right"
-              name="dolar"
-              ref={txtDolar}
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm"
-              onChange={handleInputMontoChange}
-            />
-          </div>
-          <div class="input-group input-group-sm mb-1 col-md-6">
-            <span class="input-group-text" id="inputGroup-sizing-sm">
-              Monto en Bs:
-            </span>
-            <input
-              type="text"
-              disabled
-              class="form-control text-right"
-              ref={txtBs}
-              aria-label="Sizing example input"
-              aria-describedby="inputGroup-sizing-sm"
-              onKeyUp={handleInputMontoChange}
-            />
-          </div> */}
-          {/* <div className="row col-12 d-flex justify-content-between mb-2 mt-4">
-            <input
-              type="text"
-              className=" col-3 form-control form-control-sm rounded-pill"
-              onChange={handleSearch}
-              placeholder="Buscar"
-            />
+          <div className="mb-1 col-md-12">
+            <div className="input-group input-group-sm">
+              <span className="input-group-text" id="inputGroup-sizing-sm">
+                Precio $:
+              </span>
 
-            <div className="col-3 d-flex justify-content-end">
-              <button
-                onClick={gestinarTipo}
-                className="btn btn-sm btn-primary rounded-circle"
-              >
-                <i className="fas fa-plus"></i>{" "}
-              </button>
+              <input
+                maxLength={50}
+                type="text"
+                readOnly // Cambia a 'disabled' si no quieres que sea editable
+                className="form-control"
+                value={valorSeleccionado.monto} // Muestra el monto actualizado
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                name="nom"
+              />
             </div>
-          </div> */}
-          {/* <div className="col-md-12" style={{ margin: "auto" }}>
-            <TblContainer>
-              <TblHead />
-              <TableBody>
-                {records &&
-                  recordsAfterPagingAndSorting().map((item, index) => (
-                    <TableRow key={index} style={{ padding: "0" }}>
-                      <TableCell
-                        className="align-baseline"
-                        style={{ textAlign: "center", alignItems: "center" }}
-                      >
-                        {item.contrato_id}
-                      </TableCell>
-                      <TableCell
-                        className="align-baseline"
-                        style={{
-                          textAlign: "center",
-                          alignItems: "center",
-                          width: "270px",
-                        }}
-                      >
-                        {item.contrato_nombre}
-                      </TableCell>
-
-                      <TableCell
-                        className="align-baseline"
-                        style={{
-                          textAlign: "center",
-                          alignItems: "center",
-                          width: "270px",
-                        }}
-                      >
-                        {item.sucursal_nombre}
-                      </TableCell>
-
-                      <TableCell
-                        className="align-baseline"
-                        style={{ textAlign: "center", alignItems: "center" }}
-                      >
-                        {
-                          // <button  className="btn btn-sm mx-1 btn-info rounded-circle" ><i className="fas fas fa-backward"></i> </button>
-                        }{" "}
-                        <button
-                          className="btn btn-sm mx-1 btn-danger rounded-circle"
-                          onClick={elimminarrTipo(item.precio_id)}
-                        >
-                          <i className="fa fa-trash"></i>{" "}
-                        </button>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-              </TableBody>
-            </TblContainer>
-            <TblPagination />
           </div> */}
         </div>
       </Modal.Body>

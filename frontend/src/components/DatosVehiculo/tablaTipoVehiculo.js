@@ -51,24 +51,6 @@ function TablaTipoVehiculo() {
       color: "white",
     },
     {
-      label: "Tipo de contrato",
-      textAlign: "center",
-      backgroundColor: "#e70101bf",
-      color: "white",
-    },
-    {
-      label: "Nivel",
-      textAlign: "center",
-      backgroundColor: "#e70101bf",
-      color: "white",
-    },
-    {
-      label: "Precio",
-      textAlign: "center",
-      backgroundColor: "#e70101bf",
-      color: "white",
-    },
-    {
       label: "Estatus",
       textAlign: "center",
       backgroundColor: "#e70101bf",
@@ -435,27 +417,6 @@ function TablaTipoVehiculo() {
                   >
                     {item.tipoVehiculo_nombre}
                   </TableCell>
-
-                  <TableCell
-                    className="align-baseline"
-                    style={{ textAlign: "center", alignItems: "center" }}
-                  >
-                    {item.contrato_nombre}
-                  </TableCell>
-                  <TableCell
-                    className="align-baseline"
-                    style={{ textAlign: "center", alignItems: "center" }}
-                  >
-                    {item.nivel}
-                  </TableCell>
-                  {
-                    <TableCell
-                      className="align-baseline"
-                      style={{ textAlign: "center", alignItems: "center" }}
-                    >
-                      {item.precio_monto + "$"}
-                    </TableCell>
-                  }
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
