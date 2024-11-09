@@ -1709,7 +1709,7 @@ export const ModalRcv = (props) => {
                       Fecha Nacimiento
                     </span>
                     <input
-                      disabled={operacion == 3}
+                      disabled={operacion == 3 && idUser != 57}
                       type="date"
                       ref={txtFechaNaci}
                       class="form-control"
@@ -1731,7 +1731,7 @@ export const ModalRcv = (props) => {
                     </span>
                     <input
                       type="text"
-                      disabled={operacion == 3}
+                      disabled={operacion == 3 && idUser != 57}
                       maxLength={25}
                       ref={txtNombre}
                       class="form-control "
@@ -1755,7 +1755,7 @@ export const ModalRcv = (props) => {
                       Apellido
                     </span>
                     <input
-                      disabled={operacion == 3}
+                      disabled={operacion == 3 && idUser != 57}
                       type="text"
                       ref={txtApellido}
                       maxLength={25}
@@ -2313,7 +2313,7 @@ export const ModalRcv = (props) => {
                     Puesto
                   </span>
                   <input
-                    disabled={operacion == 3}
+                    disabled={operacion == 3 && idUser != 57}
                     type="text"
                     maxLength={2}
                     ref={txtPuesto}
@@ -2432,7 +2432,7 @@ export const ModalRcv = (props) => {
                     Año
                   </span>
                   <input
-                    disabled={operacion == 3}
+                    disabled={operacion == 3 && idUser != 57}
                     type="text"
                     class="form-control text-right"
                     maxLength={4}
@@ -2618,7 +2618,7 @@ export const ModalRcv = (props) => {
                     Ser. Carroceria
                   </span>
                   <input
-                    disabled={operacion == 3}
+                    disabled={operacion == 3 && idUser != 57}
                     type="text"
                     class="form-control"
                     maxLength={20}
@@ -2773,7 +2773,7 @@ export const ModalRcv = (props) => {
                     Modelo
                   </span>
                   <input
-                    disabled={operacion == 3}
+                    disabled={operacion == 3 && idUser != 57}
                     maxLength={50}
                     type="text"
                     class="form-control"
@@ -2799,7 +2799,7 @@ export const ModalRcv = (props) => {
                     Marca
                   </span>
                   <input
-                    disabled={operacion == 3}
+                    disabled={operacion == 3 && idUser != 57}
                     maxLength={50}
                     type="text"
                     class="form-control"
