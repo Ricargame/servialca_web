@@ -1,0 +1,56 @@
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    color: #fff; /* Texto blanco */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde ligero */
+  }
+  
+  .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo más claro al enfocarse */
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5); /* Borde más destacado */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Resplandor al enfocarse */
+  }
+  
+  .btn-login {
+    background-color: #1a73e8; /* Azul adecuado para el tema navideño */
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-login:hover {
+    background-color: #1456a3; /* Azul oscuro al pasar el ratón */
+  }
+  
+  .position-absolute i {
+    color: #fff; /* Ícono de mostrar/ocultar contraseña en blanco */
+  }
+  
+  /* Efecto de nieve (opcional) */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  
+  /* Estilos para los copos de nieve */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    font-size: 1em;
+    color: white;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}

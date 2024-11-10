@@ -42,6 +42,7 @@ export const ModalNivel = (props) => {
   const txtFechaNaci = useRef();
   const txtDescripcion = useRef();
   const txtComision = useRef();
+  const idPrecio = useRef();
   const [values, setValues] = useState({
     ced: "",
     nombre: "",
@@ -157,7 +158,7 @@ export const ModalNivel = (props) => {
   };
   const actualizarCertificado = async () => {
     let endpoint;
-    console.log(endpoint);
+    console.log(idPrecio.current.value)
     setActivate(true);
     let bodyF = new FormData();
 
@@ -165,19 +166,19 @@ export const ModalNivel = (props) => {
       endpoint = op.conexion + "/nivel/registrar";
       bodyF.append("Monto", txtDescripcion.current.value);
       bodyF.append("idContrato", valorSeleccionado.contrato_id);
-      bodyF.append("idTipo", valorSeleccionado.tipoVehiculo_id);
+      bodyF.append("idTipo", valorSeleccionado.tipo_id);
     } else if (operacion === 2) {
       endpoint = op.conexion + "/nivel/actualizar";
       bodyF.append("Monto", txtDescripcion.current.value);
       bodyF.append("idContrato", valorSeleccionado.contrato_id);
-      bodyF.append("idTipo", valorSeleccionado.tipoVehiculo_id);
-      bodyF.append("ID", values.nivel_id);
+      bodyF.append("idTipo", valorSeleccionado.tipo_id);
+      bodyF.append("ID", idPrecio.current.value);
     } else {
       endpoint = op.conexion + "/nivel/eliminar";
       bodyF.append("Monto", txtDescripcion.current.value);
       bodyF.append("idContrato", valorSeleccionado.contrato_id);
-      bodyF.append("idTipo", valorSeleccionado.tipoVehiculo_id);
-      bodyF.append("ID", values.nivel_id);
+      bodyF.append("idTipo", valorSeleccionado.tipo_id);
+      bodyF.append("ID", idPrecio.current.value);
     }
     bodyF.append("Token", token);
     await fetch(endpoint, {
@@ -381,10 +382,14 @@ export const ModalNivel = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log(response);
-
-        txtDescripcion.current.value = response.roles_nombre;
-        txtComision.current.value = response.roles_comision;
+        txtDescripcion.current.value = response[0].monto;
+        idPrecio.current.value = response[0].precio_id;
+        setValorSeleccionado({
+          contrato_nombre : response[0].contrato_nombre,
+          contrato_id : response[0].contrato_id,
+          tipoVehiculo_nombre: response[0].tipoVehiculo_nombre,
+          tipo_id: response[0].tipoVehiculo_id
+        })
         setValues(response);
       })
       .catch((error) =>
@@ -480,6 +485,7 @@ export const ModalNivel = (props) => {
           <div class="mb-1 col-md-12">
             <div className="mb-3 col-md-12">
               <div className="input-group input-group-sm">
+                <input type="hidden" ref={idPrecio} />
                 <span className="input-group-text" id="inputGroup-sizing-sm">
                   Precio $:
                 </span>

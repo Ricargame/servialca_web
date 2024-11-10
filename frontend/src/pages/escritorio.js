@@ -465,7 +465,7 @@ function MenuImpuestoPP(props) {
                               <span>Tipos de Vehiculos</span>
                             </a>
                           )}
-                          {/* {permisos.substring(7, 8) === "1" && (
+                          {permisos.substring(7, 8) === "1" && (
                             <a
                               href="/nivel"
                               className="list-group-item list-group-item-action py-2 ripple"
@@ -473,7 +473,7 @@ function MenuImpuestoPP(props) {
                               <i class="fas fas-fw me-1 fa-caravan"></i>
                               <span>Asignar Precio a Tipo</span>
                             </a>
-                          )} */}
+                          )}
 
                           {permisos.substring(8, 9) === "1" && (
                             <a

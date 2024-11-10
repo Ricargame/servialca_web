@@ -317,7 +317,7 @@ function TablaNivel() {
                     }}
                   >
                     <button
-                      onClick={gestionarBanco(2, item.roles_id, "")}
+                      onClick={gestionarBanco(2, item.precio_id, "")}
                       className="btn btn-sm mx-1 btn-warning rounded-circle"
                     >
                       <i className="fa fa-edit"></i>{" "}
