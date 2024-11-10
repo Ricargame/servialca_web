@@ -42,6 +42,12 @@ function TablaNivel() {
       color: "white",
     },
     {
+      label: "Sucursal",
+      textAlign: "center",
+      backgroundColor: "#e70101bf",
+      color: "white",
+    },
+    {
       label: "Precio en $",
       textAlign: "center",
       backgroundColor: "#e70101bf",
@@ -301,6 +307,12 @@ function TablaNivel() {
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
                     {item.contrato_nombre}
+                  </TableCell>
+                  <TableCell
+                    className="align-baseline"
+                    style={{ textAlign: "center", alignItems: "center" }}
+                  >
+                    {item.sucursal_id}
                   </TableCell>
                   <TableCell
                     className="align-baseline"
