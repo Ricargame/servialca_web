@@ -2,13 +2,10 @@ import React, { useContext, useRef, useState, useEffect } from "react";
 import { AuthContext } from "../context/auth";
 import { useForm } from "../util/hooks";
 import axios from "axios";
-import { MensajeAlert, MensajeMinimal } from "../components/Alerta";
 import { Loader, Dimmer, Label } from "semantic-ui-react";
-import md5 from "md5";
 import { Mensaje } from "../components/mensajes";
-import { GestionarPreguntas } from "../components/seguridad/preguntasSeguridad";
 import { GestionarClave } from "../components/seguridad/cambiarClavePersonal";
-import bg2 from "../imagenes/bg2.jpg";
+import navidad from "./navidad.css";
 function Login(props) {
   const [loading, setLoading] = useState(false);
   const img_login = useRef();
@@ -52,6 +49,35 @@ function Login(props) {
     selecionarRegistros();
     context.logout();
   }, []);
+  // Configuración para el efecto de nieve
+  const snowflakeCount = 50; // Número de copos de nieve
+  const snowflakes = [];
+
+  // Función para crear y animar copos de nieve
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.textContent = "❄"; // Puedes cambiarlo por un carácter de copo de nieve o una imagen pequeña
+
+    // Estilos aleatorios para los copos de nieve
+    snowflake.style.left = `${Math.random() * 100}vw`;
+    snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+    snowflake.style.opacity = Math.random();
+
+    // Duración aleatoria para cada copo de nieve
+    snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;
+    document.body.appendChild(snowflake);
+
+    // Eliminar el copo de nieve cuando termina la animación
+    snowflake.addEventListener("animationend", () => {
+      snowflake.remove();
+    });
+
+    snowflakes.push(snowflake);
+  }
+
+  // Crear copos de nieve cada cierto intervalo
+  setInterval(createSnowflake, 300);
 
   const txtUserName = useRef(null);
   const txtPassword = useRef(null);
@@ -308,6 +334,14 @@ function Login(props) {
   //   // Generar un CAPTCHA al cargar el componente
   //   generateCaptcha();
   // }, []);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+  const backgroundImageUrl = `${op.conexion}/ImgPanel/${isMobile ? "photo.jpg" : "photo2.jpg"}`;
 
   return (
     <div className="contenedor">
@@ -326,28 +360,23 @@ function Login(props) {
             : setMensaje({ mostrar: false, titulo: "", texto: "", icono: "" });
         }}
       />
-
-      <div class="container-fluid ps-md-0">
+        <div
+          className="container-fluid ps-md-0"
+          style={{
+            height: "100vh",
+            width: "100%",
+            backgroundImage: `url('${backgroundImageUrl}')`,
+            backgroundSize: "100% 104vh",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
         <Dimmer active={loading} inverted>
           <Loader inverted>cargando...</Loader>
         </Dimmer>
         <div class="row g-0">
           <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image">
-            <div
-              style={{
-                height: "100vh",
-                width: "100%",
-                backgroundImage:
-                  "url('" +
-                  op.conexion +
-                  "/ImgPanel/" +
-                  "photo.jpg" +
-                  "')",
-                backgroundSize: "100% 104vh",
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat", // Agregar esta línea
-              }}
-            />
+            <div />
           </div>
           <div class="col-md-8 col-lg-5">
             <div class="login d-flex align-items-center ">
@@ -359,7 +388,10 @@ function Login(props) {
                       style={{ height: 120, width: 280 }}
                     ></div>
 
-                    <h3 class="login-heading text-center fw-bold mb-4">
+                    <h3
+                      style={{ color: "white" }}
+                      class="login-heading text-center fw-bold mb-4"
+                    >
                       {" "}
                       Sistema de Servial C.A
                     </h3>
@@ -430,7 +462,7 @@ function Login(props) {
                         >
                           Ingresar
                         </button>
-                        <div class="text-center">
+                        <div class="text-center" style={{ color: "white" }}>
                           <a
                             class="small"
                             type="button"
