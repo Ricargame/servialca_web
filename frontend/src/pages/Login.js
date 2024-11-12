@@ -400,7 +400,7 @@ function Login(props) {
                       <div class="form-floating mb-3">
                         <input
                           type="text"
-                          class="form-control-login"
+                          class="form-control form-control-login"
                           required
                           autoComplete="off"
                           name="username"
@@ -412,7 +412,7 @@ function Login(props) {
                       <div className="form-floating mb-3 position-relative">
                         <input
                           type={showPassword ? "text" : "password"}
-                          className="form-control-login"
+                          className="form-control form-control-login"
                           required
                           autoComplete="off"
                           name="password"
