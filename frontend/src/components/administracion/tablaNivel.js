@@ -174,11 +174,16 @@ function TablaNivel() {
               (x.roles_id !== null
                 ? String(x.roles_id).includes(target.value)
                 : 0) ||
-              (x.roles_nombre !== null
-                ? x.roles_nombre
+              (x.tipoVehiculo_nombre !== null
+                ? x.tipoVehiculo_nombre
                     .toLowerCase()
                     .includes(target.value.toLowerCase())
-                : "")
+                : "") ||
+                (x.contrato_nombre !== null
+                  ? x.contrato_nombre
+                      .toLowerCase()
+                      .includes(target.value.toLowerCase())
+                  : "")
             ) {
               return x;
             }
@@ -318,7 +323,7 @@ function TablaNivel() {
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.monto	+ " $"}
+                    {item.precio_monto + " $"}
                   </TableCell>
                   <TableCell
                     className="align-baseline"

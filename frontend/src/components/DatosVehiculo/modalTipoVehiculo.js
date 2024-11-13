@@ -290,10 +290,10 @@ export const ModalTipoVehiculo = (props) => {
       endpoint = op.conexion + "/tipo_vehiculo/newTipeVehiculo";
     }
 
-    // if (operacion === 2) {
-    //   endpoint = op.conexion + "/tipo_vehiculo/actualizar";
-    //   bodyF.append("ID", values.tipoVehiculo_id);
-    // }
+    if (operacion === 2) {
+      endpoint = op.conexion + "/tipo_vehiculo/newActualizar";
+      bodyF.append("ID", values.tipoVehiculo_id);
+    }
 
     bodyF.append("tipoVehiculo_nombre", txtDescripcion.current.value);
     bodyF.append("Sucursal", idsucursal);
@@ -687,7 +687,6 @@ export const ModalTipoVehiculo = (props) => {
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm"
                 name="nom"
-                onBlur={validarInput}
                 onChange={(e) =>
                   (e.target.value = e.target.value.toUpperCase())
                 }
