@@ -1,7 +1,7 @@
 .form-control-login {
   background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
-  color: #fff; /* Texto blanco */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde ligero */
+  color:black; /* Texto blanco */
+  border: 1px solid black; /* Borde ligero */
 }
 
 .form-control-login:focus {
@@ -11,7 +11,7 @@
     255,
     0.15
   ); /* Fondo más claro al enfocarse */
-  color: #fff;
+  color: black;
   border-color: rgba(255, 255, 255, 0.5); /* Borde más destacado */
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Resplandor al enfocarse */
 }

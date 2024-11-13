@@ -65,7 +65,7 @@ function Login(props) {
     snowflake.style.opacity = Math.random();
 
     // Duración aleatoria para cada copo de nieve
-    snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;
+    snowflake.style.animationDuration = `${Math.random() * 100 + 5}s`;
     document.body.appendChild(snowflake);
 
     // Eliminar el copo de nieve cuando termina la animación
