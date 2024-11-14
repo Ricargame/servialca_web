@@ -388,13 +388,13 @@ function Login(props) {
                       style={{ height: 120, width: 280 }}
                     ></div>
 
-                    <h3
+                    {/* <h3
                       style={{ color: "black" }}
                       class="login-heading text-center fw-bold mb-4"
                     >
                       {" "}
                       Sistema de Servial C.A
-                    </h3>
+                    </h3> */}
 
                     <form onSubmit={onSubmit}>
                       <div class="form-floating mb-3">
