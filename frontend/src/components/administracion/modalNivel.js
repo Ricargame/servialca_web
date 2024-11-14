@@ -382,7 +382,7 @@ export const ModalNivel = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        txtDescripcion.current.value = response[0].monto;
+        txtDescripcion.current.value = response[0].precio_monto;
         idPrecio.current.value = response[0].precio_id;
         setValorSeleccionado({
           contrato_nombre : response[0].contrato_nombre,

@@ -389,7 +389,7 @@ function Login(props) {
                     ></div>
 
                     <h3
-                      style={{ color: "white" }}
+                      style={{ color: "black" }}
                       class="login-heading text-center fw-bold mb-4"
                     >
                       {" "}
