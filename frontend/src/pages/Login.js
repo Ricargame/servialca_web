@@ -385,7 +385,7 @@ function Login(props) {
                   <div class="col-md-9 col-lg-8 mx-auto">
                     <div
                       className=" img-fluid mx-auto logo-login"
-                      style={{ height: 120, width: 280 }}
+                      style={{ height: 125, width: 280 }}
                     ></div>
 
                     {/* <h3
