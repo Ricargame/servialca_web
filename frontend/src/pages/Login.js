@@ -54,30 +54,30 @@ function Login(props) {
   const snowflakes = [];
 
   // Función para crear y animar copos de nieve
-  function createSnowflake() {
-    const snowflake = document.createElement("div");
-    snowflake.classList.add("snowflake");
-    snowflake.textContent = "❄"; // Puedes cambiarlo por un carácter de copo de nieve o una imagen pequeña
+  // function createSnowflake() {
+  //   const snowflake = document.createElement("div");
+  //   snowflake.classList.add("snowflake");
+  //   snowflake.textContent = "❄"; // Puedes cambiarlo por un carácter de copo de nieve o una imagen pequeña
 
-    // Estilos aleatorios para los copos de nieve
-    snowflake.style.left = `${Math.random() * 100}vw`;
-    snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
-    snowflake.style.opacity = Math.random();
+  //   // Estilos aleatorios para los copos de nieve
+  //   snowflake.style.left = `${Math.random() * 100}vw`;
+  //   snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+  //   snowflake.style.opacity = Math.random();
 
-    // Duración aleatoria para cada copo de nieve
-    snowflake.style.animationDuration = `${Math.random() * 100 + 5}s`;
-    document.body.appendChild(snowflake);
+  //   // Duración aleatoria para cada copo de nieve
+  //   snowflake.style.animationDuration = `${Math.random() * 100 + 5}s`;
+  //   document.body.appendChild(snowflake);
 
-    // Eliminar el copo de nieve cuando termina la animación
-    snowflake.addEventListener("animationend", () => {
-      snowflake.remove();
-    });
+  //   // Eliminar el copo de nieve cuando termina la animación
+  //   snowflake.addEventListener("animationend", () => {
+  //     snowflake.remove();
+  //   });
 
-    snowflakes.push(snowflake);
-  }
+  //   snowflakes.push(snowflake);
+  // }
 
-  // Crear copos de nieve cada cierto intervalo
-  setInterval(createSnowflake, 300);
+  // // Crear copos de nieve cada cierto intervalo
+  // setInterval(createSnowflake, 300);
 
   const txtUserName = useRef(null);
   const txtPassword = useRef(null);
@@ -388,13 +388,13 @@ function Login(props) {
                       style={{ height: 125, width: 280 }}
                     ></div>
 
-                    {/* <h3
+                    {<h3
                       style={{ color: "black" }}
                       class="login-heading text-center fw-bold mb-4"
                     >
                       {" "}
-                      Sistema de Servial C.A
-                    </h3> */}
+                      
+                    </h3>}
 
                     <form onSubmit={onSubmit}>
                       <div class="form-floating mb-3">
