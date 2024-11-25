@@ -31,7 +31,7 @@ import { FormControl, MenuItem, Select, InputLabel } from "@mui/material";
 import { Typeahead } from "react-bootstrap-typeahead";
 export const ModalRcv = (props) => {
   /*  variables de estados */
-
+  let disabledButton = false
   let op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
   const fechasistema = JSON.parse(localStorage.getItem("fechasistema"));
@@ -618,7 +618,9 @@ export const ModalRcv = (props) => {
           texto: error.res,
           icono: "informacion",
         })
-      );
+      ).finally(() => {
+        disabledButton = false
+      })
   };
 
   const selecionarPrecio = async () => {
@@ -926,6 +928,7 @@ export const ModalRcv = (props) => {
     let sigue = true;
     let minimo = 0;
     let calculo = 0;
+    disabledButton = true
     if (sigue) {
       actualizarCertificado();
     }
@@ -1650,7 +1653,7 @@ export const ModalRcv = (props) => {
                 </legend>
                 <div class="input-group input-group-sm mb-1 col-md-5">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Cedula:
+                    Cedula: <span style={{ color: 'red' }}> * </span>
                   </span>
                   <select
                     disabled={
@@ -1727,7 +1730,7 @@ export const ModalRcv = (props) => {
                 <div class="col-md-6">
                   <div class="input-group input-group-sm mb-2">
                     <span class="input-group-text" id="inputGroup-sizing-sm">
-                      Nombre
+                      Nombre <span style={{ color: 'red' }}> * </span>
                     </span>
                     <input
                       type="text"
@@ -1752,7 +1755,7 @@ export const ModalRcv = (props) => {
                 <div class="col-md-6">
                   <div class="input-group input-group-sm mb-2">
                     <span class="input-group-text" id="inputGroup-sizing-sm">
-                      Apellido
+                      Apellido <span style={{ color: 'red' }}> * </span>
                     </span>
                     <input
                       disabled={operacion == 3 && idUser != 57}
@@ -1827,7 +1830,7 @@ export const ModalRcv = (props) => {
                 <div class="col-md-12">
                   <div class="input-group input-group-sm mb-2">
                     <span class="input-group-text" id="inputGroup-sizing-sm">
-                      Direción
+                      Direción <span style={{ color: 'red' }}> * </span>
                     </span>
                     <input
                       type="text"
@@ -2160,7 +2163,7 @@ export const ModalRcv = (props) => {
                 <div class=" mb-1 col-md-5">
                   <div class="input-group input-group-sm">
                     <span class="input-group-text" id="inputGroup-sizing-sm">
-                      Cedula:
+                      Cedula: <span style={{ color: 'red' }}> * </span>
                     </span>
                     <select
                       disabled={
@@ -2217,7 +2220,7 @@ export const ModalRcv = (props) => {
                 <div class="col-md-6">
                   <div class="input-group input-group-sm mb-2">
                     <span class="input-group-text" id="inputGroup-sizing-sm">
-                      Nombre
+                      Nombre <span style={{ color: 'red' }}> * </span>
                     </span>
                     <input
                       maxLength={25}
@@ -2240,7 +2243,7 @@ export const ModalRcv = (props) => {
                 <div class="col-md-6">
                   <div class="input-group input-group-sm mb-2">
                     <span class="input-group-text" id="inputGroup-sizing-sm">
-                      Apellido
+                      Apellido <span style={{ color: 'red' }}> * </span>
                     </span>
                     <input
                       maxLength={50}
@@ -2273,7 +2276,7 @@ export const ModalRcv = (props) => {
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Placa
+                    Placa <span style={{ color: 'red' }}> * </span>
                   </span>
                   <input
                     disabled={
@@ -2310,7 +2313,7 @@ export const ModalRcv = (props) => {
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Puesto
+                    Puesto <span style={{ color: 'red' }}> * </span>
                   </span>
                   <input
                     disabled={operacion == 3 && idUser != 57}
@@ -2429,7 +2432,7 @@ export const ModalRcv = (props) => {
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Año
+                    Año <span style={{ color: 'red' }}> * </span>
                   </span>
                   <input
                     disabled={operacion == 3 && idUser != 57}
@@ -2471,7 +2474,7 @@ export const ModalRcv = (props) => {
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Ser. Motor
+                    Ser. Motor <span style={{ color: 'red' }}> * </span>
                   </span>
                   <input
                     type="text"
@@ -2590,7 +2593,7 @@ export const ModalRcv = (props) => {
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Color
+                    Color <span style={{ color: 'red' }}> * </span>
                   </span>
                   <input
                     maxLength={20}
@@ -2615,7 +2618,7 @@ export const ModalRcv = (props) => {
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Ser. Carroceria
+                    Ser. Carroceria <span style={{ color: 'red' }}> * </span>
                   </span>
                   <input
                     disabled={operacion == 3 && idUser != 57}
@@ -2770,7 +2773,7 @@ export const ModalRcv = (props) => {
               <div class="col-md-4">
                 <div class="input-group input-group-sm mb-2">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Modelo
+                    Modelo <span style={{ color: 'red' }}> * </span>
                   </span>
                   <input
                     disabled={operacion == 3 && idUser != 57}
@@ -2796,7 +2799,7 @@ export const ModalRcv = (props) => {
               <div class="col-md-4">
                 <div class="input-group input-group-sm mb-2">
                   <span class="input-group-text" id="inputGroup-sizing-sm">
-                    Marca
+                    Marca <span style={{ color: 'red' }}> * </span>
                   </span>
                   <input
                     disabled={operacion == 3 && idUser != 57}
@@ -2949,7 +2952,7 @@ export const ModalRcv = (props) => {
         <Modal.Footer>
           <button
             className="btn btn-sm btn-success rounded-pill col-md-2"
-            disabled={props.operacion == 4 ? true : false}
+            disabled={props.operacion == 4 ? true : false || disabledButton}
             onClick={onChangeValidar}
           >
             <i className="fas fa-check-circle"> Aceptar</i>
