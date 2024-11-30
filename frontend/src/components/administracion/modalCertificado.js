@@ -721,7 +721,7 @@ export const ModalCertificadoMedico = (props) => {
               placeholder="Dolares"
               onChange={handleInputMontoChange}
               name="dolar"
-              value={10}
+              value={15}
             />
             <input
               disabled
@@ -732,7 +732,7 @@ export const ModalCertificadoMedico = (props) => {
               aria-describedby="inputGroup-sizing-sm"
               placeholder="Bolivares"
               onChange={handleInputMontoChange}
-              value={(10 * parseFloat(dolarbcv)).toFixed(2)}
+              value={(15 * parseFloat(dolarbcv)).toFixed(2)}
             />
           </div>
         </div>
