@@ -241,19 +241,17 @@ function GraficosIngresos() {
         response.forEach((item) => {
           if (item.nota_motivo === "RCV") {
             sumaRcv++;
-          } else if (item.nota_motivo === "Renovación") {
+          } if (item.nota_motivo === "Renovación") {
             sumaRenovacion++;
-          } else if (
+          } if (
             item.nota_motivo === "Seguro" ||
             item.nota_motivo === "Medico"
           ) {
             sumaSeguro++;
-          } else if (item.nota_IngresoEgreso === 0) {
+          } if (item.nota_IngresoEgreso === 0) {
             sumaEgreso++;
-          } else if (item.nota_motivo === "Licencia") {
+          } if (item.nota_motivo === "Licencia") {
             sumaLicencia++;
-          } else {
-            otroIngreso++;
           }
         });
 

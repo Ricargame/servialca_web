@@ -3,7 +3,7 @@ require_once("cls_db.php");
 
 abstract class cls_sucursal extends cls_db
 {
-	protected $id, $nombre, $direccion, $estatus;
+	protected $id, $nombre, $direccion, $estatus, $reporte;
 
 	public function __construct()
 	{
@@ -34,8 +34,8 @@ abstract class cls_sucursal extends cls_db
 				];
 			}
 
-			$sql = $this->db->prepare("INSERT INTO sucursal(sucursal_nombre,sucursal_direccion,sucursal_estatus) VALUES(?,?,1)");
-			$sql->execute([$this->nombre, $this->direccion]);
+			$sql = $this->db->prepare("INSERT INTO sucursal(sucursal_nombre,sucursal_direccion,sucursal_estatus, reporte) VALUES(?,?,1, ?)");
+			$sql->execute([$this->nombre, $this->direccion, $this->reporte]);
 			$this->id = $this->db->lastInsertId();
 			if ($sql->rowCount() > 0) {
 
@@ -81,8 +81,8 @@ abstract class cls_sucursal extends cls_db
 					"code" => 400
 				];
 			}
-			$sql = $this->db->prepare("UPDATE sucursal SET sucursal_nombre = ?, sucursal_direccion = ? WHERE sucursal_id = ?");
-			if ($sql->execute([$this->nombre, $this->direccion, $this->id])) {
+			$sql = $this->db->prepare("UPDATE sucursal SET sucursal_nombre = ?, sucursal_direccion = ?, reporte = ? WHERE sucursal_id = ?");
+			if ($sql->execute([$this->nombre, $this->direccion, $this->reporte, $this->id])) {
 
 				$this->reg_bitacora([
 					'table_name' => "sucursal",

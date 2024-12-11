@@ -7,13 +7,20 @@ class Con_documento extends cls_documento
     {
         parent::__construct();
     }
-
+    public function ConsultarUno()
+    {
+        $resultado = $this->GetOne($_GET['id']);
+        Response($resultado, 200);
+    }
     public function ConsultarTodos()
     {
         $resultado = $this->GetAll();
         Response($resultado, 200);
     }
-
+    public function saveDocument() {
+        $resultado = $this->save($_POST["Nombre"], $_POST["Contenido"]);
+        Response($resultado, 200);
+    }
     public function SetImg()
     {
         // Verifica que se haya enviado un archivo

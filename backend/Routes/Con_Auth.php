@@ -17,6 +17,7 @@ class Con_Auth extends cls_Auth
     $this->clave = isset($_POST["Clave"]) ? $_POST["Clave"] : null;
     $this->rol = isset($_POST["Rol"]) ? $_POST["Rol"] : null;
     $this->sucursal = isset($_POST["Sucursal"]) ? $_POST["Sucursal"] : null;
+    $this->reporte = isset($_POST["Reporte"]) ? $_POST["Reporte"] : null;
     $this->estatus = isset($_POST["Estatus"]) ? $_POST["Estatus"] : null;
     $this->modulo = isset($_POST["Modulos"]) ? $_POST["Modulos"] : [];
     $this->permiso = isset($_POST["Permiso"]) ? $_POST["Permiso"] : null;
@@ -105,6 +106,11 @@ class Con_Auth extends cls_Auth
   public function Luz()
   {
     $resultado = $this->quitarLuz();
+    Response($resultado["data"], $resultado["code"]);
+  }
+  
+  public function ponerLuz() {
+    $resultado = $this->ponerLuz();
     Response($resultado["data"], $resultado["code"]);
   }
 

@@ -17,6 +17,7 @@ class Con_tipo_contrato extends cls_tipo_contrato
 		$this->invalidez = isset($_POST["invalidez"]) ? $_POST["invalidez"] : null;
 		$this->gst_metico = isset($_POST["gasto_metico"]) ? $_POST["gasto_metico"] : null;
 		$this->grua = isset($_POST["grua"]) ? $_POST["grua"] : null;
+		$this->bool = isset($_POST['bool']) ? $_POST["bool"] : null;
 		$this->estatus = isset($_POST["Estatus"]) ? $_POST["Estatus"] : null;
 	}
 

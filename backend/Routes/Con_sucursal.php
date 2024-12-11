@@ -9,6 +9,7 @@ class Con_sucursal extends cls_sucursal
 		$this->id = isset($_POST["ID"]) ? $_POST["ID"] : null;
 		$this->nombre = isset($_POST["Nombre"]) ? $_POST["Nombre"] : null;
 		$this->direccion = isset($_POST["Direccion"]) ? $_POST["Direccion"] : null;
+		$this->reporte = isset($_POST["Reporte"]) ? $_POST["Reporte"] : null;
 		$this->estatus = isset($_POST["Estatus"]) ? $_POST["Estatus"] : null;
 	}
 

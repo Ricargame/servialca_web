@@ -17,6 +17,14 @@ class Con_ladilla extends cls_ladilla
         // Response() debería ser definido o reemplazado por otro método de respuesta
         Response($resultado, 200);
     }
+     public function cantidad() {
+        $resultado = $this->cantidadContratos();
+        Response($resultado,200);
+    }
+    public function totalReport() {
+        $resultado = $this->reporte($_GET['desde'], $_GET['hasta']);
+        Response($resultado,200);
+    }
 
 }
 ?>

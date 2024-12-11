@@ -342,7 +342,8 @@ abstract class cls_poliza extends cls_db
     poliza_fechaVencimiento = ?,
 	cobertura_id = ?,
     poliza_renovacion = poliza_renovacion+1,
-    debitoCredito =?
+    debitoCredito =?,
+    usuario_id = ?
     WHERE poliza_id = ?");
 		if (
 			$sql->execute([
@@ -350,6 +351,7 @@ abstract class cls_poliza extends cls_db
 				$this->fechaVencimiento,
 				$this->cobertura,
 				$this->debitoCredito,
+				$this->usuario,
 				$this->id
 			])
 		) {
@@ -1601,7 +1603,8 @@ abstract class cls_poliza extends cls_db
 							"\n" . "Cédula: " . $fila["cliente_cedula"] .
 							"\n" . "Placa del vehiculo" . $fila["vehiculo_placa"] .
 							"\n" . "Marca: " . $fila["marca_nombre"] .
-							"\n" . "Modelo: " . $fila["modelo_nombre"];
+							"\n" . "Modelo: " . $fila["modelo_nombre"] .
+							"\n" . "Ver contrato: " . "https://servialcarcv.com/servialca_web/backend/reporte/reporteWeb?ID=" . $fila["poliza_id"];
 					}
 
 					// Ruta y nombre del archivo del código QR
@@ -1614,7 +1617,6 @@ abstract class cls_poliza extends cls_db
 					// Actualizar la base de datos con la ruta del código QR
 					$sql2 = $this->db->prepare("UPDATE poliza SET poliza_qr = ? WHERE poliza_id = ?");
 					$sql2->execute([$url, $id]);
-
 					return true;
 				}
 			}
