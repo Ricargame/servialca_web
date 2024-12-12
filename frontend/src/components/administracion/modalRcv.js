@@ -1653,7 +1653,7 @@ export const ModalRcv = (props) => {
                   Datos del contratante
                 </legend>
                 <div class="input-group input-group-sm mb-1 col-md-5">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
                     Cedula:
                   </span>
                   <select
@@ -1709,7 +1709,7 @@ export const ModalRcv = (props) => {
                 <div class="col-md-3"></div>
                 <div class="col-md-4 mb-1">
                   <div class="input-group input-group-sm">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
                       Fecha Nacimiento
                     </span>
                     <input
@@ -2163,7 +2163,7 @@ export const ModalRcv = (props) => {
                 </legend>
                 <div class=" mb-1 col-md-5">
                   <div class="input-group input-group-sm">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
                       Cedula:
                     </span>
                     <select
@@ -2276,7 +2276,7 @@ export const ModalRcv = (props) => {
             <div class="col-md-12 row mx-auto">
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
                     Placa
                   </span>
                   <input
