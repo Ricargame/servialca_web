@@ -107,6 +107,7 @@ function Inicio2() {
   const txtDolar = useRef();
   const txtBs = useRef();
   const dolar = useRef();
+  const contrato = useRef();
   const calcular = () => {
     const cantidadDolares = parseFloat(txtDolar.current.value);
     const precio = parseFloat(BCV);
@@ -282,6 +283,31 @@ function Inicio2() {
   //       })
   //     );
   // }
+  const eliminarRcv = async () => {
+    let endpoint = op.conexion + "/ladilla/eliminarRCv?id=" + contrato.current.value;
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: "RCV Eliminado",
+          icono: "informacion",
+        })
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  }
   const selecionarRegistros = async () => {
     let endpoint = op.conexion + "/poliza/ConsultarVencer";
     console.log(endpoint);
@@ -615,6 +641,25 @@ function Inicio2() {
             Cantidad de contratos:{" "}
             <span style={{ color: "red" }}>{cantidad}</span>
           </h2>{" "}
+          <div class="input-group input-group-sm col-md-2 my-auto">
+            <span
+                class="input-group-text bg-transparent border-0 fw-bold text-light"
+                id="inputGroup-sizing-sm"
+              >
+                N de Contrato
+              </span>
+              <input
+                type="text"
+                class="form-control bg-transparent text-light text-right"
+                ref={contrato}
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+              <button
+                className="col-md-4 mb-2 form-control"
+                onClick={eliminarRcv}
+              >Eliminar</button>
+          </div>
           <div class="input-group input-group-sm col-md-4 my-auto">
             <span
               class="input-group-text bg-transparent border-0 fw-bold text-light"

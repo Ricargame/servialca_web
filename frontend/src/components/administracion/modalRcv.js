@@ -834,13 +834,7 @@ export const ModalRcv = (props) => {
   const selecionarUso = async () => {
     let endpoint = op.conexion + "/usoVehiculo/ConsultarTodos";
     setActivate(true);
-
-    //setLoading(false);
-
     let bodyF = new FormData();
-
-    // bodyF.append("ID", user_id)
-
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -848,6 +842,7 @@ export const ModalRcv = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
+        console.log('uso de contrato', response)
         setUso(response);
       })
       .catch((error) =>
@@ -896,15 +891,8 @@ export const ModalRcv = (props) => {
     } else {
       endpoint = `${op.conexion}/tipo_vehiculo/ConsultarTodos?Sucursal=${idsucursal}&Contrato=${tipoContrato}`;
     }
-      
     setActivate(true);
-
-    //setLoading(false);
-
     let bodyF = new FormData();
-
-    // bodyF.append("Sucursal",);
-
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -912,6 +900,7 @@ export const ModalRcv = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
+        console.log('tipo de contrato', response)
         setTipo(response);
       })
       .catch((error) =>
@@ -2723,6 +2712,7 @@ export const ModalRcv = (props) => {
                   <Autocomplete
                     value={valorSeleccionado}
                     onChange={(event, newValue) => {
+                      console.log(newValue)
                       if (newValue) {
                         setValorSeleccionado({
                           ...valorSeleccionado,
