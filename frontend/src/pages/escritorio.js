@@ -198,8 +198,8 @@ function MenuImpuestoPP(props) {
                 <div className="row mx-auto">
                   <img className="mx-auto" style={{ width: 190 }} src={logo} />
                 </div>
-                <h5 className="m-0 second-text text-light mt-3">{sucursal}</h5>
-                <h5 className="m-0 second-text text-light">{username}</h5>
+                {/* <h5 className="m-0 second-text text-light mt-3">{sucursal}</h5>
+                <h5 className="m-0 second-text text-light">{username}</h5> */}
                 <h5 className="m-0 second-text text-light">
                   {moment().format("DD-MM-YYYY")}
                 </h5>
