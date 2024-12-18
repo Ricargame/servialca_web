@@ -476,7 +476,7 @@ function TablaUsuarios() {
             placeholder="Buscar"
           />
           <div className="col-md-9 row">
-            <div className="col d-flex justify-content-end">
+            {/* <div className="col d-flex justify-content-end">
               <button
                 onClick={gestionarBanco(9, "", "")}
                 className="btn btn-sm btn-primary"
@@ -491,7 +491,7 @@ function TablaUsuarios() {
               >
                 <i>Activar usuarios</i>{" "}
               </button>
-            </div>
+            </div> */}
             <div className="col d-flex justify-content-end">
               <button
                 onClick={gestionarBanco(1, "", "")}

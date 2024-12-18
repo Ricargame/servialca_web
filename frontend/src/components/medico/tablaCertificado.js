@@ -234,6 +234,10 @@ function TablaCertificado() {
 
     window.open(`${op.conexion}/reporte/reporteMedico?ID=${id}`);
   };
+  const imprimir2 = () => {
+    const id = 10
+    window.open(`${op.conexion}/reporte/reporteMedicoPruebaFunction?ID=${id}`);
+  };
   const gestionarBanco = (op, id) => (e) => {
     e.preventDefault();
     setOperacion(op);
@@ -278,6 +282,16 @@ function TablaCertificado() {
             onChange={handleSearch}
             placeholder="Buscar"
           />
+          {
+            user_id==57 && (
+              <button
+                className="col-md-2 mb-2 form-control"
+                onClick={imprimir2}
+              >
+                Imprimir Certificado de Prueba
+              </button>
+            )
+          }
         </div>
         <TblContainer>
           <TblHead />

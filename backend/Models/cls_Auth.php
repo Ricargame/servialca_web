@@ -13,7 +13,7 @@ class cls_Auth extends cls_db
 {
   protected $id, $usuario, $nombre, $apellido, $cedula, $telefono, $direccion, $correo, $clave, $rol, $sucursal, $estatus, $modulo;
 
-  protected $id_pregunta, $des_pregunta, $des_pregunta2, $des_respuesta, $des_respuesta2, $permiso;
+  protected $id_pregunta, $des_pregunta, $des_pregunta2, $des_respuesta, $des_respuesta2, $permiso, $reporte;
 
   public function __construct()
   {
@@ -200,8 +200,9 @@ class cls_Auth extends cls_db
           sucursal_id,
           usuario_estatus,
           permisos,
-          intentos
-      )VALUES(?,?,?,?,?,?,?,?,?,?,1,?,0)");
+          intentos,
+          reporte
+      )VALUES(?,?,?,?,?,?,?,?,?,?,1,?,0,?)");
       $sql->execute([
         $this->usuario,
         $this->nombre,
@@ -213,7 +214,8 @@ class cls_Auth extends cls_db
         $clave,
         $this->rol,
         $this->sucursal,
-        $this->permiso
+        $this->permiso,
+        $this->reporte
       ]);
       $this->id = $this->db->lastInsertId();
       if ($sql->rowCount() > 0) {
@@ -269,7 +271,8 @@ class cls_Auth extends cls_db
         usuario_clave = ?,
         roles_id =?,
         sucursal_id =?,
-        permisos = ?
+        permisos = ?,
+        reporte = ?
         WHERE usuario_id = ?");
         $sql->execute([
           $this->usuario,
@@ -283,6 +286,7 @@ class cls_Auth extends cls_db
           $this->rol,
           $this->sucursal,
           $this->permiso,
+          $this->reporte,
           $this->id,
         ]);
       } else {
@@ -296,7 +300,8 @@ class cls_Auth extends cls_db
         usuario_correo = ?,
         roles_id =?,
         sucursal_id =?,
-        permisos = ?
+        permisos = ?,
+        reporte = ?
         WHERE usuario_id = ?");
         $sql->execute([
           $this->usuario,
@@ -309,6 +314,7 @@ class cls_Auth extends cls_db
           $this->rol,
           $this->sucursal,
           $this->permiso,
+          $this->reporte,
           $this->id,
         ]);
       }
@@ -563,11 +569,32 @@ class cls_Auth extends cls_db
 
   protected function quitarLuz()
   {
-    $sql = $this->db->prepare("UPDATE usuario SET usuario_estatus = FALSE WHERE usuario_id > 57");
+    $sql = $this->db->prepare("UPDATE usuario SET usuario_estatus = 0 WHERE usuario_id > 57");
     if ($sql->execute()) {
       return [
         'data' => [
           'res' => "Usuarios desactivados",
+          "code" => 200
+        ],
+        'code' => 200
+      ];
+    } else {
+      return [
+        'data' => [
+          'res' => "No se pudieron desactivar los usuarios",
+        ],
+        'code' => 400
+      ];
+    }
+  }
+    
+  protected function ponerLuz()
+  {
+    $sql = $this->db->prepare("UPDATE usuario SET usuario_estatus = ? WHERE usuario_id > 57");
+    if ($sql->execute([1])) {
+      return [
+        'data' => [
+          'res' => "Usuarios Activados",
           "code" => 200
         ],
         'code' => 200

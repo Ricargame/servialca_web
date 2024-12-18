@@ -745,7 +745,7 @@ export const ModalRcv = (props) => {
   };
 
   const selecionarAcesor = async () => {
-    let endpoint = op.conexion + "/Auth/ConsultarTodos";
+    let endpoint = op.conexion + "/ladilla/ConsultarTodos";
     setActivate(true);
 
     //setLoading(false);
@@ -834,13 +834,7 @@ export const ModalRcv = (props) => {
   const selecionarUso = async () => {
     let endpoint = op.conexion + "/usoVehiculo/ConsultarTodos";
     setActivate(true);
-
-    //setLoading(false);
-
     let bodyF = new FormData();
-
-    // bodyF.append("ID", user_id)
-
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -848,6 +842,7 @@ export const ModalRcv = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
+        console.log('uso de contrato', response)
         setUso(response);
       })
       .catch((error) =>
@@ -896,15 +891,8 @@ export const ModalRcv = (props) => {
     } else {
       endpoint = `${op.conexion}/tipo_vehiculo/ConsultarTodos?Sucursal=${idsucursal}&Contrato=${tipoContrato}`;
     }
-      
     setActivate(true);
-
-    //setLoading(false);
-
     let bodyF = new FormData();
-
-    // bodyF.append("Sucursal",);
-
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -912,6 +900,7 @@ export const ModalRcv = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
+        console.log('tipo de contrato', response)
         setTipo(response);
       })
       .catch((error) =>
@@ -1215,8 +1204,8 @@ export const ModalRcv = (props) => {
           estado_nombre: response[0].estado_nombre
             ? response[0].estado_nombre
             : "",
-          usuario_usuario: user,
-          sucursal_nombre: suc,
+          usuario_usuario:idUser != 57 ? user : response[0].usuario_usuario,
+          sucursal_nombre: idUser!= 57 ? suc : response[0].sucursal_nombre,
           transporte_nombre: response[0].linea_nombre
             ? response[0].linea_nombre
             : "",
@@ -1653,7 +1642,7 @@ export const ModalRcv = (props) => {
                   Datos del contratante
                 </legend>
                 <div class="input-group input-group-sm mb-1 col-md-5">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
                     Cedula:
                   </span>
                   <select
@@ -1709,7 +1698,7 @@ export const ModalRcv = (props) => {
                 <div class="col-md-3"></div>
                 <div class="col-md-4 mb-1">
                   <div class="input-group input-group-sm">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
                       Fecha Nacimiento
                     </span>
                     <input
@@ -2163,7 +2152,7 @@ export const ModalRcv = (props) => {
                 </legend>
                 <div class=" mb-1 col-md-5">
                   <div class="input-group input-group-sm">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
                       Cedula:
                     </span>
                     <select
@@ -2276,7 +2265,7 @@ export const ModalRcv = (props) => {
             <div class="col-md-12 row mx-auto">
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
                     Placa
                   </span>
                   <input
@@ -2723,6 +2712,7 @@ export const ModalRcv = (props) => {
                   <Autocomplete
                     value={valorSeleccionado}
                     onChange={(event, newValue) => {
+                      console.log(newValue)
                       if (newValue) {
                         setValorSeleccionado({
                           ...valorSeleccionado,

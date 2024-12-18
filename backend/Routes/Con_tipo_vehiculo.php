@@ -10,6 +10,7 @@ class Con_tipo_vehiculo extends cls_tipo_vehiculo
 		$this->nombre = isset($_POST["tipoVehiculo_nombre"]) ? $_POST["tipoVehiculo_nombre"] : null;
 		$this->precio = isset($_POST["precio"]) ? $_POST["precio"] : null;
 		$this->idContrato = isset($_POST["idContrato"]) ? $_POST["idContrato"] : null;
+		$this->nivel = isset($_POST["Nivel"]) ? $_POST["Nivel"] : null;
 		$this->estatus = isset($_POST["Estatus"]) ? $_POST["Estatus"] : null;
 		$this->sucursal = isset($_POST["Sucursal"]) ? $_POST["Sucursal"] : null;
 	}
@@ -72,5 +73,17 @@ class Con_tipo_vehiculo extends cls_tipo_vehiculo
 	{
 		$resultado = $this->SerachByAllBot();
 		Response($resultado, 200);
+	}
+	public function saveNewPrecio(){
+	    $resultado = $this->saveNewPrice();
+	    	Response($resultado, 200);
+	}
+	public function newTipeVehiculo() {
+	    $resultado = $this->saveNewTipeVehiculo();
+	    Response($resultado, 200);
+	}
+	public function newActualizar() {
+	    $resultado = $this->editNewTipoVehiculo();
+	    Response($resultado, 200);
 	}
 }

@@ -357,7 +357,7 @@ export const ModalImprimir = (props) => {
         />
 
         <div className="col-md-12 row mx-auto">
-          <div class="input-group input-group-sm mb-3 col-md-3">
+          {/* <div class="input-group input-group-sm mb-3 col-md-3">
             <button
               type="button"
               onClick={imprimir(1)}
@@ -365,8 +365,8 @@ export const ModalImprimir = (props) => {
             >
               RCV
             </button>
-          </div>
-          <div class="input-group input-group-sm mb-3 col-md-3">
+          </div> */}
+          <div class="input-group input-group-sm mb-3 col-md-6">
             <button
               type="button"
               onClick={imprimir(2)}
@@ -375,7 +375,7 @@ export const ModalImprimir = (props) => {
               RCV WEB
             </button>
           </div>
-          <div class="input-group input-group-sm mb-3 col-md-3">
+          <div class="input-group input-group-sm mb-3 col-md-6q">
             <button
               type="button"
               onClick={imprimir(3)}
@@ -384,7 +384,7 @@ export const ModalImprimir = (props) => {
               Carnet R.C.V
             </button>
           </div>
-          <div class="input-group input-group-sm mb-3 col-md-3">
+          {/* <div class="input-group input-group-sm mb-3 col-md-4">
             <button
               type="button"
               onClick={imprimir(4)}
@@ -392,7 +392,7 @@ export const ModalImprimir = (props) => {
             >
               Contrato de Grua
             </button>
-          </div>
+          </div> */}
         </div>
       </Modal.Body>
       <Modal.Footer>

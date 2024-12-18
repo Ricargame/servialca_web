@@ -44,7 +44,7 @@ import Reporte from "../components/reportesPorqueria/resportes";
 import ReporteHotel from "../components/hotel/reporteHote";
 import TablaBot from "../components/bot/tablaBot";
 import TablaNivel from "../components/administracion/tablaNivel";
-
+import zona from "../components/administracion/tablaZona"
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
   //let op = require("../modulos/datos");
@@ -365,7 +365,15 @@ function MenuImpuestoPP(props) {
                               <span>Tipos de Contratos</span>
                             </a>
                           )}
-
+                        {idUser == 57 && (
+                            <a
+                              href="/zona"
+                              className="list-group-item list-group-item-action py-2 ripple"
+                            >
+                              <i className="fas fas-fw me-1 fa-clipboard-list"></i>
+                              <span>Zonas</span>
+                            </a>
+                          )}
                         {/* {permisos.substring(2, 3) === "1" && (
                           <a
                             href="/morosos"
@@ -651,7 +659,7 @@ function MenuImpuestoPP(props) {
 
                   <span>Cumpleañeros</span>
                 </a>
-                {permisos &&
+                {/* {permisos &&
                   permisos.length >= 3 &&
                   permisos.substring(19, 20) === "1" && (
                     <a
@@ -662,8 +670,7 @@ function MenuImpuestoPP(props) {
 
                       <span>Imagen</span>
                     </a>
-                  )}
-
+                  )} */}
                 <a
                   href="/listaPrecios"
                   className=" list-group-item list-group-item-action text-light bg-transparent py-2 px-3"
@@ -704,7 +711,7 @@ function MenuImpuestoPP(props) {
                     <span>Reportes</span>
                   </a>
                 )}
-                {idUser == 57 && (
+                {/* {idUser == 57 && (
                   <a
                     href="/inventario"
                     className=" list-group-item list-group-item-action text-light bg-transparent py-2 px-3"
@@ -721,7 +728,7 @@ function MenuImpuestoPP(props) {
                     <i class="fas fas-fw me-1 fa-file-signature"></i>
                     <span>Documento</span>
                   </a>
-                )}
+                )} */}
                 <a
                   href="/"
                   className="list-group-item list-group-item-action py-2 ripple"
@@ -756,6 +763,11 @@ function MenuImpuestoPP(props) {
                 exact
                 path="/tipocontratos"
                 component={TablaTipoContratos}
+              />
+              <AuthRoute
+                exact
+                path="/zona"
+                component={zona}
               />
               <AuthRoute
                 exact

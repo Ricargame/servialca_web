@@ -1,88 +1,104 @@
 <?php
 include_once("./FPDF/fpdf.php");
 include_once("./Models/cls_poliza.php");
+
 class Reporte extends cls_poliza
 {
 }
 
-$rp = new Reporte();
-$datos = $rp->reporteGeneral($_GET["Sucursal"], $_GET["Motivo"], $_GET["Desde"], $_GET["Hasta"]);
-$motivo;
-if (isset($_GET["Sucursal"]) && $_GET["Sucursal"] != null || $_GET["Sucursal"] != "") {
-  $motivo = "Reporte de sucursal";
-} else if ($_GET["Motivo"] == 1) {
-  $motivo = "Ingresos";
-} else if ($_GET["Motivo"] == 0) {
-  $motivo = "Egresos";
-} else if ($_GET["Motivo"] == 2) {
-  $motivo = "Ingreso y Egreso";
-} else {
-  $motivo = $_GET["Motivo"];
-}
-$generado = 0;
-$generdoBs = 0;
-$total = 0;
-$totalBs = 0;
-foreach ($datos as $fila) {
-    $generado += $fila["nota_monto"];
-    $generadoBs += $fila["totalPagar"];
-};
-$total = $generado / 2;
-$totalBs = $generadoBs / 2;
 class PDF extends FPDF
 {
-  public function __construct()
-  {
-    parent::__construct("L", "mm", "A4");
-  }
+    private $datos;
+    private $generado;
+    private $generadoBs;
 
-  public function Header()
-  {
-    $this->Image("./Img/heade.jpg", 0, 0, 300, 40, "JPG");
-  }
+    public function __construct($datos, $generado, $generadoBs)
+    {
+        parent::__construct("P", "mm", "A4");
 
-  public function Footer()
-  {
-    $this->Image("./Img/footer.jpg", 0, 190, 300, 22, "JPG");
-  }
+        $this->datos = $datos;
+        $this->generado = $generado;
+        $this->generadoBs = $generadoBs;
+    }
+
+    public function Header()
+    {
+        $this->Image("./Img/1.jpg", 0, 0, 210, 45);
+        $this->Image("./Img/2.jpg", 0, 38, 205, 240);
+
+        if (!empty($this->datos)) {
+            $this->SetY(20);
+            $this->SetX(160);
+            $this->SetFont("Arial", "B", 12);
+            $this->Cell(0, 10, "Reporte de: " . $this->datos[0]["sucursal_nombre"], 0, 1, "R");
+
+            $desde = isset($_GET["Desde"]) ? $_GET["Desde"] : '';
+            $hasta = isset($_GET["Hasta"]) ? $_GET["Hasta"] : '';
+            $this->Cell(0, 10, "Desde: " . date("d-m-Y", strtotime($desde)) . "  Hasta: " . date("d-m-Y", strtotime($hasta)), 0, 1, "R");
+
+            $this->SetX(15);
+            $this->SetY(20);
+            $this->Cell(0, 10, "Total Generado Vendedores: " . $this->generado . " $" . " - " . $this->generadoBs . " Bs", 0, 1, "L");
+
+            $total = $this->generado / 2;
+            $totalBs = $this->generadoBs / 2;
+
+            $this->Cell(0, 10, "Total a Transferir: " . $total . " $" . " - " . $totalBs . " Bs", 0, 1, "L");
+        }
+    }
+
+    public function Footer()
+    {
+        $this->Image("./Img/3.jpg", 0, 277, 216, 20);
+    }
 }
 
-$pdf = new PDF();
+$rp = new Reporte();
+$datos = $rp->reporteGeneral($_GET["Sucursal"], $_GET["Motivo"], $_GET["Desde"], $_GET["Hasta"]);
+
+$motivo;
+if (isset($_GET["Sucursal"]) && ($_GET["Sucursal"] != null && $_GET["Sucursal"] != "")) {
+    $motivo = "Reporte de sucursal";
+} elseif ($_GET["Motivo"] == 1) {
+    $motivo = "Ingresos";
+} elseif ($_GET["Motivo"] == 0) {
+    $motivo = "Egresos";
+} elseif ($_GET["Motivo"] == 2) {
+    $motivo = "Ingreso y Egreso";
+} else {
+    $motivo = $_GET["Motivo"];
+}
+
+$generado = 0;
+$generadoBs = 0;
+$total = 0;
+$totalBs = 0;
+
+if (is_array($datos)) {
+    foreach ($datos as $fila) {
+        $generado += $fila["nota_monto"];
+        $generadoBs += $fila["totalPagar"];
+    }
+}
+
+$total = $generado / 2;
+$totalBs = $generadoBs / 2;
+
+$pdf = new PDF($datos, $generado, $generadoBs); // Corregido el paso de parámetros al constructor
 $pdf->AddPage();
 $pdf->SetFont("Arial", "B", 16);
-$pdf->SetY(40);
-$pdf->SetX(190);
-$pdf->SetFont("Arial", "B", 12);
-$pdf->Cell(0, 10, "Reporte de: " . $datos[0]["sucursal_nombre"], 0, 1, "R");
-$pdf->Cell(0, 10, "Desde: " . date("d-m-Y", strtotime($_GET["Desde"])), 0, 1, "R");
-$pdf->Cell(0, 10, "Hasta: " . date("d-m-Y", strtotime($_GET["Hasta"])), 0, 1, "R");
-$pdf->SetX(15);
-$pdf->SetY(40);
-$pdf->Cell(0, 10, "Total Generado: " . $generado . " $", 0, 1, "L");
-$pdf->Cell(0, 10, "Total Generado: " . $generadoBs . " Bs", 0, 1, "L");
-$pdf->Cell(0, 10, "Total: " . $total . " $", 0, 1, "L");
-$pdf->Cell(0, 10, "Total: " . $totalBs . " Bs", 0, 1, "L");
 $pdf->Ln(10);
-$pdf->SetFont('Arial', '', 10);
-$pdf->SetY(80);
+$pdf->SetFont('Arial', '', 8);
+$pdf->SetY(40);
 $pageWidth = $pdf->GetPageWidth();
 
 // Número de columnas de la tabla
 $numColumns = 7;
-
-// Ancho de cada celda
-$cellWidth = $pageWidth / ($numColumns + 1); // Se suma 1 para dar espacio adicional entre las celdas
-
-// Obtener el ancho total de la tabla
+$cellWidth = $pageWidth / ($numColumns + 1);
 $tableWidth = $cellWidth * $numColumns;
-
-// Calcular la posición x para centrar la tabla
 $tableX = ($pageWidth - $tableWidth) / 2;
-
-// Establecer la posición x de la celda inicial de la tabla
 $pdf->SetX($tableX - 7.4);
 
-// Establecer el color de fondo de las celdas de encabezado
 $pdf->SetFillColor(229, 57, 53); // Rojo más intenso
 $pdf->Cell($cellWidth, 10, utf8_decode('N° de contrato'), 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, 'Fecha', 1, 0, 'C', true);
@@ -92,30 +108,30 @@ $pdf->Cell($cellWidth, 10, utf8_decode("Sucursal"), 1, 0, "C", true);
 $pdf->Cell($cellWidth + 15, 10, 'Motivo', 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, 'Monto $', 1, 0, 'C', true);
 $pdf->Ln(10);
-// Restaurar el color de fondo a blanco
+
 $pdf->SetFillColor(255, 255, 255);
 $tableY = $pdf->GetY();
-foreach ($datos as $fila) {
-  $pdf->SetX(11.2);
 
-  // Comprobar el valor de nota_IngresoEgreso
-  if ($fila["nota_IngresoEgreso"] === 0) {
-    $pdf->SetFillColor(229, 57, 53); // Establecer color de fondo en rojo
-  } else {
-    $pdf->SetFillColor(255, 255, 255); // Restaurar el color de fondo a blanco
-  }
+if (is_array($datos)) {
+    foreach ($datos as $fila) {
+        $pdf->SetX($tableX - 7.4);
 
-  $pdf->Cell($cellWidth, 10, $fila["poliza_id"], 1, 0, "C", true);
-  $pdf->Cell($cellWidth, 10, date("d-m-Y", strtotime($fila["nota_fecha"])), 1, 0, "C", true);
-  $pdf->Cell($cellWidth, 10, $fila["nota_hora"], 1, 0, "C", true);
-  $pdf->Cell($cellWidth, 10, utf8_decode($fila["usuario_usuario"]), 1, 0, "C", true);
-  $pdf->Cell($cellWidth, 10, utf8_decode($fila["sucursal_nombre"]), 1, 0, "C", true);
-  $pdf->Cell($cellWidth + 15, 10, utf8_decode($fila["nota_motivo"]), 1, 0, "C", true);
-  $pdf->Cell($cellWidth, 10, $fila["nota_monto"] . " $", 1, 0, "C", true);
-  
-  // Restaurar el color de fondo a blanco para la siguiente fila
-  $pdf->SetFillColor(255, 255, 255);
+        if ($fila["nota_IngresoEgreso"] === 0) {
+            $pdf->SetFillColor(229, 57, 53); // Rojo
+        } else {
+            $pdf->SetFillColor(255, 255, 255); // Blanco
+        }
 
-  $pdf->Ln(10);
+        $pdf->Cell($cellWidth, 10, $fila["poliza_id"], 1, 0, "C", true);
+        $pdf->Cell($cellWidth, 10, date("d-m-Y", strtotime($fila["nota_fecha"])), 1, 0, "C", true);
+        $pdf->Cell($cellWidth, 10, $fila["nota_hora"], 1, 0, "C", true);
+        $pdf->Cell($cellWidth, 10, utf8_decode($fila["usuario_usuario"]), 1, 0, "C", true);
+        $pdf->Cell($cellWidth, 10, utf8_decode($fila["sucursal_nombre"]), 1, 0, "C", true);
+        $pdf->Cell($cellWidth + 15, 10, utf8_decode($fila["nota_motivo"]), 1, 0, "C", true);
+        $pdf->Cell($cellWidth, 10, $fila["nota_monto"] . " $", 1, 0, "C", true);
+        
+        $pdf->Ln(10);
+    }
 }
+
 $pdf->Output();

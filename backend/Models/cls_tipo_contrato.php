@@ -5,7 +5,7 @@ if (!class_exists('cls_db'))
 
 abstract class cls_tipo_contrato extends cls_db
 {
-  protected $id, $nombre, $dano_cosas, $dano_personas, $fianza_cuanti, $asistencia_legal, $apov, $muerte, $invalidez, $gst_metico, $grua, $estatus;
+  protected $id, $nombre, $dano_cosas, $dano_personas, $fianza_cuanti, $asistencia_legal, $apov, $muerte, $invalidez, $gst_metico, $grua, $bool, $estatus;
 
   public function __construct()
   {
@@ -118,7 +118,8 @@ abstract class cls_tipo_contrato extends cls_db
           muerte = ?,
           invalidez = ?,
           gastosMedicos =?,
-          grua= ? 
+            grua= ?,
+            contrato_validacion = ?
         WHERE contrato_id = ?");
       if (
         $sql->execute([
@@ -132,14 +133,15 @@ abstract class cls_tipo_contrato extends cls_db
           $this->invalidez,
           $this->gst_metico,
           $this->grua,
+          $this->bool,
           $this->id
         ])
       ) {
 
-        $this->reg_bitacora([
-          'table_name' => "tipocontrato",
-          'des' => "Actualización en tipo contrato, (nombre: $this->nombre, daño cosas: $this->dano_cosas, daño personas: $this->dano_personas, fianza: $this->fianza_cuanti, asistencia legal: $this->asistencia_legal, apov: $this->apov, muerte: $this->muerte, invalidez: $this->invalidez, gatos medicos: $this->gst_metico, grua: $this->grua)"
-        ]);
+        // $this->reg_bitacora([
+        //   'table_name' => "tipocontrato",
+        //   'des' => "Actualización en tipo contrato, (nombre: $this->nombre, daño cosas: $this->dano_cosas, daño personas: $this->dano_personas, fianza: $this->fianza_cuanti, asistencia legal: $this->asistencia_legal, apov: $this->apov, muerte: $this->muerte, invalidez: $this->invalidez, gatos medicos: $this->gst_metico, grua: $this->grua)"
+        // ]);
 
         return [
           "data" => [
@@ -230,4 +232,5 @@ abstract class cls_tipo_contrato extends cls_db
       $resultado = [];
     return $resultado;
   }
+
 }

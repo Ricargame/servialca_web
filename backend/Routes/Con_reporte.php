@@ -38,6 +38,17 @@ class Con_reporte
     public function reporteSelect(){
         include("Con_reporteSelect.php");
     }
-
-   
+    
+    public function reporteVendedoresUno() {
+        include('Con_reporteVendedoresUno.php');
+    }
+    public function reporteNuevo(){
+        include('Con_reporteNuevo.php');
+    }
+    public function reporteDocumento(){
+        include('Con_reporteDocumento.php');
+    }
+    public function reporteMedicoPruebaFunction(){
+        include('Con_reporteMedicoPrueba.php');
+    }
 }

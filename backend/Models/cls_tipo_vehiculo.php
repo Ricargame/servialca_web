@@ -5,7 +5,7 @@ if (!class_exists('cls_db'))
 
 abstract class cls_tipo_vehiculo extends cls_db
 {
-  protected $id, $nombre, $precio, $idContrato, $estatus, $sucursal;
+  protected $id, $nombre, $precio, $idContrato, $estatus, $sucursal, $nivel;
 
   public function __construct()
   {
@@ -15,15 +15,15 @@ abstract class cls_tipo_vehiculo extends cls_db
   protected function Save()
   {
     try {
-      if (empty($this->nombre)) {
-        return [
-          "data" => [
-            "res" => "El nombre del tipo del vehículo no puede estar vacío",
-            "code" => 400
-          ],
-          "code" => 400
-        ];
-      }
+    //   if (empty($this->nombre)) {
+    //     return [
+    //       "data" => [
+    //         "res" => "El nombre del tipo del vehículo no puede estar vacío",
+    //         "code" => 400
+    //       ],
+    //       "code" => 400
+    //     ];
+    //   }
       $result = $this->SearchByNombre();
       if ($result) {
         return [
@@ -38,8 +38,8 @@ abstract class cls_tipo_vehiculo extends cls_db
           $this->$key = str_replace(',', '.', $value);
         }
       }
-      $sql = $this->db->prepare("INSERT INTO tipovehiculo(tipoVehiculo_nombre,tipoVehiculo_precio,sucursal_id,tipoVehiculo_estatus)  VALUES(?,?,?,1)");
-      $sql->execute([$this->nombre, $this->precio, $this->sucursal]);
+      $sql = $this->db->prepare("INSERT INTO tipovehiculo(tipoVehiculo_nombre,tipoVehiculo_estatus)  VALUES(?,1)");
+      $sql->execute([$this->nombre]);
 
       if ($sql->rowCount() > 0) {
         $this->id = $this->db->lastInsertId();
@@ -102,11 +102,13 @@ abstract class cls_tipo_vehiculo extends cls_db
       )
         ;
       $sql = $this->db->prepare("UPDATE tipovehiculo SET
-          tipoVehiculo_nombre = ?
+          tipoVehiculo_nombre = ?,
+          nivel = ?
         WHERE tipoVehiculo_id = ?");
       if (
         $sql->execute([
           $this->nombre,
+          $this->nivel,
           $this->id
         ])
       ) {
@@ -207,25 +209,47 @@ abstract class cls_tipo_vehiculo extends cls_db
     else
       return [];
   }
-  protected function GetAll($sucursal)
-  {
-    // Verificar si la sucursal es 21
-    $whereClause = ($sucursal == 21) ? 'WHERE tipovehiculo.tipoVehiculo_estatus = 1 AND tipovehiculo.sucursal_id = 21 AND precio.tipoContrato_id = ?' : 'WHERE tipovehiculo.tipoVehiculo_estatus = 1 AND tipovehiculo.sucursal_id != 21';
+protected function GetAll($sucursal)
+{
+    // Construir la cláusula WHERE según los criterios
+    $whereClause = ($sucursal == 21) 
+        ? 'WHERE tipovehiculo.tipoVehiculo_estatus = 1 AND tipovehiculo.sucursal_id = 21 AND precio.tipoContrato_id = ?' 
+        : 'WHERE tipovehiculo.tipoVehiculo_estatus = 1 AND tipovehiculo.sucursal_id != 21';
+
+    if ($this->idContrato) {
+        $whereClause .= ' AND precio.tipoContrato_id = ?'; 
+    }
+    if ($this->nivel) {
+        $whereClause .= ' AND tipovehiculo.nivel = ?'; 
+    }
 
     $sql = $this->db->prepare("SELECT precio.*, tipovehiculo.*, tipocontrato.* FROM precio 
-          INNER JOIN tipovehiculo ON tipovehiculo.tipoVehiculo_id = precio.tipoVehiculo_id 
-          INNER JOIN tipocontrato ON tipocontrato.contrato_id = precio.tipoContrato_id 
-          $whereClause ORDER BY precio_id ASC");
+        INNER JOIN tipovehiculo ON tipovehiculo.tipoVehiculo_id = precio.tipoVehiculo_id 
+        INNER JOIN tipocontrato ON tipocontrato.contrato_id = precio.tipoContrato_id 
+        $whereClause ORDER BY precio_id ASC");
 
-    $sql->execute();
-
-    if ($sql->rowCount() > 0) {
-      return $sql->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-      return [];
+    // Agregar parámetros a un arreglo
+    $params = [];
+    if ($sucursal == 21) {
+        $params[] = $this->idContrato;
     }
-  }
+    if ($this->idContrato) {
+        $params[] = $this->idContrato;
+    }
+    if ($this->nivel) {
+        $params[] = $this->nivel;
+    }
 
+    // Ejecutar la consulta con los parámetros
+    $sql->execute($params);
+
+    // Devolver los resultados si hay filas, o un arreglo vacío si no las hay
+    if ($sql->rowCount() > 0) {
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        return [];
+    }
+}
 
   protected function savePrecio()
   {
@@ -334,10 +358,10 @@ abstract class cls_tipo_vehiculo extends cls_db
       $where = "sucursal.sucursal_id = 21";
     }
 
-    $sql = $this->db->prepare("SELECT precio.* FROM precio 
-        JOIN tipocontrato ON tipocontrato.contrato_id = precio.tipoContrato_id
-        JOIN tipovehiculo ON tipovehiculo.tipoVehiculo_id = precio.tipoVehiculo_id
-        JOIN sucursal ON sucursal.sucursal_id = precio.sucursal_id 
+    $sql = $this->db->prepare("SELECT precio2.* FROM precio2
+        JOIN tipocontrato ON tipocontrato.contrato_id = precio2.tipoContrato_id
+        JOIN tipovehiculo ON tipovehiculo.tipoVehiculo_id = precio2.tipoVehiculo_id
+        JOIN sucursal ON sucursal.sucursal_id = precio2.sucursal_id 
         WHERE tipocontrato.contrato_nombre = ? AND tipovehiculo.tipoVehiculo_nombre = ? AND $where");
 
     $sql->execute([$contrato, $tipo]);
@@ -372,5 +396,35 @@ abstract class cls_tipo_vehiculo extends cls_db
     }
   }
 
-
+    protected function saveNewPrice() {
+        $sql = $this->db->prepare("
+        UPDATE precio
+        INNER JOIN tipovehiculo ON tipovehiculo.tipovehiculo_id = precio.tipovehiculo_id
+        SET precio.precio_monto = ?
+        WHERE tipovehiculo.nivel = ? AND precio.tipoContrato_id = ?");
+        $sql->execute([$this->precio, $this->nivel, $this->idContrato ]);
+    }
+    protected function saveNewTipeVehiculo() {
+        try {
+            $sql = $this->db->prepare("INSERT INTO tipovehiculo(tipoVehiculo_nombre, sucursal_id) VALUES (?, ?)");
+            $sql->execute([$this->nombre, $this->sucursal]);
+            if ($sql->rowCount() > 0) {
+                $id = $this->db->lastInsertId();
+                $sql2 = $this->db->prepare('INSERT INTO precio(tipoVehiculo_id, sucursal_id) VALUES (?,?)');
+                $sql2->execute([$id, $this->sucursal]);
+            }
+        } catch (PDOException $e) {
+            // Manejo del error
+            echo 'Error: ' . $e->getMessage();
+        }
+    }
+    protected function editNewTipoVehiculo() {
+        try{
+            $sql = $this->db->prepare("UPDATE tipovehiculo set tipoVehiculo_nombre = ? WHERE tipovehiculo_id = ?");
+            $sql->execute([$this->nombre, $this->id]);
+        } catch (PDOException $e) {
+            // Manejo del error
+            echo 'Error: ' . $e->getMessage();
+        }
+    }
 }

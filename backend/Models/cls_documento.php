@@ -7,7 +7,24 @@ abstract class cls_documento extends cls_db
     {
         parent::__construct();
     }
-
+    public function GetOne($id)
+{
+    $sql = $this->db->prepare("SELECT * FROM documentos WHERE documentos_id = ?");
+    if ($sql->execute([$id])) {
+        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+        if (!$resultado) {
+            return [
+                "data" => [
+                    "res" => "No se encontraron resultados"
+                    ],
+                    "code" => 404
+                ];
+            }
+        } else {
+            $resultado = [];
+        }
+        return $resultado;
+    }
     protected function GetAll()
     {
         $sql = $this->db->prepare("SELECT * FROM documentos");
@@ -18,7 +35,36 @@ abstract class cls_documento extends cls_db
         }
         return $resultado;
     }
-
+    protected function save($nombre, $content) {
+    try {
+        $sql = $this->db->prepare("INSERT INTO documentos(documentos_nombre, documento_content) VALUES(?,?)");
+        $sql->execute([$nombre, $content]);
+        $this->id = $this->db->lastInsertId();
+        
+        if ($sql->rowCount() > 0) {
+            return [
+                "data" => [
+                    "res" => "Registro Exitoso"
+                ],
+                "code" => 200
+            ];
+        } else {
+            return [
+                "data" => [
+                    "res" => "No se pudo guardar el registro"
+                ],
+                "code" => 400
+            ];
+        }
+    } catch (PDOException $e) {
+        return [
+            "data" => [
+                'res' => "Error de consulta: " . $e->getMessage()
+            ],
+            "code" => 500
+        ];
+    }
+}
     public function SaveImg($nombre, $ruta)
     {
         try {
