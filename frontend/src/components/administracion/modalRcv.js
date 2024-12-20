@@ -745,7 +745,7 @@ export const ModalRcv = (props) => {
   };
 
   const selecionarAcesor = async () => {
-    let endpoint = op.conexion + "/Auth/ConsultarTodos";
+    let endpoint = op.conexion + "/ladilla/ConsultarTodos";
     setActivate(true);
 
     //setLoading(false);
