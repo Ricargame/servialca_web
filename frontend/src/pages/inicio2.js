@@ -641,7 +641,8 @@ function Inicio2() {
             Cantidad de contratos:{" "}
             <span style={{ color: "red" }}>{cantidad}</span>
           </h2>{" "}
-          <div class="input-group input-group-sm col-md-2 my-auto">
+          {user_id = 57 && (
+            <div class="input-group input-group-sm col-md-2 my-auto">
             <span
                 class="input-group-text bg-transparent border-0 fw-bold text-light"
                 id="inputGroup-sizing-sm"
@@ -660,6 +661,7 @@ function Inicio2() {
                 onClick={eliminarRcv}
               >Eliminar</button>
           </div>
+          )}
           <div class="input-group input-group-sm col-md-4 my-auto">
             <span
               class="input-group-text bg-transparent border-0 fw-bold text-light"
