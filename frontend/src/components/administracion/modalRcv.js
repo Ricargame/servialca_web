@@ -391,8 +391,8 @@ export const ModalRcv = (props) => {
               estado_nombre: response.contrato[0].estado_nombre
                 ? response.contrato[0].estado_nombre
                 : "",
-              usuario_usuario: response.contrato[0].usuario_usuario,
-              sucursal_nombre: response.contrato[0].sucursal_nombre,
+              usuario_usuario: user,
+              sucursal_nombre: suc,
               transporte_nombre: response.contrato[0].linea_nombre
                 ? response.contrato[0].linea_nombre
                 : "",
