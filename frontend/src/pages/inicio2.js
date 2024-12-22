@@ -661,7 +661,7 @@ function Inicio2() {
                 onClick={eliminarRcv}
               >Eliminar</button>
           </div>
-          )}
+          )} */}
           <div class="input-group input-group-sm col-md-4 my-auto">
             <span
               class="input-group-text bg-transparent border-0 fw-bold text-light"
