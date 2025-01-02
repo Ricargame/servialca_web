@@ -110,8 +110,7 @@ function Inicio2() {
   const contrato = useRef();
   const calcular = () => {
     const cantidadDolares = parseFloat(txtDolar.current.value);
-    const precio = parseFloat(BCV);
-
+    const precio = parseFloat(dolar.current.value);
     if (!isNaN(cantidadDolares) && !isNaN(precio)) {
       const total = cantidadDolares * precio;
       txtBs.current.value = total.toFixed(2).replace(".", ",");
@@ -122,7 +121,7 @@ function Inicio2() {
   const calcular2 = () => {
     const cantidadBsStr = txtBs.current.value.replace(",", "."); // Reemplaza la coma por punto
     const cantidadBs = parseFloat(cantidadBsStr);
-    const precioDolar = parseFloat(BCV);
+    const precioDolar = parseFloat(dolar.current.value);
 
     if (!isNaN(cantidadBs) && !isNaN(precioDolar) && precioDolar !== 0) {
       const totalDolares = cantidadBs / precioDolar;
@@ -235,54 +234,54 @@ function Inicio2() {
   };
   const { TblContainer, TblHead, recordsAfterPagingAndSorting, TblPagination } =
     useTable(records, headCells, filterFn);
-  // const guardaPrecioDolar = async () => {
-  //   let endpoint = op.conexion + "/moneda/guardar";
-  //   setActivate(true);
-  //   let bodyF = new FormData();
-  //   bodyF.append("Precio", dolar.current.value);
-  //   await fetch(endpoint, {
-  //     method: "POST",
-  //     body: bodyF,
-  //   })
-  //     .then((res) => res.json())
-  //     .then((response) => {
-  //       setActivate(false);
-  //       setMensaje({
-  //         mostrar: true,
-  //         titulo: "Notificación",
-  //         texto: "Precio del Dolar Actualizado",
-  //         icono: "Success",
-  //       })
-  //     })
-  //     .catch((error) =>
-  //       setMensaje({
-  //         mostrar: true,
-  //         titulo: "Notificación",
-  //         texto: error.res,
-  //         icono: "informacion",
-  //       })
-  //     );
-  // }
-  // const buscarPrecio = async () => {
-  //   let endpoint = op.conexion + "/moneda/ConsultarTodos";
-  //   setActivate(true);
-  //   await fetch(endpoint, {
-  //     method: "GET",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((response) => {
-  //       setActivate(false);
-  //       dolar.current.value = response[0].dolar_monto
-  //     })
-  //     .catch((error) =>
-  //       setMensaje({
-  //         mostrar: true,
-  //         titulo: "Notificación",
-  //         texto: error.res,
-  //         icono: "informacion",
-  //       })
-  //     );
-  // }
+  const guardaPrecioDolar = async () => {
+    let endpoint = op.conexion + "/moneda/guardar";
+    setActivate(true);
+    let bodyF = new FormData();
+    bodyF.append("Precio", dolar.current.value);
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: "Precio del Dolar Actualizado",
+          icono: "Success",
+        })
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  }
+  const buscarPrecio = async () => {
+    let endpoint = op.conexion + "/moneda/ConsultarTodos";
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        dolar.current.value = response[0].dolar_monto
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  }
   const eliminarRcv = async () => {
     let endpoint = op.conexion + "/ladilla/eliminarRCv?id=" + contrato.current.value;
     setActivate(true);
@@ -417,8 +416,6 @@ function Inicio2() {
     });
   };
 
-  console.log("estas en menu");
-
   useEffect(() => {
     // Obtener la fecha actual
     const fechaActual = new Date();
@@ -433,6 +430,7 @@ function Inicio2() {
     Hasta.current.value = fechaDesdeFormateada;
     selecionarRegistros();
     cantidadContrato();
+    buscarPrecio();
   }, []);
 
   const regPre = () => {
@@ -607,7 +605,7 @@ function Inicio2() {
         }}
         idCliente={idCliente}
       />
-      {/* <div className="col-12">
+      {<div className="col-12">
         {user_id == 57 && (
           <div className="col-12 row d-flex justify-content-end py-2 mt-5 mb-3">
             <div className="input-group input-group-sm col-md-2 my-auto">
@@ -633,7 +631,7 @@ function Inicio2() {
             </div>
           </div>
         )}
-      </div> */}
+      </div>}
       <div className="col-12">
         <div className="col-12 row d-flex justify-content-between py-2 mt-5 mb-3">
           <h2 className=" col-3 text-light">RCV QUE ESTAN POR VENCER</h2>

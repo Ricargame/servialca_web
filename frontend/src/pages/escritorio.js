@@ -151,8 +151,8 @@ function MenuImpuestoPP(props) {
   };
 
   const selecionarDolar = async (id) => {
-    let endpoint = "https://api.exchangedyn.com/markets/quotes/usdves/bcv";
-    // let endpoint = op.conexion + "/moneda/ConsultarTodos";
+    //let endpoint = "https://api.exchangedyn.com/markets/quotes/usdves/bcv";
+    let endpoint = op.conexion + "/moneda/ConsultarTodos";
     console.log(endpoint);
     setActivate(true);
 
@@ -163,14 +163,14 @@ function MenuImpuestoPP(props) {
       .then((response) => {
         setActivate(false);
 
-        localStorage.setItem(
-          "dolarbcv",
-          JSON.stringify(parseFloat(response.sources.BCV.quote))
-        );
         // localStorage.setItem(
         //   "dolarbcv",
-        //   JSON.stringify(parseFloat(response[0].dolar_monto))
+        //   JSON.stringify(parseFloat(response.sources.BCV.quote))
         // );
+        localStorage.setItem(
+          "dolarbcv",
+          JSON.stringify(parseFloat(response[0].dolar_monto))
+        );
         // txtDescripcion.current.value = response.clase_nombre;
         //  setValues(response);
       })
