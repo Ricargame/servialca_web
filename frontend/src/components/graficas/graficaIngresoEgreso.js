@@ -506,16 +506,14 @@ function GraficosIngresos() {
                       className="align-baseline"
                       style={{ textAlign: "center", alignItems: "center" }}
                     >
-                      {(() => {
-                        if (item.nota_motivo = 'RCV') {
-                            return "RCV";
-                        } else if (item.nota_motivo = 'Seguro') {
-                            return "Certificado Medico";
-                        } else if (item.nota_motivo = 'Renovación'){
-                            return "Renovación";
-                        } else return ''
-                    })()}
-
+                      {
+                      item.nota_motivo == 'RCV' ? "RCV" :
+                      item.nota_motivo == 'Seguro' ? "Certificado Medico" :
+                      item.nota_motivo == 'Medico' ? "Certificado Medico" : 
+                      item.nota_motivo == 'Renovación' ? "Renovación" :
+                      item.nota_motivo == 'Licencia' ? "Licencia":
+                      'Otros'
+                      }
                     </TableCell>
                     <TableCell
                       className="align-baseline"
