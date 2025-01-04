@@ -210,7 +210,7 @@ function TablaReportes() {
       );
   };
   const seleccionarUsuario = async () => {
-    let endpoint = op.conexion + "/auth/consultarTodos"
+    let endpoint = op.conexion + "/Auth/consultarTodos"
     setActivate(true);
     await fetch(endpoint, {
       method: "GET",
@@ -265,13 +265,10 @@ function TablaReportes() {
   const consulta = (e) => {
     if (parseInt(e.target.value) === 5) {
       setDesabilitar(false);
-      selecionarUsuarios();
+      seleccionarUsuario();
     } else if (parseInt(e.target.value) === 4) {
       setDesabilitar(false);
       selecionarSucursal();
-    } else if (parseInt(e.target.value) === 5) {
-      setDesabilitar(false);
-      seleccionarUsuario()
     } else {
       setRecords([]);
       setDesabilitar(true);
