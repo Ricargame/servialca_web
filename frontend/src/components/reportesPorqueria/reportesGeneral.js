@@ -194,6 +194,7 @@ function TablaReportes() {
           array.push({
             id: response[i].usuario_id,
             nombre: response[i].usuario_nombre,
+             reporte: "0"
           });
         }
 
