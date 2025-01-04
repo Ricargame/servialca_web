@@ -179,7 +179,7 @@ export const ModalConfigurarUsuarios = (props) => {
     bodyF.append("Direccion", txtDireccion.current.value);
     bodyF.append("Correo", txtCorreo.current.value);
     bodyF.append("Rol", txtRol.current.value);
-    bodyF.append("Sucursal", txtSucursal.current.value);
+    // bodyF.append("Sucursal", txtSucursal.current.value);
     bodyF.append("Permiso", values.permisos);
     bodyF.append("Clave", txtClave.current.value);
     await fetch(endpoint, {
@@ -249,7 +249,6 @@ export const ModalConfigurarUsuarios = (props) => {
 
     //setLoading(false);
 
-    console.log(id);
     let bodyF = new FormData();
 
     bodyF.append("ID", id);
@@ -262,7 +261,6 @@ export const ModalConfigurarUsuarios = (props) => {
       .then((response) => {
         setActivate(false);
 
-        console.log(response);
         txtUsuario.current.value = response.usuario_usuario;
         txtNombre.current.value = response.usuario_nombre;
         txtApellido.current.value = response.usuario_apellido;

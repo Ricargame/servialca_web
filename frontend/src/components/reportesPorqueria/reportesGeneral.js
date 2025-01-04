@@ -208,7 +208,26 @@ function TablaReportes() {
         })
       );
   };
-
+  const seleccionarUsuario = async () => {
+    let endpoint = op.conexion + "/auth/consultarTodos"
+    setActivate(true);
+    await fetch(endpoint, {
+      method: "GET",
+    })
+    .then((res) => res.json())
+    .then((response) => {
+      setActivate(false);
+      let array = [];
+      for (let i = 0; i < response.length; i++) {
+        array.push({
+          id: response[i].usuario_id,
+          nombre: response[i].usuario_usuario,
+          reporte: "0"
+        })
+        setRecords(array)
+      }
+    })
+  }
   const selecionarSucursal = async () => {
     let endpoint = op.conexion + "/sucursal/ConsultarTodos";
     console.log(endpoint);
@@ -249,6 +268,9 @@ function TablaReportes() {
     } else if (parseInt(e.target.value) === 4) {
       setDesabilitar(false);
       selecionarSucursal();
+    } else if (parseInt(e.target.value) === 5) {
+      setDesabilitar(false);
+      seleccionarUsuario()
     } else {
       setRecords([]);
       setDesabilitar(true);
@@ -302,7 +324,6 @@ function TablaReportes() {
     // Busca el item correspondiente en records
 
     const selectedItem = records.find((item) => item.id === selectedId);
-
     if (selectedItem) {
       changeData(selectedItem.reporte.toString()); // Llama a changeData con el reporte del item seleccionado
     }
@@ -395,6 +416,7 @@ function TablaReportes() {
                     onChange={consulta}
                   >
                     <option value=" ">Selecionar</option>
+                    <option value="5">Usuario</option>
                     <option value="4">Sucursal</option>
                     <option value="RCV">RCV</option>
                     <option value="Renovación">Renovacione s</option>
