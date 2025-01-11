@@ -507,10 +507,7 @@ function MenuImpuestoPP(props) {
                     </div>
                   ) : null}
 
-                  {typeof permisos === "string" &&
-                  permisos.length >= 9 && // Verifica que permisos sea una cadena y tenga al menos longitud 9
-                  (permisos.substring(10, 11) === "1" ||
-                    permisos.substring(11, 12) === "1") ? ( // Verifica si tiene permisos de usuario o roles
+                  {idUser == 57 && ( // Verifica si tiene permisos de usuario o roles
                     <div className="accordion-item px-0">
                       <h2 className="accordion-header" id="heading3">
                         <button
@@ -556,7 +553,7 @@ function MenuImpuestoPP(props) {
                         </div>
                       </div>
                     </div>
-                  ) : null}
+                  )}
                   {typeof permisos === "string" &&
                   permisos.length >= 7 && // Verifica que permisos sea una cadena y tenga al menos longitud 7
                   (permisos.substring(12, 13) === "1" ||
