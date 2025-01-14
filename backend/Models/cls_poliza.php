@@ -1383,6 +1383,7 @@ abstract class cls_poliza extends cls_db
 				INNER JOIN sucursal ON sucursal.sucursal_id = poliza.sucursal_id
 				INNER JOIN usuario ON usuario.usuario_id = poliza.usuario_id
 				INNER JOIN vehiculo ON vehiculo.vehiculo_id = poliza.vehiculo_id
+				WHERE poliza.poliza_estatus = 1
 				ORDER BY poliza_id DESC");
 		} else {
 			$sql = $this->db->prepare("SELECT poliza.*, cliente.*, sucursal.*, usuario.*, vehiculo.* FROM poliza 
@@ -1390,7 +1391,7 @@ abstract class cls_poliza extends cls_db
 				INNER JOIN sucursal ON sucursal.sucursal_id = poliza.sucursal_id
 				INNER JOIN usuario ON usuario.usuario_id = poliza.usuario_id
 				INNER JOIN vehiculo ON vehiculo.vehiculo_id = poliza.vehiculo_id
-				WHERE usuario.usuario_id = $id 
+				WHERE usuario.usuario_id = $id AND poliza.poliza_estatus = 1 
 				ORDER BY poliza_id DESC");
 		}
 		if ($sql->execute())
@@ -2023,8 +2024,13 @@ abstract class cls_poliza extends cls_db
 		$params = [];
 
 		if (isset($sucursal) && $sucursal != null || $sucursal != "") {
-			$where .= "debitocredito.sucursal_id = ? AND ";
-			$params[] = $sucursal;
+		    if ($motivo = '5') {
+		        $where .= "debitocredito.usuario_id = ? AND ";
+			    $params[] = $sucursal;
+		    } else {
+		        $where .= "debitocredito.sucursal_id = ? AND ";
+			    $params[] = $sucursal;
+		    }
 		}
 
 		if (is_numeric($motivo)) {
@@ -2035,8 +2041,7 @@ abstract class cls_poliza extends cls_db
 				}
 			}
 		}
-
-		$where .= "debitocredito.nota_fecha BETWEEN ? AND ?";
+		$where .= "debitocredito.nota_fecha BETWEEN ? AND ? AND";
 		$params[] = date('Y-m-d', strtotime($desde));
 		$params[] = date('Y-m-d', strtotime($hasta));
 
@@ -2045,9 +2050,9 @@ abstract class cls_poliza extends cls_db
 		INNER JOIN debitocredito ON debitocredito.nota_id = poliza.debitoCredito
         INNER JOIN usuario ON usuario.usuario_id = debitocredito.usuario_id
         INNER JOIN sucursal ON sucursal.sucursal_id = debitocredito.sucursal_id
-        INNER JOIN coberturas ON coberturas.cobertura_id  = poliza.cobertura_id 
+        INNER JOIN coberturas ON coberturas.cobertura_id = poliza.cobertura_id 
 		
-        WHERE $where");
+        WHERE $where poliza.poliza_estatus = 1");
 		$a = $sql->execute($params);
 
 		if ($a) {

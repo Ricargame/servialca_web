@@ -1,29 +1,39 @@
 <?php
 include("./FPDF/fpdf.php");
 include("./Models/cls_poliza.php");
+
 class MiCliente extends cls_poliza
 {
-
 }
+
 $a = new MiCliente();
 $datos = $a->Reporte($_GET["Nombre"], $_GET["Desde"], $_GET["Hasta"]);
 class PDF extends FPDF
 {
+    private $showHeader = true; // Bandera para mostrar el encabezado solo en la primera página
+
     public function __construct()
     {
-        parent::__construct("L", "mm", "A4");
+        parent::__construct("P", "mm", "A4");
     }
 
     public function Header()
     {
-        $this->Image("./Img/heade.jpg", 0, 0, 300, 40, "JPG");
+        // Mostrar encabezado solo si la bandera está activada
+        if ($this->showHeader) {
+            $this->Image("./Img/heade.jpg", 10, 10, 190, 30, "JPG");
+            // Desactiva la bandera después de la primera página
+            $this->showHeader = false;
+        }
     }
 
     public function Footer()
     {
-        $this->Image("./Img/footer.jpg", 0, 190, 300, 22, "JPG");
+        $this->SetY(-30);
+        $this->Image("./Img/footer.jpg", 10, 277, 190, 15, "JPG");
     }
 }
+
 
 function abreviarNombre($nombre, $apellido)
 {
@@ -31,18 +41,15 @@ function abreviarNombre($nombre, $apellido)
     $totalNombres = count($nombres);
 
     if ($totalNombres < 1) {
-        // Si no hay nombres, mantener el nombre completo
         return $nombre;
     }
 
-    $nombreAbreviado = $nombres[0] . " "; // Primer nombre
+    $nombreAbreviado = $nombres[0] . " ";
 
-    // Abreviar el segundo nombre si existe
     if ($totalNombres >= 2 && !empty(trim($nombres[1]))) {
         $nombreAbreviado .= strtoupper(substr($nombres[1], 0, 1)) . ". ";
     }
 
-    // Mostrar el primer apellido si existe
     $apellidos = explode(" ", $apellido);
     if (count($apellidos) > 0 && !empty(trim($apellidos[0]))) {
         $nombreAbreviado .= $apellidos[0] . " ";
@@ -51,7 +58,6 @@ function abreviarNombre($nombre, $apellido)
     return trim($nombreAbreviado);
 }
 
-
 $totalDolar = 0;
 $totalComisionDolar = 0;
 foreach ($datos as $fila) {
@@ -59,79 +65,53 @@ foreach ($datos as $fila) {
     $totalComisionDolar += ($fila["nota_monto"] * $fila["roles_comision"]) / 100;
 }
 
-
 $pdf = new PDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial", "B", 16);
-$pdf->SetY(30);
-$pdf->SetX(190);
+$pdf->SetY(50);
+$pdf->Cell(0, 10, "Reporte de: " . $_GET["Nombre"], 0, 1, "C");
 $pdf->SetFont("Arial", "B", 12);
-$pdf->Cell(0, 10, "Reporte de: " . $_GET["Nombre"], 0, 1, "R");
-$pdf->Cell(0, 10, "Desde: " . $_GET["Desde"], 0, 1, "R");
-$pdf->Cell(0, 10, "Hasta: " . $_GET["Hasta"], 0, 1, "R");
-$pdf->Cell(0, 10, "Datos del Pago Movil: 0102 / 04126544855 / 11078879 ", 0, 1, "R");
-$pdf->SetX(15);
-$pdf->Cell(0, 10, 'Total: ' . $totalDolar . "$", 0, 1, 'L');
-$pdf->SetX(15);
-$pdf->Cell(0, 10, 'Comision: ' . $totalComisionDolar . "$", 0, 1, 'L');
-$pdf->Ln(10);
-$pdf->SetFont('Arial', '', 10);
-$pdf->SetY(90);
+$pdf->Cell(0, 10, "Desde: " . $_GET["Desde"] . " Hasta: " . $_GET["Hasta"], 0, 1, "C");
 
+$pdf->Ln(5);
+$pdf->SetFont("Arial", "", 11);
+$pdf->Cell(0, 10, "Total Generado: " . number_format($totalDolar, 2) . "$", 0, 1, "L");
+$pdf->Cell(0, 10, "Total a Transferir: " . number_format($totalComisionDolar, 2) . "$", 0, 1, "L");
+$pdf->SetFont("Arial", "B", 10);
+$pdf->SetTextColor(0, 128, 0); // RGB: (0, 128, 0)
+$pagoMovilDatos = "Banco: Banco de Venezuela | Teléfono: 0412-6544855 | Cédula/RIF: V-11078879";
+$pdf->Cell(0, 10, utf8_decode("Datos del Pago Móvil:" . $pagoMovilDatos), 0, 1, "L");
+// Restablecer el color del texto a negro para el resto del documento
+$pdf->SetTextColor(0, 0, 0);
+$pdf->SetFont("Arial", "B", 12);
 
-// Ancho de página
-$pageWidth = $pdf->GetPageWidth();
+// Tabla de datos
+$pdf->SetX(5);
+$pdf->SetFillColor(229, 57, 53);
+$pdf->SetTextColor(255);
+$pdf->Cell(20, 10, utf8_decode('Contrato'), 1, 0, 'C', true);
+$pdf->Cell(25, 10, 'Fecha', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Cliente', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Sucursal', 1, 0, 'C', true);
+$pdf->Cell(35, 10, 'Tipo', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Monto $', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Comision $', 1, 0, 'C', true);
+$pdf->Ln();
 
-// Número de columnas de la tabla
-$numColumns = 7;
-
-// Ancho de cada celda
-$cellWidth = $pageWidth / ($numColumns + 1); // Se suma 1 para dar espacio adicional entre las celdas
-
-// Obtener el ancho total de la tabla
-$tableWidth = $cellWidth * $numColumns;
-
-// Calcular la posición x para centrar la tabla
-$tableX = ($pageWidth - $tableWidth) / 2;
-
-// Establecer la posición x de la celda inicial de la tabla
-$pdf->SetX($tableX - 10);
-
-// Establecer el color de fondo de las celdas de encabezado
-$pdf->SetFillColor(229, 57, 53); // Rojo más intenso
-
-// Encabezados de la tabla
-$pdf->Cell($cellWidth, 10, utf8_decode('N° de contrato'), 1, 0, 'C', true);
-$pdf->Cell($cellWidth, 10, 'Fecha', 1, 0, 'C', true);
-$pdf->Cell($cellWidth + 20, 10, utf8_decode('Cliente'), 1, 0, 'C', true);
-$pdf->Cell($cellWidth, 10, utf8_decode('Sucursal'), 1, 0, 'C', true);
-$pdf->Cell($cellWidth, 10, 'Tipo de contrato', 1, 0, 'C', true);
-$pdf->Cell($cellWidth, 10, 'Monto $', 1, 0, 'C', true);
-$pdf->Cell($cellWidth, 10, utf8_decode('Comisión $'), 1, 0, 'C', true);
-$pdf->Ln(10);
-// Restaurar el color de fondo a blanco
-$pdf->SetFillColor(255, 255, 255);
-
-// Variable para controlar la posición Y de la tabla
-$tableY = $pdf->GetY();
-
-// Imprimir filas de datos
+$pdf->SetFont("Arial", "", 8);
+$pdf->SetTextColor(0);
 foreach ($datos as $fila) {
-    // Verificar si la siguiente fila excede la altura disponible en la página
-
-    $pdf->SetX(8.5);
-    $pdf->Cell($cellWidth, 10, utf8_decode($fila["poliza_id"]), 1, 0, 'C', true);
-    $pdf->Cell($cellWidth, 10, date("d-m-Y", strtotime($fila["nota_fecha"])), 1, 0, 'C', true);
-    $pdf->Cell($cellWidth + 20, 10, utf8_decode(abreviarNombre($fila["cliente_nombre"], $fila["cliente_apellido"])), 1, 0, 'C', true);
-    $pdf->Cell($cellWidth, 10, utf8_decode($fila["sucursal_nombre"]), 1, 0, 'C', true);
-    $pdf->Cell($cellWidth, 10, utf8_decode($fila["nota_motivo"]), 1, 0, 'C', true);
-    $pdf->Cell($cellWidth, 10, utf8_decode($fila["nota_monto"] . "$"), 1, 0, 'C', true);
+    $pdf->SetX(5);
+    $pdf->Cell(20, 10, utf8_decode($fila["poliza_id"]), 1, 0, 'C');
+    $pdf->Cell(25, 10, date("d-m-Y", strtotime($fila["nota_fecha"])), 1, 0, 'C');
+    $pdf->Cell(30, 10, utf8_decode(abreviarNombre($fila["cliente_nombre"], $fila["cliente_apellido"])), 1, 0, 'C');
+    $pdf->Cell(30, 10, utf8_decode($fila["sucursal_nombre"]), 1, 0, 'C');
+    $pdf->Cell(35, 10, utf8_decode($fila["nota_motivo"]), 1, 0, 'C');
+    $pdf->Cell(30, 10, number_format($fila["nota_monto"], 2) . "$", 1, 0, 'C');
     $totalComisionDolar = ($fila["nota_monto"] * $fila["roles_comision"]) / 100;
-    $pdf->Cell($cellWidth, 10, utf8_decode($totalComisionDolar . "$"), 1, 0, 'C', true);
-    $pdf->Ln(10);
-    $tableY += 10; // Actualizar la posición Y de la tabla
+    $pdf->Cell(30, 10, number_format($totalComisionDolar, 2) . "$", 1, 0, 'C');
+    $pdf->Ln();
 }
 
 $pdf->Output();
-
 ?>

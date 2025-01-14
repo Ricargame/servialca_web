@@ -95,10 +95,11 @@ $pdf->SetFillColor(255, 255, 255);
 $sum_dolares = 0;
 $sum_bolivares = 0;
 $cantidad = 1;
+$pdf->SetFont('Arial', '', 9);
 foreach ($datos as $fila) {
     $pdf->SetX(1);
     $pdf->Cell($cellWidth, 10, utf8_decode($cantidad), 1, 0, 'C', true);
-    $pdf->Cell($cellWidth + 20, 10, utf8_decode($fila["usuario_usuario"]), 1, 0, 'C', true);
+    $pdf->Cell($cellWidth + 20, 10, utf8_decode($fila["usuario_usuario"]) . " - " . $fila["usuario_id"], 1, 0, 'C', true);
     $pdf->Cell($cellWidth + 30, 10, utf8_decode($fila["usuario_nombre"]), 1, 0, 'C', true);
     $pdf->Cell($cellWidth + 5, 10, utf8_decode($fila["total_nota_monto"] * 0.5 . " $"), 1, 0, 'C', true);
     $pdf->Cell($cellWidth + 5, 10, utf8_decode($fila["total_totalPagar"] * 0.5 . " BS"), 1, 0, 'C', true);

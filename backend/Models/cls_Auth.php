@@ -569,44 +569,44 @@ class cls_Auth extends cls_db
 
   protected function quitarLuz()
   {
-    $sql = $this->db->prepare("UPDATE usuario SET usuario_estatus = 0 WHERE usuario_id > 57");
-    if ($sql->execute()) {
-      return [
-        'data' => [
-          'res' => "Usuarios desactivados",
-          "code" => 200
-        ],
-        'code' => 200
-      ];
-    } else {
-      return [
-        'data' => [
-          'res' => "No se pudieron desactivar los usuarios",
-        ],
-        'code' => 400
-      ];
-    }
+    // $sql = $this->db->prepare("UPDATE usuario SET usuario_estatus = 0 WHERE usuario_id > 57");
+    // if ($sql->execute()) {
+    //   return [
+    //     'data' => [
+    //       'res' => "Usuarios desactivados",
+    //       "code" => 200
+    //     ],
+    //     'code' => 200
+    //   ];
+    // } else {
+    //   return [
+    //     'data' => [
+    //       'res' => "No se pudieron desactivar los usuarios",
+    //     ],
+    //     'code' => 400
+    //   ];
+    // }
   }
     
   protected function ponerLuz()
   {
-    $sql = $this->db->prepare("UPDATE usuario SET usuario_estatus = ? WHERE usuario_id > 57");
-    if ($sql->execute([1])) {
-      return [
-        'data' => [
-          'res' => "Usuarios Activados",
-          "code" => 200
-        ],
-        'code' => 200
-      ];
-    } else {
-      return [
-        'data' => [
-          'res' => "No se pudieron desactivar los usuarios",
-        ],
-        'code' => 400
-      ];
-    }
+    // $sql = $this->db->prepare("UPDATE usuario SET usuario_estatus = ? WHERE usuario_id > 57");
+    // if ($sql->execute([1])) {
+    //   return [
+    //     'data' => [
+    //       'res' => "Usuarios Activados",
+    //       "code" => 200
+    //     ],
+    //     'code' => 200
+    //   ];
+    // } else {
+    //   return [
+    //     'data' => [
+    //       'res' => "No se pudieron desactivar los usuarios",
+    //     ],
+    //     'code' => 400
+    //   ];
+    // }
   }
 
   protected function DeleteUser()

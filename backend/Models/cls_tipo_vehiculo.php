@@ -223,10 +223,15 @@ protected function GetAll($sucursal)
         $whereClause .= ' AND tipovehiculo.nivel = ?'; 
     }
 
-    $sql = $this->db->prepare("SELECT precio.*, tipovehiculo.*, tipocontrato.* FROM precio 
+    // Modificar la consulta para usar GROUP BY
+    $sql = $this->db->prepare("SELECT precio.*, tipovehiculo.*, tipocontrato.*, 
+        tipovehiculo.tipoVehiculo_nombre AS nombre_unico
+        FROM precio 
         INNER JOIN tipovehiculo ON tipovehiculo.tipoVehiculo_id = precio.tipoVehiculo_id 
         INNER JOIN tipocontrato ON tipocontrato.contrato_id = precio.tipoContrato_id 
-        $whereClause ORDER BY precio_id ASC");
+        $whereClause 
+        GROUP BY tipovehiculo.tipoVehiculo_nombre
+        ORDER BY precio_id ASC");
 
     // Agregar parámetros a un arreglo
     $params = [];
@@ -250,6 +255,7 @@ protected function GetAll($sucursal)
         return [];
     }
 }
+
 
   protected function savePrecio()
   {

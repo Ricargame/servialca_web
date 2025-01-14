@@ -46,17 +46,17 @@ public function reporte($desde, $hasta) {
 
     // Consulta SQL para los datos generales excluyendo al usuario 57
     $queryGeneral = "
-        SELECT 
+        SELECT
+            usuario.usuario_id,
             usuario.usuario_nombre, 
             usuario.usuario_usuario,
             SUM(debitocredito.nota_monto) AS total_nota_monto, 
-            SUM(coberturas.totalPagar) AS total_totalPagar
+            SUM(coberturas.totalPagar) AS total_totalPagar,
+            CASE WHEN usuario.usuario_id = 57 THEN 1 ELSE 0 END AS es_usuario_57
         FROM 
             debitocredito 
         INNER JOIN 
             usuario ON usuario.usuario_id = debitocredito.usuario_id
-        LEFT JOIN  -- Cambiar a LEFT JOIN
-            medico ON medico.debitoCredito_id = debitocredito.nota_id
         INNER JOIN 
             poliza ON poliza.debitoCredito = debitocredito.nota_id
         INNER JOIN 
@@ -65,9 +65,9 @@ public function reporte($desde, $hasta) {
             debitocredito.nota_fecha BETWEEN ? AND ? 
             AND usuario.usuario_usuario IS NOT NULL 
             AND usuario.usuario_usuario <> ''
-            AND usuario.usuario_id <> 57  -- Excluir usuario 57
-        ORDER BY 
-            debitocredito.nota_fecha ASC
+            AND usuario.usuario_id <> 57
+        GROUP BY 
+            usuario.usuario_nombre
     ";
 
     // Consulta SQL para los datos específicos del usuario 57
@@ -79,8 +79,6 @@ public function reporte($desde, $hasta) {
             debitocredito 
         INNER JOIN 
             usuario ON usuario.usuario_id = debitocredito.usuario_id
-        LEFT JOIN  -- Cambiar a LEFT JOIN
-            medico ON medico.debitoCredito_id = debitocredito.nota_id
         INNER JOIN 
             poliza ON poliza.debitoCredito = debitocredito.nota_id
         INNER JOIN 
@@ -90,8 +88,6 @@ public function reporte($desde, $hasta) {
             AND usuario.usuario_usuario IS NOT NULL 
             AND usuario.usuario_usuario <> ''
             AND usuario.usuario_id = 57
-        ORDER BY 
-            debitocredito.nota_fecha ASC
     ";
 
     try {
@@ -120,5 +116,30 @@ public function reporte($desde, $hasta) {
         throw new RuntimeException("Error en la consulta de base de datos: " . $e->getMessage());
     }
 }
+    public function esconderRcv($id) {
+        $sql = $this->db->prepare("UPDATE poliza SET poliza_estatus = 0 WHERE poliza_id = ?");
+        $sql->execute([$id]);
+            return [
+					"data" => [
+						"res" => "RCV Eliminado"
+					],
+					"code" => 200
+				];
+    }
+    
+    protected function GetAll()
+  {
+    $sql = $this->db->prepare("SELECT usuario.*, roles.*, sucursal.*  FROM usuario 
+      INNER JOIN roles ON roles.roles_id = usuario.roles_id 
+      INNER JOIN sucursal ON sucursal.sucursal_id = usuario.sucursal_id WHERE usuario_id > 56 AND usuario_usuario IS NOT NULL AND usuario_estatus = 1
+      ORDER BY usuario.usuario_id DESC");
+
+    if ($sql->execute())
+      $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+    else
+      $resultado = [];
+
+    return $resultado;
+  }
 }
 ?>

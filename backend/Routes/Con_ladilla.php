@@ -25,6 +25,15 @@ class Con_ladilla extends cls_ladilla
         $resultado = $this->reporte($_GET['desde'], $_GET['hasta']);
         Response($resultado,200);
     }
+    public function eliminarRCv() {
+        $resultado = $this->esconderRcv($_GET['id']);
+        Response($resultado,200);
+    }
+    public function ConsultarTodos()
+  {
+    $resultado = $this->GetAll();
+    Response($resultado, 200);
+  }
 
 }
 ?>

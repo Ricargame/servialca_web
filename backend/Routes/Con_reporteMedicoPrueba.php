@@ -174,30 +174,22 @@ if ($datos == null) {
     $Pdf->Cell(13, 6, ""); //CI/RIF: 
     $Pdf->SetFont('Arial', 'B', 8);
     $Pdf->Cell(160, -3, "" . utf8_decode(strtoupper($datos[0]["cliente_cedula"])));
-           $Pdf->Ln(5);
-     $Pdf->SetFont('Arial', 'B', 7);
-    $Pdf->Cell(70, 6, "");
-    $Pdf->Cell(50, 195, "CARLOS R. CASAL P.");
-    // $Pdf->SetFont('Arial', 'B', 7);
-    // $Pdf->Cell(70, 6, "");
-    // $Pdf->Cell(50, 195, "CARLOS R. CASAL P.");
-    // $Pdf->Ln(15);
-    // $Pdf->SetFont('Arial', 'B', 8);
-    // $Pdf->Cell(80, 2, ""); //NOMBRES: 
-    // $Pdf->SetFont('Arial', 'B', 7);
-    // $Pdf->Cell(56, 0, "653");
-    //  //    $Pdf->Cell(47,1,"".utf8_decode(strtoupper($result['nombre'])));
-    // $Pdf->SetFont('Arial', 'B', 10);
-    // $Pdf->Cell(13, 6, ""); //CI/RIF: 
-    // $Pdf->SetFont('Arial', 'B', 8);
-    // $Pdf->Cell(160, -3, "111");
-    //    $Pdf->Cell(160,1,"".utf8_decode(strtoupper($result['id_cedulaorif'])));
-    $Pdf->Ln(5);
+    $Pdf->Ln(4);
+    $Pdf->SetFont('Arial', 'B', 8);
+    $Pdf->Cell(70, 2, ""); //NOMBRES: 
+    $Pdf->SetFont('Arial', 'B', 7);
+    $Pdf->Cell(50, 0, "CARLOS R. CASAL P.");
+    $Pdf->SetFont('Arial', 'B', 8);
+    $Pdf->Cell(160, -3, "3.866.567");
+    $Pdf->Ln(8);
+    $Pdf->SetFont('Arial', 'B', 8);
+    $Pdf->Cell(80, 2, ""); //NOMBRES: 
+    $Pdf->SetFont('Arial', 'B', 7);
+    $Pdf->Cell(50, 0, "653");
+    $Pdf->SetFont('Arial', 'B', 8);
+    $Pdf->Cell(160, -3, "111");
 
-    $Pdf->Ln(5);
-
-
-    $Pdf->Ln(6);
+    $Pdf->Ln(4);
     $Pdf->SetFont('Arial', 'B', 10);
     $Pdf->Cell(62, 117, ""); //Nombres:
     $Pdf->SetFont('Arial', 'B', 8);
@@ -236,8 +228,18 @@ if ($datos == null) {
     $modificacionVencimiento = date("d-m-Y", strtotime($fechaVencimiento));
     $Pdf->Cell(78, 106, "" . utf8_decode(strtoupper($modificacionVencimiento)));
     // $Pdf->Cell(78,108,"".utf8_decode(strtoupper($result['fecha_venci'])));
+    $Pdf->Ln(-5);
+    $Pdf->Cell(70, 153, ""); //ciudad: 
+    $Pdf->SetFont('Arial', 'B', 8);
+    $Pdf->Cell(20, 150, "" . utf8_decode(strtoupper("CARLOS R. CASAL P.")));
     $Pdf->Ln(5);
-    $Pdf->SetFont('Arial', 'B', 10);
+    $Pdf->Cell(63, 153, ""); //ciudad: 
+    $Pdf->SetFont('Arial', 'B', 8);
+    $Pdf->Cell(22, 150, "" . utf8_decode(strtoupper("191319")));
+     $Pdf->Cell(20, 153, ""); //ciudad: 
+    $Pdf->SetFont('Arial', 'B', 8);
+    $Pdf->Cell(22, 150, "" . utf8_decode(strtoupper("653")));
+    $Pdf->Ln(5);
     $Pdf->Cell(60, 153, ""); //ciudad: 
     $Pdf->SetFont('Arial', 'B', 8);
     $Pdf->Cell(22, 150, "" . utf8_decode(strtoupper("acarigua")));

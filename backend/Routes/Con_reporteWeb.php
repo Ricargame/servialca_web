@@ -24,7 +24,23 @@ if ($datos && count($datos) > 0) {
         $capTotal = $datos[0]["vehiculo_capTon"];
     }
 }
+function formatearNombreTitular($nombre) {
+    // Dividir el nombre completo en partes
+    $nombres = explode(" ", $nombre);
 
+    // Si hay más de un nombre, tomar solo el primer nombre y la inicial del segundo
+    if (count($nombres) > 1) {
+        // Primer nombre
+        $primerNombre = $nombres[0];
+        // Inicial del segundo nombre
+        $inicialSegundoNombre = strtoupper(substr($nombres[1], 0, 1)) . ".";
+        // Concatenar el primer nombre con la inicial
+        return $primerNombre . " " . $inicialSegundoNombre;
+    } else {
+        // Si solo hay un nombre, devolverlo tal cual
+        return $nombres[0];
+    }
+}
 $Pdf = new FPDF("L", "mm", "legal");
 $Pdf->AddPage("P");
 $Pdf->SetFont("Arial", "B", "12");
@@ -222,11 +238,11 @@ $Pdf->SetTextColor(183, 28, 28); //color rojo en las letras
 $Pdf->SetXY(121, 209); // Ajusta la posición del texto según sea necesario
 $Pdf->Cell(0, 13, "00000" . $datos[0]["poliza_id"] . " - " . $renovacion);
 $Pdf->SetXY(20, 210); // Ajusta la posición del texto según sea necesario
-$Pdf->Cell(25, 0, "Titular: " . strtoupper(utf8_decode($datos[0]["titular_nombre"] . " " . $datos[0]["titular_apellido"])));
+$Pdf->Cell(25, 0, "Titular: " . strtoupper(utf8_decode(formatearNombreTitular($datos[0]["titular_nombre"]) . " " . formatearNombreTitular($datos[0]["titular_apellido"]))));
 $Pdf->SetXY(90, 210); // Ajusta la posición del texto según sea necesario
 $Pdf->Cell(25, 0, $datos[0]["titular_cedula"]);
 $Pdf->SetXY(20, 215); // Ajusta la posición del texto según sea necesario
-$Pdf->Cell(25, 0, "Contratante: " . strtoupper(utf8_decode($datos[0]["cliente_nombre"]) . " " . utf8_decode($datos[0]["cliente_apellido"])));
+$Pdf->Cell(25, 0, "Contratante: " . strtoupper(utf8_decode(formatearNombreTitular($datos[0]["cliente_nombre"])) . " " . utf8_decode(formatearNombreTitular($datos[0]["cliente_apellido"]))));
 $Pdf->SetXY(90, 215); // Ajusta la posición del texto según sea necesario
 $Pdf->Cell(25, 0, $datos[0]["cliente_cedula"]);
 $Pdf->SetXY(20, 220); // Ajusta la posición del texto según sea necesario

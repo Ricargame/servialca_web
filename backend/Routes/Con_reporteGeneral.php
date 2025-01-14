@@ -93,7 +93,7 @@ $pdf->SetY(40);
 $pageWidth = $pdf->GetPageWidth();
 
 // Número de columnas de la tabla
-$numColumns = 7;
+$numColumns = 6;
 $cellWidth = $pageWidth / ($numColumns + 1);
 $tableWidth = $cellWidth * $numColumns;
 $tableX = ($pageWidth - $tableWidth) / 2;
@@ -104,7 +104,7 @@ $pdf->Cell($cellWidth, 10, utf8_decode('N° de contrato'), 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, 'Fecha', 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, utf8_decode('Hora'), 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, utf8_decode('Usuario'), 1, 0, 'C', true);
-$pdf->Cell($cellWidth, 10, utf8_decode("Sucursal"), 1, 0, "C", true);
+// $pdf->Cell($cellWidth, 10, utf8_decode("Sucursal"), 1, 0, "C", true);
 $pdf->Cell($cellWidth + 15, 10, 'Motivo', 1, 0, 'C', true);
 $pdf->Cell($cellWidth, 10, 'Monto $', 1, 0, 'C', true);
 $pdf->Ln(10);
@@ -126,7 +126,7 @@ if (is_array($datos)) {
         $pdf->Cell($cellWidth, 10, date("d-m-Y", strtotime($fila["nota_fecha"])), 1, 0, "C", true);
         $pdf->Cell($cellWidth, 10, $fila["nota_hora"], 1, 0, "C", true);
         $pdf->Cell($cellWidth, 10, utf8_decode($fila["usuario_usuario"]), 1, 0, "C", true);
-        $pdf->Cell($cellWidth, 10, utf8_decode($fila["sucursal_nombre"]), 1, 0, "C", true);
+        // $pdf->Cell($cellWidth, 10, utf8_decode($fila["sucursal_nombre"]), 1, 0, "C", true);
         $pdf->Cell($cellWidth + 15, 10, utf8_decode($fila["nota_motivo"]), 1, 0, "C", true);
         $pdf->Cell($cellWidth, 10, $fila["nota_monto"] . " $", 1, 0, "C", true);
         
