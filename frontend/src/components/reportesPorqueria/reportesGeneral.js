@@ -191,7 +191,7 @@ function TablaReportes() {
           array.push({
             id: response[i].usuario_id,
             nombre: response[i].usuario_nombre,
-             reporte: "0"
+            reporte: "0",
           });
         }
 
@@ -207,25 +207,25 @@ function TablaReportes() {
       );
   };
   const seleccionarUsuario = async () => {
-    let endpoint = op.conexion + "/Auth/consultarTodos"
+    let endpoint = op.conexion + "/Auth/consultarTodos";
     setActivate(true);
     await fetch(endpoint, {
       method: "GET",
     })
-    .then((res) => res.json())
-    .then((response) => {
-      setActivate(false);
-      let array = [];
-      for (let i = 0; i < response.length; i++) {
-        array.push({
-          id: response[i].usuario_id,
-          nombre: response[i].usuario_usuario,
-          reporte: "0"
-        })
-        setRecords(array)
-      }
-    })
-  }
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        let array = [];
+        for (let i = 0; i < response.length; i++) {
+          array.push({
+            id: response[i].usuario_id,
+            nombre: response[i].usuario_usuario,
+            reporte: "0",
+          });
+          setRecords(array);
+        }
+      });
+  };
   const selecionarSucursal = async () => {
     let endpoint = op.conexion + "/sucursal/ConsultarTodos";
     console.log(endpoint);
@@ -400,102 +400,115 @@ function TablaReportes() {
               </div>
 
               <div className="col-12 p-2 row">
-  {/* Grupo Tipo y Autocomplete */}
-  <div className="d-flex align-items-center col-md-6 mb-2">
-    <div className="me-2 flex-shrink-0">
-      <div className="input-group input-group-sm">
-        <span className="input-group-text" id="inputGroup-sizing-sm">
-          Tipo:
-        </span>
-        <select
-          className="form-select"
-          aria-label="Default select example"
-          ref={cmbTipo}
-          onChange={consulta}
-        >
-          <option value=" ">Seleccionar</option>
-          <option value="5">Usuario</option>
-          <option value="4">Sucursal</option>
-          <option value="RCV">RCV</option>
-          <option value="Renovación">Renovaciones</option>
-          <option value="Seguro">Certificados Médicos</option>
-          <option value="Licencia">Licencias</option>
-          <option value="1">Ingresos</option>
-          <option value="0">Egresos</option>
-          <option value="2">Ingreso y Egreso</option>
-          <option value="3">Nuevo Formato</option>
-        </select>
-      </div>
-    </div>
-    <div className="flex-grow-1">
-      <Autocomplete
-        disabled={desabilitar}
-        value={valorSeleccionado}
-        onChange={(event, newValue) => {
-          setValorSeleccionado(newValue);
-          handleSelectChange()
-        }}
-        options={records}
-        size="small"
-        getOptionLabel={(option) => option.nombre}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Seleccionar"
-            variant="outlined"
-            size="small"
-            InputProps={{
-              ...params.InputProps,
-              style: { fontSize: "12px", padding: "4px" }, // Opcional: ajusta la tipografía y el espaciado
-            }}
-            InputLabelProps={{
-              style: { fontSize: "12px" }, // Opcional: ajusta el tamaño del label
-            }}
-          />
-        )}
-        sx={{
-          "& .MuiAutocomplete-input": {
-            fontSize: "12px", // Ajusta el tamaño del texto en el input
-          },
-          "& .MuiOutlinedInput-root": {
-            padding: "4px", // Reduce el espaciado del input
-          },
-        }}
-      />
-    </div>
-        </div>
-  {/* Grupo Desde */}
-  <div className="col-md-3 mb-2">
-    <div className="input-group input-group-sm">
-      <span className="input-group-text" id="inputGroup-sizing-sm">
-        Desde:
-      </span>
-      <input
-        type="date"
-        className="form-control"
-        ref={txtDesde}
-        aria-label="Sizing example input"
-        aria-describedby="inputGroup-sizing-sm"
-      />
-    </div>
-  </div>
+                {/* Contenedor de Tipo y Autocomplete */}
+                <div className="col-12 col-md-6 mb-2">
+                  <div className="row">
+                    {/* Tipo */}
+                    <div className="col-12 col-md-6 mb-2 mb-md-0">
+                      <div className="input-group input-group-sm">
+                        <span
+                          className="input-group-text"
+                          id="inputGroup-sizing-sm"
+                        >
+                          Tipo:
+                        </span>
+                        <select
+                          className="form-select"
+                          aria-label="Default select example"
+                          ref={cmbTipo}
+                          onChange={consulta}
+                        >
+                          <option value=" ">Seleccionar</option>
+                          <option value="5">Usuario</option>
+                          <option value="4">Sucursal</option>
+                          <option value="RCV">RCV</option>
+                          <option value="Renovación">Renovaciones</option>
+                          <option value="Seguro">Certificados Médicos</option>
+                          <option value="Licencia">Licencias</option>
+                          <option value="1">Ingresos</option>
+                          <option value="0">Egresos</option>
+                          <option value="2">Ingreso y Egreso</option>
+                          <option value="3">Nuevo Formato</option>
+                        </select>
+                      </div>
+                    </div>
 
-  {/* Grupo Hasta */}
-  <div className="col-md-3 mb-2">
-    <div className="input-group input-group-sm">
-      <span className="input-group-text" id="inputGroup-sizing-sm">
-        Hasta:
-      </span>
-      <input
-        type="date"
-        className="form-control"
-        ref={txtHasta}
-        aria-label="Sizing example input"
-        aria-describedby="inputGroup-sizing-sm"
-      />
-    </div>
-  </div>
-</div>
+                    {/* Autocomplete */}
+                    <div className="col-12 col-md-6">
+                      <Autocomplete
+                        disabled={desabilitar}
+                        value={valorSeleccionado}
+                        onChange={(event, newValue) => {
+                          setValorSeleccionado(newValue);
+                          changeData()
+                        }}
+                        options={records}
+                        getOptionLabel={(option) => option.nombre}
+                        renderInput={(params) => (
+                          <TextField
+                            {...params}
+                            label="Seleccionar"
+                            variant="outlined"
+                            InputProps={{
+                              ...params.InputProps,
+                              style: { fontSize: "12px", padding: "4px" },
+                            }}
+                            InputLabelProps={{
+                              style: { fontSize: "12px" },
+                            }}
+                          />
+                        )}
+                        sx={{
+                          "& .MuiAutocomplete-input": {
+                            fontSize: "12px",
+                          },
+                          "& .MuiOutlinedInput-root": {
+                            padding: "4px",
+                          },
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desde */}
+                <div className="col-12 col-md-3 mb-2">
+                  <div className="input-group input-group-sm">
+                    <span
+                      className="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
+                      Desde:
+                    </span>
+                    <input
+                      type="date"
+                      className="form-control"
+                      ref={txtDesde}
+                      aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-sm"
+                    />
+                  </div>
+                </div>
+
+                {/* Hasta */}
+                <div className="col-12 col-md-3 mb-2">
+                  <div className="input-group input-group-sm">
+                    <span
+                      className="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
+                      Hasta:
+                    </span>
+                    <input
+                      type="date"
+                      className="form-control"
+                      ref={txtHasta}
+                      aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-sm"
+                    />
+                  </div>
+                </div>
+              </div>
 
               <div className="col-md-5 mx-auto row">
                 <button
