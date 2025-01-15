@@ -130,7 +130,7 @@ function TablaReportes() {
     //   );
     // }
     window.open(
-      `${op.conexion}/reporteGeneral?Motivo=${valorSeleccionado.nombre}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
+      `${op.conexion}/reporteGeneral?Sucursal=${valorSeleccionado.id}&Desde=${txtDesde.current.value}&Hasta=${txtHasta.current.value}`
     );
   };
 
@@ -314,7 +314,7 @@ function TablaReportes() {
   };
 
   const handleSelectChange = () => {
-    const selectedId = cmbDato.current.value;
+    const selectedId = valorSeleccionado.id;
 
     // Busca el item correspondiente en records
 
@@ -433,6 +433,7 @@ function TablaReportes() {
         value={valorSeleccionado}
         onChange={(event, newValue) => {
           setValorSeleccionado(newValue);
+          handleSelectChange()
         }}
         options={records}
         size="small"
