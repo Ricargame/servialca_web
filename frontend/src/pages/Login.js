@@ -342,7 +342,6 @@ function Login(props) {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
   const backgroundImageUrl = `${op.conexion}/ImgPanel/${isMobile ? "photo.jpg" : "photo2.jpg"}`;
-
   return (
     <div className="contenedor">
       <GestionarClave
@@ -380,12 +379,12 @@ function Login(props) {
           </div>
           <div class="col-md-8 col-lg-5">
             <div class="login d-flex align-items-center ">
-              <div class="container">
+              <div class="container" style={{ marginTop: isMobile ? '35%' : '10%' }}>
                 <div class="row">
                   <div class="col-md-9 col-lg-8 mx-auto">
                     <div
                       className=" img-fluid mx-auto logo-login"
-                      style={{ height: 125, width: 280 }}
+                      style={{ width: 280 }}
                     ></div>
 
                     {<h3
@@ -406,6 +405,7 @@ function Login(props) {
                           name="username"
                           value={values.username}
                           onChange={onChange}
+                          style={{ height: "40px" }}
                         />
                         <label for="floatingInput">Usuario</label>
                       </div>
@@ -419,7 +419,7 @@ function Login(props) {
                           value={values.password}
                           onChange={onChange}
                           maxLength={20}
-                          style={{ padingRight: "2.5rem" }}
+                          style={{ padingRight: "2.5rem", height: "40px" }}
                         />
                         <span
                           onClick={changeIcon}
