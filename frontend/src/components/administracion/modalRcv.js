@@ -1698,7 +1698,7 @@ export const ModalRcv = (props) => {
                 <div class="col-md-3"></div>
                 <div class="col-md-4 mb-1">
                   <div class="input-group input-group-sm">
-                    <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
                       Fecha Nacimiento
                     </span>
                     <input
