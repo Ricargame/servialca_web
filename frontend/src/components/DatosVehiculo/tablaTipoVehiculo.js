@@ -285,7 +285,11 @@ function TablaTipoVehiculo() {
       },
     });
   };
-
+  function descargarTipo() {
+    window.open(
+      `${op.conexion}/reporte/reporteTipoVehiculo`
+    );
+  }
   const selecionarTipoContrato = async () => {
     let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
     setActivate(true);
@@ -389,7 +393,14 @@ function TablaTipoVehiculo() {
               onChange={handleSearch}
               placeholder="Buscar"
             />
-          
+          <div className="col-3 d-flex justify-content-end">
+            <button
+              onClick={descargarTipo}
+              className="btn btn-sm btn-primary"
+            >
+              Descargar
+              </button>
+          </div>
           <div className="col-3 d-flex justify-content-end">
             <button
               onClick={gestionarBanco(1, "", "")}
