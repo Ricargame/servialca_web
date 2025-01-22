@@ -81,7 +81,7 @@ function TablaTipoVehiculo() {
   const [idTipoVehiculo, setIdTipoVehiculo] = useState(0.0);
   const [mostrar, setMostrar] = useState(false);
   const [tipoContrato, setTipoContrato] = useState([]);
-
+  const contrato = useRef()
   const [filterFn, setFilterFn] = useState({
     fn: (items) => {
       return items;
@@ -287,7 +287,7 @@ function TablaTipoVehiculo() {
   };
   function descargarTipo() {
     window.open(
-      `${op.conexion}/reporte/reporteTipoVehiculo`
+      `${op.conexion}/reporte/reporteTipoVehiculo?contrato=${contrato.current.value}`
     );
   }
   const selecionarTipoContrato = async () => {
@@ -394,11 +394,23 @@ function TablaTipoVehiculo() {
               placeholder="Buscar"
             />
           <div className="col-3 d-flex justify-content-end">
+            <select
+             class="form-select"
+             ref={contrato}
+             aria-label="Default select example"
+            >
+              <option value="1">Basico</option>
+              <option value="2">APOV</option>
+              <option value="3">+Grua</option>
+              </select>
+        
+          </div>
+          <div className="col-3 d-flex justify-content-end">
             <button
               onClick={descargarTipo}
               className="btn btn-sm btn-primary"
             >
-              Descargar
+              Imprimir
               </button>
           </div>
           <div className="col-3 d-flex justify-content-end">

@@ -483,7 +483,7 @@ function MenuImpuestoPP(props) {
                             </a>
                           )}
 
-                          {permisos.substring(8, 9) === "1" && (
+                          {/* {permisos.substring(8, 9) === "1" && (
                             <a
                               href="/tipovehiculobocono"
                               className="list-group-item list-group-item-action py-2 ripple"
@@ -491,9 +491,9 @@ function MenuImpuestoPP(props) {
                               <i class="fas fas-fw me-1 fa-shuttle-van"></i>
                               <span>Tipos de Vehiculos Bocono</span>
                             </a>
-                          )}
+                          )} */}
 
-                          {permisos.substring(9, 10) === "1" && (
+                          {/* {permisos.substring(9, 10) === "1" && (
                             <a
                               href="/transporte"
                               className="list-group-item list-group-item-action py-2 ripple"
@@ -501,7 +501,7 @@ function MenuImpuestoPP(props) {
                               <i class="fas fas-fw me-1 fa-bus"></i>
                               <span>Lineas de Transporte</span>
                             </a>
-                          )}
+                          )} */}
                         </div>
                       </div>
                     </div>
