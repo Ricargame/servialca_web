@@ -759,7 +759,7 @@ function Inicio2() {
         <TblContainer>
           <TblHead />
           <TableBody>
-            {records &&
+            {records && records.length > 0 &&
               recordsAfterPagingAndSorting().map((item, index) => (
                 <TableRow
                   key={index}
