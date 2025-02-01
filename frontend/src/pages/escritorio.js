@@ -45,6 +45,7 @@ import ReporteHotel from "../components/hotel/reporteHote";
 import TablaBot from "../components/bot/tablaBot";
 import TablaNivel from "../components/administracion/tablaNivel";
 import zona from "../components/administracion/tablaZona"
+import pagos from "../components/administracion/tablaPagos"
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
   //let op = require("../modulos/datos");
@@ -365,7 +366,16 @@ function MenuImpuestoPP(props) {
                               <span>Tipos de Contratos</span>
                             </a>
                           )}
-                        {idUser == 57 && (
+                          {idUser == 57 && (
+                            <a
+                              href="/pagos"
+                              className="list-group-item list-group-item-action py-2 ripple"
+                            >
+                              <i className="fas fas-fw me-1 fa-clipboard-list"></i>
+                              <span>Registrar Pago</span>
+                            </a>
+                          )}
+                        {/* {idUser == 57 && (
                             <a
                               href="/zona"
                               className="list-group-item list-group-item-action py-2 ripple"
@@ -373,7 +383,7 @@ function MenuImpuestoPP(props) {
                               <i className="fas fas-fw me-1 fa-clipboard-list"></i>
                               <span>Zonas</span>
                             </a>
-                          )}
+                          )} */}
                         {/* {permisos.substring(2, 3) === "1" && (
                           <a
                             href="/morosos"
@@ -765,6 +775,11 @@ function MenuImpuestoPP(props) {
                 exact
                 path="/zona"
                 component={zona}
+              />
+              <AuthRoute
+                exact
+                path="/pagos"
+                component={pagos}
               />
               <AuthRoute
                 exact
