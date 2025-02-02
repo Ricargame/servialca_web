@@ -197,7 +197,7 @@ function TablaPagos() {
     } else {
       variable = 0;
     }
-    let endpoint = op.conexion + "/zona/eliminar";
+    let endpoint = op.conexion + "/pagos/eliminar";
     setActivate(true);
     let bodyF = new FormData();
     bodyF.append("ID", id);
@@ -230,7 +230,7 @@ function TablaPagos() {
     selecionarRegistros();
   };
   const selecionarRegistros = async () => {
-    let endpoint = op.conexion + "/zona/ConsultarTodos";
+    let endpoint = op.conexion + "/pagos/ConsultarTodos";
     let bodyF = new FormData();
     bodyF.append("token", token);
     setActivate(true);
@@ -238,7 +238,7 @@ function TablaPagos() {
     //setLoading(false);
 
     await fetch(endpoint, {
-      method: "POST",
+      method: "GET",
     })
       .then((res) => res.json())
       .then((response) => {
@@ -371,30 +371,39 @@ function TablaPagos() {
         <TblContainer>
           <TblHead />
           <TableBody>
-            {records &&
+            {records && records.length > 0 &&
               recordsAfterPagingAndSorting().map((item, index) => (
                 <TableRow key={index} style={{ padding: "0" }}>
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.zona_id}
+                    {item.pagos_id}
                   </TableCell>
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {item.zona_nombre}
+                    {item.usuario_usuario}
                   </TableCell>
                   <TableCell
                     className="align-baseline"
                     style={{ textAlign: "center", alignItems: "center" }}
                   >
-                    {parseInt(item.zona_estatus) === 1
-                      ? "ACTIVO"
-                      : "INACTIVO"}
+                    {item.pagos_fecha}
                   </TableCell>
-
+                  <TableCell
+                    className="align-baseline"
+                    style={{ textAlign: "center", alignItems: "center" }}
+                  >
+                    {item.pagos_monto_bs}
+                  </TableCell>
+                  <TableCell
+                    className="align-baseline"
+                    style={{ textAlign: "center", alignItems: "center" }}
+                  >
+                    {item.pagos_referencia}
+                  </TableCell>
                   <TableCell
                     className="align-baseline"
                     style={{
@@ -404,27 +413,10 @@ function TablaPagos() {
                     }}
                   >
                     <button
-                      onClick={gestionarBanco(2, item.zona_id, "")}
+                      onClick={gestionarBanco(2, item.pagos_id, "")}
                       className="btn btn-sm mx-1 btn-warning rounded-circle"
                     >
                       <i className="fa fa-edit"></i>{" "}
-                    </button>
-                    <button
-                      onClick={gestionarBanco(
-                        8,
-                        item.zona_id,
-                        item.zona_estatus
-                      )}
-                      className="btn btn-sm mx-1 btn-danger rounded-circle"
-                    >
-                      {item.zona_estatus === 1 ? (
-                        <i className="fa fa-times"></i>
-                      ) : (
-                        <i
-                          className="fa fa-check"
-                          style={{ background: "none" }}
-                        ></i>
-                      )}
                     </button>
                   </TableCell>
                 </TableRow>

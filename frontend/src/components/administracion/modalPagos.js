@@ -18,29 +18,20 @@ import { Mensaje } from "../mensajes";
 import CatalogoClientes from "../../catalogos/catalogoClientes";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
+import { useForkRef } from "@material-ui/core";
 export const ModalPagos = (props) => {
   /*  variables de estados */
 
   let op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
-
-  const txtEdad = useRef();
+  const idUsuario = useRef();
+  const montoDolar = useRef();
+  const referencia = useRef();
   const txtNombre = useRef();
-  const txtTipoSangre = useRef();
+  const [acesor, setAcesor] = useState()
   const txtCedula = useRef();
-  const cmbLentes = useRef();
-  const cmbPago = useRef();
-  const cmbNacionalidad = useRef();
-  const [tipoContrato, setTipoContrato] = useState([]);
-  const [tipoVehiculo, setTipoVehiculo] = useState([]);
-  const txtDatosPastor = useRef();
-  const txtReferencia = useRef();
-  const txtBs = useRef();
-  const txtDolar = useRef();
   let permisos = JSON.parse(localStorage.getItem("permisos"));
-  const txtFechaNaci = useRef();
   const txtDescripcion = useRef();
-  const txtComision = useRef();
   const idPrecio = useRef();
   const [values, setValues] = useState({
     ced: "",
@@ -74,6 +65,7 @@ export const ModalPagos = (props) => {
     contrato_id: '',
     tipo_id: '',
     monto: "",
+    usuario_id: ''
   });
   const btnCancela = useRef();
   const [mensaje, setMensaje] = useState({
@@ -131,6 +123,35 @@ export const ModalPagos = (props) => {
     });
   };
   const idsucursal = JSON.parse(localStorage.getItem("idsucursal"));
+  const selecionarAcesor = async () => {
+    let endpoint = op.conexion + "/ladilla/ConsultarTodos";
+    setActivate(true);
+
+    //setLoading(false);
+
+    let bodyF = new FormData();
+
+    // bodyF.append("ID", user_id)
+
+    await fetch(endpoint, {
+      method: "POST",
+      body: bodyF,
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        setActivate(false);
+        setAcesor(response);
+      })
+      .catch((error) =>
+        setMensaje({
+          mostrar: true,
+          titulo: "Notificación",
+          texto: error.res,
+          icono: "informacion",
+        })
+      );
+  };
+
   const selecionarRegistros = async () => {
     setMostrar(false);
     let endpoint =
@@ -144,7 +165,6 @@ export const ModalPagos = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        setTipoVehiculo(response);
       })
       .catch((error) =>
         setMensaje({
@@ -157,27 +177,25 @@ export const ModalPagos = (props) => {
   };
   const actualizarCertificado = async () => {
     let endpoint;
-    console.log(idPrecio.current.value)
     setActivate(true);
     let bodyF = new FormData();
-
     if (operacion === 1) {
-      endpoint = op.conexion + "/nivel/registrar";
-      bodyF.append("Monto", txtDescripcion.current.value);
-      bodyF.append("idContrato", valorSeleccionado.contrato_id);
-      bodyF.append("idTipo", valorSeleccionado.tipo_id);
+      endpoint = op.conexion + "/pagos/registrar";
+      bodyF.append("usuario", valorSeleccionado.idUsuario);
+      bodyF.append("monto", montoDolar.current.value);
+      bodyF.append("referencia", referencia.current.value);
     } else if (operacion === 2) {
-      endpoint = op.conexion + "/nivel/actualizar";
-      bodyF.append("Monto", txtDescripcion.current.value);
-      bodyF.append("idContrato", valorSeleccionado.contrato_id);
-      bodyF.append("idTipo", valorSeleccionado.tipo_id);
-      bodyF.append("ID", idPrecio.current.value);
+      endpoint = op.conexion + "/pagos/Editar";
+      bodyF.append("usuario", valorSeleccionado.idUsuario);
+      bodyF.append("monto", montoDolar.current.value);
+      bodyF.append("referencia", referencia.current.value);
+      bodyF.append("id", idPrecio.current.value);
     } else {
-      endpoint = op.conexion + "/nivel/eliminar";
-      bodyF.append("Monto", txtDescripcion.current.value);
-      bodyF.append("idContrato", valorSeleccionado.contrato_id);
-      bodyF.append("idTipo", valorSeleccionado.tipo_id);
-      bodyF.append("ID", idPrecio.current.value);
+      endpoint = op.conexion + "/pagos/eliminar";
+      bodyF.append("usuario", valorSeleccionado.idUsuario);
+      bodyF.append("monto", montoDolar.current.value);
+      bodyF.append("referencia", referencia.current.value);
+      bodyF.append("id", idPrecio.current.value);
     }
     bodyF.append("Token", token);
     await fetch(endpoint, {
@@ -260,7 +278,6 @@ export const ModalPagos = (props) => {
     return false;
   };
   const seleccionarCliente = (nombre, apellido, cedula) => {
-    console.log(nombre, apellido, cedula);
     txtCedula.current.value = cedula;
     txtDescripcion.current.value = apellido;
     txtNombre.current.value = nombre;
@@ -299,41 +316,6 @@ export const ModalPagos = (props) => {
       }
     }
   };
-  const selecionarTipoContrato = async () => {
-    let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
-    setActivate(true);
-    const permiso = permisos[permisos.length - 1];
-    let bodyF = new FormData();
-    // bodyF.append("ID", user_id)
-    await fetch(endpoint, {
-      method: "POST",
-      body: bodyF,
-    })
-      .then((res) => res.json())
-      .then((response) => {
-        if (permiso.length > 19) {
-          if (permiso[20] == 1) {
-            const validatedContract = response.filter(
-              (contract) => contract.contrato_validacion == "1"
-            );
-            setTipoContrato(validatedContract);
-          }
-        }
-        const validatedContract = response.filter(
-          (contract) => contract.contrato_validacion == "0"
-        );
-        setTipoContrato(validatedContract);
-        setActivate(false);
-      })
-      .catch((error) =>
-        setMensaje({
-          mostrar: true,
-          titulo: "Notificación",
-          texto: error.res,
-          icono: "informacion",
-        })
-      );
-  };
   const handleInputMontoChange = (event) => {
     validaMonto(event);
     if (event.which === 13 || typeof event.which === "undefined") {
@@ -364,16 +346,11 @@ export const ModalPagos = (props) => {
   };
 
   const selecionarRol = async (id) => {
-    let endpoint = op.conexion + "/nivel/ConsultarUno?ID=" + id;
-    console.log(endpoint);
+    let endpoint = op.conexion + "/pagos/ConsultarUno";
     setActivate(true);
-
-    //setLoading(false);
-
     let bodyF = new FormData();
 
-    // bodyF.append("Nombre", txtDescripcion.current.value)
-
+    bodyF.append("id", id)
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -381,15 +358,14 @@ export const ModalPagos = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        txtDescripcion.current.value = response[0].precio_monto;
-        idPrecio.current.value = response[0].precio_id;
+        idPrecio.current.value = response[0].pagos_id;
+        montoDolar.current.value =  response[0].pagos_monto_bs
+        referencia.current.value =  response[0].pagos_referencia
         setValorSeleccionado({
-          contrato_nombre : response[0].contrato_nombre,
-          contrato_id : response[0].contrato_id,
-          tipoVehiculo_nombre: response[0].tipoVehiculo_nombre,
-          tipo_id: response[0].tipoVehiculo_id
+          idUsuario: response[0].usuario_id,
+          usuario_usuario: response[0].usuario_usuario
         })
-        setValues(response);
+        setValues(response[0]);
       })
       .catch((error) =>
         setMensaje({
@@ -430,20 +406,19 @@ export const ModalPagos = (props) => {
       keyboard={false}
       onShow={() => {
         setOperacion(props.operacion);
-        selecionarTipoContrato();
-        selecionarRegistros();
+        selecionarAcesor();
         if (props.operacion !== 1) {
-          selecionarRol(props.idRol);
+          selecionarRol(props.idzona);
         }
       }}
     >
       <Modal.Header className="bg-danger">
         <Modal.Title style={{ color: "#fff" }}>
           {operacion === 1
-            ? "Registrar Precio"
+            ? "Registrar Pago"
             : operacion === 2
-            ? "Editar Precio"
-            : "Eliminar Precio"}
+              ? "Editar Pago"
+              : "Eliminar Pago"}
         </Modal.Title>
         <button
           ref={btnCancela}
@@ -472,83 +447,83 @@ export const ModalPagos = (props) => {
             mensaje.titulo === "Exito."
               ? cerrarModal()
               : setMensaje({
-                  mostrar: false,
-                  titulo: "",
-                  texto: "",
-                  icono: "",
-                });
+                mostrar: false,
+                titulo: "",
+                texto: "",
+                icono: "",
+              });
           }}
         />
 
-<div className="col-md-12 row mx-auto">
-  <div className="mb-1 col-md-12">
-    <div className="row">
-      <div className="mb-3 col-md-6"> {/* Cambia col-md-16 a col-md-6 para que ocupen la mitad */}
-        <div className="input-group input-group-sm">
-          <input type="hidden" ref={idPrecio} />
-          <span className="input-group-text" id="inputGroup-sizing-sm">
-            Monto $:
-          </span>
-          <input
-            maxLength={50}
-            type="text"
-            ref={txtDescripcion}
-            className="form-control"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-sm"
-            name="nom"
-          />
+        <div className="col-md-12 row mx-auto">
+          <div className="mb-1 col-md-12">
+            <div className="row">
+              <div className="mb-3 col-md-6"> {/* Cambia col-md-16 a col-md-6 para que ocupen la mitad */}
+                <div className="input-group input-group-sm">
+                  <input type="hidden" ref={idPrecio} />
+                  <span className="input-group-text" id="inputGroup-sizing-sm">
+                    Monto Bs:
+                  </span>
+                  <input
+                    maxLength={50}
+                    type="text"
+                    ref={montoDolar}
+                    className="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                    name="nom"
+                  />
+                </div>
+              </div>
+              <div className="mb-3 col-md-6"> {/* Cambia col-md-16 a col-md-6 para que ocupen la mitad */}
+                <div className="input-group input-group-sm">
+                  <input type="hidden" ref={idPrecio} />
+                  <span className="input-group-text" id="inputGroup-sizing-sm">
+                    Referencia:
+                  </span>
+                  <input
+                    maxLength={50}
+                    type="text"
+                    ref={referencia}
+                    className="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                    name="nom"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="mb-3 col-md-12">
+                {acesor && Array.isArray(acesor) && acesor.length > 0 && (
+                  <Autocomplete
+                    value={valorSeleccionado}
+                    onChange={(event, newValue) => {
+                      if (newValue) {
+                        setValorSeleccionado({
+                          ...valorSeleccionado,
+                          usuario_usuario: newValue.usuario_usuario,
+                          idUsuario: newValue.usuario_id
+                        });
+                      }
+                    }}
+                    options={acesor}
+                    sx={{ width: "100%" }}
+                    size="small"
+                    getOptionLabel={(option) => option.usuario_usuario}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Acesor"
+                        variant="outlined"
+                      />
+                    )}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="mb-3 col-md-6"> {/* Cambia col-md-16 a col-md-6 para que ocupen la mitad */}
-        <div className="input-group input-group-sm">
-          <input type="hidden" ref={idPrecio} />
-          <span className="input-group-text" id="inputGroup-sizing-sm">
-            Monto Bs:
-          </span>
-          <input
-            maxLength={50}
-            type="text"
-            ref={txtDescripcion}
-            className="form-control"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-sm"
-            name="nom"
-          />
-        </div>
-      </div>
-    </div>
-    <div className="mb-3 col-md-12">
-      {tipoContrato &&
-        Array.isArray(tipoContrato) &&
-        tipoContrato.length > 0 && (
-          <Autocomplete
-            value={valorSeleccionado}
-            onChange={(event, newValue) => {
-              if (newValue) {
-                setValorSeleccionado({
-                  ...valorSeleccionado,
-                  contrato_nombre: newValue.contrato_nombre,
-                  contrato_id: newValue.contrato_id,
-                });
-              }
-            }}
-            options={tipoContrato}
-            sx={{ width: "100%" }}
-            size="small"
-            getOptionLabel={(option) => option.contrato_nombre}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Tipo de Contrato"
-                variant="outlined"
-              />
-            )}
-          />
-        )}
-    </div>
-  </div>
-</div>
       </Modal.Body>
       <Modal.Footer>
         <button
