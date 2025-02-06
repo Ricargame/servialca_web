@@ -473,7 +473,7 @@ export const ModalTipoContrato = (props) => {
               disabled={
                 operacion === 1 ? false : operacion === 2 ? false : true
               }
-              maxLength={25}
+              maxLength={100}
               type="text"
               class="form-control"
               ref={txtDescripcion}
