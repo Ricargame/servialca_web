@@ -5,7 +5,6 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import reportWebVitals from "./reportWebVitals";
 
-console.log("estramos en el index");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 

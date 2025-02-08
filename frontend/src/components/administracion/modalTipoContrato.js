@@ -182,7 +182,7 @@ export const ModalTipoContrato = (props) => {
       "grua",
       txtGrua.current.value.replace(/\./g, "").replace(",", ".")
     );
-    bodyF.append('bool', bool.current.value)
+    bodyF.append('bool', false)
     await fetch(endpoint, {
       method: "POST",
       body: bodyF,
@@ -618,7 +618,7 @@ export const ModalTipoContrato = (props) => {
               aria-describedby="inputGroup-sizing-sm"
             />
           </div>
-          <div class="input-group input-group-sm mb-3 col-md-4">
+          {/* <div class="input-group input-group-sm mb-3 col-md-4">
             <span class="input-group-text" id="inputGroup-sizing-sm">
               Es de Boconoa:
             </span>
@@ -630,7 +630,7 @@ export const ModalTipoContrato = (props) => {
               <option value="0">No</option>
               <option value="1">Si</option>
             </select>
-          </div>
+          </div> */}
         </div>
       </Modal.Body>
       <Modal.Footer>
