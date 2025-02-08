@@ -372,7 +372,7 @@ export const ModalImprimir = (props) => {
               onClick={imprimir(2)}
               class="btn col btn-primary"
             >
-              RCV WEB
+              IMPRIMIR RCV
             </button>
           </div>
           <div class="input-group input-group-sm mb-3 col-md-6q">
@@ -381,7 +381,7 @@ export const ModalImprimir = (props) => {
               onClick={imprimir(3)}
               class="btn col btn-primary"
             >
-              Carnet R.C.V
+              IMPRIMIR Carnet
             </button>
           </div>
           {/* <div class="input-group input-group-sm mb-3 col-md-4">
