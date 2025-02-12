@@ -1577,7 +1577,7 @@ export const ModalRcv = (props) => {
                       <Autocomplete
                         value={valorSeleccionado}
                         onChange={(event, newValue) => {
-                          if (newValue && newValue.contrato_estatus === '1') {
+                          if (newValue && newValue.contrato_estatus == '1') {
                             setValorSeleccionado({
                               ...valorSeleccionado,
                               contrato_nombre: newValue.contrato_nombre,

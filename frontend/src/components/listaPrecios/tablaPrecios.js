@@ -285,7 +285,11 @@ function TablaPrecio() {
       },
     });
   };
-
+  function descargarTipo() {
+    window.open(
+      `${op.conexion}/reporte/reporteTipoVehiculo?contrato=1`
+    );
+  }
   const selecionarTipoContrato = async () => {
     let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
     setActivate(true);
@@ -385,6 +389,14 @@ function TablaPrecio() {
               onChange={handleSearch}
               placeholder="Buscar"
             />
+            <div className="col-3 d-flex justify-content-end">
+            <button
+              onClick={descargarTipo}
+              className="btn btn-sm btn-primary"
+            >
+              Imprimir
+              </button>
+            </div>
             {/* <select
               onChange={(e) => {
                 setNivelSeleccionado(e.target.value);
