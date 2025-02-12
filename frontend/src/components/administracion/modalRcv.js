@@ -900,7 +900,6 @@ export const ModalRcv = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log('tipo de contrato', response)
         setTipo(response);
       })
       .catch((error) =>
@@ -1578,7 +1577,7 @@ export const ModalRcv = (props) => {
                       <Autocomplete
                         value={valorSeleccionado}
                         onChange={(event, newValue) => {
-                          if (newValue) {
+                          if (newValue && newValue.contrato_estatus === '1') {
                             setValorSeleccionado({
                               ...valorSeleccionado,
                               contrato_nombre: newValue.contrato_nombre,
