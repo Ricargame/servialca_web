@@ -46,6 +46,8 @@ import TablaBot from "../components/bot/tablaBot";
 import TablaNivel from "../components/administracion/tablaNivel";
 import zona from "../components/administracion/tablaZona"
 import pagos from "../components/administracion/tablaPagos"
+import tablaBasico from "../components/DatosVehiculo/tablaBasico"
+import tablaRTC from "../components/DatosVehiculo/tablaRTC"
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
   //let op = require("../modulos/datos");
@@ -483,16 +485,24 @@ function MenuImpuestoPP(props) {
                               <span>Tipos de Vehiculos</span>
                             </a>
                           )}
-                          {permisos.substring(7, 8) === "1" && (
+                          {idUser == 57 && (
                             <a
-                              href="/nivel"
+                              href="/basico"
                               className="list-group-item list-group-item-action py-2 ripple"
                             >
                               <i class="fas fas-fw me-1 fa-caravan"></i>
-                              <span>Asignar Precio a Tipo</span>
+                              <span>Precio de Basico</span>
                             </a>
                           )}
-
+                          {idUser == 57 &&(
+                            <a
+                              href="/trc"
+                              className="list-group-item list-group-item-action py-2 ripple"
+                            >
+                              <i class="fas fas-fw me-1 fa-caravan"></i>
+                              <span>Precio de TRC</span>
+                            </a>
+                          )}
                           {/* {permisos.substring(8, 9) === "1" && (
                             <a
                               href="/tipovehiculobocono"
@@ -818,6 +828,16 @@ function MenuImpuestoPP(props) {
                 exact
                 path="/nivel"
                 component={TablaNivel}
+              />
+              <AuthRoute 
+                exact
+                path="/basico"
+                component={tablaBasico}
+              />
+              <AuthRoute 
+                exact
+                path="/trc"
+                component={tablaRTC}
               />
               <AuthRoute
                 exact
