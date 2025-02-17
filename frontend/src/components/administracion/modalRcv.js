@@ -694,14 +694,19 @@ export const ModalRcv = (props) => {
     })
       .then((res) => res.json())
       .then((response) => {
-        if (permiso.length > 19) {
-          if (permiso[20] == 1 ) {
-            const validatedContract = response.filter((contract) => contract.contrato_validacion == "1");
-            setTipoContrato(validatedContract);
-          }
+        // if (permiso.length > 19) {
+        //   if (permiso[20] == 1 ) {
+        //     const validatedContract = response.filter((contract) => contract.contrato_validacion == "1");
+        //     setTipoContrato(validatedContract);
+        //   }
+        // }
+        // const validatedContract = response.filter((contract) => contract.contrato_validacion == "0");
+        if (idUser != 57) {
+          const validate = response.filter(data => data.contrato_id == 1)
+          setTipoContrato(validate);
+        } else {
+          setTipoContrato(response);
         }
-        const validatedContract = response.filter((contract) => contract.contrato_validacion == "0");
-        setTipoContrato(validatedContract);
         setActivate(false);
       })
       .catch((error) =>
