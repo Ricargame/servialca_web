@@ -1064,7 +1064,7 @@ export const ModalUsuarios = (props) => {
                 value="Asesor"
                 id="flexCheckDefault"
               />
-              <label class="form-check-label">Lista de Precio Bocono</label>
+              <label class="form-check-label">Tipo de Contrato TRC</label>
             </div>
           </div>
         </div>

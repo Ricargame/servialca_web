@@ -685,7 +685,6 @@ export const ModalRcv = (props) => {
   const selecionarTipoContrato = async () => {
     let endpoint = op.conexion + "/tipo_contrato/ConsultarTodos";
     setActivate(true);
-    const permiso = permisos[permisos.length - 1]
     let bodyF = new FormData();
     // bodyF.append("ID", user_id)
     await fetch(endpoint, {
@@ -694,18 +693,17 @@ export const ModalRcv = (props) => {
     })
       .then((res) => res.json())
       .then((response) => {
-        // if (permiso.length > 19) {
-        //   if (permiso[20] == 1 ) {
-        //     const validatedContract = response.filter((contract) => contract.contrato_validacion == "1");
-        //     setTipoContrato(validatedContract);
-        //   }
-        // }
-        // const validatedContract = response.filter((contract) => contract.contrato_validacion == "0");
-        if (idUser != 57) {
-          const validate = response.filter(data => data.contrato_id == 1)
-          setTipoContrato(validate);
+        if (permisos.length > 19) {
+          if (permisos[20] == 1 ) {
+            const validatedContract = response.filter((contract) => contract.contrato_id == '1' || contract.contrato_id == '3');
+            setTipoContrato(validatedContract);
+          } else {
+            const validatedContract = response.filter((contract) => contract.contrato_id == '1');
+            setTipoContrato(validatedContract)
+          }
         } else {
-          setTipoContrato(response);
+          const validatedContract = response.filter((contract) => contract.contrato_id == '1');
+          setTipoContrato(validatedContract)
         }
         setActivate(false);
       })
