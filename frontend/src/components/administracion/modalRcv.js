@@ -1671,7 +1671,7 @@ export const ModalRcv = (props) => {
                     ref={txtCedula}
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
-                    maxLength={9}
+                   
                     onBlur={validarInput}
                     name="cedcon"
                     onChange={(e) => {
@@ -2181,7 +2181,7 @@ export const ModalRcv = (props) => {
                       ref={txtCedulatTitular}
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
-                      maxLength={9}
+                     
                       name="ced2"
                       onBlur={validarInput}
                       onChange={(e) => {
