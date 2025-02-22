@@ -257,7 +257,6 @@ export const ModalZona = (props) => {
     return false;
   };
   const seleccionarCliente = (nombre, apellido, cedula) => {
-    console.log(nombre, apellido, cedula);
     txtCedula.current.value = cedula;
     txtDescripcion.current.value = apellido;
     txtNombre.current.value = nombre;

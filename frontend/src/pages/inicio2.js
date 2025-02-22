@@ -161,9 +161,7 @@ function Inicio2() {
   };
 
   const { user } = useContext(AuthContext);
-  const codigo = JSON.parse(localStorage.getItem("codigo"));
   let permisos = JSON.parse(localStorage.getItem("permisos"));
-  console.log(permisos);
 
   const [poliza, setPoliza] = useState();
 
@@ -545,7 +543,10 @@ function Inicio2() {
         })
       );
   };
-
+  const imrpimirServicio = async (e) => {
+    e.preventDefault();
+    window.open(`${op.conexion}/reporte/reporteServicio?ID=${user_id}`);
+  }
   return (
     <div className="col-md-12 mx-auto p-2">
       <GestionarPreguntas
@@ -754,12 +755,21 @@ function Inicio2() {
             >
               <i className="fa fa-plus"></i> Crear RCV
             </button>
+            {user_id != 57 &&
+             <button
+              type="button"
+              className="btn btn-primary btn-sm mx-2 my-2"
+              onClick={imrpimirServicio}
+            >
+              <i className="fa fa-plus"></i> Imprimir Contrato De Servicio
+            </button>
+            }
           </div>
         </div>
         <TblContainer>
           <TblHead />
           <TableBody>
-            {records && records.length > 0 &&
+            {records && records.length > 0 && records != [] &&
               recordsAfterPagingAndSorting().map((item, index) => (
                 <TableRow
                   key={index}
