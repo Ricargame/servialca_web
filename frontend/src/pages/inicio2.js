@@ -755,7 +755,7 @@ function Inicio2() {
             >
               <i className="fa fa-plus"></i> Crear RCV
             </button>
-            {user_id != 57 &&
+            {user_id == 57 &&
              <button
               type="button"
               className="btn btn-primary btn-sm mx-2 my-2"
