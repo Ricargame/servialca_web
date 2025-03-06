@@ -755,15 +755,13 @@ function Inicio2() {
             >
               <i className="fa fa-plus"></i> Crear RCV
             </button>
-            {user_id == 57 &&
-             <button
+            <button
               type="button"
               className="btn btn-primary btn-sm mx-2 my-2"
               onClick={imrpimirServicio}
             >
               <i className="fa fa-plus"></i> Imprimir Contrato De Servicio
             </button>
-            }
           </div>
         </div>
         <TblContainer>
