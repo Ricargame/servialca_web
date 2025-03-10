@@ -21,45 +21,42 @@ abstract class cls_nivel extends cls_db
 	    }
 	}
     protected function Save() {
-        $sql2 = $this->db->prepare("SELECT * FROM precio2 WHERE tipoVehiculo_id = ? AND tipoContrato_id = ?");
-        $sql2->execute([$this->idtipo, $this->idcontrato]);
-        $resultado = $sql2->fetchAll(PDO::FETCH_ASSOC);
-        if ($resultado < 1) {
-            $sql = $this->db->prepare("INSERT INTO precio2(tipoVehiculo_id, tipoContrato_id, monto) VALUES(?,?,?)");
-            if ($sql->execute([$this->idtipo, $this->idcontrato, $this->monto])) {
-                if ($sql->rowCount() > 0) {
-    				return [
-    					"data" => [
-    						"res" => "Registro exitoso"
-    					],
-    					"code" => 200
-    				];
-    			} else {
-    				return [
-    					"data" => [
-    						"res" => "El registro ha fallado"
-    					],
-    					"code" => 400
-    				];
-    			}
-            }
+    try {
+        $sql = $this->db->prepare("INSERT INTO precio2(tipoVehiculo_id, tipoContrato_id, precio_monto) VALUES(?,?,?)");
+        if ($sql->execute([$this->idtipo, $this->idcontrato, $this->monto])) {
+            return [
+                "data" => [
+                    "res" => "Registro exitoso"
+                ],
+                "code" => 200
+            ];
         } else {
-            	return [
-    					"data" => [
-    						"res" => "Ya existe un registro"
-    					],
-    					"code" => 200
-    				];
+            return [
+                "data" => [
+                    "res" => "El registro ha fallado"
+                ],
+                "code" => 400
+            ];
         }
+    } catch (PDOException $e) {
+        return [
+            "data" => [
+                "res" => "Error: " . $e->getMessage()
+            ],
+            "code" => 500
+        ];
     }
-	protected function GetAll()
+}
+	protected function GetAll($id)
     {
         $sql = $this->db->prepare("
             SELECT * FROM precio2 
             INNER JOIN tipocontrato ON tipocontrato.contrato_id = precio2.tipoContrato_id
             INNER JOIN tipovehiculo ON tipovehiculo.tipoVehiculo_id = precio2.tipoVehiculo_id
+            WHERE tipoContrato_id = ?
+            GROUP BY tipovehiculo.tipoVehiculo_nombre
         ");
-        if ($sql->execute()) {
+        if ($sql->execute([$id])) {
             $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         } else {
             $resultado = [];

@@ -44,14 +44,13 @@ public function reporte($desde, $hasta) {
         throw new InvalidArgumentException("Las fechas deben estar en formato YYYY-MM-DD.");
     }
 
-    // Consulta SQL para los datos generales excluyendo al usuario 57
     $queryGeneral = "
         SELECT
             usuario.usuario_id,
             usuario.usuario_nombre, 
             usuario.usuario_usuario,
-            SUM(debitocredito.nota_monto) AS total_nota_monto, 
-            SUM(coberturas.totalPagar) AS total_totalPagar,
+            SUM(COALESCE(debitocredito.nota_monto, 0)) AS total_nota_monto, 
+            SUM(COALESCE(coberturas.totalPagar, 0)) AS total_totalPagar,
             CASE WHEN usuario.usuario_id = 57 THEN 1 ELSE 0 END AS es_usuario_57
         FROM 
             debitocredito 
@@ -67,14 +66,13 @@ public function reporte($desde, $hasta) {
             AND usuario.usuario_usuario <> ''
             AND usuario.usuario_id <> 57
         GROUP BY 
-            usuario.usuario_nombre
+            usuario.usuario_id, usuario.usuario_nombre, usuario.usuario_usuario
     ";
 
-    // Consulta SQL para los datos específicos del usuario 57
     $queryUsuario57 = "
         SELECT 
-            SUM(debitocredito.nota_monto) AS total_nota_monto, 
-            SUM(coberturas.totalPagar) AS total_totalPagar
+            SUM(COALESCE(debitocredito.nota_monto, 0)) AS total_nota_monto, 
+            SUM(COALESCE(coberturas.totalPagar, 0)) AS total_totalPagar
         FROM 
             debitocredito 
         INNER JOIN 
@@ -91,17 +89,15 @@ public function reporte($desde, $hasta) {
     ";
 
     try {
-        // Ejecutar consulta para datos generales
         $stmtGeneral = $this->db->prepare($queryGeneral);
         $stmtGeneral->execute([$desde, $hasta]);
         $results = $stmtGeneral->fetchAll(PDO::FETCH_ASSOC);
 
-        // Ejecutar consulta para datos del usuario 57
         $stmtUsuario57 = $this->db->prepare($queryUsuario57);
         $stmtUsuario57->execute([$desde, $hasta]);
         $totalesUsuario57 = $stmtUsuario57->fetch(PDO::FETCH_ASSOC);
-        
-        // Asegurarse de que no sean nulos
+
+        // Asegurar valores no nulos
         $totalesUsuario57 = [
             'total_nota_monto' => $totalesUsuario57['total_nota_monto'] ?? 0,
             'total_totalPagar' => $totalesUsuario57['total_totalPagar'] ?? 0
@@ -112,10 +108,11 @@ public function reporte($desde, $hasta) {
             'totales_usuario_57' => $totalesUsuario57
         ];
     } catch (PDOException $e) {
-        // Manejo de errores de base de datos
-        throw new RuntimeException("Error en la consulta de base de datos: " . $e->getMessage());
+        error_log("Error en la consulta de base de datos: " . $e->getMessage());
+        throw new RuntimeException("Error en la consulta de base de datos. Consulte el log para más detalles.");
     }
 }
+
     public function esconderRcv($id) {
         $sql = $this->db->prepare("UPDATE poliza SET poliza_estatus = 0 WHERE poliza_id = ?");
         $sql->execute([$id]);

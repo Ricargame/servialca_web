@@ -241,10 +241,14 @@ function TablaCertificado() {
   const gestionarBanco = (op, id) => (e) => {
     e.preventDefault();
     setOperacion(op);
-    if (op === 2) {
+    if (op == 2) {
       setIdLicencia(id);
       setMostrar4(true);
-    } else {
+    } 
+    if (op == 1) {
+      setMostrar5(true);
+    }
+    else {
       setMostrar5(true);
       setIdLicencia(id);
     }
@@ -282,7 +286,14 @@ function TablaCertificado() {
             onChange={handleSearch}
             placeholder="Buscar"
           />
-          {
+           <button
+              type="button"
+              className="col-md-2 mb-2 form-control"
+              onClick={gestionarBanco(1)}
+            >
+              <i className="fa fa-plus"></i> Certificado Médico
+            </button>
+          {/* {
             user_id==57 && (
               <button
                 className="col-md-2 mb-2 form-control"
@@ -291,7 +302,7 @@ function TablaCertificado() {
                 Imprimir Certificado de Prueba
               </button>
             )
-          }
+          } */}
         </div>
         <TblContainer>
           <TblHead />

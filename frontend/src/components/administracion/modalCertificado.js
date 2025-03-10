@@ -431,7 +431,7 @@ export const ModalCertificadoMedico = (props) => {
       keyboard={false}
       onShow={() => {
         setOperacion(props.operacion);
-        if (props.operacion) {
+        if (props.operacion && props.operacion != 1) {
           seleccionarRegistros(props.idLicencia);
         }
       }}

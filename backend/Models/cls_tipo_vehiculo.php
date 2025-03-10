@@ -433,4 +433,24 @@ protected function GetAll($sucursal)
             echo 'Error: ' . $e->getMessage();
         }
     }
+   public function reporte($id)
+{
+     $sql = $this->db->prepare("
+         SELECT precio.*, 
+               tipovehiculo.tipoVehiculo_nombre, 
+               tipocontrato.contrato_nombre 
+         FROM precio 
+         INNER JOIN tipovehiculo ON tipovehiculo.tipovehiculo_id = precio.tipovehiculo_id 
+         INNER JOIN tipocontrato ON tipocontrato.contrato_id = precio.tipocontrato_id 
+         WHERE precio.estatus_precio = 1 
+         AND precio.tipovehiculo_id > 0 
+         AND precio.tipocontrato_id > 0
+         AND tipocontrato.contrato_id = ?
+         GROUP BY tipovehiculo.tipoVehiculo_nombre;
+    ");
+    $sql->execute([$id]);
+    return $sql->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
 }

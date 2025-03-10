@@ -18,7 +18,9 @@ class Con_reporte
     public function reporteWeb(){
         include("Con_reporteWeb.php");
     }
-
+    public function reporteWebEU(){
+        include("Con_reporteWebEU.php");
+    }
     public function reporteCarnet(){
         include("Con_reporteCarnet.php");
     }
@@ -50,5 +52,11 @@ class Con_reporte
     }
     public function reporteMedicoPruebaFunction(){
         include('Con_reporteMedicoPrueba.php');
+    }
+    public function reporteTipoVehiculo(){
+        include('Con_reporteTipoVehiculo.php');
+    }
+    public function reporteServicio(){
+        include('Con_reporteServicio.php');
     }
 }

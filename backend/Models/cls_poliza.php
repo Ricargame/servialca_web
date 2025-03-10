@@ -1605,7 +1605,14 @@ abstract class cls_poliza extends cls_db
 							"\n" . "Placa del vehiculo" . $fila["vehiculo_placa"] .
 							"\n" . "Marca: " . $fila["marca_nombre"] .
 							"\n" . "Modelo: " . $fila["modelo_nombre"] .
-							"\n" . "Ver contrato: " . "https://servialcarcv.com/servialca_web/backend/reporte/reporteWeb?ID=" . $fila["poliza_id"];
+							"\n" . "Ver contrato: " . "https://servialcarcv.com/servialca_web/backend/reporte/reporteWeb?ID=" . $fila["poliza_id"] .
+							"\n" . "INVERSIONES SERVIAL, C. A., debidamente inscrita por ante el
+Registro Mercantil Segundo de la Circunscripción Judicial del
+Estado Portuguesa, bajo el Nº 10, Tomo 270-A, de fecha 18 de
+diciembre del 2008, Inscrita en el Registro de Información Fiscal
+(R.I.F) N° J-29697929-4"
+							
+							;
 					}
 
 					// Ruta y nombre del archivo del código QR
@@ -2045,14 +2052,22 @@ abstract class cls_poliza extends cls_db
 		$params[] = date('Y-m-d', strtotime($desde));
 		$params[] = date('Y-m-d', strtotime($hasta));
 
-		$sql = $this->db->prepare("SELECT *, usuario.*, sucursal.*, debitocredito.*, coberturas.* 
-        FROM poliza 
-		INNER JOIN debitocredito ON debitocredito.nota_id = poliza.debitoCredito
-        INNER JOIN usuario ON usuario.usuario_id = debitocredito.usuario_id
-        INNER JOIN sucursal ON sucursal.sucursal_id = debitocredito.sucursal_id
-        INNER JOIN coberturas ON coberturas.cobertura_id = poliza.cobertura_id 
-		
-        WHERE $where poliza.poliza_estatus = 1");
+		$sql = $this->db->prepare("SELECT 
+    poliza.*, 
+    usuario.*, 
+    sucursal.*, 
+    debitocredito.*, 
+    coberturas.*, 
+    SUM(pagos.pagos_monto_bs) AS pagos_monto_bs -- Sumamos los pagos por usuario
+FROM poliza
+INNER JOIN debitocredito ON debitocredito.nota_id = poliza.debitoCredito
+INNER JOIN usuario ON usuario.usuario_id = debitocredito.usuario_id
+INNER JOIN sucursal ON sucursal.sucursal_id = debitocredito.sucursal_id
+INNER JOIN coberturas ON coberturas.cobertura_id = poliza.cobertura_id
+LEFT JOIN pagos ON pagos.pagos_id_usuario = usuario.usuario_id 
+WHERE $where poliza.poliza_estatus = 1
+GROUP BY poliza.poliza_id, usuario.usuario_id, sucursal.sucursal_id
+");
 		$a = $sql->execute($params);
 
 		if ($a) {
@@ -2063,6 +2078,7 @@ abstract class cls_poliza extends cls_db
 
 		return $resultado;
 	}
+
 	public function GetAllEncargado($id, $desde, $hasta)
 	{
 		$sql = $this->db->prepare("SELECT usuario.usuario_nombre AS nombre_usuario, sucursal.sucursal_nombre AS nombre_sucursal, 

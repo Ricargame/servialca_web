@@ -33,7 +33,7 @@ class Con_nivel extends cls_nivel
 
   public function ConsultarTodos()
   {
-    $resultado = $this->GetAll();
+    $resultado = $this->GetAll($_POST['ID']);
     Response($resultado, 200);
   }
 }

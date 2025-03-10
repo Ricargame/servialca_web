@@ -60,9 +60,11 @@ function abreviarNombre($nombre, $apellido)
 
 $totalDolar = 0;
 $totalComisionDolar = 0;
+$totalComisionBolivar = 0;
 foreach ($datos as $fila) {
     $totalDolar += $fila["nota_monto"];
     $totalComisionDolar += ($fila["nota_monto"] * $fila["roles_comision"]) / 100;
+    $totalComisionBolivar += ($fila['totalPagar'] * $fila["roles_comision"]) / 100;
 }
 
 $pdf = new PDF();
@@ -76,7 +78,7 @@ $pdf->Cell(0, 10, "Desde: " . $_GET["Desde"] . " Hasta: " . $_GET["Hasta"], 0, 1
 $pdf->Ln(5);
 $pdf->SetFont("Arial", "", 11);
 $pdf->Cell(0, 10, "Total Generado: " . number_format($totalDolar, 2) . "$", 0, 1, "L");
-$pdf->Cell(0, 10, "Total a Transferir: " . number_format($totalComisionDolar, 2) . "$", 0, 1, "L");
+$pdf->Cell(0, 10, "Total a Transferir: " . number_format($totalComisionDolar, 2) . " $ " . "   " . number_format($totalComisionBolivar, 2) . " Bs", 0, 1, "L");
 $pdf->SetFont("Arial", "B", 10);
 $pdf->SetTextColor(0, 128, 0); // RGB: (0, 128, 0)
 $pagoMovilDatos = "Banco: Banco de Venezuela | Teléfono: 0412-6544855 | Cédula/RIF: V-11078879";

@@ -724,7 +724,7 @@ function Inicio2() {
             Buscar
           </button>
           <div className="col-md-6 offset-md-3 d-flex justify-content-center">
-            {permisos &&
+            {/* {permisos &&
               permisos.length >= 3 &&
               permisos.toString().substring(19, 20) === "1" && (
                 <button
@@ -734,9 +734,9 @@ function Inicio2() {
                 >
                   <i className="fa fa-plus"></i> Licencia
                 </button>
-              )}
+              )} */}
 
-            {permisos &&
+            {/* {permisos &&
               permisos.length >= 3 &&
               permisos.toString().substring(16, 17) === "1" && (
                 <button
@@ -746,7 +746,7 @@ function Inicio2() {
                 >
                   <i className="fa fa-plus"></i> Certificado Médico
                 </button>
-              )}
+              )} */}
 
             <button
               type="button"

@@ -248,108 +248,99 @@ class cls_Auth extends cls_db
 
   protected function update()
   {
-    try {
-      $res = $this->GetDuplicados();
-      if (isset($res[0])) {
-        return [
-          'data' => [
-            'res' => "Estas duplicando datos de otro usuario"
-          ],
-          'code' => 400
-        ];
+     try {
+       $res = $this->GetDuplicados();
+       if (isset($res[0])) {
+       return [
+       'data' => [
+               'res' => "Estas duplicando datos de otro usuario"
+       ],
+           'code' => 400
+           ];
+       }
+       if ($this->clave != null && $this->clave != "") {
+           $hashedPassword = password_hash($this->clave, PASSWORD_BCRYPT, ['cost' => 12]);
+           $sql = $this->db->prepare("UPDATE usuario SET 
+           usuario_usuario = ?,
+           usuario_nombre = ?,
+           usuario_apellido = ?,
+           usuario_cedula = ?,
+           usuario_telefono = ?,
+           usuario_direccion = ?,
+       usuario_correo = ?,
+           usuario_clave = ?,
+           roles_id =?,
+           permisos = ?,
+           reporte = ?
+           WHERE usuario_id = ?");
+           $sql->execute([
+           $this->usuario,
+           $this->nombre,
+           $this->apellido,
+           $this->cedula,
+           $this->telefono,
+           $this->direccion,
+           $this->correo,
+           $hashedPassword,
+           $this->rol,
+           $this->permiso,
+           $this->reporte,
+           $this->id,
+           ]);
+       } else {
+           $sql = $this->db->prepare("UPDATE usuario SET 
+           usuario_usuario = ?,
+           usuario_nombre = ?,
+           usuario_apellido = ?,
+           usuario_cedula = ?,
+           usuario_telefono = ?,
+           usuario_direccion = ?,
+           usuario_correo = ?,
+           roles_id =?,
+           permisos = ?,
+           reporte = ?
+           WHERE usuario_id = ?");
+           $sql->execute([
+           $this->usuario,
+           $this->nombre,
+           $this->apellido,
+           $this->cedula,
+           $this->telefono,
+           $this->direccion,
+           $this->correo,
+           $this->rol,
+           $this->permiso,
+           $this->reporte,
+           $this->id,
+           ]);
+       }
+   if ($sql->rowCount() > 0) {
+       // $this->reg_bitacora([
+           //   'table_name' => "usuario",
+           //   'des' => "Actualización de datos de usuario ($this->usuario, $this->nombre, $this->apellido, $this->telefono, $this->correo, $this->direccion"
+           // ]);
+           return [
+           'data' => [
+               'res' => "Actualización de datos exitosa"
+           ],
+           'code' => 300
+           ];
+       }
+           return [
+           'data' => [
+           'res' => "Actualización de datos fallia"
+           ],
+       'code' => 400
+       ];
+       } catch (PDOException $e) {
+       return [
+           'data' => [
+           'res' => "Error de consulta: " . $e->getMessage()
+           ],
+           'code' => 400
+       ];
       }
-      if ($this->clave != null && $this->clave != "") {
-        $hashedPassword = password_hash($this->clave, PASSWORD_BCRYPT, ['cost' => 12]);
-        $sql = $this->db->prepare("UPDATE usuario SET 
-        usuario_usuario = ?,
-        usuario_nombre = ?,
-        usuario_apellido = ?,
-        usuario_cedula = ?,
-        usuario_telefono = ?,
-        usuario_direccion = ?,
-        usuario_correo = ?,
-        usuario_clave = ?,
-        roles_id =?,
-        sucursal_id =?,
-        permisos = ?,
-        reporte = ?
-        WHERE usuario_id = ?");
-        $sql->execute([
-          $this->usuario,
-          $this->nombre,
-          $this->apellido,
-          $this->cedula,
-          $this->telefono,
-          $this->direccion,
-          $this->correo,
-          $hashedPassword,
-          $this->rol,
-          $this->sucursal,
-          $this->permiso,
-          $this->reporte,
-          $this->id,
-        ]);
-      } else {
-        $sql = $this->db->prepare("UPDATE usuario SET 
-        usuario_usuario = ?,
-        usuario_nombre = ?,
-        usuario_apellido = ?,
-        usuario_cedula = ?,
-        usuario_telefono = ?,
-        usuario_direccion = ?,
-        usuario_correo = ?,
-        roles_id =?,
-        sucursal_id =?,
-        permisos = ?,
-        reporte = ?
-        WHERE usuario_id = ?");
-        $sql->execute([
-          $this->usuario,
-          $this->nombre,
-          $this->apellido,
-          $this->cedula,
-          $this->telefono,
-          $this->direccion,
-          $this->correo,
-          $this->rol,
-          $this->sucursal,
-          $this->permiso,
-          $this->reporte,
-          $this->id,
-        ]);
-      }
-
-
-
-      if ($sql->rowCount() > 0) {
-
-        // $this->reg_bitacora([
-        //   'table_name' => "usuario",
-        //   'des' => "Actualización de datos de usuario ($this->usuario, $this->nombre, $this->apellido, $this->telefono, $this->correo, $this->direccion"
-        // ]);
-        return [
-          'data' => [
-            'res' => "Actualización de datos exitosa"
-          ],
-          'code' => 300
-        ];
-      }
-
-      return [
-        'data' => [
-          'res' => "Actualización de datos fallia"
-        ],
-        'code' => 400
-      ];
-    } catch (PDOException $e) {
-      return [
-        'data' => [
-          'res' => "Error de consulta: " . $e->getMessage()
-        ],
-        'code' => 400
-      ];
-    }
-  }
+}
 
   protected function Delete()
   {
@@ -413,7 +404,7 @@ class cls_Auth extends cls_db
     }
   }
 
-  protected function GetOne($id)
+  public function GetOne($id)
   {
     $sql = $this->db->prepare("SELECT usuario.*, roles.*, sucursal.*  FROM usuario 
       INNER JOIN roles ON roles.roles_id = usuario.roles_id

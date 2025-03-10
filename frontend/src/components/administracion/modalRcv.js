@@ -1652,9 +1652,10 @@ export const ModalRcv = (props) => {
                       (operacion == 3 && idUser != 57) ||
                       (idUser != 57 && operacion === 2)
                     }
-                    class="form-select col-md-3"
+                    class="form-select col-md-1"
                     ref={cmbNacionalidad}
                     aria-label="Default select example"
+                    style={{ width: '10px' }}
                   >
                     <option value="V-">V-</option>
                     <option value="E-">E-</option>
@@ -1671,7 +1672,6 @@ export const ModalRcv = (props) => {
                     ref={txtCedula}
                     aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-sm"
-                   
                     onBlur={validarInput}
                     name="cedcon"
                     onChange={(e) => {
