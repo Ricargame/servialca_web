@@ -44,7 +44,7 @@ function Header(props) {
         </a>
       </div>
 
-      {/* <div className="col-5 d-flex justify-content-end ">
+      <div className="col-5 d-flex justify-content-end ">
         <div class=" dropstart">
           <button
             type="button"
@@ -80,7 +80,7 @@ function Header(props) {
           </ul>
         </div>
 
-      </div> */}
+      </div>
 
       <GestionarPreguntas
         show={mostrar2}

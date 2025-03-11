@@ -416,6 +416,7 @@ export const ModalConfigurarUsuarios = (props) => {
               type="text"
               class="form-control"
               ref={txtUsuario}
+              disabled
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
             />
@@ -443,6 +444,7 @@ export const ModalConfigurarUsuarios = (props) => {
               type="text"
               class="form-control"
               ref={txtNombre}
+              disabled
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
             />
@@ -455,6 +457,7 @@ export const ModalConfigurarUsuarios = (props) => {
               onKeyDown={handleChange(25)}
               type="text"
               class="form-control"
+              disabled
               ref={txtApellido}
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
@@ -493,6 +496,7 @@ export const ModalConfigurarUsuarios = (props) => {
               class="form-select col-md-4"
               ref={cmbTelefono}
               aria-label="Default select example"
+              disabled
             >
               <option value="0414-">0414-</option>
               <option value="0424-">0424-</option>
@@ -505,6 +509,7 @@ export const ModalConfigurarUsuarios = (props) => {
               type="text"
               class="form-control"
               ref={txtTelefono}
+              disabled
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-sm"
             />
@@ -519,6 +524,7 @@ export const ModalConfigurarUsuarios = (props) => {
               class="form-control"
               ref={txtDireccion}
               aria-label="Sizing example input"
+              disabled
               aria-describedby="inputGroup-sizing-sm"
             />
           </div>
@@ -532,6 +538,7 @@ export const ModalConfigurarUsuarios = (props) => {
               class="form-control"
               ref={txtCorreo}
               aria-label="Sizing example input"
+              disabled
               aria-describedby="inputGroup-sizing-sm"
             />
           </div>
