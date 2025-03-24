@@ -31,7 +31,7 @@ import { FormControl, MenuItem, Select, InputLabel } from "@mui/material";
 import { Typeahead } from "react-bootstrap-typeahead";
 export const ModalRcv = (props) => {
   /*  variables de estados */
-  let disabledButton = false
+  let disabledButton = false;
   let op = require("../../modulos/datos");
   let token = localStorage.getItem("jwtToken");
   const fechasistema = JSON.parse(localStorage.getItem("fechasistema"));
@@ -618,9 +618,10 @@ export const ModalRcv = (props) => {
           texto: error.res,
           icono: "informacion",
         })
-      ).finally(() => {
-        disabledButton = false
-      })
+      )
+      .finally(() => {
+        disabledButton = false;
+      });
   };
 
   const selecionarPrecio = async () => {
@@ -694,16 +695,23 @@ export const ModalRcv = (props) => {
       .then((res) => res.json())
       .then((response) => {
         if (permisos.length > 19) {
-          if (permisos[20] == 1 ) {
-            const validatedContract = response.filter((contract) => contract.contrato_id == '1' || contract.contrato_id == '3');
+          if (permisos[20] == 1) {
+            const validatedContract = response.filter(
+              (contract) =>
+                contract.contrato_id == "1" || contract.contrato_id == "3"
+            );
             setTipoContrato(validatedContract);
           } else {
-            const validatedContract = response.filter((contract) => contract.contrato_id == '1');
-            setTipoContrato(validatedContract)
+            const validatedContract = response.filter(
+              (contract) => contract.contrato_id == "1"
+            );
+            setTipoContrato(validatedContract);
           }
         } else {
-          const validatedContract = response.filter((contract) => contract.contrato_id == '1');
-          setTipoContrato(validatedContract)
+          const validatedContract = response.filter(
+            (contract) => contract.contrato_id == "1"
+          );
+          setTipoContrato(validatedContract);
         }
         setActivate(false);
       })
@@ -845,7 +853,6 @@ export const ModalRcv = (props) => {
       .then((res) => res.json())
       .then((response) => {
         setActivate(false);
-        console.log('uso de contrato', response)
         setUso(response);
       })
       .catch((error) =>
@@ -888,9 +895,11 @@ export const ModalRcv = (props) => {
   };
 
   const selecionarTipo = async () => {
-    let endpoint = ''
+    let endpoint = "";
     if (typeof tipoContrato === "object") {
-      endpoint = `${op.conexion}/tipo_vehiculo/ConsultarTodos?Sucursal=${idsucursal}&Contrato=${1}`;
+      endpoint = `${
+        op.conexion
+      }/tipo_vehiculo/ConsultarTodos?Sucursal=${idsucursal}&Contrato=${1}`;
     } else {
       endpoint = `${op.conexion}/tipo_vehiculo/ConsultarTodos?Sucursal=${idsucursal}&Contrato=${tipoContrato}`;
     }
@@ -919,7 +928,7 @@ export const ModalRcv = (props) => {
     let sigue = true;
     let minimo = 0;
     let calculo = 0;
-    disabledButton = true
+    disabledButton = true;
     if (sigue) {
       actualizarCertificado();
     }
@@ -1206,8 +1215,8 @@ export const ModalRcv = (props) => {
           estado_nombre: response[0].estado_nombre
             ? response[0].estado_nombre
             : "",
-          usuario_usuario:idUser != 57 ? user : response[0].usuario_usuario,
-          sucursal_nombre: idUser!= 57 ? suc : response[0].sucursal_nombre,
+          usuario_usuario: idUser != 57 ? user : response[0].usuario_usuario,
+          sucursal_nombre: idUser != 57 ? suc : response[0].sucursal_nombre,
           transporte_nombre: response[0].linea_nombre
             ? response[0].linea_nombre
             : "",
@@ -1288,7 +1297,6 @@ export const ModalRcv = (props) => {
       });
   };
 
-
   function validarIguales(e) {
     if (e == 1) {
       if (txtModelo.current.value == txtMarca.current.value) {
@@ -1357,7 +1365,6 @@ export const ModalRcv = (props) => {
       item.className -= " form-text fw-bold hidden ";
       item.className += " form-text fw-bold visible ";
     } else {
-
       item.className -= " form-text fw-bold visible ";
       item.className += " form-text fw-bold hidden ";
     }
@@ -1590,7 +1597,7 @@ export const ModalRcv = (props) => {
                         options={tipoContrato}
                         sx={{ width: "100%" }}
                         size="small"
-                        style={{ color: '#90EE90'}}
+                        style={{ color: "#90EE90" }}
                         getOptionLabel={(option) => option.contrato_nombre}
                         renderInput={(params) => (
                           <TextField
@@ -1643,8 +1650,12 @@ export const ModalRcv = (props) => {
                 >
                   Datos del contratante
                 </legend>
-                <div class="input-group input-group-sm mb-1 col-md-5">
-                  <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
+                <div className="input-group input-group-sm mb-1 col-md-5">
+                  <span
+                    style={{ background: "red" }}
+                    className="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Cedula:
                   </span>
                   <select
@@ -1652,10 +1663,10 @@ export const ModalRcv = (props) => {
                       (operacion == 3 && idUser != 57) ||
                       (idUser != 57 && operacion === 2)
                     }
-                    class="form-select col-md-1"
+                    className="form-select col-md-1"
                     ref={cmbNacionalidad}
                     aria-label="Default select example"
-                    style={{ width: '10px' }}
+                    style={{ padding: 0 }} // Estilo en línea para quitar el padding
                   >
                     <option value="V-">V-</option>
                     <option value="E-">E-</option>
@@ -1664,7 +1675,7 @@ export const ModalRcv = (props) => {
                   </select>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     disabled={
                       (operacion == 3 && idUser != 57) ||
                       (idUser != 57 && operacion == 2)
@@ -1676,31 +1687,34 @@ export const ModalRcv = (props) => {
                     name="cedcon"
                     onChange={(e) => {
                       validaSoloNumero(e);
-                      // Agrega la función que deseas ejecutar
                       tuFuncionEspecifica();
                       igualA(1);
                     }}
                   />
                   <button
                     type="button"
-                    class="btn btn-success"
+                    className="btn btn-success"
                     onClick={() =>
                       consultarCliente(
                         cmbNacionalidad.current.value + txtCedula.current.value
                       )
                     }
                   >
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                   </button>
 
-                  <div id="cedcon" class="form-text hidden">
+                  <div id="cedcon" className="form-text hidden">
                     Debe ingresar caracteres númericos con una longitud(8-9)
                   </div>
                 </div>
                 <div class="col-md-3"></div>
                 <div class="col-md-4 mb-1">
                   <div class="input-group input-group-sm">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span
+                      style={{ background: "#90EE90" }}
+                      class="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
                       Fecha Nacimiento
                     </span>
                     <input
@@ -1721,7 +1735,11 @@ export const ModalRcv = (props) => {
 
                 <div class="col-md-6">
                   <div class="input-group input-group-sm mb-2">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span
+                      style={{ background: "#90EE90" }}
+                      class="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
                       Nombre
                     </span>
                     <input
@@ -1746,7 +1764,11 @@ export const ModalRcv = (props) => {
                 </div>
                 <div class="col-md-6">
                   <div class="input-group input-group-sm mb-2">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span
+                      style={{ background: "#90EE90" }}
+                      class="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
                       Apellido
                     </span>
                     <input
@@ -1821,7 +1843,11 @@ export const ModalRcv = (props) => {
                 </div>
                 <div class="col-md-12">
                   <div class="input-group input-group-sm mb-2">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span
+                      style={{ background: "#90EE90" }}
+                      class="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
                       Direción
                     </span>
                     <input
@@ -2154,7 +2180,11 @@ export const ModalRcv = (props) => {
                 </legend>
                 <div class=" mb-1 col-md-5">
                   <div class="input-group input-group-sm">
-                    <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span
+                      style={{ background: "red" }}
+                      class="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
                       Cedula:
                     </span>
                     <select
@@ -2181,7 +2211,6 @@ export const ModalRcv = (props) => {
                       ref={txtCedulatTitular}
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
-                     
                       name="ced2"
                       onBlur={validarInput}
                       onChange={(e) => {
@@ -2211,7 +2240,11 @@ export const ModalRcv = (props) => {
 
                 <div class="col-md-6">
                   <div class="input-group input-group-sm mb-2">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span
+                      style={{ background: "#90EE90" }}
+                      class="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
                       Nombre
                     </span>
                     <input
@@ -2234,7 +2267,11 @@ export const ModalRcv = (props) => {
                 </div>
                 <div class="col-md-6">
                   <div class="input-group input-group-sm mb-2">
-                    <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                    <span
+                      style={{ background: "#90EE90" }}
+                      class="input-group-text"
+                      id="inputGroup-sizing-sm"
+                    >
                       Apellido
                     </span>
                     <input
@@ -2267,7 +2304,11 @@ export const ModalRcv = (props) => {
             <div class="col-md-12 row mx-auto">
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: 'red'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span
+                    style={{ background: "red" }}
+                    class="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Placa
                   </span>
                   <input
@@ -2304,7 +2345,11 @@ export const ModalRcv = (props) => {
               </div>
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span
+                    style={{ background: "#90EE90" }}
+                    class="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Puesto
                   </span>
                   <input
@@ -2409,7 +2454,7 @@ export const ModalRcv = (props) => {
                     options={uso}
                     sx={{ width: "100%" }}
                     size="small"
-                    style={{ color: '#90EE90'}}
+                    style={{ color: "#90EE90" }}
                     getOptionLabel={(option) => option.usoVehiculo_nombre}
                     renderInput={(params) => (
                       <TextField
@@ -2424,7 +2469,11 @@ export const ModalRcv = (props) => {
 
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span
+                    style={{ background: "#90EE90" }}
+                    class="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Año
                   </span>
                   <input
@@ -2466,7 +2515,11 @@ export const ModalRcv = (props) => {
 
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span
+                    style={{ background: "#90EE90" }}
+                    class="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Ser. Motor
                   </span>
                   <input
@@ -2571,7 +2624,7 @@ export const ModalRcv = (props) => {
                     options={clase}
                     sx={{ width: "100%" }}
                     size="small"
-                    style={{ color: '#90EE90'}}
+                    style={{ color: "#90EE90" }}
                     getOptionLabel={(option) => option.clase_nombre}
                     renderInput={(params) => (
                       <TextField
@@ -2586,7 +2639,11 @@ export const ModalRcv = (props) => {
 
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span
+                    style={{ background: "#90EE90" }}
+                    class="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Color
                   </span>
                   <input
@@ -2611,7 +2668,11 @@ export const ModalRcv = (props) => {
 
               <div class="col-md-4 my-auto">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span
+                    style={{ background: "#90EE90" }}
+                    class="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Ser. Carroceria
                   </span>
                   <input
@@ -2714,7 +2775,7 @@ export const ModalRcv = (props) => {
                   <Autocomplete
                     value={valorSeleccionado}
                     onChange={(event, newValue) => {
-                      console.log(newValue)
+                      console.log(newValue);
                       if (newValue) {
                         setValorSeleccionado({
                           ...valorSeleccionado,
@@ -2729,7 +2790,7 @@ export const ModalRcv = (props) => {
                     options={tipo}
                     sx={{ width: "100%" }}
                     size="small"
-                    style={{ color: '#90EE90'}}
+                    style={{ color: "#90EE90" }}
                     getOptionLabel={(option) => option.tipoVehiculo_nombre}
                     renderInput={(params) => (
                       <TextField
@@ -2768,7 +2829,11 @@ export const ModalRcv = (props) => {
 
               <div class="col-md-4">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span
+                    style={{ background: "#90EE90" }}
+                    class="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Modelo
                   </span>
                   <input
@@ -2794,7 +2859,11 @@ export const ModalRcv = (props) => {
 
               <div class="col-md-4">
                 <div class="input-group input-group-sm mb-2">
-                  <span style={{ background: '#90EE90'}} class="input-group-text" id="inputGroup-sizing-sm">
+                  <span
+                    style={{ background: "#90EE90" }}
+                    class="input-group-text"
+                    id="inputGroup-sizing-sm"
+                  >
                     Marca
                   </span>
                   <input

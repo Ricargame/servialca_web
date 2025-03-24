@@ -48,6 +48,7 @@ import zona from "../components/administracion/tablaZona"
 import pagos from "../components/administracion/tablaPagos"
 import tablaBasico from "../components/DatosVehiculo/tablaBasico"
 import tablaRTC from "../components/DatosVehiculo/tablaRTC"
+import deudores from "../components/administracion/tablaDeudores"
 function MenuImpuestoPP(props) {
   //let token = localStorage.getItem("jwtToken");
   //let op = require("../modulos/datos");
@@ -375,6 +376,15 @@ function MenuImpuestoPP(props) {
                             >
                               <i className="fas fas-fw me-1 fa-clipboard-list"></i>
                               <span>Registrar Pago</span>
+                            </a>
+                          )}
+                          {idUser == 57 && (
+                            <a
+                              href="/deudores"
+                              className="list-group-item list-group-item-action py-2 ripple"
+                            >
+                              <i className="fas fas-fw me-1 fa-clipboard-list"></i>
+                              <span>Lista de Deudores</span>
                             </a>
                           )}
                         {/* {idUser == 57 && (
@@ -790,6 +800,11 @@ function MenuImpuestoPP(props) {
                 exact
                 path="/pagos"
                 component={pagos}
+              />
+              <AuthRoute
+                exact
+                path="/deudores"
+                component={deudores}
               />
               <AuthRoute
                 exact
