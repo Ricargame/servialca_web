@@ -636,10 +636,12 @@ function Inicio2() {
       <div className="col-12">
         <div className="col-12 row d-flex justify-content-between py-2 mt-5 mb-3">
           <h2 className=" col-3 text-light">RCV QUE ESTAN POR VENCER</h2>
-          <h2 className="col-3 text-light">
+          {user_id == 57 && (
+            <h2 className="col-3 text-light">
             Cantidad de contratos:{" "}
             <span style={{ color: "red" }}>{cantidad}</span>
-          </h2>{" "}
+            </h2>
+          )}
           {user_id == 57 && (
             <div class="input-group input-group-sm col-md-2 my-auto">
             <span
