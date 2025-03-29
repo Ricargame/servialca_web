@@ -66,15 +66,21 @@ foreach ($datos as $fila) {
     $totalComisionDolar += ($fila["nota_monto"] * $fila["roles_comision"]) / 100;
     $totalComisionBolivar += ($fila['totalPagar'] * $fila["roles_comision"]) / 100;
 }
+$fechaDesde = new DateTime($_GET["Desde"]);
+$fechaHasta = new DateTime($_GET["Hasta"]);
 
+// Formatear las fechas en "día-mes-año"
+$fechaDesdeFormateada = $fechaDesde->format('d-m-Y');
+$fechaHastaFormateada = $fechaHasta->format('d-m-Y');
+
+// Mostrar las fechas formateadas en el PDF
 $pdf = new PDF();
 $pdf->AddPage();
 $pdf->SetFont("Arial", "B", 16);
 $pdf->SetY(50);
 $pdf->Cell(0, 10, "Reporte de: " . $_GET["Nombre"], 0, 1, "C");
 $pdf->SetFont("Arial", "B", 12);
-$pdf->Cell(0, 10, "Desde: " . $_GET["Desde"] . " Hasta: " . $_GET["Hasta"], 0, 1, "C");
-
+$pdf->Cell(0, 10, "Desde: " . $fechaDesdeFormateada . " Hasta: " . $fechaHastaFormateada, 0, 1, "C");
 $pdf->Ln(5);
 $pdf->SetFont("Arial", "", 11);
 $pdf->Cell(0, 10, "Total Generado: " . number_format($totalDolar, 2) . "$", 0, 1, "L");

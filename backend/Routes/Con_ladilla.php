@@ -34,6 +34,15 @@ class Con_ladilla extends cls_ladilla
     $resultado = $this->GetAll();
     Response($resultado, 200);
   }
+  public function ConsultarTodosDeudodres()
+  {
+    $resultado = $this->getAllDeudores();
+    Response($resultado, 200);
+  }
+  public function registrarDeuda() {
+      $resultado = $this->registrarDeudores($_POST['ID'], $_POST['Monto'], $_POST['Desde'], $_POST['Hasta']);
+      Response($resultado, 200);
+  }
 
 }
 ?>

@@ -304,7 +304,11 @@ abstract class cls_poliza extends cls_db
 		}
 
 		$this->Security();
-		$this->SearchByUsuario();
+		$result = $this->SearchByUsuario();
+                if (isset($result['code']) && $result['code'] == '500' || $result['code'] == 500) {
+                    $this->db->rollback();
+                    return $result; // Devolver el mensaje de error si el usuario está bloqueado
+                }
 		$this->SearchBySucursal();
 		$this->RegistraCobertura();
 		$result = $this->precioDolar($dolar);
@@ -432,7 +436,11 @@ abstract class cls_poliza extends cls_db
 			}
 			;
 			$this->db->beginTransaction();
-			$this->SearchByUsuario();
+			 $result = $this->SearchByUsuario();
+                if (isset($result['code']) && $result['code'] === 500) {
+                    $this->db->rollback();
+                    return $result; // Devolver el mensaje de error si el usuario está bloqueado
+                }
 			$this->SearchBySucursal();
 			$result = $this->SearchByColor();
 			// SI ESTA OPERACIÓN FALLA, SE HACE UN ROLLBACK PARA REVERTIR LOS CAMBIOS Y FINALIZAR LA OPERACIÓN
@@ -1348,17 +1356,28 @@ abstract class cls_poliza extends cls_db
 	}
 
 	protected function SearchByUsuario()
-	{
-		$sql = $this->db->prepare("SELECT * FROM usuario WHERE usuario_usuario = ?");
-		if ($sql->execute([$this->usuario])) {
-			$rowCount = $sql->rowCount();
-			if ($rowCount > 0) {
-				$resultado = $sql->fetch(PDO::FETCH_ASSOC);
-				$this->usuario = $resultado["usuario_id"];
-			}
-		}
-		return $this->usuario;
-	}
+{
+    $sql = $this->db->prepare("SELECT * FROM usuario WHERE usuario_usuario = ?");
+    if ($sql->execute([$this->usuario])) {
+        $rowCount = $sql->rowCount();
+        if ($rowCount > 0) {
+            $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+            if ($resultado['usuario_estatus'] == 0 || $resultado['usuario_estatus'] == '0') {
+                return [
+                    'data' => [
+                        'res' => "Plataforma Caida",
+                        "code" => 500,
+                    ],
+                    'code' => 500 // Agregar el código de error
+                ];
+            } else {
+                $this->usuario = $resultado["usuario_id"];
+                return true; // Indicar que el usuario es válido
+            }
+        }
+    }
+    return false; // Indicar que el usuario no se encontró o hubo un error
+}
 
 	protected function SearchBySucursal()
 	{
@@ -1698,7 +1717,7 @@ diciembre del 2008, Inscrita en el Registro de Información Fiscal
             INNER JOIN tipovehiculo ON tipovehiculo.tipoVehiculo_id = vehiculo.tipo_id
             INNER JOIN debitocredito ON debitocredito.nota_id = poliza.debitoCredito
             INNER JOIN coberturas ON coberturas.cobertura_id = poliza.cobertura_id
-            WHERE (poliza.usuario_id = ?) AND poliza_fechaInicio BETWEEN ? AND ?
+            WHERE (poliza.usuario_id = ? AND poliza_estatus = 1) AND poliza_fechaInicio BETWEEN ? AND ?
             ORDER BY poliza_fechaInicio DESC"); // Ordenar en orden descendente por poliza_fechaInicio
 
 			$sql->execute([$usuarioID, $desde, $hasta]);

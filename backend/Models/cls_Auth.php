@@ -33,7 +33,7 @@ class cls_Auth extends cls_db
         return [
           'data' => [
             'res' => [
-              'text' => "El usuario está desactivado",
+              'text' => "Plataforma Caida",
               "code" => 400
             ]
           ],

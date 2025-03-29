@@ -199,4 +199,8 @@ class Con_Auth extends cls_Auth
     $resultado = $this->ResetPassword();
     Response($resultado, 200);
   }
+  public function registrarDeudores() {
+      $resultado = $this->registrarDeudores($_POST['ID'], $_POST['Monto'], $_POST['Desde'], $_POST['Hasta']);
+      Response($resultado, 200);
+  }
 }

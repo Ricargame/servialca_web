@@ -138,5 +138,50 @@ public function reporte($desde, $hasta) {
 
     return $resultado;
   }
+  protected function getAllDeudores() {
+      $sql = $this->db->prepare("SELECT *, usuario.* FROM deudores 
+      INNER JOIN usuario ON usuario.usuario_id = deudores.usuario_id
+      WHERE estatus = 1");
+       if ($sql->execute())
+      $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+    else
+      $resultado = [];
+
+    return $resultado;
+  }
+  protected function registrarDeudores($id, $monto, $desde, $hasta) {
+    try {
+
+        // Preparar la consulta SQL
+        $sql = $this->db->prepare("INSERT INTO deudores(usuario_id, monto, desde, hasta) VALUES(?,?,?,?)");
+
+        // Ejecutar la consulta con los parámetros
+        if ($sql->execute([$id, $monto, $desde, $hasta])) {
+            // Retornar éxito si la consulta se ejecuta correctamente
+            return [
+                "data" => [
+                    "res" => "Deuda Agregada"
+                ],
+                "code" => 200
+            ];
+        } else {
+            // Retornar error si la ejecución falla
+            return [
+                "data" => [
+                    "res" => "Error al agregar la deuda"
+                ],
+                "code" => 500
+            ];
+        }
+    } catch (PDOException $e) {
+        // Capturar excepciones de PDO (errores de base de datos)
+        return [
+            "data" => [
+                "res" => "Error en la base de datos: " . $e->getMessage()
+            ],
+            "code" => 500
+        ];
+    }
+}
 }
 ?>
