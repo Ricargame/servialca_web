@@ -1803,6 +1803,7 @@ export const ModalRcv = (props) => {
                     >
                       <option value="0414-">0414</option>
                       <option value="0424-">0424</option>
+                      <option value="0422-">0422</option>
                       <option value="0416-">0416</option>
                       <option value="0426-">0426</option>
                       <option value="0412-">0412</option>
